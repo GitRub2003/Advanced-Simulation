@@ -315,6 +315,62 @@ plt.axis("equal")
 plt.legend()
 plt.show()
 
+def long_to_wide(long_df, road_col="road", order_col="order", lrp_col="lrp", lat_col="lat", lon_col="lon"):
+    """
+    Convert long road format:
+      road | lrp | lat | lon | order
+
+    Back into wide format:
+      road | lrp1 | lat1 | lon1 | lrp2 | lat2 | lon2 | ...
+
+    Returns a wide DataFrame suitable for saving as TSV.
+    """
+
+    # Ensure correct types and ordering
+    df = long_df.copy()
+    df[order_col] = df[order_col].astype(int)
+
+    # Determine maximum number of LRPs across roads
+    max_n = df.groupby(road_col)[order_col].max().max() + 1  # since order starts at 0
+
+    wide_rows = []
+
+    for road, g in df.groupby(road_col, sort=False):
+        g = g.sort_values(order_col)
+
+        # start row with road
+        row = [road]
+
+        # create lookup by order to be safe even if some orders are missing
+        by_order = {int(r[order_col]): r for _, r in g.iterrows()}
+
+        for k in range(max_n):
+            if k in by_order:
+                r = by_order[k]
+                row.extend([r[lrp_col], r[lat_col], r[lon_col]])
+            else:
+                row.extend(["", "", ""])  # pad missing with blanks like typical TSV exports
+
+        wide_rows.append(row)
+
+    # Build column names: first col is road, then triplets
+    cols = ["road"]
+    for k in range(max_n):
+        cols += [f"lrp_{k}", f"lat_{k}", f"lon_{k}"]
+
+    wide_df = pd.DataFrame(wide_rows, columns=cols)
+    return wide_df
+
+
+# --- Convert corrected long -> wide and save in processed data folder---
+repaired_wide = long_to_wide(corrected_df)
+
+out_file = BASE / "data" / "processed" / "repaired_roads.tsv"
+repaired_wide.to_csv(out_file, sep="\t", index=False)
+
+print("Saved:", out_file)
+
+
 
 
 
