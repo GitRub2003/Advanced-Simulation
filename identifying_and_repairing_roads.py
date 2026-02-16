@@ -17,8 +17,6 @@ MAX_STEP_KM = 50.0
 MAX_TRAILING_DROP= 5
 MAX_LEADING_DROP =4
 
-# Set ROAD_FILTER to None for all roads, or a list/set of road names
-ROAD_FILTER = None # e.g. ['N211', 'N406'] or None
 
 # -----------------------------------------------------------------------------
 # Helper functions for road filtering
@@ -37,23 +35,7 @@ def split_road(road_str):
             num = None
     return prefix, num
 
-def road_matches_filter(road_val, road_filter):
-    if road_filter is None:
-        return True
-    road_str = str(road_val).strip()
-    if isinstance(road_filter, (set, list)):
-        return road_str in road_filter
-    if isinstance(road_filter, tuple) and len(road_filter) == 2:
-        start, end = road_filter
-        s_str, e_str = str(start).strip(), str(end).strip()
-        r_pref, r_num = split_road(road_str)
-        s_pref, s_num = split_road(s_str)
-        e_pref, e_num = split_road(e_str)
-        if (r_num is not None and s_num is not None and e_num is not None
-                and r_pref == s_pref == e_pref):
-            return s_num <= r_num <= e_num
-        return s_str <= road_str <= e_str
-    return road_str == str(road_filter).strip()
+
 
 # -----------------------------------------------------------------------------
 # Geometric calculations
@@ -548,8 +530,6 @@ def detect_typos_latlon(long_df, abs_lat_deg=0.3, abs_lon_deg=0.3, rel_mult=15.0
 def analyze_roads_with_lowess(df):
     results = []
     for road, group in df.groupby("road"):
-        if not road_matches_filter(road, ROAD_FILTER):
-            continue
         group_ordered, _ = choose_direction_and_trim(group)
         road_df = analyze_single_group(road, group_ordered)
         if road_df is not None:
@@ -564,8 +544,7 @@ def repair_outliers(long_df_with_chainage, outlier_df):
     repaired["outlier"] = repaired["outlier"].fillna(False)
     repaired_lat = []; repaired_lon = []
     for road, g in repaired.groupby("road", sort=False):
-        if not road_matches_filter(road, ROAD_FILTER):
-            continue
+        
         g = g.copy()
         g_sorted = g.sort_values(["chainage","seq"], na_position="last").reset_index()
         idx_map = g_sorted["index"].to_numpy()
@@ -700,25 +679,7 @@ for i, row in repaired_roads.iterrows():
             repaired_roads.iat[i, j+2] = lon
         seq += 1
 
-# 11. Plot if a filter is set (only when using Road_filter, so this is exploratory)
-if ROAD_FILTER:
-    for road_val in sorted(long_df['road'].astype(str).unique()):
-        if not road_matches_filter(road_val, ROAD_FILTER):
-            continue
-        before = long_df[long_df['road']==road_val][['road','lrp','seq','lat','lon','chainage']]
-        after = repaired_long[repaired_long['road']==road_val][['road','lrp','seq','lat','lon','chainage']]
-        compare = before.merge(after, on=['road','lrp','seq','chainage'], how='left', suffixes=('_before','_after'))
-        print(f"--- Corrected coordinates for road {road_val} (first 20 rows) ---")
-        print(compare.head(50).to_string(index=False))
-        plt.figure(figsize=(8,6))
-        plt.plot(compare['lon_before'], compare['lat_before'], 'o-', label='Before', alpha=0.7)
-        plt.plot(compare['lon_after'], compare['lat_after'], 'o-', label='After', alpha=0.7)
-        plt.xlabel('Longitude'); plt.ylabel('Latitude')
-        plt.title(f"Road {road_val}: Before vs After Correction")
-        plt.legend(); plt.axis('equal')
-        plot_path = INFRA / f"road_{road_val}_before_after.png"
-        plt.tight_layout(); plt.savefig(plot_path, dpi=150)
-        print(f"Plot saved to: {plot_path}")
+
 
 # 12. Export final roads
 repaired_path = BASE / "data" / "processed"  / 'WBSIM_Lab1_2024'/'infrastructure'/"_roads.tsv"
