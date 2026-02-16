@@ -64,6 +64,7 @@ def build_road_index(roads_long_df):
             "lat": lat_arr,
             "lon": lon_arr,
             "lrp": lrp_arr,
+            # Fast exact lookup for BMMS.LRPName -> (lat, lon)
             "lrp_to_row": {lrp: (float(la), float(lo)) for lrp, la, lo in zip(lrp_arr, lat_arr, lon_arr)},
         }
     return idx
@@ -78,6 +79,7 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
     3) nearest road vertex from current coordinate (only if current point is plausible in BD)
     If none of the above are available, do not force a guess.
     """
+    # Repairs are only allowed on the bridge's own road; no cross-road guessing.
     road = normalize_key(row.get("road", ""))
     if road not in road_idx:
         return np.nan, np.nan, "error_no_road"
@@ -97,9 +99,11 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
         ch = float(ch)
         diffs = np.abs(ch_arr - ch)
         j = int(np.argmin(diffs))
+        # If chainage is nearly exact, snap directly to that road vertex.
         if diffs[j] <= tol_chainage_km:
             return float(lat_arr[j]), float(lon_arr[j]), "road_chainage"
 
+        # If chainage falls outside known road range, clamp to nearest endpoint.
         if ch <= ch_arr[0]:
             return float(lat_arr[0]), float(lon_arr[0]), "road_chainage_clamped_start"
         if ch >= ch_arr[-1]:
@@ -133,12 +137,14 @@ def bridge_is_broken(row, road_idx, offroad_threshold_km=OFF_ROAD_THRESHOLD_KM):
     lon = row.get("lon", np.nan)
     road = normalize_key(row.get("road", ""))
 
+    # Primary sanity filter: values outside Bangladesh bounds are invalid.
     outside_bd = not plausible_bd_coord(lat, lon)
     if outside_bd:
         return True
 
     if road in road_idx:
         dist_km = nearest_point_distance_km(lat, lon, road_idx[road])
+        # Even in-BD points are flagged if they are too far from their own road geometry.
         if pd.notna(dist_km) and dist_km > offroad_threshold_km:
             return True
     return False
@@ -155,6 +161,7 @@ new_lon = pd.Series(index=BMMS_fixed.index, dtype="float64")
 new_src = pd.Series(index=BMMS_fixed.index, dtype="object")
 
 for row_idx, row in BMMS_fixed.loc[broken_mask].iterrows():
+    # Attempt a logical repair (LRP/chainage on same road only).
     la, lo, src = estimate_bridge_latlon(row, road_idx)
     new_lat.loc[row_idx] = la
     new_lon.loc[row_idx] = lo
@@ -166,7 +173,13 @@ print("Unfixable bridges (still missing):", int((broken_mask & ~fixable_mask).su
 
 BMMS_fixed.loc[fixable_mask, "lat"] = new_lat.loc[fixable_mask].values
 BMMS_fixed.loc[fixable_mask, "lon"] = new_lon.loc[fixable_mask].values
+# Keep provenance of which rule produced the repaired coordinate.
 BMMS_fixed.loc[fixable_mask, "EstimatedLoc"] = new_src.loc[fixable_mask].values
+
+print("Repair methods used (fixable rows):")
+method_counts = new_src.loc[fixable_mask].value_counts(dropna=False)
+for method, count in method_counts.items():
+    print(f"  {method}: {int(count)}")
 
 still_broken_mask = BMMS_fixed.apply(lambda r: bridge_is_broken(r, road_idx), axis=1)
 print("Still broken after repair:", int(still_broken_mask.sum()))
