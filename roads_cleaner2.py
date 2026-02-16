@@ -260,52 +260,6 @@ def correct_start_points(long_df, road_list, multiplier=3, min_abs_km=5.0):
                 print(f"Road {road}: corrected points 0 and 1 using direction from point2→original point1")
     return df
 
-def trim_road_endpoints(df, max_lead=2, max_trail=2, jump_abs_km=2.0, jump_ratio=1.5):
-    # (function unchanged, keep as is)
-    trimmed_dfs = []
-    for road, group in df.groupby('road', sort=False):
-        group = group.sort_values(['chainage', 'seq']).reset_index(drop=True)
-        if len(group) < 2:
-            trimmed_dfs.append(group)
-            continue
-        indices = list(range(len(group)))
-        # Trim leading
-        removed_lead = 0
-        while removed_lead < max_lead and len(indices) >= 2:
-            first = indices[0]; second = indices[1]
-            dist1 = haversine(group.loc[first,'lat'], group.loc[first,'lon'],
-                              group.loc[second,'lat'], group.loc[second,'lon'])
-            ch_diff1 = group.loc[second,'chainage'] - group.loc[first,'chainage']
-            if ch_diff1 > 0 and dist1 > jump_abs_km and dist1 > jump_ratio * ch_diff1:
-                indices.pop(0); removed_lead += 1; continue
-            if len(indices) >= 3:
-                second = indices[1]; third = indices[2]
-                dist2 = haversine(group.loc[second,'lat'], group.loc[second,'lon'],
-                                  group.loc[third,'lat'], group.loc[third,'lon'])
-                ch_diff2 = group.loc[third,'chainage'] - group.loc[second,'chainage']
-                if ch_diff2 > 0 and dist2 > jump_abs_km and dist2 > jump_ratio * ch_diff2:
-                    indices.pop(1); removed_lead += 1; continue
-            break
-        # Trim trailing
-        removed_trail = 0
-        while removed_trail < max_trail and len(indices) >= 2:
-            last = indices[-1]; prev = indices[-2]
-            dist1 = haversine(group.loc[prev,'lat'], group.loc[prev,'lon'],
-                              group.loc[last,'lat'], group.loc[last,'lon'])
-            ch_diff1 = group.loc[last,'chainage'] - group.loc[prev,'chainage']
-            if ch_diff1 > 0 and dist1 > jump_abs_km and dist1 > jump_ratio * ch_diff1:
-                indices.pop(-1); removed_trail += 1; continue
-            if len(indices) >= 3:
-                third_last = indices[-3]; second_last = indices[-2]
-                dist2 = haversine(group.loc[third_last,'lat'], group.loc[third_last,'lon'],
-                                  group.loc[second_last,'lat'], group.loc[second_last,'lon'])
-                ch_diff2 = group.loc[second_last,'chainage'] - group.loc[third_last,'chainage']
-                if ch_diff2 > 0 and dist2 > jump_abs_km and dist2 > jump_ratio * ch_diff2:
-                    indices.pop(-2); removed_trail += 1; continue
-            break
-        trimmed_dfs.append(group.iloc[indices].reset_index(drop=True) if indices else pd.DataFrame())
-    return pd.concat(trimmed_dfs, ignore_index=True)
-
 def choose_direction_and_trim(group, max_trailing=MAX_TRAILING_DROP, max_leading=MAX_LEADING_DROP):
     # (unchanged)
     g_fwd = group.dropna(subset=["chainage"]).sort_values(["chainage","seq"]).reset_index(drop=True)
@@ -665,16 +619,13 @@ print(f"Roads to correct: {roads_to_correct}")
 if roads_to_correct:
     long_df = correct_start_points(long_df, roads_to_correct, multiplier=3, min_abs_km=5.0)
 
-# 4. (Optional) Trim unreliable endpoints – currently commented; uncomment if desired
-# long_df = trim_road_endpoints(long_df, max_lead=2, max_trail=2)
-
-# 5. Add step‑MAD outlier column
+# 4. Add step‑MAD outlier column
 long_df = flag_step_mad_outliers(long_df, multiplier=3, min_abs_km=5.0)
 
-# 6. LOWESS outlier detection
+# 5. LOWESS outlier detection
 lowess_results = analyze_roads_with_lowess(long_df)
 
-# 7. Typo detection (adds column 'typo_outlier')
+# 6. Typo detection (adds column 'typo_outlier')
 typo_dict = detect_typos_latlon(long_df)
 long_df['typo_outlier'] = False
 for road, points in typo_dict.items():
@@ -682,19 +633,21 @@ for road, points in typo_dict.items():
         mask = (long_df['road'] == road) & (long_df['lrp'] == lrp)
         long_df.loc[mask, 'typo_outlier'] = True
 
-# 8. Merge LOWESS outlier flags into long_df
+# 7. Merge LOWESS outlier flags into long_df
 long_df = long_df.merge(
     lowess_results[['road','lrp','seq','outlier']].rename(columns={'outlier':'lowess_outlier'}),
     on=['road','lrp','seq'], how='left'
 )
 long_df['lowess_outlier'] = long_df['lowess_outlier'].fillna(False)
 
-# 9. Combine all outlier flags
+# 8. Combine all outlier flags
 long_df['combined_outlier'] = long_df['step_mad_outlier'] | long_df['lowess_outlier'] | long_df['typo_outlier']
 
-# 10. Repair using combined outlier flag
+# 9. Repair using combined outlier flag
 repaired_long = repair_outliers(long_df, long_df.rename(columns={'combined_outlier':'outlier'}))
 
+
+### DIAGNOSTIC TEST TO SPOT HOW WELL WE HAVE DONE ###
 # After all outlier detection and repair, or right after creating long_df
 repaired_long_df, large_step_summary = flag_large_steps(repaired_long, threshold_km=50.0)
 
@@ -717,7 +670,7 @@ for road in large_step_summary[large_step_summary['has_large_step']]['road']:
     plt.axis('equal')
     plt.show()
 
-# 11. Rebuild wide format
+# 10. Rebuild wide format
 repaired_roads = roads.copy()
 for col in repaired_roads.columns:
     if str(col).lower().startswith(('lat','lon')):
@@ -740,7 +693,7 @@ for i, row in repaired_roads.iterrows():
             repaired_roads.iat[i, j+2] = lon
         seq += 1
 
-# 12. Plot if a filter is set (optional)
+# 11. Plot if a filter is set (only when using Road_filter, so this is exploratory)
 if ROAD_FILTER:
     for road_val in sorted(long_df['road'].astype(str).unique()):
         if not road_matches_filter(road_val, ROAD_FILTER):
@@ -760,7 +713,7 @@ if ROAD_FILTER:
         plt.tight_layout(); plt.savefig(plot_path, dpi=150)
         print(f"Plot saved to: {plot_path}")
 
-# 13. Export final roads
+# 12. Export final roads
 repaired_path = INFRA / "_roads.tsv"
 repaired_roads_export = normalize_coord_columns(repaired_roads, COORD_SCALE)
 repaired_roads_export.to_csv(repaired_path, sep="\t", index=False)
