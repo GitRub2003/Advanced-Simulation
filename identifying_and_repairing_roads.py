@@ -1,3 +1,5 @@
+"""Detect and repair road geometry anomalies in LRP coordinate sequences."""
+
 import os
 import pandas as pd
 import numpy as np
@@ -22,6 +24,7 @@ MAX_LEADING_DROP =0
 # Helper functions for road filtering
 # -----------------------------------------------------------------------------
 def split_road(road_str):
+    """Split road ID into alphabetic prefix and numeric suffix for comparisons."""
     s = str(road_str).strip()
     i = 0
     while i < len(s) and not s[i].isdigit():
@@ -41,6 +44,7 @@ def split_road(road_str):
 # Geometric calculations
 # -----------------------------------------------------------------------------
 def haversine(lat1, lon1, lat2, lon2):
+    """Compute great-circle distance in kilometers between two coordinates."""
     R = 6371
     phi1, phi2 = radians(lat1), radians(lat2)
     dphi = radians(lat2 - lat1)
@@ -51,6 +55,7 @@ def haversine(lat1, lon1, lat2, lon2):
     return R * c
 
 def cumulative_haversine(lats, lons):
+    """Compute cumulative path distance along a sequence of coordinates."""
     if len(lats) == 0:
         return np.array([])
     steps = [0.0]
@@ -59,6 +64,7 @@ def cumulative_haversine(lats, lons):
     return np.cumsum(steps)
 
 def step_metrics(lats, lons, chainage):
+    """Calculate per-step distance, chainage delta, and distance-to-chainage ratio."""
     n = len(lats)
     step_dist = np.zeros(n)
     chainage_step = np.zeros(n)
@@ -71,6 +77,7 @@ def step_metrics(lats, lons, chainage):
     return step_dist, chainage_step, step_ratio
 
 def walk_chainage_filter(lats, lons, chainage, jump_abs_km, jump_ratio):
+    """Flag jumps that are too large relative to chainage progression."""
     n = len(lats)
     walk_outlier = np.zeros(n, dtype=bool)
     last_good = 0
@@ -89,6 +96,7 @@ def walk_chainage_filter(lats, lons, chainage, jump_abs_km, jump_ratio):
 # Coordinate scale handling (fixed‑point to degrees)
 # -----------------------------------------------------------------------------
 def infer_coord_scale(df):
+    """Infer fixed-point coordinate scale used in source files, if any."""
     lat_cols = [c for c in df.columns if str(c).lower().startswith("lat")]
     lon_cols = [c for c in df.columns if str(c).lower().startswith("lon")]
     if not lat_cols and not lon_cols:
@@ -105,6 +113,7 @@ def infer_coord_scale(df):
     return None
 
 def normalize_coord_columns(df, scale):
+    """Normalize latitude/longitude columns from fixed-point values to degrees."""
     if not scale:
         return df
     df = df.copy()
@@ -149,6 +158,7 @@ else:
     print("Coordinates appear to already be in degrees.")
 
 def wide_to_long(df):
+    """Convert wide LRP coordinate layout into one row per road point."""
     rows = []
     for _, row in df.iterrows():
         vals = row.values
@@ -250,7 +260,7 @@ def correct_start_points(long_df, road_list, multiplier=3, min_abs_km=5.0):
     return df
 
 def choose_direction_and_trim(group, max_trailing=MAX_TRAILING_DROP, max_leading=MAX_LEADING_DROP):
-    # (unchanged)
+    """Pick traversal direction with fewer anomalies and trim endpoint outliers."""
     g_fwd = group.dropna(subset=["chainage"]).sort_values(["chainage","seq"]).reset_index(drop=True)
     if len(g_fwd) < 2:
         return g_fwd, "forward"
@@ -291,7 +301,7 @@ def choose_direction_and_trim(group, max_trailing=MAX_TRAILING_DROP, max_leading
     return g_chosen, chosen
 
 def count_step_outliers_per_road(df, multiplier=3, min_abs_km=ABS_THRESHOLD_KM):
-    # (unchanged)
+    """Summarize per-road step outlier counts using MAD thresholds."""
     df = df.sort_values(['road','chainage','seq']).reset_index(drop=True)
     results = []
     for road, group in df.groupby('road', sort=False):
@@ -319,7 +329,7 @@ def count_step_outliers_per_road(df, multiplier=3, min_abs_km=ABS_THRESHOLD_KM):
     return pd.DataFrame(results)
 
 def analyze_single_group(road, group):
-    # (unchanged, but ensure it's present)
+    """Compute anomaly diagnostics for a single road geometry sequence."""
     if len(group) < 5:
         return None
     group = group.reset_index(drop=True)
@@ -402,7 +412,7 @@ def analyze_single_group(road, group):
     return road_df
 
 def flag_step_mad_outliers(df, multiplier=3, min_abs_km=5.0):
-    # (unchanged)
+    """Flag step outliers using robust MAD-based thresholds per road."""
     df = df.copy()
     df = df.sort_values(['road','chainage','seq']).reset_index(drop=True)
     outlier_flags = []
@@ -470,7 +480,7 @@ def flag_large_steps(df, threshold_km=20.0):
     return df, summary_df
 
 def detect_typos_latlon(long_df, abs_lat_deg=0.3, abs_lon_deg=0.3, rel_mult=15.0, min_typ_deg=1e-5):
-    # (unchanged, returns dict)
+    """Detect likely latitude/longitude typos using absolute and relative checks."""
     required = {"road","lrp","lat","lon"}
     if required - set(long_df.columns):
         raise ValueError("missing columns")
@@ -528,6 +538,7 @@ def detect_typos_latlon(long_df, abs_lat_deg=0.3, abs_lon_deg=0.3, rel_mult=15.0
     return errors
 
 def analyze_roads_with_lowess(df):
+    """Fit LOWESS trendlines to road sequences for visual anomaly review."""
     results = []
     for road, group in df.groupby("road"):
         group_ordered, _ = choose_direction_and_trim(group)
@@ -537,7 +548,7 @@ def analyze_roads_with_lowess(df):
     return pd.concat(results) if results else pd.DataFrame()
 
 def repair_outliers(long_df_with_chainage, outlier_df):
-    # (unchanged)
+    """Repair coordinates flagged as outliers using neighboring valid points."""
     repaired = long_df_with_chainage.copy()
     outlier_flags = outlier_df[["road","lrp","seq","outlier"]].copy()
     repaired = repaired.merge(outlier_flags, on=["road","lrp","seq"], how="left")

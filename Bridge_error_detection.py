@@ -1,3 +1,5 @@
+"""Detect implausible bridge coordinates and repair them using road geometry and chainage."""
+
 import pandas as pd
 import numpy as np
 from math import radians, sin, cos, sqrt, atan2
@@ -9,6 +11,7 @@ CHAINAGE_EXACT_TOL_KM = 0.05
 
 
 def normalize_key(val):
+    """Normalize lookup keys for consistent road/LRP matching."""
     return str(val).strip().upper()
 
 def plausible_bd_coord(lat, lon):
@@ -19,6 +22,7 @@ def plausible_bd_coord(lat, lon):
 
 
 def haversine(lat1, lon1, lat2, lon2):
+    """Compute great-circle distance in kilometers between two coordinates."""
     r = 6371.0
     phi1 = radians(float(lat1))
     phi2 = radians(float(lat2))
@@ -122,6 +126,7 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
 
 
 def bridge_is_broken(row, road_idx, offroad_threshold_km=OFF_ROAD_THRESHOLD_KM):
+    """Flag bridges with implausible coordinates or large off-road distance."""
     lat = row.get("lat", np.nan)
     lon = row.get("lon", np.nan)
     road = normalize_key(row.get("road", ""))
