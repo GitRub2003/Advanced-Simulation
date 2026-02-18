@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from math import radians, sin, cos, sqrt, atan2
 
-from roads_cleaner2 import INFRA, BMMS, repaired_long
+from identifying_and_repairing_roads import INFRA, BMMS, repaired_long
 
 OFF_ROAD_THRESHOLD_KM = 3.0
 CHAINAGE_EXACT_TOL_KM = 0.05
@@ -10,7 +10,6 @@ CHAINAGE_EXACT_TOL_KM = 0.05
 
 def normalize_key(val):
     return str(val).strip().upper()
-
 
 def plausible_bd_coord(lat, lon):
     """Very lightweight sanity check for Bangladesh-ish bounds."""
@@ -118,16 +117,6 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
         la = lat_arr[k - 1] + t * (lat_arr[k] - lat_arr[k - 1])
         lo = lon_arr[k - 1] + t * (lon_arr[k] - lon_arr[k - 1])
         return float(la), float(lo), "road_interpolate"
-
-    # Nearest-vertex fallback intentionally disabled:
-    # this can snap to a geometrically close but semantically wrong road point.
-    # lat0 = row.get("lat", np.nan)
-    # lon0 = row.get("lon", np.nan)
-    # if plausible_bd_coord(lat0, lon0):
-    #     dists = [haversine(lat0, lon0, la, lo) for la, lo in zip(lat_arr, lon_arr)]
-    #     if dists:
-    #         j = int(np.argmin(dists))
-    #         return float(lat_arr[j]), float(lon_arr[j]), "road_nearest_vertex"
 
     return np.nan, np.nan, "error_no_logical_fix"
 

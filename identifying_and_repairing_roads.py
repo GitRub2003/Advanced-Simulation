@@ -14,8 +14,8 @@ ABS_THRESHOLD_KM = 5
 JUMP_RATIO = 1.5
 JUMP_ABS_KM = 2.0
 MAX_STEP_KM = 50.0
-MAX_TRAILING_DROP= 5
-MAX_LEADING_DROP =4
+MAX_TRAILING_DROP= 0
+MAX_LEADING_DROP =0
 
 
 # -----------------------------------------------------------------------------
