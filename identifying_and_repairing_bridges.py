@@ -87,6 +87,7 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
     if road not in road_idx:
         return np.nan, np.nan, "error_no_road"
 
+
     info = road_idx[road]
     lat_arr = info["lat"]
     lon_arr = info["lon"]
@@ -123,6 +124,8 @@ def estimate_bridge_latlon(row, road_idx, tol_chainage_km=CHAINAGE_EXACT_TOL_KM)
         return float(la), float(lo), "road_interpolate"
 
     return np.nan, np.nan, "error_no_logical_fix"
+
+
 
 
 def bridge_is_broken(row, road_idx, offroad_threshold_km=OFF_ROAD_THRESHOLD_KM):
@@ -164,6 +167,9 @@ for row_idx, row in BMMS_fixed.loc[broken_mask].iterrows():
 fixable_mask = broken_mask & new_lat.notna() & new_lon.notna()
 print("Fixable bridges (got new coords):", int(fixable_mask.sum()))
 print("Unfixable bridges (still missing):", int((broken_mask & ~fixable_mask).sum()))
+print("Error_no_road bridges:", int((new_src == "error_no_road").sum()))
+print("Error_no_logical_fix bridges:", int((new_src == "error_no_logical_fix").sum()))
+
 
 BMMS_fixed.loc[fixable_mask, "lat"] = new_lat.loc[fixable_mask].values
 BMMS_fixed.loc[fixable_mask, "lon"] = new_lon.loc[fixable_mask].values
@@ -182,3 +188,4 @@ repaired_path =  BASE / "data" / "processed"  / 'WBSIM_Lab1_2024'/'infrastructur
 with pd.ExcelWriter(repaired_path, engine="openpyxl") as writer:
     BMMS_fixed.to_excel(writer, sheet_name="BMMS_overview", index=False)
 print(f"Repaired bridges saved to: {repaired_path}")
+
