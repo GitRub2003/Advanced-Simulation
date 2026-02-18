@@ -6,7 +6,7 @@ from math import radians, sin, cos, sqrt, atan2
 
 from identifying_and_repairing_roads import INFRA, BMMS, repaired_long, BASE
 
-OFF_ROAD_THRESHOLD_KM = 3.0
+OFF_ROAD_THRESHOLD_KM = 1.0
 CHAINAGE_EXACT_TOL_KM = 0.05
 
 
