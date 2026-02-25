@@ -4,6 +4,7 @@ from mesa.space import ContinuousSpace
 from components import Source, Sink, SourceSink, Bridge, Link
 import pandas as pd
 from collections import defaultdict
+from scenario import SCENARIOS
 
 
 # ---------------------------------------------------------------
@@ -55,7 +56,10 @@ class BangladeshModel(Model):
 
     step_time = 1
 
-    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
+    def __init__(self, scenario_id=0, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
+        super().__init__()
+        self.scenario_id = scenario_id
+        self.scenario_probs = SCENARIOS[scenario_id]
 
         self.schedule = BaseScheduler(self)
         self.running = True
@@ -73,7 +77,47 @@ class BangladeshModel(Model):
         Warning: the labels are the same as the csv column labels
         """
 
-        df = pd.read_csv('../data/demo-1.csv')
+        df = pd.read_csv('../data/n1_model.csv')
+        # Normalize column names for more flexible input data formats
+        df.columns = [str(c).strip().lower() for c in df.columns]
+
+        # Ensure required columns exist or derive them from available data.
+        if 'id' not in df.columns:
+            df = df.reset_index(drop=True)
+            df['id'] = df.index.astype(int)
+
+        if 'model_type' not in df.columns:
+            df['model_type'] = 'link'
+            if 'type' in df.columns:
+                bridge_mask = df['type'].astype(str).str.contains('bridge|culvert', case=False, na=False)
+                df.loc[bridge_mask, 'model_type'] = 'bridge'
+
+            if 'road' in df.columns:
+                for _, group in df.groupby('road', sort=False):
+                    if group.empty:
+                        continue
+                    if 'chainage' in df.columns:
+                        ordered = group.sort_values(by=['chainage']).index
+                    else:
+                        ordered = group.sort_values(by=['id']).index
+                    df.loc[ordered[0], 'model_type'] = 'source'
+                    df.loc[ordered[-1], 'model_type'] = 'sink'
+            else:
+                df.loc[df['id'].idxmin(), 'model_type'] = 'source'
+                df.loc[df['id'].idxmax(), 'model_type'] = 'sink'
+
+        if 'length' not in df.columns:
+            df['length'] = 0.0
+            if 'chainage' in df.columns and 'road' in df.columns:
+                for _, group in df.groupby('road', sort=False):
+                    if group.empty:
+                        continue
+                    ordered = group.sort_values(by=['chainage'])
+                    lengths = ordered['chainage'].diff().fillna(0).abs() * 1000
+                    df.loc[ordered.index, 'length'] = lengths
+            if 'gap' in df.columns:
+                gap = pd.to_numeric(df['gap'], errors='coerce')
+                df.loc[gap.notna(), 'length'] = gap[gap.notna()]
 
         # a list of names of roads to be generated
         roads = ['N1']
@@ -89,7 +133,10 @@ class BangladeshModel(Model):
             # be careful with the sorting
             # better remove sorting by id
             # Select all the objects on a particular road
-            df_objects_on_road = df[df['road'] == road].sort_values(by=['id'])
+            sort_col = 'id'
+            if 'chainage' in df.columns and df['chainage'].notna().any():
+                sort_col = 'chainage'
+            df_objects_on_road = df[df['road'] == road].sort_values(by=[sort_col])
 
             if not df_objects_on_road.empty:
                 df_objects_all.append(df_objects_on_road)
@@ -105,6 +152,8 @@ class BangladeshModel(Model):
                 self.path_ids_dict[path_ids[0], path_ids.iloc[-1]] = path_ids
 
         # put back to df with selected roads so that min and max and be easily calculated
+        if not df_objects_all:
+            raise ValueError("No objects found for the requested roads; check the input CSV and road names.")
         df = pd.concat(df_objects_all)
         y_min, y_max, x_min, x_max = set_lat_lon_bound(
             df['lat'].min(),
@@ -136,7 +185,7 @@ class BangladeshModel(Model):
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
                 elif model_type == 'bridge':
-                    agent = Bridge(row['id'], self, row['length'], row['name'], row['road'])
+                    agent = Bridge(row['id'], self, row['length'], row['name'], row['road'], row['condition'])
                 elif model_type == 'link':
                     agent = Link(row['id'], self, row['length'], row['name'], row['road'])
 

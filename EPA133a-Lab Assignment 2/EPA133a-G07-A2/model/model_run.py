@@ -1,3 +1,4 @@
+from scenario import SCENARIOS
 from model import BangladeshModel
 
 """
@@ -14,8 +15,9 @@ from model import BangladeshModel
 run_length = 1000
 
 seed = 1234567
+scenario_id = 1
 
-sim_model = BangladeshModel(seed=seed)
+sim_model = BangladeshModel(scenario_id=scenario_id, seed=seed)
 
 # Check if the seed is set
 print("SEED " + str(sim_model._seed))
