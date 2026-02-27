@@ -1,5 +1,6 @@
 from scenario import SCENARIOS
 from model import BangladeshModel
+import os
 
 """
     Run simulation
@@ -15,13 +16,22 @@ from model import BangladeshModel
 run_length = 1000
 
 seed = 1234567
-scenario_id = 1
+base_dir = os.path.dirname(__file__)
+experiments_dir = os.path.normpath(os.path.join(base_dir, "..", "Experiments"))
 
-sim_model = BangladeshModel(scenario_id=scenario_id, seed=seed)
+for scenario_id in sorted(SCENARIOS.keys()):
+    sim_model = BangladeshModel(scenario_id=scenario_id, seed=seed)
 
-# Check if the seed is set
-print("SEED " + str(sim_model._seed))
+    # Check if the seed is set
+    print("SEED " + str(sim_model._seed) + " | SCENARIO " + str(scenario_id))
 
-# One run with given steps
-for i in range(run_length):
-    sim_model.step()
+    # One run with given steps
+    for i in range(run_length):
+        sim_model.step()
+
+    output_path = os.path.join(
+        experiments_dir,
+        f"truck_driving_times_scenario_{scenario_id}.csv"
+    )
+    sim_model.export_total_driving_times(output_path=output_path)
+    print("Driving times saved to: " + str(output_path))

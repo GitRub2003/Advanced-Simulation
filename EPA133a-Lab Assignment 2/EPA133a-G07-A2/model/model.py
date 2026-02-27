@@ -3,6 +3,7 @@ from mesa.time import BaseScheduler
 from mesa.space import ContinuousSpace
 from components import Source, Sink, SourceSink, Bridge, Link
 import pandas as pd
+import os
 from collections import defaultdict
 from scenario import SCENARIOS
 
@@ -67,6 +68,7 @@ class BangladeshModel(Model):
         self.space = None
         self.sources = []
         self.sinks = []
+        self.completed_vehicle_times = []
 
         self.generate_model()
 
@@ -180,10 +182,12 @@ class BangladeshModel(Model):
                 elif model_type == 'sink':
                     agent = Sink(row['id'], self, row['length'], row['name'], row['road'])
                     self.sinks.append(agent.unique_id)
+                    self._attach_sink_remove_hook(agent)
                 elif model_type == 'sourcesink':
                     agent = SourceSink(row['id'], self, row['length'], row['name'], row['road'])
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
+                    self._attach_sink_remove_hook(agent)
                 elif model_type == 'bridge':
                     agent = Bridge(row['id'], self, row['length'], row['name'], row['road'], row['condition'])
                 elif model_type == 'link':
@@ -212,6 +216,61 @@ class BangladeshModel(Model):
         Advance the simulation by one step.
         """
         self.schedule.step()
+
+    def _attach_sink_remove_hook(self, sink_agent):
+        """
+        Wrap sink.remove so completed vehicle timings are recorded in the model.
+        """
+        original_remove = sink_agent.remove
+
+        def remove_with_record(vehicle):
+            self.record_completed_vehicle(vehicle)
+            return original_remove(vehicle)
+
+        sink_agent.remove = remove_with_record
+
+    def record_completed_vehicle(self, vehicle):
+        """
+        Store generated/removed steps for a finished vehicle.
+        """
+        if vehicle.generated_at_step is None or vehicle.removed_at_step is None:
+            return
+        self.completed_vehicle_times.append(
+            {
+                "truck_id": vehicle.unique_id,
+                "generated_at_step": vehicle.generated_at_step,
+                "removed_at_step": vehicle.removed_at_step,
+            }
+        )
+
+    def calculate_total_driving_times(self):
+        """
+        Return a DataFrame with total driving time for each completed truck.
+        """
+        df = pd.DataFrame(self.completed_vehicle_times)
+        if df.empty:
+            return pd.DataFrame(
+                columns=[
+                    "truck_id",
+                    "generated_at_step",
+                    "removed_at_step",
+                    "total_driving_time",
+                ]
+            )
+        df["total_driving_time"] = df["removed_at_step"] - df["generated_at_step"]
+        return df
+
+    def export_total_driving_times(self, output_path=None):
+        """
+        Export truck driving times to a CSV file in the data folder.
+        """
+        if output_path is None:
+            output_path = os.path.normpath(
+                os.path.join(os.path.dirname(__file__), "..", "data", "truck_driving_times.csv")
+            )
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        self.calculate_total_driving_times().to_csv(output_path, index=False)
+        return output_path
 
 
 # EOF -----------------------------------------------------------
