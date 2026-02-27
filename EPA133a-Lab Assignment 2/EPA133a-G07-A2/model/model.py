@@ -272,5 +272,44 @@ class BangladeshModel(Model):
         self.calculate_total_driving_times().to_csv(output_path, index=False)
         return output_path
 
+    def calculate_bridge_total_wait_times(self):
+        """
+        Return a DataFrame with total wait time per bridge for this scenario.
+        """
+        rows = []
+        for agent in self.schedule._agents.values():  # Access to protected member _agents
+            if isinstance(agent, Bridge):
+                rows.append(
+                    {
+                        "bridge_id": agent.unique_id,
+                        "bridge_name": agent.name,
+                        "road_name": agent.road_name,
+                        "condition": agent.condition,
+                        "total_wait_time": float(getattr(agent, "total_wait_time", 0.0)),
+                    }
+                )
+        if not rows:
+            return pd.DataFrame(
+                columns=[
+                    "bridge_id",
+                    "bridge_name",
+                    "road_name",
+                    "condition",
+                    "total_wait_time",
+                ]
+            )
+        return pd.DataFrame(rows).sort_values(by=["bridge_id"]).reset_index(drop=True)
+
+    def export_bridge_total_wait_times(self, output_path=None):
+        """
+        Export total wait time per bridge to CSV.
+        """
+        if output_path is None:
+            output_path = os.path.normpath(
+                os.path.join(os.path.dirname(__file__), "..", "data", "bridge_total_wait_times.csv")
+            )
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        self.calculate_bridge_total_wait_times().to_csv(output_path, index=False)
+        return output_path
 
 # EOF -----------------------------------------------------------

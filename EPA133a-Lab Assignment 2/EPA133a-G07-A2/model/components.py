@@ -56,7 +56,7 @@ class Bridge(Infra):
         super().__init__(unique_id, model, length, name, road_name)
 
         self.condition = condition # condition has to be 'A', 'B', 'C' or 'D'
-
+        self.total_wait_time= 0.0
         # TODO
         if self.length > 200:
             self.delay_time = self.model.random.triangular(1,4,2)
@@ -84,7 +84,7 @@ class Bridge(Infra):
         print("prob is:", prob) # I used it to test the model but can be removed
         print("random is:", self.model.random.random()) # I used it to test the model but can be removed
         if self.model.random.random() < prob:
-            print(self.delay_time)
+            self.total_wait_time += self.delay_time
             return self.delay_time
         else:
             return 0.0

@@ -35,3 +35,10 @@ for scenario_id in sorted(SCENARIOS.keys()):
     )
     sim_model.export_total_driving_times(output_path=output_path)
     print("Driving times saved to: " + str(output_path))
+
+    bridge_wait_output_path = os.path.join(
+        experiments_dir,
+        f"bridge_total_wait_times_scenario_{scenario_id}.csv"
+    )
+    sim_model.export_bridge_total_wait_times(output_path=bridge_wait_output_path)
+    print("Bridge wait times saved to: " + str(bridge_wait_output_path))
