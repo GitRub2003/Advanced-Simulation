@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Begin visualization en naam folder aangepast">
+      <change beforePath="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model/model_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report/stats_components.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report/stats_components.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="12646" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sybedehaan&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GitRub2003/Advanced-Simulation.git&quot;,
+    &quot;accountId&quot;: &quot;4e46f583-9c5b-4d2a-836d-f974bbc7611c&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3A9mlaHn6r9HLs7BEX2EpqCuOVY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Data Preparation.executor": "Run",
+    "Python.model_run.executor": "Run",
+    "Python.model_viz.executor": "Run",
+    "Python.stats_components.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/sybed/Desktop/Advanced-Simulation/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "database.data.views.appearance",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sybed\Desktop\Advanced-Simulation\EPA133a-Lab_Assignment_2\EPA133a-G07-A2\report" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sybed\Desktop\Advanced-Simulation\EPA133a-Lab_Assignment_2\EPA133a-G07-A2\report" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="" />
+      <created>1772013314916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772013314916</updated>
+      <workItem from="1772013316659" duration="1892000" />
+      <workItem from="1772205577599" duration="12636000" />
+    </task>
+    <task id="LOCAL-00001" summary="Begin visualization en naam folder aangepast">
+      <option name="closed" value="true" />
+      <created>1772214509762</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772214509762</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Begin visualization en naam folder aangepast" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin visualization en naam folder aangepast" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1772377086160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$stats_components.coverage" NAME="stats_components Coverage Results" MODIFIED="1772384703681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
+  </component>
+</project>
