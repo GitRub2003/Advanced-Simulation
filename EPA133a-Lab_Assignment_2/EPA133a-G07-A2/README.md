@@ -1,24 +1,30 @@
-# Example README File
+# Assignment 2: Component Building
 
-Created by: EPA133a Group xx
+Created by:
 
-|    Name     | Student Number |
-| :---------: | :------------- |
-| Mary White  | 1234567        |
-| David Brown | 7654321        |
+|Group Number|07|
+|:-:|:-:|
+|Ruben Zuidgeest|5542014|
+|Lars Groen|4667697|
+|Ryan Zondag|5543485|
+|Olivier Poelman|5589177|
+|Sybe de Haan|5595088|
 
-## Introduction
+## How to use
 
-Every project should have a README file to help a first-time user understand what it is about and how they might be able to use it. This file is where you (as a group) shall provide the information needed by the TAs to evaluate and grade your work.
+## 
 
-If you are looking for information about the Demo model of Assignment 2, navigate to the [model/README.md](model/README.md) in the [model](model) directory. Have **fun** modeling in Python!
+In this file there are several important folders. The first folder which is important is the data folder. This folder contains the \_roads3 and BMMS\_overview csv files which  are needed to produce driving and waiting times of the trucks (per bridge and road), more about this is written in the report. To be able to use this data, the Data Preparation file needs to be ran in pycharm to get this data in the right format, this file produces a csv file (n1\_model) with all the needed information in this format.
 
-## How to Use
 
-Include whatever you think is necessary for someone to understand your work. The README file is usually the first file someone will see and open. It doesn't need to explain what might be obvious, but it should point out the most important things for someone looking at your work. For example, how to launch your program, what are the main files, where to find them, etc.
 
-### Format
+With this csv file the model file in the model folder generates a model which can calculate and export truck driving times and bridge total wait times per scenario and replications. These files are stored in the Experiments folder.
 
-Most README files for data or software projects are now written in Markdown format, like this document. There are some different flavours, but they are easy to write. See here for more information https://www.markdownguide.org/basic-syntax
+Finally, when running the stats\_components file in the report folder you create visualation which are then stored in the img folder
 
-Most IDEs can render Markdown files directly.
+## Requirements
+
+To be able to run the model mesa version 2.1.4 and pandas module 2.1.3 or later is needed. 
+
+### 
+
