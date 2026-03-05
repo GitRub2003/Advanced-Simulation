@@ -285,6 +285,7 @@ class BangladeshModel(Model):
                         "bridge_name": agent.name,
                         "road_name": agent.road_name,
                         "condition": agent.condition,
+                        "length": agent.length,
                         "total_wait_time": float(getattr(agent, "total_wait_time", 0.0)),
                     }
                 )

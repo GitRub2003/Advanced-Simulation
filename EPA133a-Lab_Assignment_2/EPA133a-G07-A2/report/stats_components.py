@@ -25,13 +25,19 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 OUTPUT_DIR = PROJECT_ROOT / "img"
 EXPERIMENTS_DIR = PROJECT_ROOT / "Experiments"
 
-EXPECTED_SCENARIOS = 8
+EXPECTED_SCENARIOS = 9
 EXPECTED_REPLICATIONS = 10
 TOP_N_WORST_BRIDGES = 5
 TOP_K_PARETO = 20
 
 TRUCK_FILE_RE = re.compile(r"^truck_driving_times_scenario_(\d+)_replicate_(\d+)\.csv$", re.IGNORECASE)
 BRIDGE_FILE_RE = re.compile(r"^bridge_total_wait_times_scenario_(\d+)_replicate_(\d+)\.csv$", re.IGNORECASE)
+
+# Road selection for analysis:
+# - Set to "ALL" to use all roads.
+# - Set to a specific road like "N1" to focus analysis.
+ROAD_SELECTION = "ALL"
+LENGTH_CATEGORY_ORDER = ["Over 200 m", "50-200 m", "10-50 m", "Under 10 m"]
 
 
 def discover_files():
@@ -70,6 +76,54 @@ def discover_files():
     return truck_files, bridge_files, stats
 
 
+def road_scope_label():
+    """Return a human-readable road scope label for titles and summaries."""
+    selected = str(ROAD_SELECTION).strip()
+    if selected.upper() == "ALL":
+        return "All Roads"
+    return selected.upper()
+
+
+def scoped_title(base_title):
+    """Append road scope to a chart title."""
+    return f"{base_title} ({road_scope_label()})"
+
+
+def filter_by_road(df, stats, df_name):
+    """
+    Filter a dataframe by ROAD_SELECTION if possible.
+    Accepts common road column names: road_name, road, road_id.
+    """
+    if df.empty:
+        return df
+
+    selected = str(ROAD_SELECTION).strip().upper()
+    if selected == "ALL":
+        return df
+
+    road_col = "road_name",
+
+    if road_col is None:
+        stats["warnings"].append(
+            f"{df_name}: ROAD_SELECTION={selected}, but no road column found; data kept unfiltered."
+        )
+        return df
+
+    filtered = df[df[road_col].astype(str).str.strip().str.upper() == selected].copy()
+    if filtered.empty:
+        stats["warnings"].append(f"{df_name}: no rows found for ROAD_SELECTION={selected}.")
+    return filtered
+
+
+def build_length_category(length_series):
+    """Group numeric bridge lengths (m) into report categories."""
+    length_num = pd.to_numeric(length_series, errors="coerce")
+    bins = [0, 10, 50, 200, np.inf]
+    labels = ["Under 10 m", "10-50 m", "50-200 m", "Over 200 m"]
+    categories = pd.cut(length_num, bins=bins, labels=labels, right=False, include_lowest=True)
+    return pd.Series(categories, index=length_series.index).astype("object")
+
+
 def load_truck_driving(truck_files, stats):
     """Load truck driving-time CSVs and return a standardized long-form table."""
     rows = []
@@ -99,7 +153,7 @@ def load_truck_driving(truck_files, stats):
 
 def load_bridge_wait_times(bridge_files, stats):
     """Load bridge wait-time CSVs and harmonize key bridge attributes."""
-    needed = ["bridge_id", "bridge_name", "road_name", "condition", "total_wait_time"]
+    needed = ["bridge_id", "bridge_name", "road_name", "condition", "total_wait_time", "length"]
     rows = []
 
     for (scenario_id, replication_id), path in bridge_files.items():
@@ -119,9 +173,7 @@ def load_bridge_wait_times(bridge_files, stats):
                 "road_name": df["road_name"].astype(str).str.strip(),
                 "condition_category": df["condition"].astype(str).str.strip().str.upper(),
                 "total_wait_time": pd.to_numeric(df["total_wait_time"], errors="coerce"),
-                "length_category": df["length_category"].astype(str).str.strip() if "length_category" in df.columns else np.nan,
-                "lat": pd.to_numeric(df["lat"], errors="coerce") if "lat" in df.columns else np.nan,
-                "lon": pd.to_numeric(df["lon"], errors="coerce") if "lon" in df.columns else np.nan,
+                "length_category": build_length_category(df["length"]),
             }
         ).dropna(subset=["total_wait_time"])
         rows.append(tmp)
@@ -138,8 +190,6 @@ def load_bridge_wait_times(bridge_files, stats):
                 "condition_category",
                 "total_wait_time",
                 "length_category",
-                "lat",
-                "lon",
             ]
         )
 
@@ -238,18 +288,20 @@ def plot_length_heatmaps(bridge_df, stats):
         return
 
     wait_share = percent_table(d, category_col="length_category", value_col="total_wait_time")
+    wait_share = wait_share.reindex(columns=LENGTH_CATEGORY_ORDER, fill_value=0)
     save_heatmap(
         wait_share,
-        "Share of Total Wait Time by Bridge Length Category and Scenario",
+        scoped_title("Share of Total Wait Time by Bridge Length Category and Scenario"),
         "Bridge Length Category",
         "Scenario",
         OUTPUT_DIR / "all_scenarios_total_wait_time_length_category_heatmap_wait_share.png",
     )
 
     event_share = percent_table(d, category_col="length_category", value_col=None)
+    event_share = event_share.reindex(columns=LENGTH_CATEGORY_ORDER, fill_value=0)
     save_heatmap(
         event_share,
-        "Share of Bridge Wait Events by Length Category and Scenario",
+        scoped_title("Share of Bridge Wait Events by Length Category and Scenario"),
         "Bridge Length Category",
         "Scenario",
         OUTPUT_DIR / "all_scenarios_total_wait_time_length_category_heatmap_event_share.png",
@@ -265,7 +317,7 @@ def plot_length_line(bridge_df, stats):
         return
 
     summary = d.groupby(["scenario_id", "length_category"])["total_wait_time"].mean().reset_index()
-    categories = sorted(summary["length_category"].astype(str).unique())
+    categories = LENGTH_CATEGORY_ORDER
 
     fig, ax = plt.subplots(figsize=(11, 6))
     for scenario in range(EXPECTED_SCENARIOS):
@@ -273,7 +325,7 @@ def plot_length_line(bridge_df, stats):
         if s["total_wait_time"].notna().any():
             ax.plot(categories, s["total_wait_time"], marker="o", label=f"Scenario {int(scenario)}")
 
-    ax.set_title("Average Bridge Wait Time by Length Category")
+    ax.set_title(scoped_title("Average Bridge Wait Time by Length Category"))
     ax.set_xlabel("Bridge Length Category")
     ax.set_ylabel("Average Total Wait Time")
     ax.tick_params(axis="x", rotation=30)
@@ -295,7 +347,7 @@ def plot_condition_heatmap(bridge_df, stats):
     table = table.reindex(columns=["A", "B", "C", "D"], fill_value=0)
     save_heatmap(
         table,
-        "Share of Total Wait Time by Condition Category and Scenario",
+        scoped_title("Share of Total Wait Time by Condition Category and Scenario"),
         "Condition Category",
         "Scenario",
         OUTPUT_DIR / "all_scenarios_total_wait_time_condition_heatmap_wait_share.png",
@@ -319,7 +371,7 @@ def plot_condition_line(bridge_df, stats):
         if s["total_wait_time"].notna().any():
             ax.plot(categories, s["total_wait_time"], marker="o", label=f"Scenario {int(scenario)}")
 
-    ax.set_title("Average Bridge Wait Time by Condition Category")
+    ax.set_title(scoped_title("Average Bridge Wait Time by Condition Category"))
     ax.set_xlabel("Condition Category")
     ax.set_ylabel("Average Total Wait Time")
     ax.legend(loc="best", ncol=2, fontsize=8)
@@ -340,7 +392,7 @@ def plot_driving_boxplot(truck_df, stats):
 
     fig, ax = plt.subplots(figsize=(11, 6))
     ax.boxplot(values, labels=[str(int(s)) for s in scenarios], showmeans=True)
-    ax.set_title("Travel Time Distribution per Scenario (10 Replications Expected)")
+    ax.set_title(scoped_title("Travel Time Distribution per Scenario (10 Replications Expected)"))
     ax.set_xlabel("Scenario")
     ax.set_ylabel("Total Driving Time per Replication (sum)")
     fig.tight_layout()
@@ -364,36 +416,11 @@ def plot_worst_bridges_dot(bridge_df, stats):
     ax.errorbar(worst["mean_wait"], y, xerr=worst["std_wait"].fillna(0), fmt="o", capsize=3)
     ax.set_yticks(y)
     ax.set_yticklabels(worst.index.astype(str))
-    ax.set_title(f"Top {len(worst)} Worst Bridges by Mean Wait Time")
+    ax.set_title(scoped_title(f"Top {len(worst)} Worst Bridges by Mean Wait Time"))
     ax.set_xlabel("Mean Total Wait Time (Scenarios 1-7)")
     ax.set_ylabel("Bridge")
     fig.tight_layout()
     fig.savefig(OUTPUT_DIR / "scenario_1_7_total_wait_time_worst_bridges_dotplot.png", dpi=180)
-    plt.close(fig)
-
-
-def plot_wait_map(bridge_df, stats):
-    """Create a map-like scatter showing spatial variation in bridge wait times."""
-    d = bridge_df.dropna(subset=["bridge_id", "lat", "lon"]).copy()
-    if d.empty:
-        stats["warnings"].append("Skipping map-like plot: no lat/lon data.")
-        return
-
-    g = d.groupby("bridge_id", as_index=False).agg(lat=("lat", "mean"), lon=("lon", "mean"), mean_wait=("total_wait_time", "mean"))
-    g = g.dropna(subset=["lat", "lon", "mean_wait"])
-    if g.empty:
-        stats["warnings"].append("Skipping map-like plot: lat/lon data invalid after aggregation.")
-        return
-
-    fig, ax = plt.subplots(figsize=(10, 7))
-    scatter = ax.scatter(g["lon"], g["lat"], c=g["mean_wait"], s=np.clip(g["mean_wait"], 10, None) * 0.8, alpha=0.75)
-    cb = fig.colorbar(scatter, ax=ax)
-    cb.set_label("Mean Total Wait Time")
-    ax.set_title("Bridge Wait Time Spatial Pattern (Map-like Scatter)")
-    ax.set_xlabel("Longitude")
-    ax.set_ylabel("Latitude")
-    fig.tight_layout()
-    fig.savefig(OUTPUT_DIR / "all_scenarios_total_wait_time_bridge_map_scatter.png", dpi=180)
     plt.close(fig)
 
 
@@ -406,7 +433,7 @@ def plot_replication_heatmap(truck_df, stats):
         return
     save_heatmap(
         table,
-        "Total Driving Time per Scenario and Replication",
+        scoped_title("Total Driving Time per Scenario and Replication"),
         "Replication",
         "Scenario",
         OUTPUT_DIR / "all_scenarios_total_driving_time_replication_heatmap.png",
@@ -428,7 +455,7 @@ def plot_wait_ecdf(bridge_df, stats):
         y = np.arange(1, len(values) + 1) / len(values)
         ax.plot(values, y, label=f"Scenario {int(scenario)}", alpha=0.9)
 
-    ax.set_title("ECDF of Bridge Wait Times by Scenario")
+    ax.set_title(scoped_title("ECDF of Bridge Wait Times by Scenario"))
     ax.set_xlabel("Total Wait Time")
     ax.set_ylabel("ECDF")
     ax.legend(loc="lower right", ncol=2, fontsize=8)
@@ -452,7 +479,7 @@ def plot_pareto(bridge_df, stats):
         cum = top.cumsum() / totals.sum() * 100 if totals.sum() > 0 else top * 0
         ax.plot(np.arange(1, len(cum) + 1), cum.values, marker="o", label=f"Scenario {int(scenario)}")
 
-    ax.set_title("Pareto Concentration of Bridge Wait Time by Scenario")
+    ax.set_title(scoped_title("Pareto Concentration of Bridge Wait Time by Scenario"))
     ax.set_xlabel(f"Top-K Bridges (K <= {TOP_K_PARETO})")
     ax.set_ylabel("Cumulative Share of Total Wait Time (%)")
     ax.legend(loc="lower right", ncol=2, fontsize=8)
@@ -483,7 +510,7 @@ def plot_driving_vs_wait(agg_df, stats):
         s = merged[merged["scenario_id"] == scenario]
         ax.scatter(s["total_wait_time_sum"], s["total_driving_time_sum"], label=f"Scenario {int(scenario)}", alpha=0.8)
 
-    ax.set_title("Driving Time vs Wait Time by Scenario/Replication")
+    ax.set_title(scoped_title("Driving Time vs Wait Time by Scenario/Replication"))
     ax.set_xlabel("Total Wait Time per Replication (sum)")
     ax.set_ylabel("Total Driving Time per Replication (sum)")
     ax.legend(loc="best", ncol=2, fontsize=8)
@@ -499,7 +526,8 @@ def report_missing_pairs(df, kind, stats):
         return
 
     known = set(tuple(x) for x in df[["scenario_id", "replication_id"]].dropna().astype(int).drop_duplicates().to_numpy())
-    expected = {(s, r) for s in range(EXPECTED_SCENARIOS) for r in range(EXPECTED_REPLICATIONS)}
+    scenario_ids = sorted(df["scenario_id"].dropna().astype(int).unique())
+    expected = {(s, r) for s in range(EXPECTED_SCENARIOS) for r in range(1, EXPECTED_REPLICATIONS + 1)}
     missing = expected - known
     if missing:
         stats["warnings"].append(f"{kind}: missing {len(missing)} expected scenario-replication pairs.")
@@ -512,6 +540,8 @@ def main():
     truck_files, bridge_files, stats = discover_files()
     truck_df = load_truck_driving(truck_files, stats)
     bridge_df = load_bridge_wait_times(bridge_files, stats)
+    truck_df = filter_by_road(truck_df, stats, "truck")
+    bridge_df = filter_by_road(bridge_df, stats, "bridge")
 
     report_missing_pairs(truck_df, "truck", stats)
     report_missing_pairs(bridge_df, "bridge", stats)
@@ -528,13 +558,13 @@ def main():
     plot_condition_line(bridge_df, stats)
     plot_driving_boxplot(truck_df, stats)
     plot_worst_bridges_dot(bridge_df, stats)
-    plot_wait_map(bridge_df, stats)
     plot_replication_heatmap(truck_df, stats)
     plot_wait_ecdf(bridge_df, stats)
     plot_pareto(bridge_df, stats)
     plot_driving_vs_wait(agg_df, stats)
 
     print("\n=== Compact Summary ===")
+    print(f"road_selection: {road_scope_label()}")
     print(f"csv_found: {stats.get('csv_found', 0)}")
     print(f"truck_files_classified: {len(truck_files)}")
     print(f"bridge_files_classified: {len(bridge_files)}")
