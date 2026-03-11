@@ -3,12 +3,12 @@ import numpy as np
 import pandas as pd
 
 # ---- config ----
-INPUT_ROADS = Path("_roads3.csv")              # jouw roads file in data/
-BMMS_XLSX = Path("BMMS_overview.xlsx")         # jouw BMMS file in data/
+INPUT_ROADS = Path("_roads3.csv")              # Opening the correct files
+BMMS_XLSX = Path("BMMS_overview.xlsx")
 OUTPUT = Path("n1_model.csv")
 ROAD_NAME = "N1"
-MAX_CHAINAGE_DIFF_KM = 1.0   # max verschil in chainage voor LRP-match (in km)
-MAX_DIST_M = 2000            # fallback: max afstand voor lat/lon match (in meters)
+MAX_CHAINAGE_DIFF_KM = 1.0   # max difference in chainage for LRP-match (in km)
+MAX_DIST_M = 2000            # fallback: max dist for lat/lon match (in meters)
 
 #--- Distance Function
 def haversine_m(lat1, lon1, lat2, lon2):
@@ -22,21 +22,28 @@ def haversine_m(lat1, lon1, lat2, lon2):
 # ---- detection helpers ----
 def detect_structure_type(row: pd.Series) -> str:
     """
+    Determines whether a row in the dataset represents a bridge or culvert.
+    The function inspects the 'type' and 'name' columns of the row and
+    searches for keywords that indicate infrastructure structures.
     Returns:
       - "Bridge" if row indicates a bridge
       - "Box Culvert" if row indicates a culvert/box culvert
       - "" otherwise (not a structure)
     """
+    # Convert the relevant fields to lowercase strings to allow
+    # case-insensitive keyword matching
     t = str(row.get("type", "")).lower()
     n = str(row.get("name", "")).lower()
 
-    # bridge keywords
+    # Identify bridges by checking for the keyword "bridge"
+    # in either the type or name field
     if "bridge" in t or "bridge" in n:
         return "Bridge"
 
-    # culvert keywords (roads file often has type='Culvert' and name='Box Culvert')
+    # culvert keywords
     if "culvert" in t or "culvert" in n:
-        # if you want to distinguish box culvert vs other culverts:
+        # If the word "box" is present, classify the structure
+        # specifically as a box culvert
         if "box" in n or "box" in t:
             return "Box Culvert"
         return "Culvert"
@@ -44,82 +51,129 @@ def detect_structure_type(row: pd.Series) -> str:
     return ""
 
 def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
+    # Checks whether the required columns exist in the dataframe
     missing = [c for c in cols if c not in df.columns]
     if missing:
+        # Raises an error if any required columns are missing
         raise ValueError(f"{name} is missing columns: {missing}\nAvailable: {list(df.columns)}")
 
 def normalize_lrp(s: pd.Series) -> pd.Series:
+    # Standardizes LRP values by converting them to uppercase strings and removing whitespace
     return s.astype(str).str.strip().str.upper()
 
 def main():
     # --- Load roads ---
+    # Check if the roads dataset exists before attempting to load it
     if not INPUT_ROADS.exists():
         raise FileNotFoundError(f"Could not find {INPUT_ROADS.resolve()} (put _roads3.csv in data/)")
 
+    # Load the roads CSV file into a dataframe
     roads = pd.read_csv(INPUT_ROADS)
+
+    # Verify that the required columns exist in the dataset
     _has_cols(roads, ["road", "chainage", "lrp", "lat", "lon"], "roads")
 
-    # Normalize + filter N1
+    # Normalize road names (remove spaces and convert to uppercase)
+    # and filter the dataset to only keep rows belonging to the N1 road
     roads = roads.copy()
     roads["road"] = roads["road"].astype(str).str.strip().str.upper()
     roads = roads[roads["road"] == ROAD_NAME].copy()
+
+    # Ensure that the filtering step produced data
     if roads.empty:
         raise ValueError(f"No rows found for road == {ROAD_NAME}")
 
-    # numeric cleanup
+    # Convert key columns to numeric values so they can be used
+    # for sorting, distance calculations and geographic operations
     roads["chainage"] = pd.to_numeric(roads["chainage"], errors="coerce")
     roads["lat"] = pd.to_numeric(roads["lat"], errors="coerce")
     roads["lon"] = pd.to_numeric(roads["lon"], errors="coerce")
+
+    # Standardize LRP identifiers to a consistent format
     roads["lrp"] = normalize_lrp(roads["lrp"])
 
+    # Remove rows that have missing values in critical fields
     roads = roads.dropna(subset=["chainage", "lat", "lon"])
+
+    # Sort the road points along the road based on chainage distance
     roads = roads.sort_values("chainage").reset_index(drop=True)
 
-    # keep first per chainage (simple, stable route)
+    # If multiple rows have the same chainage value,
+    # keep only the first occurrence to maintain a stable route representation
     roads = roads.drop_duplicates(subset=["chainage"], keep="first").reset_index(drop=True)
 
+    # Ensure there are enough points to form at least one road segment
     if len(roads) < 2:
         raise ValueError("Not enough N1 points after cleaning (need at least 2).")
 
-    # name optional
+    # Ensure the "name" column exists (some rows may not contain it)
     if "name" not in roads.columns:
         roads["name"] = ""
+
+    # Replace missing values in the name column and ensure string format
     roads["name"] = roads["name"].fillna("").astype(str)
 
     # --- Compute segment lengths (meters) ---
+    # Extract chainage values and compute the distance between consecutive points
     chain = roads["chainage"].to_numpy(dtype=float)
+
+    # Calculate segment lengths in kilometers between consecutive chainage values
     seg_km = np.diff(chain, append=chain[-1])
+
+    # Convert segment lengths to meters and prevent negative values
     seg_m = np.maximum(seg_km * 1000.0, 0.0)
+
+    # The final node represents the end of the road and therefore has no outgoing segment
     seg_m[-1] = 0.0
 
     # --- Determine structure_type for each row (Bridge / Box Culvert / Culvert / "") ---
+    # Apply the structure detection function to identify infrastructure structures
     structure_type = roads.apply(detect_structure_type, axis=1).astype(str).to_numpy()
 
     # --- Assign model_type ---
-    # Default: link; first: source; last: sink; structures: "bridge" (we reuse Bridge component for both bridges & culverts)
+    # Initialize all rows as "link" elements in the simulation network
     model_type = np.array(["link"] * len(roads), dtype=object)
+
+    # The first node is the traffic source and the last node is the sink
     model_type[0] = "source"
     model_type[-1] = "sink"
 
+    # Identify rows that represent infrastructure structures
     is_structure = (structure_type != "")
+
+    # Prevent the first and last nodes from being classified as structures
     is_structure[0] = False
     is_structure[-1] = False
-    model_type[is_structure] = "bridge"   # <-- bridges + culverts treated as "bridge" component
+
+    # Treat bridges and culverts as "bridge" components in the simulation model
+    model_type[is_structure] = "bridge"
 
     # --- Load BMMS and build mapping by (road, LRPName) ---
+    # Check if the BMMS overview file exists
     if not BMMS_XLSX.exists():
         raise FileNotFoundError(f"Could not find {BMMS_XLSX.resolve()} (put BMMS_overview.xlsx in data/)")
 
+    # Load the BMMS infrastructure database from Excel
     bmms = pd.read_excel(BMMS_XLSX, sheet_name="BMMS_overview")
+
+    # Verify that all required columns are present
     _has_cols(bmms, ["road", "LRPName", "condition", "chainage", "type"], "BMMS_overview")
 
+    # Standardize road names and filter for the N1 road
     bmms = bmms.copy()
     bmms["road"] = bmms["road"].astype(str).str.strip().str.upper()
     bmms = bmms[bmms["road"] == ROAD_NAME].copy()
 
+    # Normalize LRP identifiers so they match the format used in the roads dataset
     bmms["LRPName"] = normalize_lrp(bmms["LRPName"])
+
+    # Standardize condition values (A/B/C/D) to uppercase strings
     bmms["condition"] = bmms["condition"].astype(str).str.strip().str.upper()
+
+    # Convert chainage values to numeric format for distance comparison
     bmms["chainage"] = pd.to_numeric(bmms["chainage"], errors="coerce")
+
+    # Clean and standardize structure type information
     bmms["type"] = bmms["type"].astype(str).str.strip()
 
 
