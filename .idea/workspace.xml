@@ -4,36 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="laatste code gefixt en gerund">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/BMMS_overview.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/N1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/demo-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/demo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/demo-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_08__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/BMMS_overview.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/N1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/demo-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/demo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/demo-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_09__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/BMMS_overview.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/N1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/demo-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/demo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/demo-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_02_2026_17_19__Changes_.xml" beforeDir="false" />
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Data Preparation multiple roads.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Data Preparation multiple roads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersection creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersection creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersections In the CSV.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersections In the CSV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Side roads choosing.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Side roads choosing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/roadmap plotting with bridges.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/roadmap plotting with bridges.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,34 +51,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.Data Preparation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
-    &quot;Python.stats_components.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sybed/Desktop/Advanced-Simulation/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views.appearance&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Data Preparation.executor": "Run",
+    "Python.model_run.executor": "Run",
+    "Python.model_viz.executor": "Run",
+    "Python.stats_components.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/sybed/Desktop/Advanced-Simulation/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "database.data.views.appearance",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sybed\Desktop\Advanced-Simulation\EPA133a-Lab_Assignment_2\EPA133a-G07-A2\report" />
@@ -134,7 +108,8 @@
       <workItem from="1772470192326" duration="2308000" />
       <workItem from="1772640624816" duration="6207000" />
       <workItem from="1772718547221" duration="1985000" />
-      <workItem from="1773655895070" duration="2859000" />
+      <workItem from="1773655895070" duration="3143000" />
+      <workItem from="1773663827333" duration="1394000" />
     </task>
     <task id="LOCAL-00001" summary="Begin visualization en naam folder aangepast">
       <option name="closed" value="true" />
@@ -184,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772712646008</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd">
+      <option name="closed" value="true" />
+      <created>1773658945126</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773658945126</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd">
+      <option name="closed" value="true" />
+      <created>1773659030140</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773659030140</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +187,8 @@
     <MESSAGE value="Comments toegevoegd" />
     <MESSAGE value="run length gefixt" />
     <MESSAGE value="laatste code gefixt en gerund" />
-    <option name="LAST_COMMIT_MESSAGE" value="laatste code gefixt en gerund" />
+    <MESSAGE value="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
