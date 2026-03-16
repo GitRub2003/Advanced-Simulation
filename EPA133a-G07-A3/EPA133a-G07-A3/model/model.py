@@ -1,4 +1,4 @@
-import json
+import os
 from pathlib import Path
 
 import networkx as nx
@@ -6,8 +6,7 @@ import pandas as pd
 from mesa import Model
 from mesa.space import ContinuousSpace
 from mesa.time import BaseScheduler
-
-from components import Source, Sink, SourceSink, Bridge, Link, Intersection
+from components import Source, Sink, SourceSink, Bridge, Link, Intersection, Vehicle
 
 
 # ---------------------------------------------------------------
@@ -43,11 +42,12 @@ class BangladeshModel(Model):
     step_time: int
         step_time = 1 # 1 step is 1 min
 
-    path_ids_dict: defaultdict
+    route_cache: dict
         Key: (origin, destination)
         Value: the shortest path (Infra component IDs) from an origin to a destination
 
-        Cached shortest paths between sourcesinks in the network
+        Cached shortest paths for the current run only. Routes are not reused
+        across runs because broken bridges change edge weights.
 
     sources: list
         all sources in the network
@@ -60,23 +60,27 @@ class BangladeshModel(Model):
     step_time = 1
 
     file_name = Path(__file__).resolve().parents[1] / 'data' / 'network_model.csv'
-    path_cache_file = Path(__file__).resolve().parents[1] / 'data' / 'path_ids_dict.json'
 
-    def __init__(self, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
+    def __init__(self, scenario_id=0, scenario_probs=None, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
         """
         Initialize the simulation state and build the network from disk.
+
+        Breakdown probabilities are supplied by the caller so the model stays
+        independent from a specific batch-run script.
         """
         super().__init__(seed=seed)
+        self.scenario_id = scenario_id
+        self.scenario_probs = scenario_probs or {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0}
 
         self.schedule = BaseScheduler(self)
         self.running = True
-        self.path_ids_dict = {}
+        self.route_cache = {}
         self.space = None
         self.sources = []
         self.sinks = []
-        self.network = nx.Graph()
+        self.network = nx.DiGraph()
+        self.completed_vehicle_times = []
 
-        self.load_path_cache()
         self.generate_model()
 
     def generate_model(self):
@@ -129,10 +133,12 @@ class BangladeshModel(Model):
                 elif model_type == 'sink':
                     agent = Sink(row['id'], self, row['length'], name, row['road'])
                     self.sinks.append(agent.unique_id)
+                    self._attach_sink_remove_hook(agent)
                 elif model_type == 'sourcesink':
                     agent = SourceSink(row['id'], self, row['length'], name, row['road'])
                     self.sources.append(agent.unique_id)
                     self.sinks.append(agent.unique_id)
+                    self._attach_sink_remove_hook(agent)
                 elif model_type == 'bridge':
                     agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'])
                 elif model_type == 'link':
@@ -149,63 +155,62 @@ class BangladeshModel(Model):
                     self.space.place_agent(agent, (x, y))
                     agent.pos = (x, y)
 
+        self.update_network_travel_times()
+
     def add_road_to_network(self, df_objects_on_road):
         """
-        Add one road segment to the network graph and seed obvious path caches.
-        """
-        path_ids = df_objects_on_road['id'].tolist()
+        Add one road segment to the directed network graph.
 
+        Each infrastructure component is stored as a node. Directed edges are
+        added in both directions so route cost can depend on the destination
+        node being entered.
+        """
         for _, row in df_objects_on_road.iterrows():
             self.network.add_node(
                 row['id'],
                 road=row['road'],
                 model_type=row['model_type'].strip(),
                 length=float(row['length']),
-                name="" if pd.isna(row['name']) else str(row['name']).strip()
+                name="" if pd.isna(row['name']) else str(row['name']).strip(),
+                condition="" if pd.isna(row.get('condition')) else str(row['condition']).strip()
             )
 
         for current_row, next_row in zip(
             df_objects_on_road.iloc[:-1].itertuples(index=False),
             df_objects_on_road.iloc[1:].itertuples(index=False)
         ):
-            edge_weight = max(float(next_row.length), 1.0)
-            self.network.add_edge(current_row.id, next_row.id, weight=edge_weight)
+            # The traversal cost is attached to the node being entered, so the
+            # reverse direction gets its own weight.
+            self.network.add_edge(current_row.id, next_row.id, weight=0.0)
+            self.network.add_edge(next_row.id, current_row.id, weight=0.0)
 
-        # A single CSV road is already an ordered path, so cache both travel directions.
-        start_id = path_ids[0]
-        end_id = path_ids[-1]
-        self.path_ids_dict.setdefault((start_id, end_id), path_ids)
-        self.path_ids_dict.setdefault((end_id, start_id), list(reversed(path_ids)))
-
-    def load_path_cache(self):
+    def get_infrastructure_travel_time(self, infra):
         """
-        Load previously computed shortest paths from the JSON cache if available.
+        Return the expected time needed to traverse one infrastructure object.
+
+        Base travel time is the infrastructure length divided by truck speed.
+        Broken bridges add their mean delay so shortest-path routing reflects
+        expected disruption during the current run.
         """
-        if not self.path_cache_file.exists():
-            return
+        travel_time = float(infra.length) / Vehicle.speed
+        if isinstance(infra, Bridge) and infra.is_broken:
+            travel_time += infra.get_average_delay_time()
+        return travel_time
 
-        with self.path_cache_file.open('r', encoding='utf-8') as cache_file:
-            cache_entries = json.load(cache_file)
-
-        for entry in cache_entries:
-            key = (entry['origin'], entry['destination'])
-            self.path_ids_dict[key] = entry['path_ids']
-
-    def save_path_cache(self):
+    def update_network_travel_times(self):
         """
-        Persist the path cache so future runs can reuse computed shortest paths.
-        """
-        cache_entries = [
-            {
-                'origin': origin,
-                'destination': destination,
-                'path_ids': path_ids
-            }
-            for (origin, destination), path_ids in sorted(self.path_ids_dict.items())
-        ]
+        Recompute all directed edge weights for the current run.
 
-        with self.path_cache_file.open('w', encoding='utf-8') as cache_file:
-            json.dump(cache_entries, cache_file, indent=2)
+        Bridge breakdown status is sampled during model construction, so the
+        route graph must be updated afterwards to include the extra expected
+        delay on broken bridges.
+        """
+        for start_id, end_id in self.network.edges():
+            destination_infra = self.schedule._agents[end_id]  # Access to protected member _agents
+            self.network[start_id][end_id]['weight'] = self.get_infrastructure_travel_time(destination_infra)
+
+        # Routes are run-specific because broken bridges change weights.
+        self.route_cache.clear()
 
     def get_random_route(self, source):
         """
@@ -226,12 +231,116 @@ class BangladeshModel(Model):
         Return the cached or newly computed shortest path between two nodes.
         """
         cache_key = (origin, destination)
-        if cache_key not in self.path_ids_dict:
+        if cache_key not in self.route_cache:
             # NetworkX handles multi-road routing once the graph has been assembled.
             path_ids = nx.shortest_path(self.network, origin, destination, weight='weight')
-            self.path_ids_dict[cache_key] = path_ids
-            self.save_path_cache()
-        return self.path_ids_dict[cache_key]
+            self.route_cache[cache_key] = path_ids
+        return self.route_cache[cache_key]
+
+    def _attach_sink_remove_hook(self, sink_agent):
+        """
+        Wrap a sink so completed vehicle travel times are recorded on removal.
+        """
+        original_remove = sink_agent.remove
+
+        def remove_with_record(vehicle):
+            self.record_completed_vehicle(vehicle)
+            return original_remove(vehicle)
+
+        sink_agent.remove = remove_with_record
+
+    def record_completed_vehicle(self, vehicle):
+        """
+        Store the timestamps of a vehicle that finished its route.
+        """
+        if vehicle.generated_at_step is None or vehicle.removed_at_step is None:
+            return
+
+        self.completed_vehicle_times.append(
+            {
+                'truck_id': vehicle.unique_id,
+                'generated_at_step': vehicle.generated_at_step,
+                'removed_at_step': vehicle.removed_at_step,
+            }
+        )
+
+    def calculate_total_driving_times(self):
+        """
+        Return a DataFrame with total travel time for each completed truck.
+        """
+        df = pd.DataFrame(self.completed_vehicle_times)
+        if df.empty:
+            return pd.DataFrame(
+                columns=[
+                    'truck_id',
+                    'generated_at_step',
+                    'removed_at_step',
+                    'total_driving_time',
+                ]
+            )
+
+        df['total_driving_time'] = df['removed_at_step'] - df['generated_at_step']
+        return df
+
+    def export_total_driving_times(self, output_path=None):
+        """
+        Export total travel time per completed truck to CSV.
+        """
+        if output_path is None:
+            output_path = os.path.normpath(
+                os.path.join(os.path.dirname(__file__), '..', 'data', 'truck_driving_times.csv')
+            )
+
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        self.calculate_total_driving_times().to_csv(output_path, index=False)
+        return output_path
+
+    def calculate_bridge_total_wait_times(self):
+        """
+        Return per-bridge waiting-time totals and run-level breakdown status.
+        """
+        rows = []
+        for agent in self.schedule._agents.values():  # Access to protected member _agents
+            if isinstance(agent, Bridge):
+                rows.append(
+                    {
+                        'bridge_id': agent.unique_id,
+                        'bridge_name': agent.name,
+                        'road_name': agent.road_name,
+                        'condition': agent.condition,
+                        'length': agent.length,
+                        'is_broken': agent.is_broken,
+                        'total_wait_time': float(agent.total_wait_time),
+                    }
+                )
+
+        if not rows:
+            return pd.DataFrame(
+                columns=[
+                    'bridge_id',
+                    'bridge_name',
+                    'road_name',
+                    'condition',
+                    'length',
+                    'is_broken',
+                    'total_wait_time',
+                ]
+            )
+
+        return pd.DataFrame(rows).sort_values(by=['bridge_id']).reset_index(drop=True)
+
+    def export_bridge_total_wait_times(self, output_path=None):
+        """
+        Export per-bridge waiting-time totals to CSV.
+        """
+        if output_path is None:
+            output_path = os.path.normpath(
+                os.path.join(os.path.dirname(__file__), '..', 'data', 'bridge_total_wait_times.csv')
+            )
+
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        self.calculate_bridge_total_wait_times().to_csv(output_path, index=False)
+        return output_path
 
     def step(self):
         """

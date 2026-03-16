@@ -1,8 +1,9 @@
+import os
+
 from model import BangladeshModel
 
 """
-    Run simulation
-    Print output at terminal
+Run batch simulations and export the collected outputs.
 """
 
 # ---------------------------------------------------------------
@@ -27,7 +28,11 @@ experiments_dir = os.path.normpath(os.path.join(base_dir, "..", "Experiments"))
 for scenario_id in sorted(SCENARIOS.keys()):
     for replicate in range(1, num_replicates + 1):
         seed = base_seed + replicate - 1
-        sim_model = BangladeshModel(scenario_id=scenario_id, seed=seed)
+        sim_model = BangladeshModel(
+            scenario_id=scenario_id,
+            scenario_probs=SCENARIOS[scenario_id],
+            seed=seed
+        )
 
         # Check if the seed is set
         print(
