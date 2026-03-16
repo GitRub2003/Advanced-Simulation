@@ -13,6 +13,7 @@ MAX_DIST_M = 500
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
+    """Return the great-circle distance in meters between two coordinates."""
     R = 6371000.0
     lat1 = np.radians(lat1); lon1 = np.radians(lon1)
     lat2 = np.radians(lat2); lon2 = np.radians(lon2)
@@ -23,6 +24,7 @@ def haversine_m(lat1, lon1, lat2, lon2):
 
 
 def detect_structure_type(row: pd.Series) -> str:
+    """Infer a structure type from the row type and name fields."""
     t = str(row.get("type", "")).lower()
     n = str(row.get("name", "")).lower()
 
@@ -36,16 +38,19 @@ def detect_structure_type(row: pd.Series) -> str:
 
 
 def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
+    """Raise an error if a required set of columns is missing."""
     missing = [c for c in cols if c not in df.columns]
     if missing:
         raise ValueError(f"{name} is missing columns: {missing}\nAvailable: {list(df.columns)}")
 
 
 def normalize_lrp(s: pd.Series) -> pd.Series:
+    """Normalize LRP values so matching is case- and whitespace-insensitive."""
     return s.astype(str).str.strip().str.upper()
 
 
 def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name: str) -> pd.DataFrame:
+    """Build the model-ready road-object rows for one road."""
     roads = roads_all[roads_all["road"] == road_name].copy()
     if roads.empty:
         raise ValueError(f"No rows found for road == {road_name}")
@@ -64,6 +69,8 @@ def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name:
     seg_m = np.maximum(seg_km * 1000.0, 0.0)
     seg_m[-1] = 0.0
 
+    # Start from the road CSV classification, then enrich bridge rows with BMMS
+    # data where a suitable match can be found.
     structure_type = roads.apply(detect_structure_type, axis=1).astype(str).to_numpy()
 
     model_type = np.array(["link"] * len(roads), dtype=object)
@@ -101,6 +108,8 @@ def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name:
             candidates = bmms_groups[lrp].copy()
             cand_valid = candidates.dropna(subset=["chainage"]).copy()
 
+            # Prefer a same-LRP match with a nearby chainage because this is
+            # more reliable than matching only on geographic distance.
             if len(cand_valid) > 0:
                 diffs = (cand_valid["chainage"] - ch).abs().to_numpy()
                 best_pos = int(np.argmin(diffs))
@@ -110,6 +119,8 @@ def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name:
                 matched_row = candidates.iloc[0]
 
         if matched_row is None and len(bmms) > 0:
+            # Fall back to spatial matching when the LRP name does not produce
+            # a confident BMMS match.
             d = haversine_m(lat, lon, bm_lat, bm_lon)
             j = int(np.argmin(d))
             if float(d[j]) <= MAX_DIST_M:
@@ -158,6 +169,7 @@ def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name:
 
 
 def main():
+    """Prepare road objects for all selected roads and write the merged CSV."""
     roads_all = pd.read_csv(INPUT_ROADS)
     _has_cols(roads_all, ["road", "chainage", "lrp", "lat", "lon"], "roads")
 
@@ -179,6 +191,8 @@ def main():
     bmms_all["chainage"] = pd.to_numeric(bmms_all["chainage"], errors="coerce")
     bmms_all["type"] = bmms_all["type"].astype(str).str.strip()
 
+    # Process roads independently so each road keeps its own chainage order and
+    # BMMS matching is limited to records from that same road.
     pieces = []
     for road_name in SELECTED_ROADS:
         part = process_one_road(roads_all, bmms_all, road_name)

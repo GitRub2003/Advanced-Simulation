@@ -54,15 +54,39 @@ class Bridge(Infra):
                  name='Unknown', road_name='Unknown', condition='Unknown'):
         super().__init__(unique_id, model, length, name, road_name)
 
-        self.condition = condition
-
+        self.condition = condition  # condition has to be 'A', 'B', 'C' or 'D'
+        self.total_wait_time = 0.0
         # TODO
-        self.delay_time = self.random.randrange(0, 10)
+        if self.length > 200:
+            self.delay_time = self.model.random.triangular(1, 4, 2)
+        elif self.length > 50 and self.length <= 200:
+            self.delay_time = self.model.random.uniform(45, 90)
+        elif self.length > 10 and self.length <= 50:
+            self.delay_time = self.model.random.uniform(15, 60)
+        elif self.length <= 10:
+            self.delay_time = self.model.random.uniform(10, 20)
+        else:
+            raise ValueError(f"Invalid bridge length: {self.length}")
         # print(self.delay_time)
 
     # TODO
     def get_delay_time(self):
-        return self.delay_time
+        """
+        Returns the delay time if the bridge breaks down in this step,
+        otherwise returns 0.
+        """
+        # Look up the breakdown probability for this bridge's condition
+        prob = self.model.scenario_probs.get(self.condition, 0.0)
+
+        # Use the model's random generator to decide if breakdown occurs
+        print("condition is:", self.condition)  # I used it to test the model but can be removed
+        print("prob is:", prob)  # I used it to test the model but can be removed
+        print("random is:", self.model.random.random())  # I used it to test the model but can be removed
+        if self.model.random.random() < prob:
+            self.total_wait_time += self.delay_time
+            return self.delay_time
+        else:
+            return 0.0
 
 
 # ---------------------------------------------------------------

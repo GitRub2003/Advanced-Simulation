@@ -12,6 +12,7 @@ MAX_ROAD_DIST_M = 500.0
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
+    """Return the great-circle distance in meters between two coordinates."""
     R = 6371000.0
     lat1 = np.radians(lat1)
     lon1 = np.radians(lon1)
@@ -24,12 +25,14 @@ def haversine_m(lat1, lon1, lat2, lon2):
 
 
 def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
+    """Raise an error when a required column is missing from a dataframe."""
     missing = [c for c in cols if c not in df.columns]
     if missing:
         raise ValueError(f"{name} is missing columns: {missing}\nAvailable: {list(df.columns)}")
 
 
 def prepare_roads_df(path: Path) -> pd.DataFrame:
+    """Load the road CSV, validate required columns, and normalize key fields."""
     if not path.exists():
         raise FileNotFoundError(f"Could not find {path.resolve()}")
 
@@ -46,15 +49,20 @@ def prepare_roads_df(path: Path) -> pd.DataFrame:
         roads["name"] = ""
     roads["name"] = roads["name"].fillna("").astype(str)
 
+    # Drop incomplete rows so downstream distance and length calculations
+    # can assume numeric coordinates and chainage values are present.
     roads = roads.dropna(subset=["road", "chainage", "lat", "lon"]).copy()
     roads = roads.sort_values(["road", "chainage"]).reset_index(drop=True)
     return roads
 
 
 def get_road_summary(roads: pd.DataFrame) -> pd.DataFrame:
+    """Summarize each road using its first and last chainage point."""
     rows = []
 
     for road_name, g in roads.groupby("road", sort=True):
+        # Duplicate chainage values do not change the road extent, so only the
+        # first occurrence is needed for start/end based summary metrics.
         g = g.sort_values("chainage").drop_duplicates(subset=["chainage"], keep="first").reset_index(drop=True)
         if len(g) < 2:
             continue
@@ -77,6 +85,7 @@ def get_road_summary(roads: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_main_road_reference(roads: pd.DataFrame, main_roads: set[str]) -> np.ndarray:
+    """Extract coordinate points for the main roads used as the distance reference."""
     main_df = roads[roads["road"].isin(main_roads)].copy()
     if main_df.empty:
         raise ValueError(f"No rows found for main roads {main_roads}")
@@ -85,10 +94,7 @@ def build_main_road_reference(roads: pd.DataFrame, main_roads: set[str]) -> np.n
 
 
 def road_min_distance_to_main(road_points: np.ndarray, main_coords: np.ndarray) -> float:
-    """
-    Minimum distance in meters between any point on a candidate road
-    and any point on N1/N2.
-    """
+    """Return the minimum distance in meters from one road to the main-road network."""
     min_dist = np.inf
 
     for lat, lon in road_points:
@@ -101,6 +107,7 @@ def road_min_distance_to_main(road_points: np.ndarray, main_coords: np.ndarray) 
 
 
 def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
+    """Filter N-roads to side-road candidates and flag the selected ones."""
     road_summary = get_road_summary(roads)
     main_coords = build_main_road_reference(roads, MAIN_ROADS)
 
@@ -114,16 +121,19 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
 
     candidates["passes_length"] = candidates["length_km"] > MIN_SIDE_ROAD_KM
 
-    min_dists = []
-    for road_name in candidates["road"]:
-        g = roads[roads["road"] == road_name].sort_values("chainage")
-        road_points = g[["lat", "lon"]].dropna().to_numpy(dtype=float)
-        min_dist = road_min_distance_to_main(road_points, main_coords)
-        min_dists.append(min_dist)
-
-    candidates["min_dist_to_main_m"] = min_dists
+    # Compute the closest approach to the main roads for each candidate. This
+    # keeps the expensive point-to-point distance check in one place.
+    road_points_by_name = {
+        road_name: group[["lat", "lon"]].dropna().to_numpy(dtype=float)
+        for road_name, group in roads.groupby("road", sort=False)
+    }
+    candidates["min_dist_to_main_m"] = candidates["road"].map(
+        lambda road_name: road_min_distance_to_main(road_points_by_name[road_name], main_coords)
+    )
     candidates["connected_by_distance"] = candidates["min_dist_to_main_m"] <= MAX_ROAD_DIST_M
 
+    # A road is selected only if it is both long enough and sufficiently close
+    # to the N1/N2 corridor to count as connected.
     candidates["selected"] = (
         candidates["passes_length"] & candidates["connected_by_distance"]
     )
@@ -143,6 +153,7 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
 
 
 def main():
+    """Run the side-road selection workflow and write the candidate CSV."""
     roads = prepare_roads_df(INPUT_ROADS)
     candidates = select_side_roads(roads)
 
