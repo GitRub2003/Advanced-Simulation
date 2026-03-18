@@ -187,7 +187,11 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
         + candidates.loc[candidates["selected"], "road"].tolist()
         + [row["road"] for row in manual_rows]
     )
-    connector_roads = find_connector_roads(roads, list(REQUIRED_ROADS))
+    connector_roads = find_connector_roads(
+        roads,
+        list(REQUIRED_ROADS),
+        allowed_prefixes=("N",),
+    )
 
     connector_rows = []
     for road_name in connector_roads:
@@ -199,7 +203,7 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
         row = ensure_summary_columns(road_summary_by_name.loc[[road_name]]).iloc[0].to_dict()
         row["passes_length"] = bool(row["length_km"] > MIN_SIDE_ROAD_KM) if pd.notna(row["length_km"]) else False
         row["selected"] = True
-        row["reason"] = "explicit metadata connection to the selected network"
+        row["reason"] = "explicit metadata connection to the selected N-road network"
         row["selection_source"] = "connector"
         connector_rows.append(row)
 
