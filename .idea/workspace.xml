@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Code aangepast om kapotte bruggen op de juiste manier te maken en weights in netwerk te berekenen met meenemen van vertraging">
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Comments toegevoegd aan model.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis/driving_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis/driving_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_viz.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_viz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="374" />
+    <option name="cachedIndexableFilesCount" value="273" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,7 +58,6 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Data Preparation.executor": "Run",
-    "Python.driving_time.executor": "Run",
     "Python.model_run.executor": "Run",
     "Python.model_viz.executor": "Run",
     "Python.stats_components.executor": "Run",
@@ -110,8 +112,7 @@
       <workItem from="1772640624816" duration="6207000" />
       <workItem from="1772718547221" duration="1985000" />
       <workItem from="1773655895070" duration="3143000" />
-      <workItem from="1773663827333" duration="11863000" />
-      <workItem from="1773824918796" duration="912000" />
+      <workItem from="1773663827333" duration="11812000" />
     </task>
     <task id="LOCAL-00001" summary="Begin visualization en naam folder aangepast">
       <option name="closed" value="true" />
@@ -185,15 +186,7 @@
       <option name="project" value="LOCAL" />
       <updated>1773665380621</updated>
     </task>
-    <task id="LOCAL-00010" summary="Code aangepast om kapotte bruggen op de juiste manier te maken en weights in netwerk te berekenen met meenemen van vertraging">
-      <option name="closed" value="true" />
-      <created>1773677479286</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1773677479286</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,8 +200,7 @@
     <MESSAGE value="laatste code gefixt en gerund" />
     <MESSAGE value="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd" />
     <MESSAGE value="Comments toegevoegd aan model.py" />
-    <MESSAGE value="Code aangepast om kapotte bruggen op de juiste manier te maken en weights in netwerk te berekenen met meenemen van vertraging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code aangepast om kapotte bruggen op de juiste manier te maken en weights in netwerk te berekenen met meenemen van vertraging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments toegevoegd aan model.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,7 +224,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1772703611362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$stats_components.coverage" NAME="stats_components Coverage Results" MODIFIED="1772712534061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$driving_time.coverage" NAME="driving_time Coverage Results" MODIFIED="1773825701474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
   </component>

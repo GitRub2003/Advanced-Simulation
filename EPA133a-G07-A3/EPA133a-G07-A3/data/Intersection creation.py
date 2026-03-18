@@ -6,9 +6,38 @@ import pandas as pd
 INPUT_ROADS = Path("_roads3.csv")
 OUTPUT_INTERSECTIONS = Path("intersections_detected.csv")
 
-# Put your final selected roads here
-SELECTED_ROADS = ["N1", "N2", "N102","N104", "N105", "N204", "N207", "N208"]
+from pathlib import Path
+import pandas as pd
 
+SIDE_ROADS_FILE = Path("side_road_candidates.csv")
+
+def load_selected_roads() -> list[str]:
+    base_roads = ["N1", "N2"]
+
+    if not SIDE_ROADS_FILE.exists():
+        raise FileNotFoundError(
+            f"{SIDE_ROADS_FILE} not found. Run 'Side roads choosing.py' first."
+        )
+
+    df = pd.read_csv(SIDE_ROADS_FILE)
+
+    if "road" not in df.columns or "selected" not in df.columns:
+        raise ValueError(
+            "side_road_candidates.csv must contain columns 'road' and 'selected'"
+        )
+
+    selected_side_roads = (
+        df.loc[df["selected"] == True, "road"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .str.upper()
+        .tolist()
+    )
+
+    return base_roads + [r for r in selected_side_roads if r not in base_roads]
+
+SELECTED_ROADS = load_selected_roads()
 # max distance between two sampled road points to count as an intersection
 INTERSECTION_THRESHOLD_M = 120.0
 
