@@ -9,10 +9,10 @@ Run batch simulations and export the collected outputs.
 # ---------------------------------------------------------------
 
 # run time 5 x 24 hours; 1 tick 1 minute
-run_length = 5 * 24 * 60
+run_length = 5 *24* 60
 
 base_seed = 1234567
-num_replicates = 10
+num_replicates = 1
 
 SCENARIOS = {
     0: {'A': 0.00, 'B': 0.00, 'C': 0.00, 'D': 0.00},
@@ -55,9 +55,3 @@ for scenario_id in sorted(SCENARIOS.keys()):
         sim_model.export_total_driving_times(output_path=output_path)
         print("Driving times saved to: " + str(output_path))
 
-        bridge_wait_output_path = os.path.join(
-            experiments_dir,
-            f"bridge_total_wait_times_scenario_{scenario_id}_replicate_{replicate}.csv"
-        )
-        sim_model.export_bridge_total_wait_times(output_path=bridge_wait_output_path)
-        print("Bridge wait times saved to: " + str(bridge_wait_output_path))

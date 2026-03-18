@@ -15,6 +15,7 @@ FILE_REGEX = re.compile(
 
 
 def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
+    """Load all truck driving-time CSVs and aggregate them to route-level averages per replicate."""
     rows = []
     for csv_file in experiments_dir.glob("truck_driving_times_scenario_*_replicate_*.csv"):
         match = FILE_REGEX.match(csv_file.name)
@@ -31,6 +32,7 @@ def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
                 f"Missing required columns in {csv_file.name}. Expected {sorted(required_columns)}."
             )
 
+        # Collapse raw truck records into one row per route for this replicate.
         route_df = (
             df.groupby(["source_id", "sink_id"], as_index=False)
             .agg(
@@ -55,6 +57,8 @@ def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
 
 
 def compute_pct_increase_vs_baseline(all_data: pd.DataFrame) -> pd.DataFrame:
+    """Compare each non-baseline scenario against scenario 0 on a route-by-route basis."""
+    # First pool all replicates per scenario so each route gets one weighted scenario average.
     scenario_route_mean = (
         all_data.groupby(["scenario_id", "source_id", "sink_id"], as_index=False)
         .agg(
@@ -67,6 +71,7 @@ def compute_pct_increase_vs_baseline(all_data: pd.DataFrame) -> pd.DataFrame:
         scenario_route_mean["total_time_sum"] / scenario_route_mean["total_truck_count"]
     )
 
+    # Scenario 0 is treated as the baseline for all percentage comparisons.
     baseline = scenario_route_mean[scenario_route_mean["scenario_id"] == 0][
         ["source_id", "sink_id", "scenario_avg_time"]
     ].rename(columns={"scenario_avg_time": "baseline_avg_time"})
@@ -75,6 +80,7 @@ def compute_pct_increase_vs_baseline(all_data: pd.DataFrame) -> pd.DataFrame:
         baseline, on=["source_id", "sink_id"], how="inner"
     )
 
+    # Keep only valid baseline routes, then compute the percentage increase for each comparison route.
     compare = compare[compare["baseline_avg_time"] > 0].copy()
     compare["pct_increase"] = (
         (compare["scenario_avg_time"] - compare["baseline_avg_time"]) / compare["baseline_avg_time"] * 100.0
@@ -86,10 +92,12 @@ def compute_pct_increase_vs_baseline(all_data: pd.DataFrame) -> pd.DataFrame:
 
 
 def compute_replicate_means(all_data: pd.DataFrame) -> pd.DataFrame:
+    """Compute one mean travel-time value per scenario/replicate pair."""
     grouped = all_data.groupby(["scenario_id", "replicate_id"], as_index=False)
 
     has_weighted_inputs = {"total_driving_time_sum", "truck_count"}.issubset(all_data.columns)
     if has_weighted_inputs:
+        # Use weighted totals so busy routes contribute proportionally to the replicate mean.
         replicate_means = (
             grouped[["total_driving_time_sum", "truck_count"]]
             .sum()
@@ -108,6 +116,7 @@ def compute_replicate_means(all_data: pd.DataFrame) -> pd.DataFrame:
 
 
 def plot_average_travel_time_per_scenario(all_data: pd.DataFrame, output_dir: Path) -> Path:
+    """Create a bar chart of mean travel time per scenario with replicate-level standard deviation."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
     replicate_means = compute_replicate_means(all_data)
@@ -142,10 +151,12 @@ def plot_average_travel_time_per_scenario(all_data: pd.DataFrame, output_dir: Pa
 
 
 def plot_top10_increases(compare_df: pd.DataFrame, output_dir: Path, scenarios: list[int] | None = None) -> list[Path]:
+    """Plot the ten routes with the largest average travel-time increase for each scenario."""
     output_dir.mkdir(parents=True, exist_ok=True)
     generated_paths: list[Path] = []
 
     if scenarios is None:
+        # By default, generate one figure for every comparison scenario found in the data.
         scenarios = sorted(compare_df["scenario_id"].unique().tolist())
 
     for scenario_id in scenarios:
@@ -179,6 +190,7 @@ def plot_top10_increases(compare_df: pd.DataFrame, output_dir: Path, scenarios: 
 def plot_route_increase_heatmaps(
     compare_df: pd.DataFrame, output_dir: Path, scenarios: list[int]
 ) -> list[Path]:
+    """Create source-to-sink heatmaps showing route-level percentage change versus scenario 0."""
     output_dir.mkdir(parents=True, exist_ok=True)
     generated_paths: list[Path] = []
 
@@ -187,6 +199,7 @@ def plot_route_increase_heatmaps(
         if scenario_df.empty:
             continue
 
+        # Re-shape the route table into a matrix so source/sink pairs can be shown as a heatmap.
         matrix_df = (
             scenario_df.pivot(index="source_id", columns="sink_id", values="pct_increase")
             .sort_index(axis=0)
@@ -200,6 +213,7 @@ def plot_route_increase_heatmaps(
         if valid_values.size == 0:
             continue
 
+        # Center the color scale on zero so decreases and increases are visually comparable.
         max_abs = float(np.max(np.abs(valid_values)))
         if max_abs == 0.0:
             max_abs = 1.0
@@ -241,6 +255,7 @@ def plot_route_increase_heatmaps(
 
 
 def main() -> None:
+    """Load experiment outputs, build the comparison tables, and save the resulting figures."""
     base_dir = Path(__file__).resolve().parents[1]
     experiments_dir = base_dir / "Experiments"
     img_dir = base_dir / "img"
@@ -248,12 +263,14 @@ def main() -> None:
     all_data = load_route_average_data(experiments_dir)
     compare_df = compute_pct_increase_vs_baseline(all_data)
     output_paths = []
+
+    # The average travel-time bar chart includes all scenarios in the loaded dataset.
     output_paths.append(plot_average_travel_time_per_scenario(all_data, img_dir))
-    output_paths.extend(plot_route_increase_heatmaps(compare_df, img_dir, scenarios=[1, 2, 3]))
-    output_paths.extend(plot_top10_increases(compare_df, img_dir, scenarios=[1, 2, 3]))
+    output_paths.extend(plot_route_increase_heatmaps(compare_df, img_dir, scenarios=sorted(compare_df["scenario_id"].unique().tolist())))
+    output_paths.extend(plot_top10_increases(compare_df, img_dir, scenarios=sorted(compare_df["scenario_id"].unique().tolist())))
 
     if len(output_paths) == 0:
-        print("No plots generated. Check whether scenario 0 and scenarios 1-3 share route pairs.")
+        print("No plots generated. Check whether scenario 0 and the comparison scenarios share route pairs.")
         return
 
     print("Generated plots:")
