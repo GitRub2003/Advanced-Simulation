@@ -8,7 +8,7 @@ INPUT_ROADS = Path("_roads3.csv")
 BMMS_XLSX = Path("BMMS_overview.xlsx")
 OUTPUT = Path("road_objects.csv")
 
-SELECTED_ROADS = load_selected_roads(include_support_roads=True)
+SELECTED_ROADS = load_selected_roads()
 MAX_CHAINAGE_DIFF_KM = 1
 MAX_DIST_M = 500
 
