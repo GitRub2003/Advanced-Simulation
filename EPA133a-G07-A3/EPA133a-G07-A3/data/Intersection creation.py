@@ -3,12 +3,15 @@ import itertools
 import numpy as np
 import pandas as pd
 
+from road_selection import extract_road_references, load_selected_roads
+
 INPUT_ROADS = Path("_roads3.csv")
 OUTPUT_INTERSECTIONS = Path("intersections_detected.csv")
 
 INTERSECTION_THRESHOLD_M = 120.0
 PAIR_CLUSTER_THRESHOLD_M = 120.0
 CLUSTER_THRESHOLD_M = 80.0
+REFERENCE_ENDPOINT_THRESHOLD_M = 1000.0
 INTERSECTION_ID_START = 9_000_000
 
 
@@ -28,20 +31,6 @@ def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
     missing = [c for c in cols if c not in df.columns]
     if missing:
         raise ValueError(f"{name} is missing columns: {missing}")
-
-
-def load_selected_roads() -> list[str]:
-    df = pd.read_csv("side_road_candidates.csv")
-    selected = (
-        df.loc[df["selected"] == True, "road"]
-        .dropna()
-        .astype(str)
-        .str.strip()
-        .str.upper()
-        .tolist()
-    )
-    base = ["N1", "N2"]
-    return base + [r for r in selected if r not in base]
 
 
 SELECTED_ROADS = load_selected_roads()
@@ -71,6 +60,65 @@ def load_roads(path: Path) -> pd.DataFrame:
     return roads
 
 
+def build_match_record(a_row: pd.Series, b_row: pd.Series, dist_m: float) -> dict:
+    return {
+        "road_a": str(a_row["road"]),
+        "road_b": str(b_row["road"]),
+        "chainage_a": float(a_row["chainage"]),
+        "chainage_b": float(b_row["chainage"]),
+        "lat_a": float(a_row["lat"]),
+        "lon_a": float(a_row["lon"]),
+        "lat_b": float(b_row["lat"]),
+        "lon_b": float(b_row["lon"]),
+        "lat": float((a_row["lat"] + b_row["lat"]) / 2.0),
+        "lon": float((a_row["lon"] + b_row["lon"]) / 2.0),
+        "dist_m": float(dist_m),
+        "name_a": str(a_row.get("name", "")),
+        "name_b": str(b_row.get("name", "")),
+        "lrp_a": str(a_row.get("lrp", "")),
+        "lrp_b": str(b_row.get("lrp", "")),
+    }
+
+
+def endpoint_reference_match(a: pd.DataFrame, b: pd.DataFrame) -> dict | None:
+    """
+    Fall back to endpoint metadata when the sampled geometry misses a logical
+    connection that is explicitly described in the source data.
+    """
+    endpoints_a = pd.concat([a.head(1), a.tail(1)]).drop_duplicates().reset_index(drop=True)
+    endpoints_b = pd.concat([b.head(1), b.tail(1)]).drop_duplicates().reset_index(drop=True)
+
+    road_a = str(a.iloc[0]["road"])
+    road_b = str(b.iloc[0]["road"])
+
+    referenced_pairs: list[tuple[pd.Series, pd.Series]] = []
+
+    for _, a_row in endpoints_a.iterrows():
+        if road_b in extract_road_references(a_row.get("name", "")):
+            for _, b_row in endpoints_b.iterrows():
+                referenced_pairs.append((a_row, b_row))
+
+    for _, b_row in endpoints_b.iterrows():
+        if road_a in extract_road_references(b_row.get("name", "")):
+            for _, a_row in endpoints_a.iterrows():
+                referenced_pairs.append((a_row, b_row))
+
+    best_match = None
+    for a_row, b_row in referenced_pairs:
+        dist = haversine_m(
+            float(a_row["lat"]),
+            float(a_row["lon"]),
+            float(b_row["lat"]),
+            float(b_row["lon"]),
+        )
+        if dist <= REFERENCE_ENDPOINT_THRESHOLD_M and (
+            best_match is None or dist < best_match["dist_m"]
+        ):
+            best_match = build_match_record(a_row, b_row, float(dist))
+
+    return best_match
+
+
 def find_all_pair_matches(a: pd.DataFrame, b: pd.DataFrame) -> list[dict]:
     """
     Find all local close approaches between two roads, not just the single best one.
@@ -91,27 +139,11 @@ def find_all_pair_matches(a: pd.DataFrame, b: pd.DataFrame) -> list[dict]:
         if dist <= INTERSECTION_THRESHOLD_M:
             a_row = a.iloc[i]
             b_row = b.iloc[j]
-
-            candidates.append({
-                "road_a": str(a_row["road"]),
-                "road_b": str(b_row["road"]),
-                "chainage_a": float(a_row["chainage"]),
-                "chainage_b": float(b_row["chainage"]),
-                "lat_a": float(a_row["lat"]),
-                "lon_a": float(a_row["lon"]),
-                "lat_b": float(b_row["lat"]),
-                "lon_b": float(b_row["lon"]),
-                "lat": float((a_row["lat"] + b_row["lat"]) / 2.0),
-                "lon": float((a_row["lon"] + b_row["lon"]) / 2.0),
-                "dist_m": dist,
-                "name_a": str(a_row.get("name", "")),
-                "name_b": str(b_row.get("name", "")),
-                "lrp_a": str(a_row.get("lrp", "")),
-                "lrp_b": str(b_row.get("lrp", "")),
-            })
+            candidates.append(build_match_record(a_row, b_row, dist))
 
     if not candidates:
-        return []
+        fallback = endpoint_reference_match(a, b)
+        return [fallback] if fallback is not None else []
 
     # cluster nearby candidates for this road pair into distinct intersections
     clusters = []

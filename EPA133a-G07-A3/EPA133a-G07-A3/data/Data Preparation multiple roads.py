@@ -2,40 +2,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from road_selection import load_selected_roads
+
 INPUT_ROADS = Path("_roads3.csv")
 BMMS_XLSX = Path("BMMS_overview.xlsx")
 OUTPUT = Path("road_objects.csv")
-
-from pathlib import Path
-import pandas as pd
-
-SIDE_ROADS_FILE = Path("side_road_candidates.csv")
-
-def load_selected_roads() -> list[str]:
-    base_roads = ["N1", "N2"]
-
-    if not SIDE_ROADS_FILE.exists():
-        raise FileNotFoundError(
-            f"{SIDE_ROADS_FILE} not found. Run 'Side roads choosing.py' first."
-        )
-
-    df = pd.read_csv(SIDE_ROADS_FILE)
-
-    if "road" not in df.columns or "selected" not in df.columns:
-        raise ValueError(
-            "side_road_candidates.csv must contain columns 'road' and 'selected'"
-        )
-
-    selected_side_roads = (
-        df.loc[df["selected"] == True, "road"]
-        .dropna()
-        .astype(str)
-        .str.strip()
-        .str.upper()
-        .tolist()
-    )
-
-    return base_roads + [r for r in selected_side_roads if r not in base_roads]
 
 SELECTED_ROADS = load_selected_roads()
 MAX_CHAINAGE_DIFF_KM = 1

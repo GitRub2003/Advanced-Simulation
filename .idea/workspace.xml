@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Pipeline toegevoegd en wegen niet meer gehardcode" />
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Comments toegevoegd aan model.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Data Preparation multiple roads.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Data Preparation multiple roads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersection creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Intersection creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Side roads choosing.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/Side roads choosing.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,37 +53,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Data Preparation.executor": "Run",
-    "Python.Intersection creation.executor": "Run",
-    "Python.model_run.executor": "Run",
-    "Python.model_viz.executor": "Run",
-    "Python.run_pipeline.executor": "Run",
-    "Python.stats_components.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/sybed/Desktop/Advanced-Simulation/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "database.data.views.appearance",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Data Preparation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.stats_components.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sybed/Desktop/Advanced-Simulation/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views.appearance&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sybed\Desktop\Advanced-Simulation\EPA133a-Lab_Assignment_2\EPA133a-G07-A2\report" />
@@ -182,15 +185,7 @@
       <option name="project" value="LOCAL" />
       <updated>1773665380621</updated>
     </task>
-    <task id="LOCAL-00010" summary="Pipeline toegevoegd en wegen niet meer gehardcode">
-      <option name="closed" value="true" />
-      <created>1773827145990</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1773827145990</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,8 +199,7 @@
     <MESSAGE value="laatste code gefixt en gerund" />
     <MESSAGE value="Comments toegevoegd en scenario bestand van assignment 2 gekopieerd" />
     <MESSAGE value="Comments toegevoegd aan model.py" />
-    <MESSAGE value="Pipeline toegevoegd en wegen niet meer gehardcode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pipeline toegevoegd en wegen niet meer gehardcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments toegevoegd aan model.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -228,14 +222,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Advanced_Simulation$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1772703611362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$roadmap_plotting_with_bridges.coverage" NAME="roadmap plotting with bridges Coverage Results" MODIFIED="1773826622542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation_multiple_roads.coverage" NAME="Data Preparation multiple roads Coverage Results" MODIFIED="1773826504491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$Intersection_creation.coverage" NAME="Intersection creation Coverage Results" MODIFIED="1773827198340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$Check_N1__N106.coverage" NAME="Check N1, N106 Coverage Results" MODIFIED="1773825573334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$driving_time.coverage" NAME="driving_time Coverage Results" MODIFIED="1773824938532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$stats_components.coverage" NAME="stats_components Coverage Results" MODIFIED="1772712534061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$run_pipeline.coverage" NAME="run_pipeline Coverage Results" MODIFIED="1773827215794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
   </component>
 </project>

@@ -2,11 +2,13 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from road_selection import BASE_ROADS, REQUIRED_ROADS, find_connector_roads, normalize_roads
+
 # ---- config ----
 INPUT_ROADS = Path("_roads3.csv")
 OUTPUT_CANDIDATES = Path("side_road_candidates.csv")
 
-MAIN_ROADS = {"N1", "N2"}
+MAIN_ROADS = set(BASE_ROADS)
 MIN_SIDE_ROAD_KM = 25.0
 MAX_ROAD_DIST_M = 500.0
 
@@ -84,6 +86,22 @@ def get_road_summary(roads: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def ensure_summary_columns(summary: pd.DataFrame) -> pd.DataFrame:
+    """Add columns that may be absent for manually included or connector roads."""
+    work = summary.copy()
+
+    if "length_km" not in work.columns:
+        work["length_km"] = np.nan
+    if "min_dist_to_main_m" not in work.columns:
+        work["min_dist_to_main_m"] = np.nan
+    if "passes_length" not in work.columns:
+        work["passes_length"] = False
+    if "connected_by_distance" not in work.columns:
+        work["connected_by_distance"] = False
+
+    return work
+
+
 def build_main_road_reference(roads: pd.DataFrame, main_roads: set[str]) -> np.ndarray:
     """Extract coordinate points for the main roads used as the distance reference."""
     main_df = roads[roads["road"].isin(main_roads)].copy()
@@ -144,9 +162,55 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
         "not selected"
     )
 
+    candidates["selection_source"] = np.where(
+        candidates["selected"],
+        "distance_rule",
+        "distance_rule_rejected"
+    )
+
+    road_summary_by_name = road_summary.set_index("road", drop=False)
+
+    manual_rows = []
+    for road_name in normalize_roads(REQUIRED_ROADS):
+        if road_name in MAIN_ROADS or road_name not in road_summary_by_name.index:
+            continue
+
+        row = ensure_summary_columns(road_summary_by_name.loc[[road_name]]).iloc[0].to_dict()
+        row["passes_length"] = bool(row["length_km"] > MIN_SIDE_ROAD_KM) if pd.notna(row["length_km"]) else False
+        row["selected"] = True
+        row["reason"] = "required road for the expanded network"
+        row["selection_source"] = "required"
+        manual_rows.append(row)
+
+    selected_seed_roads = normalize_roads(
+        list(MAIN_ROADS)
+        + candidates.loc[candidates["selected"], "road"].tolist()
+        + [row["road"] for row in manual_rows]
+    )
+    connector_roads = find_connector_roads(roads, list(REQUIRED_ROADS))
+
+    connector_rows = []
+    for road_name in connector_roads:
+        if road_name in MAIN_ROADS or road_name in selected_seed_roads:
+            continue
+        if road_name not in road_summary_by_name.index:
+            continue
+
+        row = ensure_summary_columns(road_summary_by_name.loc[[road_name]]).iloc[0].to_dict()
+        row["passes_length"] = bool(row["length_km"] > MIN_SIDE_ROAD_KM) if pd.notna(row["length_km"]) else False
+        row["selected"] = True
+        row["reason"] = "explicit metadata connection to the selected network"
+        row["selection_source"] = "connector"
+        connector_rows.append(row)
+
+    extra = pd.DataFrame(manual_rows + connector_rows)
+    if not extra.empty:
+        candidates = pd.concat([candidates, extra], ignore_index=True)
+        candidates = candidates.drop_duplicates(subset=["road"], keep="last")
+
     candidates = candidates.sort_values(
-        by=["selected", "length_km"],
-        ascending=[False, False]
+        by=["selected", "selection_source", "length_km", "road"],
+        ascending=[False, True, False, True]
     ).reset_index(drop=True)
 
     return candidates
@@ -166,12 +230,12 @@ def main():
         print("No side roads selected with current threshold.")
     else:
         print(selected[[
-            "road", "length_km", "min_dist_to_main_m", "reason"
+            "road", "length_km", "min_dist_to_main_m", "selection_source", "reason"
         ]].to_string(index=False))
 
     print("\nAll candidates:")
     print(candidates[[
-        "road", "length_km", "min_dist_to_main_m", "selected"
+        "road", "length_km", "min_dist_to_main_m", "selection_source", "selected"
     ]].to_string(index=False))
 
 
