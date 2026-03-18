@@ -12,7 +12,7 @@ Run batch simulations and export the collected outputs.
 run_length = 5 *24* 60
 
 base_seed = 1234567
-num_replicates = 1
+num_replicates = 10
 
 SCENARIOS = {
     0: {'A': 0.00, 'B': 0.00, 'C': 0.00, 'D': 0.00},

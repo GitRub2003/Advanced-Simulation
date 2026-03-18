@@ -264,8 +264,8 @@ class BangladeshModel(Model):
         self.completed_vehicle_times.append(
             {
                 'truck_id': vehicle.unique_id,
-                'origin_id': origin_id,
-                'destination_id': destination_id,
+                'source_id': origin_id,
+                'sink_id': destination_id,
                 'generated_at_step': vehicle.generated_at_step,
                 'removed_at_step': vehicle.removed_at_step,
             }
@@ -280,8 +280,8 @@ class BangladeshModel(Model):
             return pd.DataFrame(
                 columns=[
                     'truck_id',
-                    'origin_id',
-                    'destination_id',
+                    'source_id',
+                    'sink_id',
                     'generated_at_step',
                     'removed_at_step',
                     'total_driving_time',
