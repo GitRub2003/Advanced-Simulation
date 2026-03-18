@@ -13,6 +13,14 @@ PAIR_CLUSTER_THRESHOLD_M = 120.0
 CLUSTER_THRESHOLD_M = 80.0
 REFERENCE_ENDPOINT_THRESHOLD_M = 1000.0
 INTERSECTION_ID_START = 9_000_000
+MANUAL_INTERSECTION_SPECS = [
+    {
+        "road_a": "N106",
+        "chainage_a": 0.0,
+        "road_b": "N1",
+        "name": "Oxygen More",
+    },
+]
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
@@ -78,6 +86,57 @@ def build_match_record(a_row: pd.Series, b_row: pd.Series, dist_m: float) -> dic
         "lrp_a": str(a_row.get("lrp", "")),
         "lrp_b": str(b_row.get("lrp", "")),
     }
+
+
+def nearest_row_by_chainage(road_df: pd.DataFrame, chainage: float) -> pd.Series:
+    diffs = (road_df["chainage"] - float(chainage)).abs().to_numpy()
+    idx = int(np.argmin(diffs))
+    return road_df.iloc[idx]
+
+
+def nearest_row_by_coordinate(road_df: pd.DataFrame, lat: float, lon: float) -> pd.Series:
+    distances = haversine_m(float(lat), float(lon), road_df["lat"].to_numpy(dtype=float), road_df["lon"].to_numpy(dtype=float))
+    idx = int(np.argmin(distances))
+    return road_df.iloc[idx]
+
+
+def build_manual_intersection_matches(roads: pd.DataFrame) -> list[dict]:
+    """
+    Add explicit junctions where the source road sampling does not contain a
+    reliable shared point even though the model should connect the roads.
+    """
+    manual_matches: list[dict] = []
+
+    for spec in MANUAL_INTERSECTION_SPECS:
+        road_a = str(spec["road_a"]).upper()
+        road_b = str(spec["road_b"]).upper()
+
+        a = roads[roads["road"] == road_a].sort_values("chainage").reset_index(drop=True)
+        b = roads[roads["road"] == road_b].sort_values("chainage").reset_index(drop=True)
+
+        if a.empty or b.empty:
+            continue
+
+        a_row = nearest_row_by_chainage(a, float(spec["chainage_a"]))
+        b_row = nearest_row_by_coordinate(b, float(a_row["lat"]), float(a_row["lon"]))
+
+        manual_match = build_match_record(
+            a_row,
+            b_row,
+            haversine_m(
+                float(a_row["lat"]),
+                float(a_row["lon"]),
+                float(b_row["lat"]),
+                float(b_row["lon"]),
+            ),
+        )
+        manual_match["lat"] = float(a_row["lat"])
+        manual_match["lon"] = float(a_row["lon"])
+        manual_match["name_a"] = str(spec.get("name", manual_match["name_a"]))
+        manual_match["source"] = "manual_override"
+        manual_matches.append(manual_match)
+
+    return manual_matches
 
 
 def endpoint_reference_match(a: pd.DataFrame, b: pd.DataFrame) -> dict | None:
@@ -249,6 +308,8 @@ def detect_intersections(roads: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
 
         matches = find_all_pair_matches(a, b)
         raw_matches.extend(matches)
+
+    raw_matches.extend(build_manual_intersection_matches(roads))
 
     raw_df = pd.DataFrame(raw_matches)
     clustered_df = cluster_intersections(raw_df)
