@@ -126,7 +126,6 @@ class BangladeshModel(Model):
                 agent = None
 
                 name = "" if pd.isna(row['name']) else row['name'].strip()
-
                 if model_type == 'source':
                     agent = Source(row['id'], self, row['length'], name, row['road'])
                     self.sources.append(agent.unique_id)
@@ -256,9 +255,17 @@ class BangladeshModel(Model):
         if vehicle.generated_at_step is None or vehicle.removed_at_step is None:
             return
 
+        origin_id = ''
+        destination_id = ''
+        if vehicle.path_ids:
+            origin_id = vehicle.path_ids[0]
+            destination_id = vehicle.path_ids[-1]
+
         self.completed_vehicle_times.append(
             {
                 'truck_id': vehicle.unique_id,
+                'origin_id': origin_id,
+                'destination_id': destination_id,
                 'generated_at_step': vehicle.generated_at_step,
                 'removed_at_step': vehicle.removed_at_step,
             }
@@ -273,6 +280,8 @@ class BangladeshModel(Model):
             return pd.DataFrame(
                 columns=[
                     'truck_id',
+                    'origin_id',
+                    'destination_id',
                     'generated_at_step',
                     'removed_at_step',
                     'total_driving_time',
@@ -293,53 +302,6 @@ class BangladeshModel(Model):
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         self.calculate_total_driving_times().to_csv(output_path, index=False)
-        return output_path
-
-    def calculate_bridge_total_wait_times(self):
-        """
-        Return per-bridge waiting-time totals and run-level breakdown status.
-        """
-        rows = []
-        for agent in self.schedule._agents.values():  # Access to protected member _agents
-            if isinstance(agent, Bridge):
-                rows.append(
-                    {
-                        'bridge_id': agent.unique_id,
-                        'bridge_name': agent.name,
-                        'road_name': agent.road_name,
-                        'condition': agent.condition,
-                        'length': agent.length,
-                        'is_broken': agent.is_broken,
-                        'total_wait_time': float(agent.total_wait_time),
-                    }
-                )
-
-        if not rows:
-            return pd.DataFrame(
-                columns=[
-                    'bridge_id',
-                    'bridge_name',
-                    'road_name',
-                    'condition',
-                    'length',
-                    'is_broken',
-                    'total_wait_time',
-                ]
-            )
-
-        return pd.DataFrame(rows).sort_values(by=['bridge_id']).reset_index(drop=True)
-
-    def export_bridge_total_wait_times(self, output_path=None):
-        """
-        Export per-bridge waiting-time totals to CSV.
-        """
-        if output_path is None:
-            output_path = os.path.normpath(
-                os.path.join(os.path.dirname(__file__), '..', 'data', 'bridge_total_wait_times.csv')
-            )
-
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        self.calculate_bridge_total_wait_times().to_csv(output_path, index=False)
         return output_path
 
     def step(self):
