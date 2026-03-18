@@ -1,5 +1,6 @@
 from pathlib import Path
 import itertools
+from typing import Optional
 import numpy as np
 import pandas as pd
 
@@ -139,7 +140,7 @@ def build_manual_intersection_matches(roads: pd.DataFrame) -> list[dict]:
     return manual_matches
 
 
-def endpoint_reference_match(a: pd.DataFrame, b: pd.DataFrame) -> dict | None:
+def endpoint_reference_match(a: pd.DataFrame, b: pd.DataFrame) -> Optional[dict]:
     """
     Fall back to endpoint metadata when the sampled geometry misses a logical
     connection that is explicitly described in the source data.
