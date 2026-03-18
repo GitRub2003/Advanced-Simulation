@@ -2,7 +2,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from road_selection import BASE_ROADS, REQUIRED_ROADS, find_connector_roads, normalize_roads
+from road_selection import BASE_ROADS, REQUIRED_ROADS, normalize_roads
 
 # ---- config ----
 INPUT_ROADS = Path("_roads3.csv")
@@ -182,32 +182,7 @@ def select_side_roads(roads: pd.DataFrame) -> pd.DataFrame:
         row["selection_source"] = "required"
         manual_rows.append(row)
 
-    selected_seed_roads = normalize_roads(
-        list(MAIN_ROADS)
-        + candidates.loc[candidates["selected"], "road"].tolist()
-        + [row["road"] for row in manual_rows]
-    )
-    connector_roads = find_connector_roads(
-        roads,
-        list(REQUIRED_ROADS),
-        allowed_prefixes=("N",),
-    )
-
-    connector_rows = []
-    for road_name in connector_roads:
-        if road_name in MAIN_ROADS or road_name in selected_seed_roads:
-            continue
-        if road_name not in road_summary_by_name.index:
-            continue
-
-        row = ensure_summary_columns(road_summary_by_name.loc[[road_name]]).iloc[0].to_dict()
-        row["passes_length"] = bool(row["length_km"] > MIN_SIDE_ROAD_KM) if pd.notna(row["length_km"]) else False
-        row["selected"] = True
-        row["reason"] = "explicit metadata connection to the selected N-road network"
-        row["selection_source"] = "connector"
-        connector_rows.append(row)
-
-    extra = pd.DataFrame(manual_rows + connector_rows)
+    extra = pd.DataFrame(manual_rows)
     if not extra.empty:
         candidates = pd.concat([candidates, extra], ignore_index=True)
         candidates = candidates.drop_duplicates(subset=["road"], keep="last")

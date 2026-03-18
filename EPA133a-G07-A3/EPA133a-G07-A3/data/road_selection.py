@@ -8,6 +8,9 @@ import pandas as pd
 SIDE_ROADS_FILE = Path("side_road_candidates.csv")
 BASE_ROADS = ("N1", "N2")
 REQUIRED_ROADS = ("N106",)
+SUPPORT_ROADS_BY_ROAD = {
+    "N106": ("R160", "Z1619"),
+}
 
 ROAD_REF_PATTERN = re.compile(r"\b([NRZS]\d{1,4})\b", re.IGNORECASE)
 
@@ -24,6 +27,15 @@ def normalize_roads(values) -> list[str]:
         ordered.append(road)
 
     return ordered
+
+
+def get_required_support_roads(selected_roads: list[str]) -> list[str]:
+    support_roads: list[str] = []
+
+    for road in normalize_roads(selected_roads):
+        support_roads.extend(SUPPORT_ROADS_BY_ROAD.get(road, ()))
+
+    return normalize_roads(support_roads)
 
 
 def extract_road_references(text: str) -> set[str]:
@@ -79,7 +91,10 @@ def find_connector_roads(
     return normalize_roads(connectors)
 
 
-def load_selected_roads(path: Path = SIDE_ROADS_FILE) -> list[str]:
+def load_selected_roads(
+    path: Path = SIDE_ROADS_FILE,
+    include_support_roads: bool = False,
+) -> list[str]:
     if not path.exists():
         raise FileNotFoundError(
             f"{path} not found. Run 'Side roads choosing.py' first."
@@ -99,4 +114,9 @@ def load_selected_roads(path: Path = SIDE_ROADS_FILE) -> list[str]:
     )
     required = list(REQUIRED_ROADS)
 
-    return normalize_roads(base + required + selected)
+    selected_roads = normalize_roads(base + required + selected)
+
+    if include_support_roads:
+        return normalize_roads(selected_roads + get_required_support_roads(selected_roads))
+
+    return selected_roads

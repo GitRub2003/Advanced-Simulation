@@ -33,7 +33,7 @@ def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
         raise ValueError(f"{name} is missing columns: {missing}")
 
 
-SELECTED_ROADS = load_selected_roads()
+SELECTED_ROADS = load_selected_roads(include_support_roads=True)
 
 
 def load_roads(path: Path) -> pd.DataFrame:
