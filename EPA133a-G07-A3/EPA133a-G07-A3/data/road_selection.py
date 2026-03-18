@@ -36,7 +36,11 @@ def _require_columns(df: pd.DataFrame, columns: list[str], name: str) -> None:
         raise ValueError(f"{name} missing columns: {missing}")
 
 
-def find_connector_roads(roads: pd.DataFrame, target_roads: list[str]) -> list[str]:
+def find_connector_roads(
+    roads: pd.DataFrame,
+    target_roads: list[str],
+    allowed_prefixes: tuple[str, ...] | None = None,
+) -> list[str]:
     """
     Return roads that are explicitly referenced by, or explicitly reference,
     one of the target roads in the source metadata.
@@ -67,6 +71,10 @@ def find_connector_roads(roads: pd.DataFrame, target_roads: list[str]) -> list[s
             connectors.update(refs - target_set)
         elif refs & target_set:
             connectors.add(road_name)
+
+    if allowed_prefixes is not None:
+        prefixes = tuple(prefix.upper() for prefix in allowed_prefixes)
+        connectors = {road for road in connectors if road.startswith(prefixes)}
 
     return normalize_roads(connectors)
 
