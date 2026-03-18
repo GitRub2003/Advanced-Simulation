@@ -20,6 +20,7 @@ INTERSECTION_ID_START = 9_000_000
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
+    """Return the great-circle distance in meters between two coordinates."""
     R = 6371000.0
     lat1 = np.radians(lat1)
     lon1 = np.radians(lon1)
@@ -32,12 +33,14 @@ def haversine_m(lat1, lon1, lat2, lon2):
 
 
 def _has_cols(df: pd.DataFrame, cols: list[str], name: str) -> None:
+    """Raise an error if a required set of columns is missing."""
     missing = [c for c in cols if c not in df.columns]
     if missing:
         raise ValueError(f"{name} is missing columns: {missing}")
 
 
 def load_roads(path: Path) -> pd.DataFrame:
+    """Load the road CSV, normalize key columns, and keep only selected roads."""
     roads = pd.read_csv(path)
     _has_cols(roads, ["road", "chainage", "lat", "lon"], "roads")
 
@@ -55,6 +58,8 @@ def load_roads(path: Path) -> pd.DataFrame:
     roads["name"] = roads["name"].fillna("").astype(str)
     roads["lrp"] = roads["lrp"].fillna("").astype(str)
 
+    # Drop incomplete rows before filtering so downstream geometry checks can
+    # assume each road point has valid coordinates and chainage.
     roads = roads.dropna(subset=["road", "chainage", "lat", "lon"]).copy()
     roads = roads[roads["road"].isin(SELECTED_ROADS)].copy()
     roads = roads.sort_values(["road", "chainage"]).reset_index(drop=True)
@@ -62,9 +67,7 @@ def load_roads(path: Path) -> pd.DataFrame:
 
 
 def get_best_pair_match(a: pd.DataFrame, b: pd.DataFrame) -> dict | None:
-    """
-    Find the closest sampled-point pair between road a and road b.
-    """
+    """Find the closest sampled-point pair between two roads."""
     a_pts = a[["lat", "lon"]].to_numpy(dtype=float)
     b_pts = b[["lat", "lon"]].to_numpy(dtype=float)
 
@@ -75,6 +78,8 @@ def get_best_pair_match(a: pd.DataFrame, b: pd.DataFrame) -> dict | None:
     }
 
     for i, (alat, alon) in enumerate(a_pts):
+        # For each point on road A, compare it to all sampled points on road B
+        # and keep only the globally closest pair.
         d = haversine_m(alat, alon, b_pts[:, 0], b_pts[:, 1])
         j = int(np.argmin(d))
         if float(d[j]) < best["dist_m"]:
@@ -132,7 +137,8 @@ def cluster_intersections(df: pd.DataFrame) -> pd.DataFrame:
             if d <= CLUSTER_THRESHOLD_M:
                 cluster["members"].append(row.to_dict())
 
-                # recompute centroid
+                # Recompute the centroid after each added member so the cluster
+                # location tracks the average of all contributing matches.
                 cluster["lat"] = float(np.mean([m["lat"] for m in cluster["members"]]))
                 cluster["lon"] = float(np.mean([m["lon"] for m in cluster["members"]]))
                 assigned = True
@@ -183,11 +189,7 @@ def cluster_intersections(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def detect_intersections(roads: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    Returns:
-      raw_matches: one row per road pair that appears to intersect
-      clustered: one row per final intersection
-    """
+    """Detect pairwise road intersections and cluster nearby matches."""
     raw_matches = []
 
     for road_a, road_b in itertools.combinations(SELECTED_ROADS, 2):
@@ -208,6 +210,7 @@ def detect_intersections(roads: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
 
 
 def main():
+    """Run the intersection-detection workflow and write both output CSV files."""
     roads = load_roads(INPUT_ROADS)
     raw_df, clustered_df = detect_intersections(roads)
 

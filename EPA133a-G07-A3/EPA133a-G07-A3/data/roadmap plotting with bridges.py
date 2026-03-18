@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 INPUT = Path("network_model.csv")
 OUTPUT = Path("network_map.png")
 
-def main():
-    df = pd.read_csv(INPUT)
 
-    # Basic cleanup
+def prepare_network_df(path: Path) -> pd.DataFrame:
+    """Load the network CSV and normalize the columns used for plotting."""
+    df = pd.read_csv(path)
     df["road"] = df["road"].astype(str).str.strip().str.upper()
     df["chainage"] = pd.to_numeric(df["chainage"], errors="coerce")
     df["lat"] = pd.to_numeric(df["lat"], errors="coerce")
@@ -16,11 +16,54 @@ def main():
     df["model_type"] = df["model_type"].astype(str).str.strip().str.lower()
     df["name"] = df.get("name", "").fillna("").astype(str)
 
-    df = df.dropna(subset=["road", "lat", "lon"]).copy()
+    # Rows without coordinates cannot be placed on the map.
+    return df.dropna(subset=["road", "lat", "lon"]).copy()
+
+
+def get_intersections_to_plot(df: pd.DataFrame) -> pd.DataFrame:
+    """Return one row per plotted intersection to avoid duplicate markers."""
+    intersections = df[df["model_type"] == "intersection"].copy()
+
+    if "id" in intersections.columns:
+        return intersections.drop_duplicates(subset=["id"]).copy()
+
+    return intersections.drop_duplicates(subset=["lat", "lon"]).copy()
+
+
+def make_intersection_label(row: pd.Series) -> str:
+    """Build a readable label for an intersection annotation."""
+    name = row["name"].strip()
+    if name:
+        return name
+
+    if "id" in row.index:
+        return f'INT_{row["id"]}'
+
+    return "Intersection"
+
+
+def add_unique_legend(ax) -> None:
+    """Add a legend while removing duplicate labels created by repeated plotting calls."""
+    handles, labels = ax.get_legend_handles_labels()
+    seen = set()
+    uniq_handles, uniq_labels = [], []
+
+    for handle, label in zip(handles, labels):
+        if label not in seen:
+            uniq_handles.append(handle)
+            uniq_labels.append(label)
+            seen.add(label)
+
+    ax.legend(uniq_handles, uniq_labels, loc="best", fontsize=8, ncol=2)
+
+
+def main():
+    """Create a map of the road network and highlight bridges and intersections."""
+    df = prepare_network_df(INPUT)
 
     fig, ax = plt.subplots(figsize=(11, 11))
 
-    # Plot each road as a line through all non-intersection objects
+    # Plot each road as a continuous line using all non-intersection points.
     road_df = df[df["model_type"] != "intersection"].copy()
     if "chainage" in road_df.columns:
         road_df = road_df.sort_values(["road", "chainage", "id"])
@@ -43,15 +86,7 @@ def main():
             label="Bridge"
         )
 
-    # Highlight intersections
-    intersections = df[df["model_type"] == "intersection"].copy()
-
-    # avoid duplicate labels/markers for same intersection id
-    if "id" in intersections.columns:
-        intersections_plot = intersections.drop_duplicates(subset=["id"]).copy()
-    else:
-        intersections_plot = intersections.drop_duplicates(subset=["lat", "lon"]).copy()
-
+    intersections_plot = get_intersections_to_plot(df)
     if not intersections_plot.empty:
         ax.scatter(
             intersections_plot["lon"],
@@ -64,9 +99,8 @@ def main():
         )
 
         for _, row in intersections_plot.iterrows():
-            label = row["name"].strip() if row["name"].strip() else f'INT_{row["id"]}'
             ax.annotate(
-                label,
+                make_intersection_label(row),
                 (row["lon"], row["lat"]),
                 xytext=(4, 4),
                 textcoords="offset points",
@@ -91,16 +125,7 @@ def main():
     ax.grid(True, alpha=0.3)
     ax.axis("equal")
 
-    # cleaner legend: unique labels only
-    handles, labels = ax.get_legend_handles_labels()
-    seen = set()
-    uniq_handles, uniq_labels = [], []
-    for h, l in zip(handles, labels):
-        if l not in seen:
-            uniq_handles.append(h)
-            uniq_labels.append(l)
-            seen.add(l)
-    ax.legend(uniq_handles, uniq_labels, loc="best", fontsize=8, ncol=2)
+    add_unique_legend(ax)
 
     plt.tight_layout()
     plt.savefig(OUTPUT, dpi=250, bbox_inches="tight")

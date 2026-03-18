@@ -37,15 +37,18 @@ class Infra(Agent):
 # ---------------------------------------------------------------
 class Bridge(Infra):
     """
-    Creates delay time
+    Bridge that may be broken down for an entire simulation run.
 
     Attributes
     __________
     condition:
         condition of the bridge
 
-    delay_time: int
-        the delay (in ticks) caused by this bridge
+    is_broken:
+        whether the bridge is broken down for the current run
+
+    total_wait_time: float
+        the cumulative waiting time caused by this bridge over the run
     ...
 
     """
@@ -55,14 +58,64 @@ class Bridge(Infra):
         super().__init__(unique_id, model, length, name, road_name)
 
         self.condition = condition
+        self.total_wait_time = 0.0
+        self.is_broken = self._sample_initial_breakdown()
 
-        # TODO
-        self.delay_time = self.random.randrange(0, 10)
-        # print(self.delay_time)
+    def _sample_initial_breakdown(self):
+        """
+        Decide once per run whether this bridge is broken down.
 
-    # TODO
+        The breakdown probability depends on the bridge condition and is
+        provided by the scenario configuration in the model.
+        """
+        probability = self.model.scenario_probs.get(self.condition, 0.0)
+        return self.model.random.random() < probability
+
+    def sample_delay_time(self):
+        """
+        Draw a waiting time from the bridge-length-based delay distribution.
+        """
+        if self.length > 200:
+            return self.model.random.triangular(1, 4, 2)
+        if 50 < self.length <= 200:
+            return self.model.random.uniform(45, 90)
+        if 10 < self.length <= 50:
+            return self.model.random.uniform(15, 60)
+        if self.length <= 10:
+            return self.model.random.uniform(10, 20)
+        raise ValueError(f"Invalid bridge length: {self.length}")
+
+    def get_average_delay_time(self):
+        """
+        Return the mean delay implied by the bridge's delay distribution.
+
+        This expected value is used in routing so path selection reflects the
+        average disruption caused by a broken bridge in the current run.
+        """
+        if self.length > 200:
+            return (1 + 4 + 2) / 3
+        if 50 < self.length <= 200:
+            return (45 + 90) / 2
+        if 10 < self.length <= 50:
+            return (15 + 60) / 2
+        if self.length <= 10:
+            return (10 + 20) / 2
+        raise ValueError(f"Invalid bridge length: {self.length}")
+
     def get_delay_time(self):
-        return self.delay_time
+        """
+        Return the wait caused by this bridge for the current vehicle arrival.
+
+        If the bridge is not broken for this run, vehicles pass immediately.
+        When the bridge is broken, each arriving vehicle draws its own delay
+        from the length-based distribution.
+        """
+        if not self.is_broken:
+            return 0.0
+
+        delay_time = self.sample_delay_time()
+        self.total_wait_time += delay_time
+        return delay_time
 
 
 # ---------------------------------------------------------------

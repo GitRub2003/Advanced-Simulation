@@ -13,6 +13,7 @@ CLUSTER_THRESHOLD_M = 80.0
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
+    """Return the great-circle distance in meters between two coordinates."""
     R = 6371000.0
     lat1 = np.radians(lat1)
     lon1 = np.radians(lon1)
@@ -25,12 +26,14 @@ def haversine_m(lat1, lon1, lat2, lon2):
 
 
 def ensure_columns(df: pd.DataFrame, cols: list[str], name: str):
+    """Raise an error if a required set of columns is missing."""
     missing = [c for c in cols if c not in df.columns]
     if missing:
         raise ValueError(f"{name} missing columns: {missing}")
 
 
 def load_inputs():
+    """Load the input CSV files and normalize the columns used later in the workflow."""
     roads = pd.read_csv(INPUT_ROAD_OBJECTS)
     inter = pd.read_csv(INPUT_INTERSECTIONS_RAW)
 
@@ -61,6 +64,8 @@ def load_inputs():
     inter["lon"] = pd.to_numeric(inter["lon"], errors="coerce")
     inter["dist_m"] = pd.to_numeric(inter["dist_m"], errors="coerce")
 
+    # Keep the road objects in chainage order because later insertion logic
+    # assumes each road can be traversed from low to high chainage.
     roads = roads.sort_values(["road", "chainage", "id"]).reset_index(drop=True)
     inter = inter.dropna(subset=["road_a", "road_b", "chainage_a", "chainage_b", "lat", "lon"]).reset_index(drop=True)
 
@@ -79,6 +84,8 @@ def cluster_raw_matches(raw: pd.DataFrame) -> pd.DataFrame:
         for cluster in clusters:
             d = haversine_m(row["lat"], row["lon"], cluster["lat"], cluster["lon"])
             if d <= CLUSTER_THRESHOLD_M:
+                # Update the cluster center after every added match so nearby
+                # records are compared against the current average position.
                 cluster["members"].append(row.to_dict())
                 cluster["lat"] = float(np.mean([m["lat"] for m in cluster["members"]]))
                 cluster["lon"] = float(np.mean([m["lon"] for m in cluster["members"]]))
@@ -115,16 +122,14 @@ def cluster_raw_matches(raw: pd.DataFrame) -> pd.DataFrame:
 
 
 def nearest_row_id_for_chainage(road_df: pd.DataFrame, target_chainage: float) -> int:
+    """Return the id of the road row closest to the requested chainage."""
     diffs = (road_df["chainage"] - target_chainage).abs().to_numpy()
     idx = int(np.argmin(diffs))
     return int(road_df.iloc[idx]["id"])
 
 
 def build_insert_map(roads: pd.DataFrame, clustered: pd.DataFrame):
-    """
-    Returns:
-      insert_after[(road, row_id)] = [intersection_row_dict, ...]
-    """
+    """Build a lookup of which intersection rows should be inserted after each road row."""
     insert_after = defaultdict(list)
 
     roads_by_name = {
@@ -138,8 +143,9 @@ def build_insert_map(roads: pd.DataFrame, clustered: pd.DataFrame):
         lon = float(c["lon"])
         name = str(c["name"])
 
-        # For each member road pair, insert this same intersection into both roads.
-        # We deduplicate per road so the same intersection is inserted once per connected road.
+        # One clustered intersection can come from several raw pair matches.
+        # Aggregate them per road first so the same intersection is inserted
+        # once per connected road using the mean matching chainage.
         road_to_target_chainages = defaultdict(list)
 
         for m in c["members"]:
@@ -167,10 +173,11 @@ def build_insert_map(roads: pd.DataFrame, clustered: pd.DataFrame):
                 "condition": "N/A",
             }
 
-            # preserve optional columns if they exist later
+            # Preserve optional columns if they exist in the road schema.
             insert_after[(road_name, row_id)].append(intersection_row)
 
-    # sort multiple intersections after the same row by chainage
+    # If several intersections are attached to the same source row, keep them
+    # ordered by chainage for a predictable final CSV.
     for key in insert_after:
         insert_after[key] = sorted(insert_after[key], key=lambda r: r["chainage"])
 
@@ -184,7 +191,8 @@ def merge_roads_and_intersections(roads: pd.DataFrame, insert_after) -> pd.DataF
     """
     final_rows = []
 
-    # preserve original column order where possible
+    # Preserve the existing road-object schema and add only the extra columns
+    # needed by generated intersection rows.
     base_cols = list(roads.columns)
     extra_cols = [c for c in ["lrp"] if c not in base_cols]
     all_cols = base_cols + [c for c in extra_cols if c not in base_cols]
@@ -201,7 +209,8 @@ def merge_roads_and_intersections(roads: pd.DataFrame, insert_after) -> pd.DataF
                     out_row = {col: np.nan for col in all_cols}
                     out_row.update(inter_row)
 
-                    # fill any missing schema columns safely
+                    # Fill defaults so inserted rows are compatible with the
+                    # same columns as the original road-object rows.
                     if "structure_type" in roads.columns and "structure_type" not in out_row:
                         out_row["structure_type"] = ""
                     if "name" not in out_row:
@@ -215,7 +224,7 @@ def merge_roads_and_intersections(roads: pd.DataFrame, insert_after) -> pd.DataF
 
     final_df = pd.DataFrame(final_rows)
 
-    # remove exact duplicate intersection rows accidentally inserted twice after same row
+    # Guard against exact duplicate insertions caused by overlapping raw matches.
     final_df = final_df.drop_duplicates(
         subset=["road", "id", "model_type", "chainage"],
         keep="first"
@@ -225,6 +234,7 @@ def merge_roads_and_intersections(roads: pd.DataFrame, insert_after) -> pd.DataF
 
 
 def validate_intersections(final_df: pd.DataFrame):
+    """Print a simple sanity check for how many roads each intersection connects."""
     inter = final_df[final_df["model_type"].astype(str).str.lower() == "intersection"].copy()
     if inter.empty:
         print("No intersections inserted.")
@@ -241,6 +251,7 @@ def validate_intersections(final_df: pd.DataFrame):
 
 
 def main():
+    """Run the intersection insertion workflow and write the final network CSV."""
     roads, raw_intersections = load_inputs()
     clustered = cluster_raw_matches(raw_intersections)
     insert_after = build_insert_map(roads, clustered)
