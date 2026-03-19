@@ -1,24 +1,52 @@
-# Example README File
+# Assignment 3: Network model generation
 
-Created by: EPA133a Group xx
+Created by:
 
-|    Name     | Student Number |
-| :---------: | :------------- |
-| Mary White  | 1234567        |
-| David Brown | 7654321        |
+|Group Number|07|
+|:-:|:-:|
+|Ruben Zuidgeest|5542014|
+|Lars Groen|4667697|
+|Ryan Zondag|5543485|
+|Olivier Poelman|5589177|
+|Sybe de Haan|5595088|
 
-## Introduction
+## How to use
 
-Every project should have a README file to help a first-time user understand what it is about and how they might be able to use it. This file is where you (as a group) shall provide the information needed by the TAs to evaluate and grade your work.
+## 
 
-If you are looking for information about the Demo model of Assignment 3, navigate to the [model/README.md](model/README.md) in the [model](model) directory. Have **fun** modeling in Python!
+In this file there are several important folders.
 
-## How to Use
 
-Include whatever you think is necessary for someone to understand your work. The README file is usually the first file someone will see and open. It doesn't need to explain what might be obvious, but it should point out the most important things for someone looking at your work. For example, how to launch your program, what are the main files, where to find them, etc.
 
-### Format
+The first is the data folder. It contains the \_roads3 and BMMS\_overview CSV files, which are needed to produce the road network (network.csv) for the analysis. 
 
-Most README files for data or software projects are now written in Markdown format, like this document. There are some different flavours, but they are easy to write. See here for more information https://www.markdownguide.org/basic-syntax
 
-Most IDEs can render Markdown files directly.
+
+The road network is produced by running 'run\_pipeline' , which runs 'Datra Preparation multiple roads', 'intersection creation', 'Intersections in the csv' 'N106 check', road\_selection' 'roadmap plotting with bridges' and 'side roads choosing'. More details on this are provided in the report.
+
+
+
+
+
+The network\_model.csv file is then used by the model file in the model folder. The model calculates and exports truck driving times times for each scenario and replication. These calculations are executed by running the model\_run file, which also stores the outputs in the Experiments folder.
+
+
+
+Finally, running the plot\_creation.py file in the Analysis folder uses the experiment outputs to generate visualizations, which are saved in the img folder.
+
+
+
+For the bonusassignments there are 2 more important files in the data folder. Compare\_intersection\_with\_shapefile.py evaluates the accuracy of the detected intersections, the script compares the 
+
+modeled locations against a reference road shapefile called roads.shp this outputs the intersection\_shapefile\_comparison.csv in the data folder
+
+
+
+
+
+
+
+## Requirements
+
+To be able to run the model mesa version 2.1.4, pandas module 2.1.3 or later is needed and geopandas for the compare\_intersections\_with\_shapefile.py
+
