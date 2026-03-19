@@ -10,6 +10,7 @@ Run batch simulations and export the collected outputs.
 
 # run time 5 x 24 hours; 1 tick 1 minute
 run_length = 5 *24* 60
+progress_interval = 500
 
 base_seed = 1234567
 num_replicates = 10
@@ -47,6 +48,21 @@ for scenario_id in sorted(SCENARIOS.keys()):
         # One run with given steps
         for i in range(run_length):
             sim_model.step()
+            if (i + 1) % progress_interval == 0 or i + 1 == run_length:
+                active_trucks = sum(
+                    1 for agent in sim_model.schedule._agents.values()
+                    if agent.__class__.__name__ == "Vehicle"
+                )
+                print(
+                    "PROGRESS "
+                    + str(i + 1)
+                    + "/"
+                    + str(run_length)
+                    + " | ACTIVE_TRUCKS "
+                    + str(active_trucks)
+                    + " | COMPLETED "
+                    + str(len(sim_model.completed_vehicle_times))
+                )
 
         output_path = os.path.join(
             experiments_dir,

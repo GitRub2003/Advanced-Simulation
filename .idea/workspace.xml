@@ -4,14 +4,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="gerund" />
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="plots etc.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis/Plot_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis/Plot_creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_0_replicate_9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_1_replicate_9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_2_replicate_9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_3_replicate_9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_6.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_7.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_8.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Experiments/truck_driving_times_scenario_4_replicate_9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/intersection_shapefile_comparison.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/intersection_shapefile_comparison.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/roads.dbf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/roads.prj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data/roads.shx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/average_travel_time_per_scenario_with_std.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/average_travel_time_per_scenario_with_std.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/heatmap_route_driving_time_increase_pct_scenario_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/img/top10_route_avg_driving_time_increase_pct_scenario_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/model_run.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="273" />
+    <option name="cachedIndexableFilesCount" value="357" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,7 +134,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.export.id": "Excel (xlsx)",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -111,6 +180,7 @@
       <workItem from="1772718547221" duration="1985000" />
       <workItem from="1773655895070" duration="3143000" />
       <workItem from="1773663827333" duration="11812000" />
+      <workItem from="1773925349798" duration="11896000" />
     </task>
     <task id="LOCAL-00001" summary="Begin visualization en naam folder aangepast">
       <option name="closed" value="true" />
@@ -200,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773862021605</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="plots etc.">
+      <option name="closed" value="true" />
+      <created>1773912633381</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773912633381</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +294,8 @@
     <MESSAGE value="Comments toegevoegd aan model.py" />
     <MESSAGE value="Bonus assignment pushen en requirements aangepast" />
     <MESSAGE value="gerund" />
-    <option name="LAST_COMMIT_MESSAGE" value="gerund" />
+    <MESSAGE value="plots etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="plots etc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -234,14 +313,18 @@
           <url>file://$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model/model_run.py</url>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model/components.py</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$Plot_creation.coverage" NAME="Plot_creation Coverage Results" MODIFIED="1773912538394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1773853097922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$Plot_creation.coverage" NAME="Plot_creation Coverage Results" MODIFIED="1773940188215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$model_run.coverage" NAME="model_run Coverage Results" MODIFIED="1773939162016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/model" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$stats_components.coverage" NAME="stats_components Coverage Results" MODIFIED="1772712534061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/report" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$compare_intersections_with_shapefile.coverage" NAME="compare_intersections_with_shapefile Coverage Results" MODIFIED="1773849702027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$compare_intersections_with_shapefile.coverage" NAME="compare_intersections_with_shapefile Coverage Results" MODIFIED="1773926337597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$driving_time.coverage" NAME="driving_time Coverage Results" MODIFIED="1773825701474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />

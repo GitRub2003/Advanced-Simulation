@@ -80,6 +80,7 @@ class BangladeshModel(Model):
         self.sinks = []
         self.network = nx.DiGraph()
         self.completed_vehicle_times = []
+        self.endpoint_labels = {}
 
         self.generate_model()
 
@@ -119,7 +120,12 @@ class BangladeshModel(Model):
         self.space = ContinuousSpace(x_max, y_max, True, x_min, y_min)
 
         for df in df_objects_all:
-            for _, row in df.iterrows():
+            endpoint_rows = df[
+                df['model_type'].astype(str).str.strip().str.lower().isin({'source', 'sink', 'sourcesink'})
+            ].index.tolist()
+            first_endpoint_index = endpoint_rows[0] if endpoint_rows else None
+            last_endpoint_index = endpoint_rows[-1] if endpoint_rows else None
+            for row_index, row in df.iterrows():
 
                 # Create the proper agent class for each infrastructure record.
                 model_type = row['model_type'].strip()
@@ -153,8 +159,25 @@ class BangladeshModel(Model):
                     x = row['lon']
                     self.space.place_agent(agent, (x, y))
                     agent.pos = (x, y)
+                    self._register_endpoint_label(agent.unique_id, row, row_index, first_endpoint_index, last_endpoint_index)
 
         self.update_network_travel_times()
+
+    def _register_endpoint_label(self, unique_id, row, row_index, first_endpoint_index, last_endpoint_index):
+        """
+        Store a readable label for each road endpoint source/sink.
+        """
+        model_type = str(row['model_type']).strip().lower()
+        if model_type not in {'source', 'sink', 'sourcesink'}:
+            return
+
+        road_name = str(row['road']).strip()
+        if row_index == first_endpoint_index:
+            self.endpoint_labels[unique_id] = f"{road_name} start"
+        elif row_index == last_endpoint_index:
+            self.endpoint_labels[unique_id] = f"{road_name} end"
+        else:
+            self.endpoint_labels[unique_id] = road_name
 
     def add_road_to_network(self, df_objects_on_road):
         """
@@ -231,7 +254,8 @@ class BangladeshModel(Model):
         """
         cache_key = (origin, destination)
         if cache_key not in self.route_cache:
-            # NetworkX handles multi-road routing once the graph has been assembled.
+            # Shortest paths are computed on the full network; vehicles may
+            # traverse source/sink nodes and only finish at their destination.
             path_ids = nx.shortest_path(self.network, origin, destination, weight='weight')
             self.route_cache[cache_key] = path_ids
         return self.route_cache[cache_key]
@@ -255,17 +279,14 @@ class BangladeshModel(Model):
         if vehicle.generated_at_step is None or vehicle.removed_at_step is None:
             return
 
-        origin_id = ''
-        destination_id = ''
-        if vehicle.path_ids:
-            origin_id = vehicle.path_ids[0]
-            destination_id = vehicle.path_ids[-1]
+        origin_id = vehicle.generated_by.unique_id if vehicle.generated_by is not None else ''
+        destination_id = vehicle.location.unique_id if isinstance(vehicle.location, Sink) else ''
 
         self.completed_vehicle_times.append(
             {
                 'truck_id': vehicle.unique_id,
-                'source_id': origin_id,
-                'sink_id': destination_id,
+                'source_id': self.endpoint_labels.get(origin_id, origin_id),
+                'sink_id': self.endpoint_labels.get(destination_id, destination_id),
                 'generated_at_step': vehicle.generated_at_step,
                 'removed_at_step': vehicle.removed_at_step,
             }

@@ -14,8 +14,60 @@ FILE_REGEX = re.compile(
 )
 
 
+def load_endpoint_label_map(base_dir: Path) -> dict[str, str]:
+    """Build a legacy-ID to road-endpoint label map from the network CSV."""
+    network_path = base_dir / "data" / "network_model.csv"
+    if not network_path.exists():
+        return {}
+
+    df = pd.read_csv(network_path)
+    required_columns = {"id", "road", "model_type"}
+    if not required_columns.issubset(df.columns):
+        return {}
+
+    df = df.copy()
+    df["road"] = df["road"].astype(str).str.strip()
+    df["model_type"] = df["model_type"].astype(str).str.strip().str.lower()
+
+    label_map: dict[str, str] = {}
+    for road_name, road_df in df.groupby("road", sort=False):
+        road_df = road_df.reset_index(drop=True)
+        endpoint_rows = road_df[
+            road_df["model_type"].isin({"source", "sink", "sourcesink"})
+        ].index.tolist()
+        first_endpoint_index = endpoint_rows[0] if endpoint_rows else None
+        last_endpoint_index = endpoint_rows[-1] if endpoint_rows else None
+
+        for row_index, row in road_df.iterrows():
+            if row["model_type"] not in {"source", "sink", "sourcesink"}:
+                continue
+
+            if row_index == first_endpoint_index:
+                label = f"{road_name} start"
+            elif row_index == last_endpoint_index:
+                label = f"{road_name} end"
+            else:
+                label = road_name
+
+            label_map[str(row["id"])] = label
+
+    return label_map
+
+
+def apply_endpoint_labels(df: pd.DataFrame, label_map: dict[str, str]) -> pd.DataFrame:
+    """Replace numeric endpoint IDs with readable road-endpoint labels when possible."""
+    if df.empty:
+        return df
+
+    df = df.copy()
+    for column in ["source_id", "sink_id"]:
+        df[column] = df[column].astype(str).map(label_map).fillna(df[column].astype(str))
+    return df
+
+
 def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
     """Load all truck driving-time CSVs and aggregate them to route-level averages per replicate."""
+    label_map = load_endpoint_label_map(experiments_dir.parent)
     rows = []
     for csv_file in experiments_dir.glob("truck_driving_times_scenario_*_replicate_*.csv"):
         match = FILE_REGEX.match(csv_file.name)
@@ -31,6 +83,7 @@ def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
             raise ValueError(
                 f"Missing required columns in {csv_file.name}. Expected {sorted(required_columns)}."
             )
+        df = apply_endpoint_labels(df, label_map)
 
         # Collapse raw truck records into one row per route for this replicate.
         route_df = (
@@ -213,19 +266,18 @@ def plot_route_increase_heatmaps(
         if valid_values.size == 0:
             continue
 
-        # Center the color scale on zero so decreases and increases are visually comparable.
-        max_abs = float(np.max(np.abs(valid_values)))
-        if max_abs == 0.0:
-            max_abs = 1.0
+        max_increase = float(np.max(valid_values))
+        if max_increase == 0.0:
+            max_increase = 1.0
 
-        norm = colors.TwoSlopeNorm(vmin=-max_abs, vcenter=0.0, vmax=max_abs)
+        norm = colors.Normalize(vmin=0.0, vmax=max_increase)
         masked_values = np.ma.masked_invalid(matrix_values)
 
         fig_width = max(8.0, 0.6 * len(matrix_df.columns) + 3.0)
         fig_height = max(6.0, 0.5 * len(matrix_df.index) + 2.5)
         fig, ax = plt.subplots(figsize=(fig_width, fig_height))
 
-        heat = ax.imshow(masked_values, cmap="RdBu_r", norm=norm, aspect="auto")
+        heat = ax.imshow(masked_values, cmap="Reds", norm=norm, aspect="auto")
         colorbar = fig.colorbar(heat, ax=ax)
         colorbar.set_label("Driving time increase vs scenario 0 (%)")
 

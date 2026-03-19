@@ -141,11 +141,13 @@ class Sink(Infra):
 
     """
     vehicle_removed_toggle = False
+    log_events = False
 
     def remove(self, vehicle):
         self.model.schedule.remove(vehicle)
         self.vehicle_removed_toggle = not self.vehicle_removed_toggle
-        print(str(self) + ' REMOVE ' + str(vehicle))
+        if self.log_events:
+            print(str(self) + ' REMOVE ' + str(vehicle))
 
 
 # ---------------------------------------------------------------
@@ -173,6 +175,7 @@ class Source(Infra):
     truck_counter = 0
     generation_frequency = 5
     vehicle_generated_flag = False
+    log_events = False
 
     def step(self):
         if self.model.schedule.steps % self.generation_frequency == 0:
@@ -192,7 +195,8 @@ class Source(Infra):
                 Source.truck_counter += 1
                 self.vehicle_count += 1
                 self.vehicle_generated_flag = True
-                print(str(self) + " GENERATE " + str(agent))
+                if self.log_events:
+                    print(str(self) + " GENERATE " + str(agent))
         except Exception as e:
             print("Oops!", e.__class__, "occurred.")
 
@@ -253,6 +257,7 @@ class Vehicle(Agent):
     speed = 48 * 1000 / 60
     # One tick represents 1 minute
     step_time = 1
+    log_state_each_step = False
 
     class State(Enum):
         DRIVE = 1
@@ -302,7 +307,8 @@ class Vehicle(Agent):
         """
         To print the vehicle trajectory at each step
         """
-        print(self)
+        if self.log_state_each_step:
+            print(self)
 
     def drive(self):
 
@@ -327,7 +333,7 @@ class Vehicle(Agent):
         next_id = self.path_ids[self.location_index]
         next_infra = self.model.schedule._agents[next_id]  # Access to protected member _agents
 
-        if isinstance(next_infra, Sink):
+        if isinstance(next_infra, Sink) and next_id == self.path_ids[-1]:
             # arrive at the sink
             self.arrive_at_next(next_infra, 0)
             self.removed_at_step = self.model.schedule.steps
