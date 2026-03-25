@@ -6,11 +6,14 @@ from road_selection import load_selected_roads
 
 INPUT_ROADS = Path("_roads3.csv")
 BMMS_XLSX = Path("BMMS_overview.xlsx")
+RMMS_TRAFFIC_CSV = Path("rmms_traffic_raw.csv")
 OUTPUT = Path("road_objects.csv")
 
 SELECTED_ROADS = load_selected_roads()
 MAX_CHAINAGE_DIFF_KM = 1
 MAX_DIST_M = 500
+START_SOURCE_TRAFFIC_SIDE = "L"
+END_SOURCE_TRAFFIC_SIDE = "R"
 
 
 def haversine_m(lat1, lon1, lat2, lon2):
@@ -50,7 +53,68 @@ def normalize_lrp(s: pd.Series) -> pd.Series:
     return s.astype(str).str.strip().str.upper()
 
 
-def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name: str) -> pd.DataFrame:
+def load_rmms_source_truck_lookup(path: Path) -> dict[str, dict[str, float]]:
+    """
+    Build a per-road lookup of one-direction truck AADT for the first and last links.
+
+    The current network represents each road as one line with a source/sink at each end.
+    To avoid counting inbound and outbound traffic together, one carriageway is mapped to
+    the road start and the opposite carriageway is mapped to the road end.
+    """
+    if not path.exists():
+        raise FileNotFoundError(f"RMMS traffic CSV not found: {path.resolve()}")
+
+    traffic = pd.read_csv(path).copy()
+    required_cols = ["road", "link_no", "total_trucks", "start_chainage", "end_chainage"]
+    _has_cols(traffic, required_cols, "rmms_traffic_raw")
+
+    traffic["road"] = traffic["road"].astype(str).str.strip().str.upper()
+    traffic["link_no"] = traffic["link_no"].astype(str).str.strip().str.upper()
+    traffic["total_trucks"] = pd.to_numeric(traffic["total_trucks"], errors="coerce").fillna(0.0)
+    traffic["start_chainage"] = pd.to_numeric(traffic["start_chainage"], errors="coerce")
+    traffic["end_chainage"] = pd.to_numeric(traffic["end_chainage"], errors="coerce")
+    traffic = traffic.dropna(subset=["start_chainage", "end_chainage"]).copy()
+
+    lookup: dict[str, dict[str, float]] = {}
+
+    for road_name, group in traffic.groupby("road", sort=False):
+        group = group.copy()
+        group["side"] = group["link_no"].str.extract(r"([LR])$", expand=False)
+
+        start_candidates = group.sort_values(["start_chainage", "end_chainage", "link_no"])
+        end_candidates = group.sort_values(["end_chainage", "start_chainage", "link_no"], ascending=[False, False, True])
+
+        start_row = start_candidates[start_candidates["side"] == START_SOURCE_TRAFFIC_SIDE].head(1)
+        end_row = end_candidates[end_candidates["side"] == END_SOURCE_TRAFFIC_SIDE].head(1)
+
+        if start_row.empty:
+            start_row = start_candidates[start_candidates["side"].isna()].head(1)
+        if end_row.empty:
+            end_row = end_candidates[end_candidates["side"].isna()].head(1)
+
+        if start_row.empty or end_row.empty:
+            raise ValueError(
+                f"Could not map RMMS source traffic sides for road {road_name}. "
+                f"Expected start side {START_SOURCE_TRAFFIC_SIDE} and end side {END_SOURCE_TRAFFIC_SIDE}, "
+                f"or unsuffixed link numbers."
+            )
+
+        lookup[road_name] = {
+            "start_total_trucks": float(start_row.iloc[0]["total_trucks"]),
+            "end_total_trucks": float(end_row.iloc[0]["total_trucks"]),
+            "start_link_no": str(start_row.iloc[0]["link_no"]),
+            "end_link_no": str(end_row.iloc[0]["link_no"]),
+        }
+
+    return lookup
+
+
+def process_one_road(
+    roads_all: pd.DataFrame,
+    bmms_all: pd.DataFrame,
+    road_name: str,
+    rmms_lookup: dict[str, dict[str, float]],
+) -> pd.DataFrame:
     """Build the model-ready road-object rows for one road."""
     roads = roads_all[roads_all["road"] == road_name].copy()
     if roads.empty:
@@ -166,6 +230,16 @@ def process_one_road(roads_all: pd.DataFrame, bmms_all: pd.DataFrame, road_name:
         "condition": condition,
     })
 
+    out["source_total_trucks"] = np.nan
+    out["source_rmms_link_no"] = ""
+
+    traffic_info = rmms_lookup.get(road_name)
+    if traffic_info is not None:
+        out.loc[out.index[0], "source_total_trucks"] = traffic_info["start_total_trucks"]
+        out.loc[out.index[0], "source_rmms_link_no"] = traffic_info["start_link_no"]
+        out.loc[out.index[-1], "source_total_trucks"] = traffic_info["end_total_trucks"]
+        out.loc[out.index[-1], "source_rmms_link_no"] = traffic_info["end_link_no"]
+
     return out
 
 
@@ -191,12 +265,13 @@ def main():
     bmms_all["condition"] = bmms_all["condition"].astype(str).str.strip().str.upper()
     bmms_all["chainage"] = pd.to_numeric(bmms_all["chainage"], errors="coerce")
     bmms_all["type"] = bmms_all["type"].astype(str).str.strip()
+    rmms_lookup = load_rmms_source_truck_lookup(RMMS_TRAFFIC_CSV)
 
     # Process roads independently so each road keeps its own chainage order and
     # BMMS matching is limited to records from that same road.
     pieces = []
     for road_name in SELECTED_ROADS:
-        part = process_one_road(roads_all, bmms_all, road_name)
+        part = process_one_road(roads_all, bmms_all, road_name, rmms_lookup)
         pieces.append(part)
 
     out = pd.concat(pieces, ignore_index=True)

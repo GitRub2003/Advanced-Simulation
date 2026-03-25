@@ -8,6 +8,11 @@ BASE = Path(__file__).resolve().parent
 
 PIPELINE = [
     {
+        "name": "rmms_traffic",
+        "script": "rmms prep.py",
+        "expected_outputs": ["rmms_traffic_raw.csv"],
+    },
+    {
         "name": "side_roads",
         "script": "Side roads choosing.py",
         "expected_outputs": ["side_road_candidates.csv"],
