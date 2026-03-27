@@ -4,61 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="Code aangepast en gerund">
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/Analysis/Plot_creation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/BMMS_overview.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Data Preparation multiple roads.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Intersection creation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Intersections In the CSV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Side roads choosing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/_roads3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/compare_intersections_with_shapefile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/demo-4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/intersection_shapefile_comparison.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/intersections_detected.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/intersections_raw_matches.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/network_map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/network_model.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/path_ids_dict.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/road_objects.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/road_selection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/roadmap plotting with bridges.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/roads.shp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/run_pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/side_road_candidates.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/img/N1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/img/N1N2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/img/demo-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/ContinuousSpace/SimpleContinuousModule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/ContinuousSpace/simple_continuous_canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/model_run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/model/model_viz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/._EPA133a-Gxx-A3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._experiment" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._img" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._notebook" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/._report" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/data/._README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._.DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._ContinuousSpace" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._model_run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/._model_viz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/ContinuousSpace/._SimpleContinuousModule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EPA133a-G07-A4/__MACOSX/EPA133a-Gxx-A3/model/ContinuousSpace/._simple_continuous_canvas.js" afterDir="false" />
+    <list default="true" id="ac6e31a5-4686-4793-9c71-5e94e35d8535" name="Changes" comment="RMMS gepusht">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_10_46_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_10_46__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_11_01_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_11_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_11_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_03_2026_11_44__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Data Preparation multiple roads.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/Data Preparation multiple roads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/network_model.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/network_model.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/rmms prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/rmms prep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/road_objects.csv" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data/road_objects.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="354" />
+    <option name="cachedIndexableFilesCount" value="450" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -103,38 +61,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Data Preparation.executor": "Run",
-    "Python.Plot_creation.executor": "Run",
-    "Python.compare_intersections_with_shapefile.executor": "Run",
-    "Python.model_run.executor": "Run",
-    "Python.model_viz.executor": "Run",
-    "Python.run_pipeline.executor": "Run",
-    "Python.stats_components.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "database.data.extractors.current.export.id": "Excel (xlsx)",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/sybed/Desktop/Advanced-Simulation",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "database.data.views.appearance",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Data Preparation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Plot_creation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.compare_intersections_with_shapefile.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_run.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_viz.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.stats_components.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Excel (xlsx)&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sybed/Desktop/Advanced-Simulation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views.appearance&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sybed\Desktop\Advanced-Simulation" />
@@ -171,7 +129,8 @@
       <workItem from="1773949075675" duration="314000" />
       <workItem from="1774272806241" duration="634000" />
       <workItem from="1774350123981" duration="1156000" />
-      <workItem from="1774430375740" duration="522000" />
+      <workItem from="1774430375740" duration="5710000" />
+      <workItem from="1774606414759" duration="2621000" />
     </task>
     <task id="LOCAL-00001" summary="Begin visualization en naam folder aangepast">
       <option name="closed" value="true" />
@@ -277,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1773940236028</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Assignment 4 gepusht">
+      <option name="closed" value="true" />
+      <created>1774430921744</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1774430921744</updated>
+    </task>
+    <task id="LOCAL-00015" summary="RMMS gepusht">
+      <option name="closed" value="true" />
+      <created>1774431296381</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1774431296381</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +270,9 @@
     <MESSAGE value="gerund" />
     <MESSAGE value="plots etc." />
     <MESSAGE value="Code aangepast en gerund" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code aangepast en gerund" />
+    <MESSAGE value="Assignment 4 gepusht" />
+    <MESSAGE value="RMMS gepusht" />
+    <option name="LAST_COMMIT_MESSAGE" value="RMMS gepusht" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,6 +305,6 @@
     <SUITE FILE_PATH="coverage/Advanced_Simulation$driving_time.coverage" NAME="driving_time Coverage Results" MODIFIED="1773825701474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/Analysis" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$Data_Preparation.coverage" NAME="Data Preparation Coverage Results" MODIFIED="1772206094594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab Assignment 2/EPA133a-G07-A2/data" />
     <SUITE FILE_PATH="coverage/Advanced_Simulation$model_viz.coverage" NAME="model_viz Coverage Results" MODIFIED="1772206698599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-Lab_Assignment_2/EPA133a-G07-A2/model" />
-    <SUITE FILE_PATH="coverage/Advanced_Simulation$run_pipeline.coverage" NAME="run_pipeline Coverage Results" MODIFIED="1773849661086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A3/EPA133a-G07-A3/data" />
+    <SUITE FILE_PATH="coverage/Advanced_Simulation$run_pipeline.coverage" NAME="run_pipeline Coverage Results" MODIFIED="1774608935052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EPA133a-G07-A4/EPA133a-G07-A4/data" />
   </component>
 </project>

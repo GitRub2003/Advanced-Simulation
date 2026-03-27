@@ -2,13 +2,15 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
+import zipfile
 import pandas as pd
 from bs4 import BeautifulSoup
 
 from road_selection import load_selected_roads
 
 BASE_DIR = Path(__file__).resolve().parent
-RMMS_DIR = Path("RMMS")
+RMMS_DIR = BASE_DIR / "RMMS"
+RMMS_ZIP = BASE_DIR / "RMMS.zip"
 OUTPUT_RAW = BASE_DIR / "rmms_traffic_raw.csv"
 OUTPUT_MISSING = BASE_DIR / "rmms_missing_files.csv"
 
@@ -156,10 +158,35 @@ def build_column_names(header_row_1: list[str], header_row_2: list[str]) -> list
     return [normalize_column_name(col) for col in columns]
 
 
+def ensure_rmms_dir(rmms_dir: Path = RMMS_DIR, rmms_zip: Path = RMMS_ZIP) -> Path:
+    """
+    Ensure the extracted RMMS directory exists.
+    """
+    if rmms_dir.exists():
+        return rmms_dir
+
+    if not rmms_zip.exists():
+        raise FileNotFoundError(
+            f"RMMS directory not found at {rmms_dir} and RMMS zip not found at {rmms_zip}."
+        )
+
+    print(f"Extracting RMMS archive from: {rmms_zip.resolve()}")
+    with zipfile.ZipFile(rmms_zip, "r") as zf:
+        zf.extractall(BASE_DIR)
+
+    if not rmms_dir.exists():
+        raise FileNotFoundError(
+            f"Extracted {rmms_zip.name}, but expected RMMS directory was not created at {rmms_dir}."
+        )
+
+    return rmms_dir
+
+
 def load_one_rmms_file(road: str, rmms_dir: Path = RMMS_DIR, debug: bool = False) -> pd.DataFrame:
     """
     Load one RMMS traffic HTML file by manually parsing the table with BeautifulSoup.
     """
+    rmms_dir = ensure_rmms_dir(rmms_dir)
     file_path = rmms_dir / f"{road}.traffic.htm"
 
     if not file_path.exists():
@@ -216,6 +243,7 @@ def load_rmms_for_selected_roads(
     """
     Load RMMS traffic data for all selected roads.
     """
+    rmms_dir = ensure_rmms_dir(rmms_dir)
     roads = load_selected_roads(include_support_roads=include_support_roads)
 
     all_frames = []
@@ -260,6 +288,7 @@ def inspect_one_file(road: str, rmms_dir: Path = RMMS_DIR) -> None:
     """
     Inspect one RMMS file and print a preview.
     """
+    rmms_dir = ensure_rmms_dir(rmms_dir)
     df = load_one_rmms_file(road, rmms_dir=rmms_dir, debug=True)
     df = add_combined_truck_column(df)
 
