@@ -1,7 +1,9 @@
 import os
+import math
 from pathlib import Path
 
 import networkx as nx
+import numpy as np
 import pandas as pd
 from mesa import Model
 from mesa.space import ContinuousSpace
@@ -58,10 +60,15 @@ class BangladeshModel(Model):
     """
 
     step_time = 1
+    steps_per_day = 24 * 60
 
     file_name = Path(__file__).resolve().parents[1] / 'data' / 'network_model.csv'
+    od_matrix_file = Path(__file__).resolve().parents[1] / 'data' / 'od_matrix.csv'
+    od_calibration_file = Path(__file__).resolve().parents[1] / 'data' / 'od_calibration_summary.csv'
+    od_cache_signature = None
+    od_cache = None
 
-    def __init__(self, scenario_id=0, scenario_probs=None, seed=None, x_max=500, y_max=500, x_min=0, y_min=0):
+    def __init__(self, scenario_id=0, scenario_probs=None, seed=None, x_max=500, y_max=500, x_min=0, y_min=0, demand_scale=1.0):
         """
         Initialize the simulation state and build the network from disk.
 
@@ -71,6 +78,7 @@ class BangladeshModel(Model):
         super().__init__(seed=seed)
         self.scenario_id = scenario_id
         self.scenario_probs = scenario_probs or {'A': 0.0, 'B': 0.0, 'C': 0.0, 'D': 0.0}
+        self.demand_scale = demand_scale
 
         self.schedule = BaseScheduler(self)
         self.running = True
@@ -81,6 +89,10 @@ class BangladeshModel(Model):
         self.network = nx.DiGraph()
         self.completed_vehicle_times = []
         self.endpoint_labels = {}
+        self.source_daily_demand = {}
+        self.source_destination_weights = {}
+        self.od_matrix = pd.DataFrame()
+        self.np_random = np.random.default_rng(seed)
 
         self.generate_model()
 
@@ -106,8 +118,11 @@ class BangladeshModel(Model):
 
                 self.add_road_to_network(df_objects_on_road)
 
+        full_network_df = pd.concat(df_objects_all, ignore_index=True)
+        self._load_or_build_od_demand(full_network_df)
+
         # Recombine the selected road data so the global coordinate bounds can be computed.
-        df = pd.concat(df_objects_all)
+        df = full_network_df
         y_min, y_max, x_min, x_max = set_lat_lon_bound(
             df['lat'].min(),
             df['lat'].max(),
@@ -154,6 +169,7 @@ class BangladeshModel(Model):
                         agent = Intersection(row['id'], self, row['length'], name, row['road'])
 
                 if agent:
+                    self._configure_agent_demand(agent)
                     self.schedule.add(agent)
                     y = row['lat']
                     x = row['lon']
@@ -162,6 +178,308 @@ class BangladeshModel(Model):
                     self._register_endpoint_label(agent.unique_id, row, row_index, first_endpoint_index, last_endpoint_index)
 
         self.update_network_travel_times()
+
+    @classmethod
+    def _network_signature(cls) -> tuple[int, int]:
+        stat = cls.file_name.stat()
+        return stat.st_mtime_ns, stat.st_size
+
+    @staticmethod
+    def _build_endpoint_label_map(df: pd.DataFrame) -> dict[int, str]:
+        """
+        Build stable human-readable labels for road endpoint ids.
+        """
+        label_map: dict[int, str] = {}
+        for road_name, road_df in df.groupby('road', sort=False):
+            road_df = road_df.reset_index(drop=True)
+            endpoint_rows = road_df[
+                road_df['model_type'].astype(str).str.strip().str.lower().isin({'source', 'sink', 'sourcesink'})
+            ].index.tolist()
+            first_endpoint_index = endpoint_rows[0] if endpoint_rows else None
+            last_endpoint_index = endpoint_rows[-1] if endpoint_rows else None
+
+            for row_index, row in road_df.iterrows():
+                model_type = str(row['model_type']).strip().lower()
+                if model_type not in {'source', 'sink', 'sourcesink'}:
+                    continue
+
+                node_id = int(row['id'])
+                if row_index == first_endpoint_index:
+                    label_map[node_id] = f"{road_name} start"
+                elif row_index == last_endpoint_index:
+                    label_map[node_id] = f"{road_name} end"
+                else:
+                    label_map[node_id] = str(road_name).strip()
+
+        return label_map
+
+    def _load_or_build_od_demand(self, df: pd.DataFrame) -> None:
+        """
+        Compute one OD matrix from source-sink truck AADT and reuse it across replications.
+        """
+        signature = self._network_signature()
+        if BangladeshModel.od_cache_signature != signature or BangladeshModel.od_cache is None:
+            BangladeshModel.od_cache = self._build_od_demand(df)
+            BangladeshModel.od_cache_signature = signature
+
+        cache = BangladeshModel.od_cache
+        self.od_matrix = cache['od_matrix']
+        self.source_daily_demand = cache['source_daily_demand']
+        self.source_destination_weights = cache['source_destination_weights']
+        self.endpoint_labels.update(cache['endpoint_labels'])
+
+    def _build_od_demand(self, df: pd.DataFrame) -> dict[str, object]:
+        """
+        Build and calibrate a gravity-style OD matrix from endpoint truck AADT.
+
+        The available data only provides truck AADT at the source/sink endpoints, so those
+        values are used as both origin production and destination attraction weights.
+        """
+        endpoint_df = df[
+            df['model_type'].astype(str).str.strip().str.lower().isin({'source', 'sourcesink'})
+        ].copy()
+        od_columns = ['origin_id', 'destination_id', 'origin_label', 'destination_label', 'cost_minutes', 'daily_trucks', 'probability']
+        endpoint_df['id'] = pd.to_numeric(endpoint_df['id'], errors='coerce').astype('Int64')
+        endpoint_df['source_total_trucks'] = pd.to_numeric(endpoint_df.get('source_total_trucks'), errors='coerce').fillna(0.0)
+        endpoint_df = endpoint_df.dropna(subset=['id']).copy()
+        endpoint_df = endpoint_df[endpoint_df['source_total_trucks'] > 0].copy()
+
+        endpoint_labels = self._build_endpoint_label_map(df)
+        source_daily_demand = {
+            int(row['id']): float(row['source_total_trucks']) / 2.0
+            for _, row in endpoint_df.iterrows()
+        }
+        source_destination_weights: dict[int, dict[int, float]] = {}
+        od_rows: list[dict[str, float | int | str]] = []
+
+        if endpoint_df.empty:
+            empty_od = pd.DataFrame(columns=od_columns)
+            empty_od.to_csv(self.od_matrix_file, index=False)
+            return {
+                'od_matrix': empty_od,
+                'source_daily_demand': source_daily_demand,
+                'source_destination_weights': source_destination_weights,
+                'endpoint_labels': endpoint_labels,
+            }
+
+        baseline_graph = self.network.copy()
+        for start_id, end_id in baseline_graph.edges():
+            destination_length = float(baseline_graph.nodes[end_id].get('length', 0.0))
+            baseline_graph[start_id][end_id]['weight'] = destination_length / Vehicle.speed
+
+        source_ids = [int(node_id) for node_id in endpoint_df['id'].tolist()]
+        target_demand = {
+            int(row['id']): float(row['source_total_trucks']) / 2.0
+            for _, row in endpoint_df.iterrows()
+        }
+
+        pair_costs: dict[tuple[int, int], float] = {}
+        all_costs: list[float] = []
+        for origin_id in source_ids:
+            for destination_id in source_ids:
+                if destination_id == origin_id:
+                    continue
+                try:
+                    cost = float(nx.shortest_path_length(baseline_graph, origin_id, destination_id, weight='weight'))
+                except (nx.NetworkXNoPath, nx.NodeNotFound):
+                    continue
+                pair_costs[(origin_id, destination_id)] = cost
+                if cost > 0:
+                    all_costs.append(cost)
+
+        if all_costs:
+            median_cost = float(np.median(all_costs))
+            beta = math.log(2.0) / median_cost if median_cost > 0 else 0.0
+        else:
+            beta = 0.0
+
+        prior_matrix = self._build_gravity_prior_matrix(
+            source_ids=source_ids,
+            target_demand=target_demand,
+            pair_costs=pair_costs,
+            beta=beta,
+        )
+        calibrated_matrix, calibration_summary = self._calibrate_od_matrix(
+            matrix=prior_matrix,
+            source_ids=source_ids,
+            target_demand=target_demand,
+            endpoint_labels=endpoint_labels,
+        )
+        calibration_summary.to_csv(self.od_calibration_file, index=False)
+        print(f"Wrote OD calibration summary to: {self.od_calibration_file.resolve()}")
+
+        for origin_idx, origin_id in enumerate(source_ids):
+            origin_total = float(calibrated_matrix[origin_idx, :].sum())
+            if origin_total <= 0:
+                source_destination_weights[origin_id] = {}
+                source_daily_demand[origin_id] = 0.0
+                continue
+
+            source_daily_demand[origin_id] = origin_total
+            normalized_weights: dict[int, float] = {}
+            for destination_idx, destination_id in enumerate(source_ids):
+                if destination_id == origin_id:
+                    continue
+                daily_trucks = float(calibrated_matrix[origin_idx, destination_idx])
+                if daily_trucks <= 0:
+                    continue
+                probability = daily_trucks / origin_total
+                normalized_weights[destination_id] = probability
+                od_rows.append(
+                    {
+                        'origin_id': origin_id,
+                        'destination_id': destination_id,
+                        'origin_label': endpoint_labels.get(origin_id, str(origin_id)),
+                        'destination_label': endpoint_labels.get(destination_id, str(destination_id)),
+                        'cost_minutes': pair_costs[(origin_id, destination_id)],
+                        'daily_trucks': daily_trucks,
+                        'probability': probability,
+                    }
+                )
+
+            source_destination_weights[origin_id] = normalized_weights
+
+        od_matrix = pd.DataFrame(od_rows, columns=od_columns)
+        if not od_matrix.empty:
+            od_matrix = od_matrix.sort_values(['origin_id', 'destination_id']).reset_index(drop=True)
+        od_matrix.to_csv(self.od_matrix_file, index=False)
+        print(f"Wrote OD matrix to: {self.od_matrix_file.resolve()}")
+
+        return {
+            'od_matrix': od_matrix,
+            'source_daily_demand': source_daily_demand,
+            'source_destination_weights': source_destination_weights,
+            'endpoint_labels': endpoint_labels,
+        }
+
+    def _build_gravity_prior_matrix(
+        self,
+        source_ids: list[int],
+        target_demand: dict[int, float],
+        pair_costs: dict[tuple[int, int], float],
+        beta: float,
+    ) -> np.ndarray:
+        """
+        Build the unconstrained gravity prior before calibration.
+        """
+        size = len(source_ids)
+        matrix = np.zeros((size, size), dtype=float)
+
+        for origin_idx, origin_id in enumerate(source_ids):
+            for destination_idx, destination_id in enumerate(source_ids):
+                if destination_id == origin_id:
+                    continue
+                cost = pair_costs.get((origin_id, destination_id))
+                if cost is None:
+                    continue
+                deterrence = math.exp(-beta * cost) if beta > 0 else 1.0
+                matrix[origin_idx, destination_idx] = (
+                    float(target_demand[origin_id]) *
+                    float(target_demand[destination_id]) *
+                    deterrence
+                )
+
+        return matrix
+
+    def _simulate_intact_daily_assignment(
+        self,
+        matrix: np.ndarray,
+        source_ids: list[int],
+    ) -> tuple[np.ndarray, np.ndarray]:
+        """
+        Simulate one intact-network daily assignment from the OD matrix.
+
+        With fixed OD trips on an intact shortest-path network, generated counts are the
+        row sums and arrived counts are the column sums.
+        """
+        generated = matrix.sum(axis=1)
+        arrived = matrix.sum(axis=0)
+        return generated, arrived
+
+    def _calibrate_od_matrix(
+        self,
+        matrix: np.ndarray,
+        source_ids: list[int],
+        target_demand: dict[int, float],
+        endpoint_labels: dict[int, str],
+        max_iterations: int = 30,
+        tolerance: float = 0.05,
+    ) -> tuple[np.ndarray, pd.DataFrame]:
+        """
+        Iteratively rebalance the OD matrix until intact simulated endpoint flows are close
+        to the target truck AADT values.
+        """
+        calibrated = matrix.copy()
+        targets = np.array([float(target_demand[source_id]) for source_id in source_ids], dtype=float)
+        epsilon = 1e-9
+
+        for _ in range(max_iterations):
+            generated, arrived = self._simulate_intact_daily_assignment(calibrated, source_ids)
+
+            row_scale = np.divide(
+                targets,
+                np.maximum(generated, epsilon),
+                out=np.ones_like(targets),
+                where=targets > 0,
+            )
+            calibrated = (calibrated.T * row_scale).T
+
+            generated, arrived = self._simulate_intact_daily_assignment(calibrated, source_ids)
+            col_scale = np.divide(
+                targets,
+                np.maximum(arrived, epsilon),
+                out=np.ones_like(targets),
+                where=targets > 0,
+            )
+            calibrated = calibrated * col_scale
+
+            generated, arrived = self._simulate_intact_daily_assignment(calibrated, source_ids)
+            gen_rel_error = np.divide(
+                np.abs(generated - targets),
+                np.maximum(targets, 1.0),
+            )
+            arr_rel_error = np.divide(
+                np.abs(arrived - targets),
+                np.maximum(targets, 1.0),
+            )
+            max_error = float(max(np.max(gen_rel_error), np.max(arr_rel_error))) if len(gen_rel_error) > 0 else 0.0
+            if max_error <= tolerance:
+                break
+
+        generated, arrived = self._simulate_intact_daily_assignment(calibrated, source_ids)
+        summary_rows = []
+        for idx, source_id in enumerate(source_ids):
+            target_value = float(targets[idx])
+            combined_target = target_value * 2.0
+            sim_generated = float(generated[idx])
+            sim_arrived = float(arrived[idx])
+            sim_total = sim_generated + sim_arrived
+            denom = max(target_value, 1.0)
+            summary_rows.append(
+                {
+                    'endpoint_id': source_id,
+                    'endpoint_label': endpoint_labels.get(source_id, str(source_id)),
+                    'combined_aadt_target': combined_target,
+                    'per_direction_target': target_value,
+                    'sim_generated_trucks_per_day': sim_generated,
+                    'sim_arrived_trucks_per_day': sim_arrived,
+                    'sim_total_endpoint_activity': sim_total,
+                    'generated_rel_error': abs(sim_generated - target_value) / denom,
+                    'arrived_rel_error': abs(sim_arrived - target_value) / denom,
+                    'total_activity_rel_error': abs(sim_total - combined_target) / max(combined_target, 1.0),
+                }
+            )
+
+        summary = pd.DataFrame(summary_rows).sort_values('endpoint_id').reset_index(drop=True)
+        return calibrated, summary
+
+    def _configure_agent_demand(self, agent) -> None:
+        """
+        Attach the cached demand data to source-capable agents.
+        """
+        if isinstance(agent, Source):
+            agent.daily_truck_demand = float(self.source_daily_demand.get(agent.unique_id, 0.0))
+            agent.destination_weights = dict(self.source_destination_weights.get(agent.unique_id, {}))
 
     def _register_endpoint_label(self, unique_id, row, row_index, first_endpoint_index, last_endpoint_index):
         """
@@ -239,14 +557,34 @@ class BangladeshModel(Model):
         Return a shortest path from the source to a randomly chosen sink.
         """
         possible_sinks = [sink for sink in self.sinks if sink != source]
+        if not possible_sinks:
+            return None
         sink = self.random.choice(possible_sinks)
         return self.get_shortest_path(source, sink)
+
+    def choose_destination(self, source):
+        """
+        Choose a destination sink for one generated truck using the cached OD weights.
+        """
+        destination_weights = self.source_destination_weights.get(source, {})
+        if destination_weights:
+            destinations = list(destination_weights.keys())
+            probabilities = list(destination_weights.values())
+            return self.random.choices(destinations, weights=probabilities, k=1)[0]
+
+        possible_sinks = [sink for sink in self.sinks if sink != source]
+        if not possible_sinks:
+            return None
+        return self.random.choice(possible_sinks)
 
     def get_route(self, source):
         """
         Return a route for a new vehicle leaving the given source.
         """
-        return self.get_random_route(source)
+        destination = self.choose_destination(source)
+        if destination is None:
+            return None
+        return self.get_shortest_path(source, destination)
 
     def get_shortest_path(self, origin, destination):
         """

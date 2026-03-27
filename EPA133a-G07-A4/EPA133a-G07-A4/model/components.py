@@ -1,5 +1,6 @@
 from mesa import Agent
 from enum import Enum
+import numpy as np
 
 
 # ---------------------------------------------------------------
@@ -173,15 +174,30 @@ class Source(Infra):
     """
 
     truck_counter = 0
-    generation_frequency = 5
     vehicle_generated_flag = False
     log_events = False
 
     def step(self):
-        if self.model.schedule.steps % self.generation_frequency == 0:
-            self.generate_truck()
-        else:
+        mean_arrivals = self.get_mean_arrivals_per_step()
+        if mean_arrivals <= 0:
             self.vehicle_generated_flag = False
+            return
+
+        generated_count = int(self.model.np_random.poisson(mean_arrivals))
+        self.vehicle_generated_flag = False
+        for _ in range(generated_count):
+            self.generate_truck()
+
+    def get_mean_arrivals_per_step(self):
+        """
+        Return the expected number of truck arrivals for this source in one model step.
+        """
+        daily_truck_demand = float(getattr(self, "daily_truck_demand", 0.0) or 0.0)
+        demand_scale = float(getattr(self.model, "demand_scale", 1.0))
+        steps_per_day = float(getattr(self.model, "steps_per_day", 24 * 60))
+        if steps_per_day <= 0:
+            return 0.0
+        return max(daily_truck_demand * demand_scale / steps_per_day, 0.0)
 
     def generate_truck(self):
         """
@@ -189,14 +205,15 @@ class Source(Infra):
         """
         try:
             agent = Vehicle('Truck' + str(Source.truck_counter), self.model, self)
-            if agent:
-                self.model.schedule.add(agent)
-                agent.set_path()
-                Source.truck_counter += 1
-                self.vehicle_count += 1
-                self.vehicle_generated_flag = True
-                if self.log_events:
-                    print(str(self) + " GENERATE " + str(agent))
+            if not agent.set_path():
+                return
+
+            self.model.schedule.add(agent)
+            Source.truck_counter += 1
+            self.vehicle_count += 1
+            self.vehicle_generated_flag = True
+            if self.log_events:
+                print(str(self) + " GENERATE " + str(agent))
         except Exception as e:
             print("Oops!", e.__class__, "occurred.")
 
@@ -290,6 +307,7 @@ class Vehicle(Agent):
         Set the origin destination path of the vehicle
         """
         self.path_ids = self.model.get_route(self.generated_by.unique_id)
+        return self.path_ids is not None and len(self.path_ids) >= 2
 
     def step(self):
         """
