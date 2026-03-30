@@ -88,7 +88,9 @@ class BangladeshModel(Model):
         self.sinks = []
         self.network = nx.DiGraph()
         self.completed_vehicle_times = []
+        self.infrastructure_crossing_stats = {}
         self.endpoint_labels = {}
+        self.infrastructure_labels = {}
         self.source_daily_demand = {}
         self.source_destination_weights = {}
         self.od_matrix = pd.DataFrame()
@@ -161,8 +163,24 @@ class BangladeshModel(Model):
                     self._attach_sink_remove_hook(agent)
                 elif model_type == 'bridge':
                     agent = Bridge(row['id'], self, row['length'], name, row['road'], row['condition'])
+                    infrastructure_label = self._build_infrastructure_label(
+                        name=row['name'],
+                        lrp=row.get('lrp'),
+                        road_name=row['road'],
+                        model_type='bridge',
+                        unique_id=row['id'],
+                    )
+                    self.infrastructure_labels[agent.unique_id] = infrastructure_label
                 elif model_type == 'link':
                     agent = Link(row['id'], self, row['length'], name, row['road'])
+                    infrastructure_label = self._build_infrastructure_label(
+                        name=row['name'],
+                        lrp=row.get('lrp'),
+                        road_name=row['road'],
+                        model_type='link',
+                        unique_id=row['id'],
+                    )
+                    self.infrastructure_labels[agent.unique_id] = infrastructure_label
                 elif model_type == 'intersection':
                     # Intersections can appear in multiple road definitions, so only add them once.
                     if row['id'] not in self.schedule._agents:
@@ -497,6 +515,23 @@ class BangladeshModel(Model):
         else:
             self.endpoint_labels[unique_id] = road_name
 
+    @staticmethod
+    def _build_infrastructure_label(name, lrp, road_name, model_type, unique_id):
+        """
+        Build a readable label for links/bridges using name + LRP when available.
+        """
+        name_str = "" if pd.isna(name) else str(name).strip()
+        lrp_str = "" if pd.isna(lrp) else str(lrp).strip()
+        road_str = "" if pd.isna(road_name) else str(road_name).strip()
+
+        if name_str and lrp_str:
+            return f"{name_str} ({lrp_str})"
+        if name_str:
+            return name_str
+        if lrp_str:
+            return f"{road_str} {model_type} ({lrp_str})"
+        return f"{road_str} {model_type} {unique_id}"
+
     def add_road_to_network(self, df_objects_on_road):
         """
         Add one road segment to the directed network graph.
@@ -627,8 +662,29 @@ class BangladeshModel(Model):
                 'sink_id': self.endpoint_labels.get(destination_id, destination_id),
                 'generated_at_step': vehicle.generated_at_step,
                 'removed_at_step': vehicle.removed_at_step,
+                'infra_crossing_count': vehicle.infra_crossing_count,
             }
         )
+
+    def record_infrastructure_crossing(self, infra, vehicle):
+        """
+        Update per-link/per-bridge counters in constant time.
+        """
+        infra_id = infra.unique_id
+        if infra_id not in self.infrastructure_crossing_stats:
+            self.infrastructure_crossing_stats[infra_id] = {
+                'infra_id': infra_id,
+                'infra_label': self.infrastructure_labels.get(infra_id, infra_id),
+                'infra_type': type(infra).__name__.lower(),
+                'road_name': getattr(infra, 'road_name', ''),
+                'infra_name': getattr(infra, 'name', ''),
+                'crossing_count': 0,
+                'truck_ids': set(),
+            }
+
+        stats = self.infrastructure_crossing_stats[infra_id]
+        stats['crossing_count'] += 1
+        stats['truck_ids'].add(vehicle.unique_id)
 
     def calculate_total_driving_times(self):
         """
@@ -643,12 +699,50 @@ class BangladeshModel(Model):
                     'sink_id',
                     'generated_at_step',
                     'removed_at_step',
+                    'infra_crossing_count',
                     'total_driving_time',
                 ]
             )
 
         df['total_driving_time'] = df['removed_at_step'] - df['generated_at_step']
         return df
+
+    def calculate_infrastructure_crossing_summary(self):
+        """
+        Return a DataFrame with total crossing counts per link/bridge.
+        """
+        if not self.infrastructure_crossing_stats:
+            return pd.DataFrame(
+                columns=[
+                    'infra_id',
+                    'infra_label',
+                    'infra_type',
+                    'road_name',
+                    'infra_name',
+                    'crossing_count',
+                    'unique_truck_count',
+                ]
+            )
+
+        summary_rows = []
+        for stats in self.infrastructure_crossing_stats.values():
+            summary_rows.append(
+                {
+                    'infra_id': stats['infra_id'],
+                    'infra_label': stats['infra_label'],
+                    'infra_type': stats['infra_type'],
+                    'road_name': stats['road_name'],
+                    'infra_name': stats['infra_name'],
+                    'crossing_count': stats['crossing_count'],
+                    'unique_truck_count': len(stats['truck_ids']),
+                }
+            )
+
+        summary = pd.DataFrame(summary_rows).sort_values(
+            ['crossing_count', 'infra_id'],
+            ascending=[False, True]
+        ).reset_index(drop=True)
+        return summary
 
     def export_total_driving_times(self, output_path=None):
         """
@@ -661,6 +755,19 @@ class BangladeshModel(Model):
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         self.calculate_total_driving_times().to_csv(output_path, index=False)
+        return output_path
+
+    def export_infrastructure_crossing_summary(self, output_path=None):
+        """
+        Export aggregated link/bridge crossing counts to CSV.
+        """
+        if output_path is None:
+            output_path = os.path.normpath(
+                os.path.join(os.path.dirname(__file__), '..', 'data', 'infrastructure_crossings.csv')
+            )
+
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        self.calculate_infrastructure_crossing_summary().to_csv(output_path, index=False)
         return output_path
 
     def step(self):

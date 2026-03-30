@@ -295,6 +295,7 @@ class Vehicle(Agent):
         self.waiting_time = 0
         self.waited_at = None
         self.removed_at_step = None
+        self.infra_crossing_count = 0
 
     def __str__(self):
         return "Vehicle" + str(self.unique_id) + \
@@ -357,7 +358,11 @@ class Vehicle(Agent):
             self.removed_at_step = self.model.schedule.steps
             self.location.remove(self)
             return
-        elif isinstance(next_infra, Bridge):
+        elif isinstance(next_infra, (Bridge, Link)):
+            self.infra_crossing_count += 1
+            self.model.record_infrastructure_crossing(next_infra, self)
+
+        if isinstance(next_infra, Bridge):
             self.waiting_time = next_infra.get_delay_time()
             if self.waiting_time > 0:
                 # arrive at the bridge and wait

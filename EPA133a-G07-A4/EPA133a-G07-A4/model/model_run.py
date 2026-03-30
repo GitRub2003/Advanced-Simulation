@@ -71,3 +71,9 @@ for scenario_id in sorted(SCENARIOS.keys()):
         sim_model.export_total_driving_times(output_path=output_path)
         print("Driving times saved to: " + str(output_path))
 
+        infrastructure_output_path = os.path.join(
+            experiments_dir,
+            f"infrastructure_crossings_scenario_{scenario_id}_replicate_{replicate}.csv"
+        )
+        sim_model.export_infrastructure_crossing_summary(output_path=infrastructure_output_path)
+        print("Infrastructure crossings saved to: " + str(infrastructure_output_path))
