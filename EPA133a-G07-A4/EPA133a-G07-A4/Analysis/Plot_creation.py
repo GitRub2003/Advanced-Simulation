@@ -12,6 +12,9 @@ import pandas as pd
 FILE_REGEX = re.compile(
     r"^truck_driving_times_scenario_(?P<scenario>\d+)_replicate_(?P<replicate>\d+)\.csv$"
 )
+INFRA_FILE_REGEX = re.compile(
+    r"^infrastructure_crossings_scenario_(?P<scenario>\d+)_replicate_(?P<replicate>\d+)\.csv$"
+)
 
 
 def load_endpoint_label_map(base_dir: Path) -> dict[str, str]:
@@ -109,6 +112,38 @@ def load_route_average_data(experiments_dir: Path) -> pd.DataFrame:
     return data
 
 
+def load_infrastructure_crossing_data(experiments_dir: Path) -> pd.DataFrame:
+    """Load all link/bridge-crossing CSVs and combine them into one table."""
+    rows = []
+    for csv_file in experiments_dir.glob("infrastructure_crossings_scenario_*_replicate_*.csv"):
+        match = INFRA_FILE_REGEX.match(csv_file.name)
+        if not match:
+            continue
+
+        scenario_id = int(match.group("scenario"))
+        replicate_id = int(match.group("replicate"))
+
+        df = pd.read_csv(csv_file)
+        required_columns = {"infra_id", "infra_label", "infra_type", "crossing_count", "unique_truck_count"}
+        if not required_columns.issubset(df.columns):
+            raise ValueError(
+                f"Missing required columns in {csv_file.name}. Expected {sorted(required_columns)}."
+            )
+
+        df = df.copy()
+        df["scenario_id"] = scenario_id
+        df["replicate_id"] = replicate_id
+        rows.append(df)
+
+    if not rows:
+        raise FileNotFoundError(
+            f"No infrastructure crossing files found in {experiments_dir} with pattern "
+            f"'infrastructure_crossings_scenario_*_replicate_*.csv'."
+        )
+
+    return pd.concat(rows, ignore_index=True)
+
+
 def compute_pct_increase_vs_baseline(all_data: pd.DataFrame) -> pd.DataFrame:
     """Compare each non-baseline scenario against scenario 0 on a route-by-route basis."""
     # First pool all replicates per scenario so each route gets one weighted scenario average.
@@ -166,6 +201,20 @@ def compute_replicate_means(all_data: pd.DataFrame) -> pd.DataFrame:
     replicate_means = grouped["average_driving_time"].mean().rename(columns={"average_driving_time": "replicate_mean_travel_time"})
     replicate_means["replicate_total_trucks"] = np.nan
     return replicate_means
+
+
+def compute_infrastructure_crossing_means(infra_data: pd.DataFrame) -> pd.DataFrame:
+    """Average link/bridge usage over replicates for each scenario/infrastructure pair."""
+    summary = (
+        infra_data.groupby(["scenario_id", "infra_id", "infra_label", "infra_type"], as_index=False)
+        .agg(
+            mean_crossing_count=("crossing_count", "mean"),
+            std_crossing_count=("crossing_count", "std"),
+            mean_unique_truck_count=("unique_truck_count", "mean"),
+        )
+    )
+    summary["std_crossing_count"] = summary["std_crossing_count"].fillna(0.0)
+    return summary
 
 
 def plot_average_travel_time_per_scenario(all_data: pd.DataFrame, output_dir: Path) -> Path:
@@ -306,6 +355,130 @@ def plot_route_increase_heatmaps(
     return generated_paths
 
 
+def plot_top_infrastructure_crossings_per_scenario(
+    infra_data: pd.DataFrame, output_dir: Path, top_n: int = 15
+) -> list[Path]:
+    """Plot the busiest links/bridges for each scenario using mean crossings over replicates."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    generated_paths: list[Path] = []
+
+    infra_summary = compute_infrastructure_crossing_means(infra_data)
+    for scenario_id in sorted(infra_summary["scenario_id"].unique().tolist()):
+        scenario_df = infra_summary[infra_summary["scenario_id"] == scenario_id].copy()
+        if scenario_df.empty:
+            continue
+
+        top_df = (
+            scenario_df.sort_values("mean_crossing_count", ascending=False)
+            .head(top_n)
+            .sort_values("mean_crossing_count")
+        )
+        if top_df.empty:
+            continue
+
+        fig_height = max(6.0, 0.42 * len(top_df) + 1.5)
+        fig, ax = plt.subplots(figsize=(11, fig_height))
+        ax.barh(
+            top_df["infra_label"],
+            top_df["mean_crossing_count"],
+            xerr=top_df["std_crossing_count"],
+            capsize=4,
+            color="#009E73",
+            alpha=0.9,
+        )
+        ax.set_xlabel("Average link/bridge crossings per replicate")
+        ax.set_ylabel("Infrastructure")
+        ax.set_title(f"Most-used links and bridges in scenario {scenario_id}")
+        ax.grid(axis="x", alpha=0.25)
+
+        for idx, value in enumerate(top_df["mean_crossing_count"]):
+            ax.text(value, idx, f" {value:.1f}", va="center", fontsize=8)
+
+        fig.tight_layout()
+        output_path = output_dir / f"top_infrastructure_by_crossings_scenario_{scenario_id}.png"
+        fig.savefig(output_path, dpi=200)
+        plt.close(fig)
+        generated_paths.append(output_path)
+
+    return generated_paths
+
+
+def plot_infrastructure_crossing_heatmap(
+    infra_data: pd.DataFrame, output_dir: Path, top_n: int = 20
+) -> Path | None:
+    """Plot a scenario-by-infrastructure heatmap for the busiest links/bridges overall."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    infra_summary = compute_infrastructure_crossing_means(infra_data)
+    if infra_summary.empty:
+        return None
+
+    top_infra = (
+        infra_summary.groupby(["infra_id", "infra_label", "infra_type"], as_index=False)["mean_crossing_count"]
+        .sum()
+        .sort_values("mean_crossing_count", ascending=False)
+        .head(top_n)
+    )
+    if top_infra.empty:
+        return None
+
+    filtered = infra_summary.merge(
+        top_infra[["infra_id", "infra_label", "infra_type"]],
+        on=["infra_id", "infra_label", "infra_type"],
+        how="inner",
+    )
+
+    # Multiple infrastructure IDs can share the same display label, so collapse those
+    # rows before pivoting to keep one value per scenario/label pair.
+    filtered = (
+        filtered.groupby(["scenario_id", "infra_label"], as_index=False)
+        .agg(mean_crossing_count=("mean_crossing_count", "sum"))
+    )
+
+    matrix_df = filtered.pivot(
+        index="scenario_id",
+        columns="infra_label",
+        values="mean_crossing_count",
+    ).sort_index(axis=0)
+
+    ordered_labels = top_infra["infra_label"].drop_duplicates().tolist()
+    matrix_df = matrix_df.reindex(columns=ordered_labels)
+    if matrix_df.empty:
+        return None
+
+    matrix_values = matrix_df.to_numpy(dtype=float)
+    max_value = float(np.nanmax(matrix_values)) if np.isfinite(matrix_values).any() else 1.0
+    if max_value <= 0.0:
+        max_value = 1.0
+
+    fig_width = max(10.0, 0.45 * len(matrix_df.columns) + 3.0)
+    fig_height = max(4.5, 0.7 * len(matrix_df.index) + 2.0)
+    fig, ax = plt.subplots(figsize=(fig_width, fig_height))
+    heat = ax.imshow(matrix_values, cmap="Blues", aspect="auto", vmin=0.0, vmax=max_value)
+    colorbar = fig.colorbar(heat, ax=ax)
+    colorbar.set_label("Average crossings per replicate")
+
+    ax.set_xticks(np.arange(len(matrix_df.columns)))
+    ax.set_xticklabels(matrix_df.columns.astype(str), rotation=90)
+    ax.set_yticks(np.arange(len(matrix_df.index)))
+    ax.set_yticklabels(matrix_df.index.astype(str))
+    ax.set_xlabel("Infrastructure")
+    ax.set_ylabel("Scenario")
+    ax.set_title("Link and bridge usage heatmap for busiest infrastructure")
+
+    for row_idx in range(matrix_df.shape[0]):
+        for col_idx in range(matrix_df.shape[1]):
+            value = matrix_values[row_idx, col_idx]
+            if np.isfinite(value):
+                ax.text(col_idx, row_idx, f"{value:.0f}", ha="center", va="center", fontsize=7)
+
+    fig.tight_layout()
+    output_path = output_dir / "heatmap_infrastructure_crossings_by_scenario.png"
+    fig.savefig(output_path, dpi=200)
+    plt.close(fig)
+    return output_path
+
+
 def main() -> None:
     """Load experiment outputs, build the comparison tables, and save the resulting figures."""
     base_dir = Path(__file__).resolve().parents[1]
@@ -313,13 +486,24 @@ def main() -> None:
     img_dir = base_dir / "img"
 
     all_data = load_route_average_data(experiments_dir)
-    compare_df = compute_pct_increase_vs_baseline(all_data)
     output_paths = []
+    compare_df = compute_pct_increase_vs_baseline(all_data)
 
     # The average travel-time bar chart includes all scenarios in the loaded dataset.
     output_paths.append(plot_average_travel_time_per_scenario(all_data, img_dir))
     output_paths.extend(plot_route_increase_heatmaps(compare_df, img_dir, scenarios=sorted(compare_df["scenario_id"].unique().tolist())))
     output_paths.extend(plot_top10_increases(compare_df, img_dir, scenarios=sorted(compare_df["scenario_id"].unique().tolist())))
+
+    try:
+        infra_data = load_infrastructure_crossing_data(experiments_dir)
+    except FileNotFoundError:
+        infra_data = None
+
+    if infra_data is not None:
+        heatmap_path = plot_infrastructure_crossing_heatmap(infra_data, img_dir)
+        if heatmap_path is not None:
+            output_paths.append(heatmap_path)
+        output_paths.extend(plot_top_infrastructure_crossings_per_scenario(infra_data, img_dir))
 
     if len(output_paths) == 0:
         print("No plots generated. Check whether scenario 0 and the comparison scenarios share route pairs.")
