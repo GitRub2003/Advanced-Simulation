@@ -18,13 +18,11 @@ In this file there are several important folders.
 
 
 
-The first is the data folder. It contains the \_roads3 and BMMS\_overview CSV files, which are needed to produce the road network (network.csv) for the analysis. 
+The first is the data folder. It contains the \_roads3 and BMMS\_overview CSV files, which are needed to produce the road network (network.csv) for the analysis.
 
 
 
-The road network is produced by running 'run\_pipeline' , which runs 'Datra Preparation multiple roads', 'intersection creation', 'Intersections in the csv' 'N106 check', road\_selection' 'roadmap plotting with bridges' and 'side roads choosing'. More details on this are provided in the report.
-
-
+The road network is produced by running 'run\_pipeline' , which runs 'Data Preparation multiple roads', 'intersection creation', 'Intersections in the csv' 'N106 check', road\_selection' 'roadmap plotting with bridges' and 'side roads choosing'. More details on this are provided in the report.
 
 
 
@@ -32,15 +30,7 @@ The network\_model.csv file is then used by the model file in the model folder. 
 
 
 
-Finally, running the plot\_creation.py file in the Analysis folder uses the experiment outputs to generate visualizations, which are saved in the img folder.
-
-
-
-For the bonusassignments there are 2 more important files in the data folder. Compare\_intersection\_with\_shapefile.py evaluates the accuracy of the detected intersections, the script compares the 
-
-modeled locations against a reference road shapefile called roads.shp this outputs the intersection\_shapefile\_comparison.csv in the data folder
-
-
+Finally, there are 2 files important for the results visualisation . Plot bridge\_traffic\_by\_scenario plots  makes one network map per scenario plotting each bridge and their criticality on it.It also labels the top 5 busiest bridges in that scenario. Secondly, running plot\_experiment\_results which is visualising the more analysis oriented comparisons of the experiments, it uses the experiment outputs to generate visualizations, which are saved in the img folder.
 
 
 
