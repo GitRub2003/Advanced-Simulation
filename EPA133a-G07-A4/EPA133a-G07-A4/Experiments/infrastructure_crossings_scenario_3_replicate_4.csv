@@ -1,0 +1,3007 @@
+infra_id,infra_label,infra_type,road_name,infra_name,crossing_count,unique_truck_count
+3,Km post missing (LRP001),link,N1,Km post missing,77130,77130
+6,Km post missing (LRP003),link,N1,Km post missing,77128,77128
+5,Box culvert (LRP002A),bridge,N1,Box culvert,77127,77127
+4,Km post missing (LRP002),link,N1,Km post missing,77126,77126
+2,Intersection with Z1101 (LRPSB),link,N1,Intersection with Z1101,77125,77125
+1,Box Culvert (LRPSA),bridge,N1,Box Culvert,77123,77123
+8,Road to Narayanganj(R111) (LRP004A),link,N1,Road to Narayanganj(R111),77123,77123
+10,Km post missing (LRP006),link,N1,Km post missing,77119,77119
+9,Km post missing (LRP005),link,N1,Km post missing,77118,77118
+12,"R110,Left to Demra, Right to Narayanganj (LRP007A)",link,N1,"R110,Left to Demra, Right to Narayanganj",77117,77117
+17,Road to Sylhet (N2) (LRP009A),link,N1,Road to Sylhet (N2),77116,77116
+7,Km post missing (LRP004),link,N1,Km post missing,77115,77115
+11,Km post missing (LRP007),link,N1,Km post missing,77112,77112
+16,"Chittagong 251 km,Comilla 84 km (LRP009)",link,N1,"Chittagong 251 km,Comilla 84 km",77112,77112
+15,Bridge end (LRP008B),bridge,N1,Bridge end,77109,77109
+14,Kachpur bridge (LRP008A),bridge,N1,Kachpur bridge,77106,77106
+13,Km post missing (LRP008),link,N1,Km post missing,77105,77105
+1347,Sylhet 226 km (LRP005),link,N2,Sylhet 226 km,39608,39608
+1340,Sylhet 230 km (LRP001),link,N2,Sylhet 230 km,39604,39604
+1345,Road to Demra (R201) (LRP003A),link,N2,Road to Demra (R201),39604,39604
+1346,Information missing (LRP004),link,N2,Information missing,39602,39602
+1348,Km post broken (LRP006),link,N2,Km post broken,39602,39602
+1344,Km post missing (LRP003),link,N2,Km post missing,39601,39601
+1343,Bridge end (LRP002B),bridge,N2,Bridge end,39600,39600
+1341,Sylhet 229 km (LRP002),link,N2,Sylhet 229 km,39598,39598
+1342,Bridge start (LRP002A),bridge,N2,Bridge start,39598,39598
+1352,Km post missing (LRP009),link,N2,Km post missing,39598,39598
+1350,Km post broken (LRP007),link,N2,Km post broken,39597,39597
+1351,Sylhet 223 km (LRP008),link,N2,Sylhet 223 km,39597,39597
+1353,Km post broken (LRP010),link,N2,Km post broken,39596,39596
+1354,Km post broken (LRP011),link,N2,Km post broken,39596,39596
+1349,"Z1090 Left to Keyatpara,Right to Mahajanpur. (LRP006A)",link,N2,"Z1090 Left to Keyatpara,Right to Mahajanpur.",39595,39595
+1355,R202 to Rupganj (LRP011A),link,N2,R202 to Rupganj,39594,39594
+1356,Km post missing (LRP012),link,N2,Km post missing,39594,39594
+1357,Intersection with N105 (LRP012A),link,N2,Intersection with N105,39593,39593
+1358,Bridge start (LRP012B),bridge,N2,Bridge start,39593,39593
+1369,Bridge start (LRP016B),bridge,N2,Bridge start,36962,36962
+1366,Box culvert (LRP015A),bridge,N2,Box culvert,36869,36869
+1367,Sylhet 215 km (LRP016),link,N2,Sylhet 215 km,36867,36867
+1368,Box culvert (LRP016A),bridge,N2,Box culvert,36867,36867
+1362,Km post broken (LRP013),link,N2,Km post broken,36864,36864
+1564,Box culvert (LRP085A),bridge,N2,Box culvert,36864,36864
+1359,Bridge end (LRP012C),bridge,N2,Bridge end,36863,36863
+1546,Box culvert (LRP077A),bridge,N2,Box culvert,36863,36863
+1361,Box culvert (LRP012E),bridge,N2,Box culvert,36862,36862
+1364,Box culvert (LRP014A),bridge,N2,Box culvert,36862,36862
+1365,Km post missing (LRP015),link,N2,Km post missing,36861,36861
+1544,Bridge end (LRP076B),bridge,N2,Bridge end,36861,36861
+1545,Km post missing (LRP077),link,N2,Km post missing,36861,36861
+1360,R203 to Ramchandri (LRP012D),link,N2,R203 to Ramchandri,36860,36860
+1363,Km post missing (LRP014),link,N2,Km post missing,36860,36860
+1542,Km post missing (LRP076),link,N2,Km post missing,36860,36860
+1552,Sylhet 152 km (LRP080),link,N2,Sylhet 152 km,36860,36860
+1554,Km post missing (LRP081),link,N2,Km post missing,36860,36860
+1557,Sylhet 150 km (LRP082),link,N2,Sylhet 150 km,36860,36860
+1558,Box culvert (LRP082A),bridge,N2,Box culvert,36860,36860
+1565,Box culvert (LRP085B),bridge,N2,Box culvert,36860,36860
+1566,Sylhet 146 km (LRP086),link,N2,Sylhet 146 km,36860,36860
+1385,Sylhet 208 km (LRP023),link,N2,Sylhet 208 km,36859,36859
+1555,Box culvert (LRP081A),bridge,N2,Box culvert,36859,36859
+1562,Box culvert (LRP084A),bridge,N2,Box culvert,36858,36858
+1563,Sylhet 147 km (LRP085),link,N2,Sylhet 147 km,36858,36858
+1392,Sylhet 205 km (LRP026),link,N2,Sylhet 205 km,36857,36857
+1395,Road to Shakerchar (Z2038) (LRP028A),link,N2,Road to Shakerchar (Z2038),36857,36857
+1406,Box culvert (LRP032A),bridge,N2,Box culvert,36857,36857
+1540,Box culvert (LRP075B),bridge,N2,Box culvert,36857,36857
+1541,Box culvert (LRP075C),bridge,N2,Box culvert,36857,36857
+1553,Box culvert (LRP080A),bridge,N2,Box culvert,36857,36857
+1383,Sylhet 209 km (LRP022),link,N2,Sylhet 209 km,36856,36856
+1384,Box culvert (LRP022A),bridge,N2,Box culvert,36856,36856
+1386,Sylhet 207 km (LRP024),link,N2,Sylhet 207 km,36856,36856
+1393,Km post broken (LRP027),link,N2,Km post broken,36856,36856
+1404,Box culvert (LRP031C),bridge,N2,Box culvert,36856,36856
+1405,Km post missing (LRP032),link,N2,Km post missing,36856,36856
+1407,Sylhet 198 km (LRP033),link,N2,Sylhet 198 km,36856,36856
+1408,Box culvert (LRP033A),bridge,N2,Box culvert,36856,36856
+1409,Km post missing (LRP034),link,N2,Km post missing,36856,36856
+1410,R210 to Narsingdi (LRP034A),link,N2,R210 to Narsingdi,36856,36856
+1530,Km post missing (LRP073),link,N2,Km post missing,36856,36856
+1538,Km post missing (LRP075),link,N2,Km post missing,36856,36856
+1539,Box culvert (LRP075A),bridge,N2,Box culvert,36856,36856
+1543,Bridge start (LRP076A),bridge,N2,Bridge start,36856,36856
+1547,Sylhet 154 km (LRP078),link,N2,Sylhet 154 km,36856,36856
+1548,Box culvert (LRP078A),bridge,N2,Box culvert,36856,36856
+1556,Box culvert (LRP081B),bridge,N2,Box culvert,36856,36856
+1560,Sylhet 149 km (LRP083),link,N2,Sylhet 149 km,36856,36856
+1561,Sylhet 178 km (LRP084),link,N2,Sylhet 178 km,36856,36856
+1387,Box culvert (LRP024A),bridge,N2,Box culvert,36855,36855
+1403,Bridge end (LRP031B),bridge,N2,Bridge end,36855,36855
+1412,Sylhet 196 km (LRP035),link,N2,Sylhet 196 km,36855,36855
+1567,Road to Mainamoti(N102) (LRP086A),link,N2,Road to Mainamoti(N102),36855,36855
+1371,Km post missing (LRP017),link,N2,Km post missing,36854,36854
+1379,Box culvert (LRP020A),bridge,N2,Box culvert,36854,36854
+1381,Box culvert (LRP021A),bridge,N2,Box culvert,36854,36854
+1390,Box culvert (LRP025A),bridge,N2,Box culvert,36854,36854
+1402,Bridge start (LRP031A),bridge,N2,Bridge start,36854,36854
+1535,Start of Brahamanbaria road Division / Start of Brahamanbaria road Division (LRP074C),link,N2,Start of Brahamanbaria road Division / Start of Brahamanbaria road Division,36854,36854
+1550,Sylhet 153 km (LRP079),link,N2,Sylhet 153 km,36854,36854
+1378,Sylhet 211 km (LRP020),link,N2,Sylhet 211 km,36853,36853
+1394,Km post missing (LRP028),link,N2,Km post missing,36853,36853
+1399,Sylhet 201 km (LRP030),link,N2,Sylhet 201 km,36853,36853
+1400,Box culvert (LRP030A),bridge,N2,Box culvert,36853,36853
+1401,"R301 to Ghorashal, Z2047 to Ghorashal / Sylhet 200 km (LRP030B)",link,N2,"R301 to Ghorashal, Z2047 to Ghorashal / Sylhet 200 km",36853,36853
+1411,Box culvert (LRP034B),bridge,N2,Box culvert,36853,36853
+1534,Road to Nabinagar (Z2031) (LRP074B),link,N2,Road to Nabinagar (Z2031),36853,36853
+1549,Box culvert (LRP078B),bridge,N2,Box culvert,36853,36853
+1551,Box culvert (LRP079A),bridge,N2,Box culvert,36853,36853
+1559,Box culvert (LRP082B),bridge,N2,Box culvert,36853,36853
+1377,Box Culvert (LRP019B),bridge,N2,Box Culvert,36852,36852
+1382,Box culvert (LRP021B),bridge,N2,Box culvert,36852,36852
+1391,Box culvert (LRP025B),bridge,N2,Box culvert,36852,36852
+1397,Box culvert (LRP029A),bridge,N2,Box culvert,36852,36852
+1398,Box culvert (LRP029B),bridge,N2,Box culvert,36852,36852
+1413,Box culvert (LRP035A),bridge,N2,Box culvert,36852,36852
+1414,Box culvert (LRP035B),bridge,N2,Box culvert,36852,36852
+1415,Km post broken (LRP036),link,N2,Km post broken,36852,36852
+1527,Km post missing (LRP072),link,N2,Km post missing,36852,36852
+1529,Bhairab Bridge (LRP072B),bridge,N2,Bhairab Bridge,36852,36852
+1536,Box Culvert (LRP074D),bridge,N2,Box Culvert,36852,36852
+1537,Box Culvert (LRP074E),bridge,N2,Box Culvert,36852,36852
+1370,Bridge end (LRP016C),bridge,N2,Bridge end,36851,36851
+1375,Km post missing (LRP019),link,N2,Km post missing,36851,36851
+1389,Sylhet 206 km (LRP025),link,N2,Sylhet 206 km,36851,36851
+1416,Box culvert (LRP036A),bridge,N2,Box culvert,36851,36851
+1531,Bridge end (LRP073A),bridge,N2,Bridge end,36851,36851
+1532,Km post missing (LRP074),link,N2,Km post missing,36851,36851
+1533,Over pass (LRP074A),bridge,N2,Over pass,36851,36851
+1373,Sylhet 213 km (LRP018),link,N2,Sylhet 213 km,36850,36850
+1376,Start of Narsingdi road Division / Start of Narsingdi road Division (LRP019A),link,N2,Start of Narsingdi road Division / Start of Narsingdi road Division,36850,36850
+1380,Sylhet 210 km (LRP021),link,N2,Sylhet 210 km,36850,36850
+1396,Sylhet 202 km (LRP029),link,N2,Sylhet 202 km,36850,36850
+1425,Box culvert (LRP039A),bridge,N2,Box culvert,36850,36850
+1525,Road to Kishoreganj(R360) (LRP071A),link,N2,Road to Kishoreganj(R360),36850,36850
+1528,Box Culvert (LRP072A),bridge,N2,Box Culvert,36850,36850
+1374,Box culvert (LRP018A),bridge,N2,Box culvert,36849,36849
+1388,Box culvert (LRP024B),bridge,N2,Box culvert,36849,36849
+1424,Sylhet 192 km (LRP039),link,N2,Sylhet 192 km,36849,36849
+1517,Bridge start (LRP069A),bridge,N2,Bridge start,36849,36849
+1518,Bridge end/ Start of Kishoreganj road Division / Bridge end/ Start of Kishoreganj road Division (LRP069B),bridge,N2,Bridge end/ Start of Kishoreganj road Division / Bridge end/ Start of Kishoreganj road Division,36849,36849
+1521,Bridge end (LRP070B),bridge,N2,Bridge end,36849,36849
+1522,Box culvert (LRP070C),bridge,N2,Box culvert,36849,36849
+1526,Start of Narsingdi road Division / Start of Narsingdi road Division (LRP071B),link,N2,Start of Narsingdi road Division / Start of Narsingdi road Division,36849,36849
+1372,Box culvert (LRP017A),bridge,N2,Box culvert,36848,36848
+1419,Bridge end (LRP037B),bridge,N2,Bridge end,36848,36848
+1421,Bridge start (LRP038A),bridge,N2,Bridge start,36848,36848
+1422,Bridge end (LRP038B),bridge,N2,Bridge end,36848,36848
+1423,Box culvert (LRP038C),bridge,N2,Box culvert,36848,36848
+1428,Box culvert (LRP040A),bridge,N2,Box culvert,36848,36848
+1429,Box culvert (LRP040B),bridge,N2,Box culvert,36848,36848
+1515,Box culvert (LRP068B),bridge,N2,Box culvert,36848,36848
+1516,Sylhet 162 km (LRP069),link,N2,Sylhet 162 km,36848,36848
+1420,Km post missing (LRP038),link,N2,Km post missing,36847,36847
+1426,Box culvert (LRP039B),bridge,N2,Box culvert,36847,36847
+1427,Sylhet 191 km (LRP040),link,N2,Sylhet 191 km,36847,36847
+1438,Box culvert (LRP043A),bridge,N2,Box culvert,36847,36847
+1507,Km post broken (LRP066),link,N2,Km post broken,36847,36847
+1508,Box culvert (LRP066A),bridge,N2,Box culvert,36847,36847
+1509,Sylhet 164 km (LRP067),link,N2,Sylhet 164 km,36847,36847
+1512,Box culvert (LRP067C),bridge,N2,Box culvert,36847,36847
+1513,Sylhet 163 km (LRP068),link,N2,Sylhet 163 km,36847,36847
+1514,Box culvert (LRP068A),bridge,N2,Box culvert,36847,36847
+1519,Km post missing (LRP070),link,N2,Km post missing,36847,36847
+1520,Bridge start (LRP070A),bridge,N2,Bridge start,36847,36847
+1524,Km post missing (LRP071),link,N2,Km post missing,36847,36847
+1417,Km post missing (LRP037),link,N2,Km post missing,36846,36846
+1418,Bridge start (LRP037A),bridge,N2,Bridge start,36846,36846
+1431,Box culvert (LRP041A),bridge,N2,Box culvert,36846,36846
+1432,Box culvert (LRP041B),bridge,N2,Box culvert,36846,36846
+1434,Box culvert (LRP042A),bridge,N2,Box culvert,36846,36846
+1435,Box culvert (LRP042B),bridge,N2,Box culvert,36846,36846
+1510,Bridge start (LRP067A),bridge,N2,Bridge start,36846,36846
+1511,Bridge end (LRP067B),bridge,N2,Bridge end,36846,36846
+1523,Box culvert (LRP070D),bridge,N2,Box culvert,36846,36846
+1439,"R310 to Gazipur ,R211 to Shibpur (LRP043B)",link,N2,"R310 to Gazipur ,R211 to Shibpur",36845,36845
+1440,Box culvert (LRP043C),bridge,N2,Box culvert,36845,36845
+1441,Sylhet 187 km (LRP044),link,N2,Sylhet 187 km,36845,36845
+1500,Bridge end (LRP063B),bridge,N2,Bridge end,36845,36845
+1430,Km post missing (LRP041),link,N2,Km post missing,36844,36844
+1437,Km post missing (LRP043),link,N2,Km post missing,36843,36843
+1501,Sylhet 167 km (LRP064),link,N2,Sylhet 167 km,36843,36843
+1502,Box culvert (LRP064A),bridge,N2,Box culvert,36843,36843
+1503,Z2032 to Belabo (LRP064B),link,N2,Z2032 to Belabo,36843,36843
+1506,Sylhet 166 km (LRP065),link,N2,Sylhet 166 km,36843,36843
+1433,Sylhet 189 km (LRP042),link,N2,Sylhet 189 km,36842,36842
+1436,Box culvert (LRP042C),bridge,N2,Box culvert,36842,36842
+1468,Box culvert (LRP054A),bridge,N2,Box culvert,36842,36842
+1463,Sylhet 179 km (LRP052),link,N2,Sylhet 179 km,36841,36841
+1466,Box culvert (LRP053A),bridge,N2,Box culvert,36841,36841
+1467,Sylhet 177 km (LRP054),link,N2,Sylhet 177 km,36841,36841
+1498,Sylhet 168 km (LRP063),link,N2,Sylhet 168 km,36841,36841
+1499,Bridge start (LRP063A),bridge,N2,Bridge start,36841,36841
+1461,Sylhet 180 km (LRP051),link,N2,Sylhet 180 km,36840,36840
+1462,Box culvert (LRP051A),bridge,N2,Box culvert,36840,36840
+1470,Sylhet 176 km (LRP055),link,N2,Sylhet 176 km,36839,36839
+1472,Box culvert (LRP055B),bridge,N2,Box culvert,36839,36839
+1473,Sylhet 175 km (LRP056),link,N2,Sylhet 175 km,36839,36839
+1504,Bridge start (LRP064C),bridge,N2,Bridge start,36839,36839
+1505,Bridge end (LRP064D),bridge,N2,Bridge end,36839,36839
+1442,Box culvert (LRP044A),bridge,N2,Box culvert,36838,36838
+1443,Z2033 (LRP044B),link,N2,Z2033,36838,36838
+1445,Sylhet 186 km (LRP045),link,N2,Sylhet 186 km,36838,36838
+1446,Box culvert (LRP045A),bridge,N2,Box culvert,36838,36838
+1460,Box culvert (LRP050A),bridge,N2,Box culvert,36838,36838
+1465,Sylhet 178 km (LRP053),link,N2,Sylhet 178 km,36838,36838
+1469,Box culvert (LRP054B),bridge,N2,Box culvert,36838,36838
+1464,Box culvert (LRP052A),bridge,N2,Box culvert,36837,36837
+1471,Road to Belobo(Z2042) (LRP055A),link,N2,Road to Belobo(Z2042),36837,36837
+1476,Bridge end (LRP056C),bridge,N2,Bridge end,36837,36837
+1497,Bridge end (LRP062B),bridge,N2,Bridge end,36837,36837
+1455,Box culvert (LRP048A),bridge,N2,Box culvert,36836,36836
+1474,Box cuylvert (LRP056A),bridge,N2,Box cuylvert,36836,36836
+1475,Bridge start (LRP056B),bridge,N2,Bridge start,36836,36836
+1479,Box culvert (LRP057B),bridge,N2,Box culvert,36836,36836
+1481,Sylhet 173 km (LRP058),link,N2,Sylhet 173 km,36836,36836
+1495,Sylhet 169 km (LRP062),link,N2,Sylhet 169 km,36836,36836
+1496,Bridge start (LRP062A),bridge,N2,Bridge start,36836,36836
+1444,Box culvert (LRP044C),bridge,N2,Box culvert,36835,36835
+1447,Sylhet 185 km (LRP046),link,N2,Sylhet 185 km,36835,36835
+1457,Sylhet 182 km (LRP049),link,N2,Sylhet 182 km,36835,36835
+1477,Km post missing (LRP057),link,N2,Km post missing,36835,36835
+1478,Box culvert (LRP057A),bridge,N2,Box culvert,36835,36835
+1486,Sylhet 172 km (LRP059),link,N2,Sylhet 172 km,36835,36835
+1487,Box culvert (LRP059A),bridge,N2,Box culvert,36835,36835
+1488,Road to Rajpur (Z2041) (LRP059B),link,N2,Road to Rajpur (Z2041),36835,36835
+1489,Sylhet 171 km (LRP060),link,N2,Sylhet 171 km,36835,36835
+1494,Box culvert (LRP061A),bridge,N2,Box culvert,36835,36835
+1451,Sylhet 184 km (LRP047),link,N2,Sylhet 184 km,36834,36834
+1452,Box culvert (LRP047A),bridge,N2,Box culvert,36834,36834
+1480,Box culvert (LRP057C),bridge,N2,Box culvert,36834,36834
+1485,Bridge end (LRP058D),bridge,N2,Bridge end,36834,36834
+1492,Box culvert (LRP060C),bridge,N2,Box culvert,36834,36834
+1458,Box culvert (LRP049A),bridge,N2,Box culvert,36833,36833
+1459,Information missing (LRP050),link,N2,Information missing,36833,36833
+1493,Sylhet 170 km (LRP061),link,N2,Sylhet 170 km,36833,36833
+1448,Bridge start (LRP046A),bridge,N2,Bridge start,36832,36832
+1449,Bridge end (LRP046B),bridge,N2,Bridge end,36832,36832
+1450,Box culvert (LRP046C),bridge,N2,Box culvert,36832,36832
+1456,Box culvert (LRP048B),bridge,N2,Box culvert,36832,36832
+1482,Bridge start (LRP058A),bridge,N2,Bridge start,36832,36832
+1483,Bridge end (LRP058B),bridge,N2,Bridge end,36832,36832
+1484,Bridge start (LRP058C),bridge,N2,Bridge start,36832,36832
+1453,Box culvert (LRP047B),bridge,N2,Box culvert,36831,36831
+1454,Sylhet 183 km (LRP048),link,N2,Sylhet 183 km,36831,36831
+1491,Bridge end (LRP060B),bridge,N2,Bridge end,36830,36830
+1490,Bridge start (LRP060A),bridge,N2,Bridge start,36829,36829
+23,Box culvert (LRP011A),bridge,N1,Box culvert,36568,36568
+20,Box culvert (LRP010B),bridge,N1,Box culvert,36567,36567
+21,Box culvert (LRP010C),bridge,N1,Box culvert,36567,36567
+22,Km post missing (LRP011),link,N1,Km post missing,36567,36567
+18,Km post missing (LRP010),link,N1,Km post missing,36565,36565
+28,Right to Syedpur (R113) left to Joydebpur N105) (LRP012C),link,N1,Right to Syedpur (R113) left to Joydebpur N105),36565,36565
+24,Box culvert (LRP011B),bridge,N1,Box culvert,36564,36564
+25,"Chittagong 248 km,Comilla 81 km (LRP012)",link,N1,"Chittagong 248 km,Comilla 81 km",36564,36564
+26,Bridge start (LRP012A),bridge,N1,Bridge start,36564,36564
+27,Bridge end (LRP012B),bridge,N1,Bridge end,36564,36564
+19,Box culvert (LRP010A),bridge,N1,Box culvert,36563,36563
+159,Km post Missing (LRP069),link,N1,Km post Missing,33257,33257
+157,Km post Missing (LRP068),link,N1,Km post Missing,33256,33256
+156,Ctg 191 km (LRP067),link,N1,Ctg 191 km,33254,33254
+107,Box culvert (LRP039A),bridge,N1,Box culvert,33253,33253
+158,Box culvert (LRP068A),bridge,N1,Box culvert,33253,33253
+175,Km post missing (LRP078),link,N1,Km post missing,33253,33253
+173,Km post missing (LRP077),link,N1,Km post missing,33252,33252
+176,Km post missing (LRP079),link,N1,Km post missing,33252,33252
+178,Km post missing (LRP080),link,N1,Km post missing,33252,33252
+99,Km post missing (LRP037),link,N1,Km post missing,33251,33251
+160,Km post Missing (LRP070),link,N1,Km post Missing,33251,33251
+180,Km post missing (LRP082),link,N1,Km post missing,33251,33251
+96,Box culvert (LRP035C),bridge,N1,Box culvert,33250,33250
+98,Daudkandi bridge (LRP036A),bridge,N1,Daudkandi bridge,33250,33250
+168,Km post missing (LRP074),link,N1,Km post missing,33250,33250
+169,Km post missing (LRP075),link,N1,Km post missing,33250,33250
+171,Ctg 184 km (LRP076),link,N1,Ctg 184 km,33250,33250
+179,Km post missing (LRP081),link,N1,Km post missing,33250,33250
+184,Km post missing (LRP084),link,N1,Km post missing,33250,33250
+185,Road to Brahmanbaria(N102) (LRP084A),link,N1,Road to Brahmanbaria(N102),33250,33250
+53,Km post missing (LRP021),link,N1,Km post missing,33249,33249
+97,Km post missing (LRP036),link,N1,Km post missing,33249,33249
+101,Daudkandi bridge (LRP038A),bridge,N1,Daudkandi bridge,33249,33249
+102,Start of Comilla road Division / Start of Comilla road Division (LRP038B),link,N1,Start of Comilla road Division / Start of Comilla road Division,33249,33249
+103,Road to Matlab (Z1062) (LRP038C),link,N1,Road to Matlab (Z1062),33249,33249
+104,Bridge start (LRP038D),bridge,N1,Bridge start,33249,33249
+105,Bridge end (LRP038E),bridge,N1,Bridge end,33249,33249
+106,Km post missing (LRP039),link,N1,Km post missing,33249,33249
+147,Km post Missing (LRP062),link,N1,Km post Missing,33249,33249
+152,Km post Missing (LRP064),link,N1,Km post Missing,33249,33249
+172,Box culvert (LRP076A),bridge,N1,Box culvert,33249,33249
+177,Box culvert (LRP079A),bridge,N1,Box culvert,33249,33249
+181,Box culvert (LRP082A),bridge,N1,Box culvert,33249,33249
+182,Km post missing (LRP083),link,N1,Km post missing,33249,33249
+49,Km post missing (LRP020),link,N1,Km post missing,33248,33248
+54,Box culvert (LRP021A),bridge,N1,Box culvert,33248,33248
+95,Bridge end (LRP035B),bridge,N1,Bridge end,33248,33248
+143,Km post Missing (LRP059),link,N1,Km post Missing,33248,33248
+146,Km post Missing (LRP061),link,N1,Km post Missing,33248,33248
+148,Km post Missing (LRP063),link,N1,Km post Missing,33248,33248
+149,"Z1017, Road to Companiganj (LRP063A)",link,N1,"Z1017, Road to Companiganj",33248,33248
+153,Km post Missing (LRP065),link,N1,Km post Missing,33248,33248
+154,Km post Missing (LRP066),link,N1,Km post Missing,33248,33248
+161,Road to Debiduar (Z1008) (LRP070A),link,N1,Road to Debiduar (Z1008),33248,33248
+162,Road to Jhalam (Z1022) (LRP070B),link,N1,Road to Jhalam (Z1022),33248,33248
+163,Ctg 188 km (LRP071),link,N1,Ctg 188 km,33248,33248
+167,Ctg 187 km (LRP073),link,N1,Ctg 187 km,33248,33248
+170,Box culvert (LRP075A),bridge,N1,Box culvert,33248,33248
+174,Road to Khangsanagar (Z1219) left road to Barua Z1028 right (LRP077A),link,N1,Road to Khangsanagar (Z1219) left road to Barua Z1028 right,33248,33248
+29,"Ctg 247 km,Comilla 80 km (LRP013)",link,N1,"Ctg 247 km,Comilla 80 km",33247,33247
+30,Box culvert (LRP013A),bridge,N1,Box culvert,33247,33247
+55,"Ctg 238 km,Comilla 71 km (LRP022)",link,N1,"Ctg 238 km,Comilla 71 km",33247,33247
+56,Bridge start (LRP022A),bridge,N1,Bridge start,33247,33247
+62,Km post missing (LRP024),link,N1,Km post missing,33247,33247
+90,Bridge end (LRP033B),bridge,N1,Bridge end,33247,33247
+92,Km post missing (LRP034),link,N1,Km post missing,33247,33247
+100,Km post missing (LRP038),link,N1,Km post missing,33247,33247
+108,Km post missing (LRP040),link,N1,Km post missing,33247,33247
+150,Box culvert (LRP063B),bridge,N1,Box culvert,33247,33247
+151,Box culvert (LRP063C),bridge,N1,Box culvert,33247,33247
+155,Box culvert (LRP066A),bridge,N1,Box culvert,33247,33247
+166,Bridge end (LRP072B),bridge,N1,Bridge end,33247,33247
+183,Box culvert (LRP083A),bridge,N1,Box culvert,33247,33247
+51,Bridge start (LRP020B),bridge,N1,Bridge start,33246,33246
+52,Bridge end (LRP020C),bridge,N1,Bridge end,33246,33246
+57,Bridge end (LRP022B),bridge,N1,Bridge end,33246,33246
+58,Bridge start (LRP022C),bridge,N1,Bridge start,33246,33246
+87,Box culvert (LRP032A),bridge,N1,Box culvert,33246,33246
+91,Box culvert (LRP033C),bridge,N1,Box culvert,33246,33246
+109,Km post missing (LRP041),link,N1,Km post missing,33246,33246
+110,Ctg 214 km (LRP042),link,N1,Ctg 214 km,33246,33246
+164,"Ctg 188 km,Comilla 20 km (LRP072)",link,N1,"Ctg 188 km,Comilla 20 km",33246,33246
+165,Bridge start (LRP072A),bridge,N1,Bridge start,33246,33246
+31,Km post missing (LRP014),link,N1,Km post missing,33245,33245
+33,Box culvert (LRP015A),bridge,N1,Box culvert,33245,33245
+59,Bridge end (LRP022D),bridge,N1,Bridge end,33245,33245
+85,Bridge end (LRP031C),bridge,N1,Bridge end,33245,33245
+88,"Ctg 227 km,Comilla 60 km (LRP033)",link,N1,"Ctg 227 km,Comilla 60 km",33245,33245
+93,Km post missing (LRP035),link,N1,Km post missing,33245,33245
+94,Bridge start (LRP035A),bridge,N1,Bridge start,33245,33245
+141,Km post Missing (LRP058),link,N1,Km post Missing,33245,33245
+142,Box culvert (LRP058A),bridge,N1,Box culvert,33245,33245
+34,Km post missing (LRP016),link,N1,Km post missing,33244,33244
+37,Bridge end (LRP016C),bridge,N1,Bridge end,33244,33244
+38,Km post missing (LRP017),link,N1,Km post missing,33244,33244
+46,Km post missing (LRP019),link,N1,Km post missing,33244,33244
+47,Box culvert (LRP019A),bridge,N1,Box culvert,33244,33244
+48,Box culvert (LRP019B),bridge,N1,Box culvert,33244,33244
+50,Left to Sonargaon (Z1089) Right to Morgrapara ( Z1066) (LRP020A),link,N1,Left to Sonargaon (Z1089) Right to Morgrapara ( Z1066),33244,33244
+61,Meghna  bridge (LRP023A),bridge,N1,Meghna  bridge,33244,33244
+86,"Ctg 228 km,Comilla 61 km (LRP032)",link,N1,"Ctg 228 km,Comilla 61 km",33244,33244
+113,Km post broken (LRP043),link,N1,Km post broken,33244,33244
+114,Km post Missing (LRP044),link,N1,Km post Missing,33244,33244
+32,Km post missing (LRP015),link,N1,Km post missing,33243,33243
+39,Bridge start (LRP017A),bridge,N1,Bridge start,33243,33243
+40,Bridge end (LRP017B),bridge,N1,Bridge end,33243,33243
+45,Bridge end (LRP018B),bridge,N1,Bridge end,33243,33243
+60,Km post missing (LRP023),link,N1,Km post missing,33243,33243
+89,Bridge start (LRP033A),bridge,N1,Bridge start,33243,33243
+116,Box culvert (LRP045A),bridge,N1,Box culvert,33243,33243
+144,Km post Missing (LRP060),link,N1,Km post Missing,33243,33243
+145,Box culvert (LRP060A),bridge,N1,Box culvert,33243,33243
+35,Road to MinanbariZ1061) (LRP016A),link,N1,Road to MinanbariZ1061),33242,33242
+41,Bridge start (LRP017C),bridge,N1,Bridge start,33242,33242
+42,Bridge end (LRP017D),bridge,N1,Bridge end,33242,33242
+43,Km post missing (LRP018),link,N1,Km post missing,33242,33242
+82,"Ctg 229 km,Comilla 62 km (LRP031)",link,N1,"Ctg 229 km,Comilla 62 km",33242,33242
+83,Road to Gazara (Z1063) (LRP031A),link,N1,Road to Gazara (Z1063),33242,33242
+111,Bridge start (LRP042A),bridge,N1,Bridge start,33242,33242
+112,Bridge end (LRP042B),bridge,N1,Bridge end,33242,33242
+115,Km post Missing (LRP045),link,N1,Km post Missing,33242,33242
+119,"Z1053, Road to Homna (LRP046B)",link,N1,"Z1053, Road to Homna",33242,33242
+140,Km post Missing (LRP057),link,N1,Km post Missing,33242,33242
+36,Langalbandhu bridge (LRP016B),bridge,N1,Langalbandhu bridge,33241,33241
+44,Bridge start (LRP018A),bridge,N1,Bridge start,33241,33241
+63,Bridge end (LRP024A),bridge,N1,Bridge end,33241,33241
+64,Km post missing (LRP025),link,N1,Km post missing,33241,33241
+117,Km post Missing (LRP046),link,N1,Km post Missing,33241,33241
+118,"Z1402, road to Pennai (LRP046A)",link,N1,"Z1402, road to Pennai",33241,33241
+69,Bridge start (LRP027A),bridge,N1,Bridge start,33240,33240
+70,Km post missing (LRP028),link,N1,Km post missing,33240,33240
+71,Bridge end (LRP028A),bridge,N1,Bridge end,33240,33240
+77,Km post missing (LRP030),link,N1,Km post missing,33240,33240
+78,Bridge start (LRP030A),bridge,N1,Bridge start,33240,33240
+84,Bridge start (LRP031B),bridge,N1,Bridge start,33240,33240
+66,Box culvert (LRP026A),bridge,N1,Box culvert,33239,33239
+68,Km post missing (LRP027),link,N1,Km post missing,33239,33239
+76,Bridge end (LRP029B),bridge,N1,Bridge end,33239,33239
+79,Bridge end (LRP030B),bridge,N1,Bridge end,33239,33239
+80,Bridge start (LRP030C),bridge,N1,Bridge start,33239,33239
+81,Bridge end (LRP030D),bridge,N1,Bridge end,33239,33239
+121,Km post Missing (LRP047),link,N1,Km post Missing,33239,33239
+125,Bridge end (LRP048B),bridge,N1,Bridge end,33239,33239
+139,"Z1042, road to Bancharampur (LRP056C)",link,N1,"Z1042, road to Bancharampur",33239,33239
+65,Km post missing (LRP026),link,N1,Km post missing,33238,33238
+72,Bridge start (LRP028B),bridge,N1,Bridge start,33238,33238
+133,Km post Missing (LRP053),link,N1,Km post Missing,33238,33238
+73,Bridge end (LRP028C),bridge,N1,Bridge end,33237,33237
+74,Information missing (LRP029),link,N1,Information missing,33237,33237
+126,Km post Missing (LRP049),link,N1,Km post Missing,33237,33237
+134,Km post Missing (LRP054),link,N1,Km post Missing,33237,33237
+135,Km post Missing (LRP055),link,N1,Km post Missing,33237,33237
+138,Bridge end (LRP056B),bridge,N1,Bridge end,33237,33237
+67,Box culvert (LRP026B),bridge,N1,Box culvert,33236,33236
+75,Bridge start (LRP029A),bridge,N1,Bridge start,33236,33236
+120,Box culvert (LRP046C),bridge,N1,Box culvert,33236,33236
+122,Z1044 (LRP047A),link,N1,Z1044,33236,33236
+123,Km post Missing (LRP048),link,N1,Km post Missing,33236,33236
+124,Bridge start (LRP048A),bridge,N1,Bridge start,33236,33236
+127,Km post Missing (LRP050),link,N1,Km post Missing,33236,33236
+130,Km post Missing (LRP051),link,N1,Km post Missing,33236,33236
+136,Km post Missing (LRP056),link,N1,Km post Missing,33236,33236
+137,Bridge start (LRP056A),bridge,N1,Bridge start,33236,33236
+128,Bridge start (LRP050A),bridge,N1,Bridge start,33235,33235
+129,Bridge end (LRP050B),bridge,N1,Bridge end,33235,33235
+132,Box culvert (LRP052A),bridge,N1,Box culvert,33234,33234
+131,Km post Missing (LRP052),link,N1,Km post Missing,33232,33232
+1572,Sylhet 144 km (LRP088),link,N2,Sylhet 144 km,28180,28180
+1574,Sylhet 143 km (LRP089),link,N2,Sylhet 143 km,28180,28180
+1568,Km post missing (LRP087),link,N2,Km post missing,28179,28179
+1569,Road to Nasimagar(R220) (LRP087A),link,N2,Road to Nasimagar(R220),28179,28179
+1570,Bridge start (LRP087B),bridge,N2,Bridge start,28179,28179
+1571,Bridge end (LRP087C),bridge,N2,Bridge end,28179,28179
+1573,Box culvert (LRP088A),bridge,N2,Box culvert,28179,28179
+1575,Bridge start (LRP089A),bridge,N2,Bridge start,28178,28178
+1576,Bridge end (LRP089B),bridge,N2,Bridge end,28178,28178
+1577,Sylhet 142 km (LRP090),link,N2,Sylhet 142 km,28178,28178
+1588,Box culvert (LRP093A),bridge,N2,Box culvert,28178,28178
+1582,Bridge end (LRP091B),bridge,N2,Bridge end,28177,28177
+1584,Box culvert (LRP092A),bridge,N2,Box culvert,28177,28177
+1587,Sylhet 139 km (LRP093),link,N2,Sylhet 139 km,28177,28177
+1583,Sylhet 140 km (LRP092),link,N2,Sylhet 140 km,28176,28176
+1586,Bridge end (LRP092C),bridge,N2,Bridge end,28176,28176
+1585,Bridge start (LRP092B),bridge,N2,Bridge start,28175,28175
+1589,Sylhet 138 km (LRP094),link,N2,Sylhet 138 km,28175,28175
+1578,Bridge start (LRP090A),bridge,N2,Bridge start,28173,28173
+1579,Bridge end (LRP090B),bridge,N2,Bridge end,28173,28173
+1580,Sylhet 141 km (LRP091),link,N2,Sylhet 141 km,28173,28173
+1581,Bridge start (LRP091A),bridge,N2,Bridge start,28173,28173
+1590,Bridge start (LRP094A),bridge,N2,Bridge start,28173,28173
+1591,Bridge end (LRP094B),bridge,N2,Bridge end,28173,28173
+1592,Bridge start (LRP094C),bridge,N2,Bridge start,28173,28173
+1593,Bridge end (LRP094D),bridge,N2,Bridge end,28173,28173
+1594,Km post missing (LRP095),link,N2,Km post missing,28173,28173
+1608,Sylhet 132 km (LRP100),link,N2,Sylhet 132 km,28171,28171
+1595,Box culvert (LRP095A),bridge,N2,Box culvert,28170,28170
+1596,Sylhet 136 km (LRP096),link,N2,Sylhet 136 km,28170,28170
+1598,Sylhet 135 km (LRP097),link,N2,Sylhet 135 km,28170,28170
+1599,Box culvert (LRP097A),bridge,N2,Box culvert,28170,28170
+1604,Bridge end (LRP098B),bridge,N2,Bridge end,28170,28170
+1601,Bridge end (LRP097C),bridge,N2,Bridge end,28169,28169
+1602,Km post missing (LRP098),link,N2,Km post missing,28169,28169
+1607,Bridge end (LRP099B),bridge,N2,Bridge end,28169,28169
+1605,Km post missing (LRP099),link,N2,Km post missing,28168,28168
+1606,Bridge start (LRP099A),bridge,N2,Bridge start,28168,28168
+1609,Box culvert (LRP100A),bridge,N2,Box culvert,28168,28168
+1610,Sylhet 131 km (LRP101),link,N2,Sylhet 131 km,28168,28168
+1597,Box culvert (LRP096A),bridge,N2,Box culvert,28167,28167
+1600,Bridge start (LRP097B),bridge,N2,Bridge start,28167,28167
+1603,Bridge start (LRP098A),bridge,N2,Bridge start,28166,28166
+1611,Bridge start (LRP101A),bridge,N2,Bridge start,28166,28166
+1612,Bridge end (LRP101B),bridge,N2,Bridge end,28166,28166
+1613,Sylhet 130 km (LRP102),link,N2,Sylhet 130 km,28166,28166
+1614,Box culvert (LRP102A),bridge,N2,Box culvert,28165,28165
+1615,Box culvert (LRP102B),bridge,N2,Box culvert,28164,28164
+1616,Sylhet 129 km (LRP103),link,N2,Sylhet 129 km,28164,28164
+1618,Sylhet 128 km (LRP104),link,N2,Sylhet 128 km,28162,28162
+1619,Box culvert (LRP104A),bridge,N2,Box culvert,28162,28162
+1623,Km post missing (LRP106),link,N2,Km post missing,28162,28162
+1617,Box culvert (LRP103A),bridge,N2,Box culvert,28161,28161
+1621,Sylhet 127 km (LRP105),link,N2,Sylhet 127 km,28161,28161
+1628,Information missing (LRP108),link,N2,Information missing,28161,28161
+1632,Box culvert (LRP109A),bridge,N2,Box culvert,28161,28161
+1633,Sylhet 122 km (LRP110),link,N2,Sylhet 122 km,28161,28161
+1620,Box culvert (LRP104B),bridge,N2,Box culvert,28160,28160
+1635,Bridge end (LRP110B),bridge,N2,Bridge end,28160,28160
+1622,Box culvert (LRP105A),bridge,N2,Box culvert,28159,28159
+1625,Sylhet 125 km (LRP107),link,N2,Sylhet 125 km,28159,28159
+1626,Box culvert (LRP107A),bridge,N2,Box culvert,28159,28159
+1630,Bridge end (LRP108B),bridge,N2,Bridge end,28159,28159
+1631,Km post missing (LRP109),link,N2,Km post missing,28159,28159
+1634,Bridge start (LRP110A),bridge,N2,Bridge start,28159,28159
+1639,Sylhet 120 km (LRP112),link,N2,Sylhet 120 km,28159,28159
+1627,Box culvert (LRP107B),bridge,N2,Box culvert,28158,28158
+1629,Bridge start/ Start of Habiganj road Division / Bridge start/ Start of Habiganj road Division (LRP108A),bridge,N2,Bridge start/ Start of Habiganj road Division / Bridge start/ Start of Habiganj road Division,28158,28158
+1638,Bridge end (LRP111B),bridge,N2,Bridge end,28158,28158
+1643,Bridge end (LRP113B),bridge,N2,Bridge end,28157,28157
+1644,Sylhet 118 km (LRP114),link,N2,Sylhet 118 km,28157,28157
+1624,Box culvert (LRP106A),bridge,N2,Box culvert,28156,28156
+1636,Sylhet 121 km (LRP111),link,N2,Sylhet 121 km,28156,28156
+1637,Bridge start (LRP111A),bridge,N2,Bridge start,28155,28155
+1640,Box culvert (LRP112A),bridge,N2,Box culvert,28155,28155
+1641,Sylhet 119 km (LRP113),link,N2,Sylhet 119 km,28155,28155
+1646,Bridge end (LRP114B),bridge,N2,Bridge end,28155,28155
+1649,Bridge end (LRP115B),bridge,N2,Bridge end,28155,28155
+1645,Bridge start (LRP114A),bridge,N2,Bridge start,28154,28154
+1647,Sylhet 117 km (LRP115),link,N2,Sylhet 117 km,28154,28154
+1648,Bridge start (LRP115A),bridge,N2,Bridge start,28154,28154
+1650,Sylhet 116 km (LRP116),link,N2,Sylhet 116 km,28154,28154
+1651,Bridge start (LRP116A),bridge,N2,Bridge start,28154,28154
+1652,Bridge end (LRP116B),bridge,N2,Bridge end,28154,28154
+1642,Bridge start (LRP113A),bridge,N2,Bridge start,28153,28153
+1653,Sylhet 115 km (LRP117),link,N2,Sylhet 115 km,28150,28150
+1654,Box culvert (LRP117A),bridge,N2,Box culvert,28150,28150
+1655,Road to Chunarughat(N204) (LRP117B),link,N2,Road to Chunarughat(N204),28147,28147
+196,Km post missing (LRP090),link,N1,Km post missing,27084,27084
+198,Km post missing (LRP092),link,N1,Km post missing,27084,27084
+202,Rail Road Crossing (LRP093C),link,N1,Rail Road Crossing,27084,27084
+195,Cross Road with Z1052 (LRP089C),link,N1,Cross Road with Z1052,27083,27083
+197,Ctg 170 km (LRP091),link,N1,Ctg 170 km,27083,27083
+201,Bridge end (LRP093B),bridge,N1,Bridge end,27083,27083
+204,Left to Comilla Right to Noakhali (LRP094A),link,N1,Left to Comilla Right to Noakhali,27083,27083
+191,Cross road Z1029 (LRP088A),link,N1,Cross road Z1029,27082,27082
+192,Km post missing (LRP089),link,N1,Km post missing,27082,27082
+207,Bridge end (LRP095B),bridge,N1,Bridge end,27082,27082
+335,Intersection with N104 / Km post missing (LRP148A),link,N1,Intersection with N104 / Km post missing,27082,27082
+193,Bridge start (LRP089A),bridge,N1,Bridge start,27081,27081
+194,Bridge end (LRP089B),bridge,N1,Bridge end,27081,27081
+199,Ctg 168 km (LRP093),link,N1,Ctg 168 km,27081,27081
+200,Bridge start (LRP093A),bridge,N1,Bridge start,27081,27081
+203,Km post missing (LRP094),link,N1,Km post missing,27081,27081
+205,"Ctg 66 km,Feni 52 km (LRP095)",link,N1,"Ctg 66 km,Feni 52 km",27081,27081
+206,Bridge start (LRP095A),bridge,N1,Bridge start,27081,27081
+188,Km post missing (LRP086),link,N1,Km post missing,27080,27080
+332,Box culvert (LRP147A),bridge,N1,Box culvert,27080,27080
+333,Box culvert (LRP147B),bridge,N1,Box culvert,27080,27080
+189,Km post missing (LRP087),link,N1,Km post missing,27079,27079
+190,Km post missing (LRP088),link,N1,Km post missing,27079,27079
+208,Km post missing (LRP096),link,N1,Km post missing,27079,27079
+250,Box culvert (LRP114A),bridge,N1,Box culvert,27079,27079
+253,Km post missing (LRP116),link,N1,Km post missing,27079,27079
+276,Km post missing (LRP124),link,N1,Km post missing,27079,27079
+330,Road to Biroli (Z1030) (LRP146A),link,N1,Road to Biroli (Z1030),27079,27079
+331,"Ctg 98 km,Feni 2 km (LRP147)",link,N1,"Ctg 98 km,Feni 2 km",27079,27079
+187,Km post missing (LRP085),link,N1,Km post missing,27078,27078
+251,Km post missing (LRP115),link,N1,Km post missing,27078,27078
+259,Box culvert (LRP118A),bridge,N1,Box culvert,27078,27078
+334,Km post missing (LRP148),link,N1,Km post missing,27078,27078
+186,Box culvert (LRP084B),bridge,N1,Box culvert,27077,27077
+252,Box culvert (LRP115A),bridge,N1,Box culvert,27077,27077
+260,Km post missing (LRP119),link,N1,Km post missing,27077,27077
+261,Box culvert (LRP119A),bridge,N1,Box culvert,27077,27077
+266,Box culvert (LRP120A),bridge,N1,Box culvert,27077,27077
+274,Km post missing (LRP123),link,N1,Km post missing,27077,27077
+262,Bridge start (LRP119B),bridge,N1,Bridge start,27076,27076
+263,Bridge end (LRP119C),bridge,N1,Bridge end,27076,27076
+273,Box culvert (LRP122B),bridge,N1,Box culvert,27076,27076
+275,Box culvert (LRP123A),bridge,N1,Box culvert,27076,27076
+277,Box culvert (LRP124A),bridge,N1,Box culvert,27076,27076
+209,Ctg 164 km (LRP097),link,N1,Ctg 164 km,27075,27075
+229,Km post missing (LRP106),link,N1,Km post missing,27075,27075
+236,Km post missing (LRP109),link,N1,Km post missing,27075,27075
+245,Box culvert (LRP112A),bridge,N1,Box culvert,27075,27075
+246,Km post missing (LRP113),link,N1,Km post missing,27075,27075
+247,Bridge start (LRP113A),bridge,N1,Bridge start,27075,27075
+248,Bridge end (LRP113B),bridge,N1,Bridge end,27075,27075
+264,Box culvert (LRP119D),bridge,N1,Box culvert,27075,27075
+265,Km post missing (LRP120),link,N1,Km post missing,27075,27075
+267,Box culvert (LRP120B),bridge,N1,Box culvert,27075,27075
+268,Km post missing (LRP121),link,N1,Km post missing,27075,27075
+270,Box culvert (LRP121B),bridge,N1,Box culvert,27075,27075
+272,Road to Bangadda (Z1045) (LRP122A),link,N1,Road to Bangadda (Z1045),27075,27075
+278,Km post missing (LRP125),link,N1,Km post missing,27075,27075
+282,Bridge end (LRP126B),bridge,N1,Bridge end,27075,27075
+329,"Ctg 99 km,Feni 3 km (LRP146)",link,N1,"Ctg 99 km,Feni 3 km",27075,27075
+215,Km post missing (LRP100),link,N1,Km post missing,27074,27074
+227,Bridge start (LRP105A),bridge,N1,Bridge start,27074,27074
+228,Bridge end (LRP105B),bridge,N1,Bridge end,27074,27074
+231,Km post missing (LRP107),link,N1,Km post missing,27074,27074
+239,Bridge end (LRP110B),bridge,N1,Bridge end,27074,27074
+249,Km post missing (LRP114),link,N1,Km post missing,27074,27074
+254,Km post missing (LRP117),link,N1,Km post missing,27074,27074
+257,Box culvert (LRP117C),bridge,N1,Box culvert,27074,27074
+269,Box culvert (LRP121A),bridge,N1,Box culvert,27074,27074
+271,Km post missing (LRP122),link,N1,Km post missing,27074,27074
+327,Km post missing (LRP145),link,N1,Km post missing,27074,27074
+328,Box culvert (LRP145A),bridge,N1,Box culvert,27074,27074
+223,Km post missing (LRP103),link,N1,Km post missing,27073,27073
+230,Box culvert (LRP106A),bridge,N1,Box culvert,27073,27073
+232,Km post missing (LRP108),link,N1,Km post missing,27073,27073
+237,Km post missing (LRP110),link,N1,Km post missing,27073,27073
+238,Bridge start (LRP110A),bridge,N1,Bridge start,27073,27073
+242,Bridge end (LRP111B),bridge,N1,Bridge end,27073,27073
+244,Km post missing (LRP112),link,N1,Km post missing,27073,27073
+255,Box culvert (LRP117A),bridge,N1,Box culvert,27073,27073
+256,Box culvert (LRP117B),bridge,N1,Box culvert,27073,27073
+279,Box culvert (LRP125A),bridge,N1,Box culvert,27073,27073
+280,Km post missing (LRP126),link,N1,Km post missing,27073,27073
+281,Bridge start (LRP126A),bridge,N1,Bridge start,27073,27073
+283,Km post missing (LRP127),link,N1,Km post missing,27073,27073
+285,Ctg 133 km (LRP128),link,N1,Ctg 133 km,27073,27073
+214,Bridge end (LRP099B),bridge,N1,Bridge end,27072,27072
+220,Km post missing (LRP102),link,N1,Km post missing,27072,27072
+225,Box culvert (LRP104A),bridge,N1,Box culvert,27072,27072
+234,Bridge end (LRP108B),bridge,N1,Bridge end,27072,27072
+235,Road to Harishchar (Z1046) (LRP108C),link,N1,Road to Harishchar (Z1046),27072,27072
+243,Box culvert (LRP111C),bridge,N1,Box culvert,27072,27072
+258,Km post missing (LRP118),link,N1,Km post missing,27072,27072
+216,Km post missing (LRP101),link,N1,Km post missing,27071,27071
+217,Box culvert (LRP101A),bridge,N1,Box culvert,27071,27071
+224,Km post missing (LRP104),link,N1,Km post missing,27071,27071
+226,"Ctg 156 km,Feni 43 km (LRP105)",link,N1,"Ctg 156 km,Feni 43 km",27071,27071
+233,Bridge start (LRP108A),bridge,N1,Bridge start,27071,27071
+240,Km post missing (LRP111),link,N1,Km post missing,27071,27071
+241,Bridge start (LRP111A),bridge,N1,Bridge start,27071,27071
+218,Box culvert (LRP101B),bridge,N1,Box culvert,27070,27070
+219,Box culvert (LRP101C),bridge,N1,Box culvert,27070,27070
+284,Box culvert (LRP127A),bridge,N1,Box culvert,27070,27070
+325,Box culvert (LRP144A),bridge,N1,Box culvert,27070,27070
+326,Rail Road Crossing (LRP144B),link,N1,Rail Road Crossing,27070,27070
+221,Bridge start (LRP102A),bridge,N1,Bridge start,27069,27069
+222,Bridge end (LRP102B),bridge,N1,Bridge end,27069,27069
+210,Ctg 163 km (LRP098),link,N1,Ctg 163 km,27068,27068
+211,Box culvert (LRP098A),bridge,N1,Box culvert,27068,27068
+212,Ctg 162 km (LRP099),link,N1,Ctg 162 km,27068,27068
+213,Bridge start (LRP099A),bridge,N1,Bridge start,27068,27068
+323,Z1031 (LRP143A),link,N1,Z1031,27068,27068
+324,Ctg 101 km (LRP144),link,N1,Ctg 101 km,27068,27068
+322,Ctg 102 km (LRP143),link,N1,Ctg 102 km,27067,27067
+314,Bridge end (LRP139C),bridge,N1,Bridge end,27065,27065
+321,Road to Karerhat (Z1031) (LRP142A),link,N1,Road to Karerhat (Z1031),27065,27065
+312,Box culvertt (LRP139A),bridge,N1,Box culvertt,27064,27064
+313,Bridge start (LRP139B),bridge,N1,Bridge start,27064,27064
+316,Box culvert (LRP140A),bridge,N1,Box culvert,27064,27064
+318,Start of Feni road Division / Start of Feni road Division (LRP141A),link,N1,Start of Feni road Division / Start of Feni road Division,27064,27064
+286,Bridge start (LRP128A),bridge,N1,Bridge start,27063,27063
+287,Bridge end (LRP128B),bridge,N1,Bridge end,27063,27063
+288,Km post missing (LRP129),link,N1,Km post missing,27063,27063
+296,Box culvert (LRP132A),bridge,N1,Box culvert,27063,27063
+317,Km post missing (LRP141),link,N1,Km post missing,27063,27063
+319,Box Culvert (LRP141B),bridge,N1,Box Culvert,27063,27063
+320,Ctg 103 km (LRP142),link,N1,Ctg 103 km,27063,27063
+290,Km post missing (LRP130),link,N1,Km post missing,27062,27062
+315,Ctg 122 km (LRP140),link,N1,Ctg 122 km,27062,27062
+289,Box culvert (LRP129A),bridge,N1,Box culvert,27061,27061
+294,Box culvert (LRP131A),bridge,N1,Box culvert,27060,27060
+295,Km post missing (LRP132),link,N1,Km post missing,27060,27060
+302,"Ctg 127 km,Feni 16 km (LRP135)",link,N1,"Ctg 127 km,Feni 16 km",27060,27060
+306,Km post missing (LRP137),link,N1,Km post missing,27060,27060
+307,Box culvert (LRP137A),bridge,N1,Box culvert,27060,27060
+291,Road to Nangolhat (Z1048) (LRP130A),link,N1,Road to Nangolhat (Z1048),27059,27059
+292,Box culvert (LRP130B),bridge,N1,Box culvert,27059,27059
+293,Km post missing (LRP131),link,N1,Km post missing,27059,27059
+305,Box culvert (LRP136B),bridge,N1,Box culvert,27059,27059
+309,Km post missing (LRP138),link,N1,Km post missing,27059,27059
+310,Box culvert (LRP138A),bridge,N1,Box culvert,27059,27059
+311,Km post missing (LRP139),link,N1,Km post missing,27059,27059
+298,Box culvert (LRP133A),bridge,N1,Box culvert,27058,27058
+300,Km post missing (LRP134),link,N1,Km post missing,27058,27058
+301,Box culvert (LRP134A),bridge,N1,Box culvert,27058,27058
+303,Km post missing (LRP136),link,N1,Km post missing,27058,27058
+308,Box culvert (LRP137B),bridge,N1,Box culvert,27058,27058
+297,Km post missing (LRP133),link,N1,Km post missing,27057,27057
+299,Box culvert (LRP133B),bridge,N1,Box culvert,27057,27057
+304,Box culvert (LRP136A),bridge,N1,Box culvert,27057,27057
+1748,R240 to Habiganj / N204 to Chunarughat (LRP142B),link,N2,R240 to Habiganj / N204 to Chunarughat,26922,26922
+1745,Box culvert (LRP141A),bridge,N2,Box culvert,26921,26921
+1746,Sylhet 90 km (LRP142),link,N2,Sylhet 90 km,26921,26921
+1747,Box culvert (LRP142A),bridge,N2,Box culvert,26921,26921
+1716,Sylhet 100 km (LRP132),link,N2,Sylhet 100 km,26919,26919
+1717,Rail Road Crossing (LRP132A),link,N2,Rail Road Crossing,26919,26919
+1732,Box culvert (LRP136B),bridge,N2,Box culvert,26919,26919
+1670,Box culvert (LRP120A),bridge,N2,Box culvert,26918,26918
+1671,Box culvert (LRP120B),bridge,N2,Box culvert,26918,26918
+1674,Box culvert (LRP121A),bridge,N2,Box culvert,26918,26918
+1675,Sylhet 110 km (LRP122),link,N2,Sylhet 110 km,26918,26918
+1721,Box culvert (LRP133A),bridge,N2,Box culvert,26918,26918
+1738,Box culvert (LRP139A),bridge,N2,Box culvert,26918,26918
+1741,Sylhet 92 km (LRP140),link,N2,Sylhet 92 km,26918,26918
+1742,Box culvert (LRP140A),bridge,N2,Box culvert,26918,26918
+1743,Box culvert (LRP140B),bridge,N2,Box culvert,26918,26918
+1744,Sylhet 91 km (LRP141),link,N2,Sylhet 91 km,26918,26918
+1676,Box culvert (LRP122A),bridge,N2,Box culvert,26917,26917
+1677,Box culvert (LRP122B),bridge,N2,Box culvert,26917,26917
+1679,Box culvert (LRP123A),bridge,N2,Box culvert,26917,26917
+1680,Box culvert (LRP123B),bridge,N2,Box culvert,26917,26917
+1703,Box culvert (LRP128B),bridge,N2,Box culvert,26917,26917
+1707,Box culvert (LRP129C),bridge,N2,Box culvert,26917,26917
+1708,Sylhet 102 km (LRP130),link,N2,Sylhet 102 km,26917,26917
+1714,Box culvert (LRP131A),bridge,N2,Box culvert,26917,26917
+1715,Box culvert (LRP131B),bridge,N2,Box culvert,26917,26917
+1731,R221 (LRP136A),link,N2,R221,26917,26917
+1739,Box culvert (LRP139B),bridge,N2,Box culvert,26917,26917
+1657,Box culvert (LRP117D),bridge,N2,Box culvert,26916,26916
+1658,Box culvert (LRP117E),bridge,N2,Box culvert,26916,26916
+1659,Sylhet 114 km (LRP118),link,N2,Sylhet 114 km,26916,26916
+1660,Box culvert (LRP118A),bridge,N2,Box culvert,26916,26916
+1661,Box culvert (LRP118B),bridge,N2,Box culvert,26916,26916
+1662,Box culvert (LRP118C),bridge,N2,Box culvert,26916,26916
+1666,Box culvert (LRP119B),bridge,N2,Box culvert,26916,26916
+1669,Sylhet 112 km (LRP120),link,N2,Sylhet 112 km,26916,26916
+1673,Sylhet 111 km (LRP121),link,N2,Sylhet 111 km,26916,26916
+1694,Box culvert (LRP126B),bridge,N2,Box culvert,26916,26916
+1702,Box culvert (LRP128A),bridge,N2,Box culvert,26916,26916
+1710,Box culvert (LRP130B),bridge,N2,Box culvert,26916,26916
+1711,Box culvert (LRP130C),bridge,N2,Box culvert,26916,26916
+1712,Box culvert (LRP130D),bridge,N2,Box culvert,26916,26916
+1713,Sylhet 101 km (LRP131),link,N2,Sylhet 101 km,26916,26916
+1720,Sylhet 99 km (LRP133),link,N2,Sylhet 99 km,26916,26916
+1733,Sylhet 95 km (LRP137),link,N2,Sylhet 95 km,26916,26916
+1735,Sylhet 94 km (LRP138),link,N2,Sylhet 94 km,26916,26916
+1736,Box culvert (LRP138A),bridge,N2,Box culvert,26916,26916
+1737,Sylhet 93 km (LRP139),link,N2,Sylhet 93 km,26916,26916
+1656,Box culvert (LRP117C),bridge,N2,Box culvert,26915,26915
+1667,Box culvert (LRP119C),bridge,N2,Box culvert,26915,26915
+1668,Box culvert (LRP119D),bridge,N2,Box culvert,26915,26915
+1678,Sylhet 109 km (LRP123),link,N2,Sylhet 109 km,26915,26915
+1683,Box culvert (LRP124A),bridge,N2,Box culvert,26915,26915
+1684,Box culvert (LRP124B),bridge,N2,Box culvert,26915,26915
+1689,Box culvert (LRP125B),bridge,N2,Box culvert,26915,26915
+1690,Box culvert (LRP125C),bridge,N2,Box culvert,26915,26915
+1691,Box culvert (LRP125D),bridge,N2,Box culvert,26915,26915
+1692,Sylhet 106 km (LRP126),link,N2,Sylhet 106 km,26915,26915
+1695,Box culvert (LRP126C),bridge,N2,Box culvert,26915,26915
+1696,Box culvert (LRP126D),bridge,N2,Box culvert,26915,26915
+1697,Sylhet 105 km (LRP127),link,N2,Sylhet 105 km,26915,26915
+1698,Box culvert (LRP127A),bridge,N2,Box culvert,26915,26915
+1699,Box culvert (LRP127B),bridge,N2,Box culvert,26915,26915
+1700,Box culvert (LRP127C),bridge,N2,Box culvert,26915,26915
+1701,Sylhet 104 km (LRP128),link,N2,Sylhet 104 km,26915,26915
+1704,Sylhet 103 km (LRP129),link,N2,Sylhet 103 km,26915,26915
+1705,Box culvert (LRP129A),bridge,N2,Box culvert,26915,26915
+1718,Box culvert (LRP132B),bridge,N2,Box culvert,26915,26915
+1719,Box culvert (LRP132C),bridge,N2,Box culvert,26915,26915
+1728,Sylhet 97 km (LRP135),link,N2,Sylhet 97 km,26915,26915
+1734,Box culvert (LRP137A),bridge,N2,Box culvert,26915,26915
+1740,Box culvert (LRP139C),bridge,N2,Box culvert,26915,26915
+1663,Box culvert (LRP118D),bridge,N2,Box culvert,26914,26914
+1664,Km post missing (LRP119),link,N2,Km post missing,26914,26914
+1665,Box culvert (LRP119A),bridge,N2,Box culvert,26914,26914
+1672,Box culvert (LRP120C),bridge,N2,Box culvert,26914,26914
+1706,Box culvert (LRP129B),bridge,N2,Box culvert,26914,26914
+1709,Box culvert (LRP130A),bridge,N2,Box culvert,26914,26914
+1724,Bridge end (LRP134B),bridge,N2,Bridge end,26914,26914
+1725,Box culvert (LRP134C),bridge,N2,Box culvert,26914,26914
+1726,Box culvert (LRP134D),bridge,N2,Box culvert,26914,26914
+1730,Sylhet 96 km (LRP136),link,N2,Sylhet 96 km,26914,26914
+1681,Box culvert (LRP123C),bridge,N2,Box culvert,26913,26913
+1682,Sylhet 108 km (LRP124),link,N2,Sylhet 108 km,26913,26913
+1687,Sylhet 107 km (LRP125),link,N2,Sylhet 107 km,26913,26913
+1688,Box culvert (LRP125A),bridge,N2,Box culvert,26913,26913
+1693,Box culvert (LRP126A),bridge,N2,Box culvert,26913,26913
+1729,Box culvert (LRP135A),bridge,N2,Box culvert,26913,26913
+1685,Bridge start (LRP124C),bridge,N2,Bridge start,26912,26912
+1686,Bridge end (LRP124D),bridge,N2,Bridge end,26912,26912
+1722,Sylhet 98 km (LRP134),link,N2,Sylhet 98 km,26912,26912
+1723,Bridge start (LRP134A),bridge,N2,Bridge start,26912,26912
+1727,Box culvert (LRP134E),bridge,N2,Box culvert,26912,26912
+3232,Box Culvert (LRP046B),bridge,N105,Box Culvert,25913,25913
+1755,Bridge end (LRP144B),bridge,N2,Bridge end,25912,25912
+3154,Km Post missing (LRP014),link,N105,Km Post missing,25912,25912
+3233,Box Culvert (LRP046C),bridge,N105,Box Culvert,25912,25912
+3155,Km post missing (LRP015),link,N105,Km post missing,25911,25911
+3234,Box Culvert (LRP046D),bridge,N105,Box Culvert,25911,25911
+3153,Information  missing (LRP013),link,N105,Information  missing,25910,25910
+3229,Box Culvert (LRP045C),bridge,N105,Box Culvert,25910,25910
+3230,Km post missing (LRP046),link,N105,Km post missing,25910,25910
+3231,Dhaka -Mymensingh N3 Road (LRP046A),link,N105,Dhaka -Mymensingh N3 Road,25910,25910
+3235,"B.Bridge 85 km,Tangail 162 km (LRP047)",bridge,N105,"B.Bridge 85 km,Tangail 162 km",25910,25910
+1756,Sylhet 87 km (LRP145),link,N2,Sylhet 87 km,25909,25909
+3156,km Post missing (LRP016),link,N105,km Post missing,25909,25909
+3165,"km Post missing / Bridge Start, Kanchon Bridge (LRP020)",bridge,N105,"km Post missing / Bridge Start, Kanchon Bridge",25909,25909
+1753,Sylhet 88 km (LRP144),link,N2,Sylhet 88 km,25908,25908
+1754,Bridge start (LRP144A),bridge,N2,Bridge start,25908,25908
+3205,"R301, Tongi- Panchhona road (LRP036B)",link,N105,"R301, Tongi- Panchhona road",25908,25908
+3225,Box Culvert (LRP044C),bridge,N105,Box Culvert,25908,25908
+3236,Box culvert (LRP047A),bridge,N105,Box culvert,25908,25908
+1751,Sylhet 89 km (LRP143),link,N2,Sylhet 89 km,25907,25907
+1752,Rail Road Crossing (LRP143A),link,N2,Rail Road Crossing,25907,25907
+1758,Box culvert (LRP145B),bridge,N2,Box culvert,25907,25907
+3157,Km Post Missing (LRP017),link,N105,Km Post Missing,25907,25907
+3226,"B.Bridge 87 km,Tangail 64 km (LRP045)",bridge,N105,"B.Bridge 87 km,Tangail 64 km",25907,25907
+3227,Box Culvert (LRP045A),bridge,N105,Box Culvert,25907,25907
+3237,Box Culvert (LRP047B),bridge,N105,Box Culvert,25907,25907
+3158,Box Culvert (LRP017A),bridge,N105,Box Culvert,25906,25906
+3160,km Post missing (LRP018),link,N105,km Post missing,25906,25906
+3186,Box Culvert (LRP029A),bridge,N105,Box Culvert,25906,25906
+3204,Rail Road Crossing (LRP036A),link,N105,Rail Road Crossing,25906,25906
+3220,Box culvert (LRP042B),bridge,N105,Box culvert,25906,25906
+3222,B.Bridge 88 km (LRP044),bridge,N105,B.Bridge 88 km,25906,25906
+3223,Box culvert (LRP044A),bridge,N105,Box culvert,25906,25906
+3224,Cros Road Z3008 (LRP044B),link,N105,Cros Road Z3008,25906,25906
+1757,Box culvert (LRP145A),bridge,N2,Box culvert,25905,25905
+3161,Box Culvert (LRP018A),bridge,N105,Box Culvert,25905,25905
+3162,km Post missing (LRP019),link,N105,km Post missing,25905,25905
+3166,Bridge end (LRP020B),bridge,N105,Bridge end,25905,25905
+3167,Purbachal Road (LRP020D),link,N105,Purbachal Road,25905,25905
+3168,km Post missing / Box Culvert (LRP021),bridge,N105,km Post missing / Box Culvert,25905,25905
+3187,Information  missing (LRP030),link,N105,Information  missing,25905,25905
+3206,Km post missing (LRP037),link,N105,Km post missing,25905,25905
+3207,Box culvert (LRP037A),bridge,N105,Box culvert,25905,25905
+3211,Pipe Culvert (LRP038A),bridge,N105,Pipe Culvert,25905,25905
+3212,"Gazipur 12 km,Tangail 70 km,Bangabandhu bridge 93 km (LRP039)",bridge,N105,"Gazipur 12 km,Tangail 70 km,Bangabandhu bridge 93 km",25905,25905
+3213,Box Culvert (LRP039A),bridge,N105,Box Culvert,25905,25905
+3217,Box culvert (LRP041A),bridge,N105,Box culvert,25905,25905
+3218,"Gazipur 9 km, Tangail 67 km, Bangabandhu Bridge 90 km (LRP042)",bridge,N105,"Gazipur 9 km, Tangail 67 km, Bangabandhu Bridge 90 km",25905,25905
+3219,Box culvert (LRP042A),bridge,N105,Box culvert,25905,25905
+1749,Bridge start (LRP142D),bridge,N2,Bridge start,25904,25904
+3159,Box Culvert (LRP017B),bridge,N105,Box Culvert,25904,25904
+3164,Box Culvert (LRP019B),bridge,N105,Box Culvert,25904,25904
+3169,Box Culvert (LRP021B),bridge,N105,Box Culvert,25904,25904
+3188,Km post missing (LRP031),link,N105,Km post missing,25904,25904
+3189,Side Road Left Z3003 (LRP031A),link,N105,Side Road Left Z3003,25904,25904
+3214,Km post missing (LRP040),link,N105,Km post missing,25904,25904
+3215,Rail Road Crossing (LRP040A),link,N105,Rail Road Crossing,25904,25904
+3216,Km post missing (LRP041),link,N105,Km post missing,25904,25904
+3221,Km post missing (LRP043),link,N105,Km post missing,25904,25904
+3228,Box Culvert (LRP045B),bridge,N105,Box Culvert,25904,25904
+1759,Sylhet 86 km (LRP146),link,N2,Sylhet 86 km,25903,25903
+1760,Box culvert (LRP146A),bridge,N2,Box culvert,25903,25903
+3163,Box Culvert (LRP019A),bridge,N105,Box Culvert,25903,25903
+3175,Box Culvert (LRP025B),bridge,N105,Box Culvert,25903,25903
+3176,Km Post missing (LRP026),link,N105,Km Post missing,25903,25903
+3177,Box Culvert (LRP026A),bridge,N105,Box Culvert,25903,25903
+3190,Bridge Start (LRP031C),bridge,N105,Bridge Start,25903,25903
+3193,Box culvert (LRP032A),bridge,N105,Box culvert,25903,25903
+3194,Box culvert (LRP032B),bridge,N105,Box culvert,25903,25903
+3199,Bridge end (LRP034B),bridge,N105,Bridge end,25903,25903
+3202,Box culvert (LRP035A),bridge,N105,Box culvert,25903,25903
+3209,Box Culvert (LRP037C),bridge,N105,Box Culvert,25903,25903
+3210,"Gazipur 13 km,Mymensingh 98 km,Bangabandhu Bridge 94 km (LRP038)",bridge,N105,"Gazipur 13 km,Mymensingh 98 km,Bangabandhu Bridge 94 km",25903,25903
+1750,Bridge end (LRP142E),bridge,N2,Bridge end,25902,25902
+1761,Road to Srimongal(N207) (LRP146B),link,N2,Road to Srimongal(N207),25902,25902
+3170,"Bangabandhu Bridge- 109 km, Tangail-86 km, Gazipur- 28 km (LRP023)",bridge,N105,"Bangabandhu Bridge- 109 km, Tangail-86 km, Gazipur- 28 km",25902,25902
+3171,Box Culvert (LRP023A),bridge,N105,Box Culvert,25902,25902
+3182,Box Culvert (LRP028A),bridge,N105,Box Culvert,25902,25902
+3185,"Bangabandhu Bridge- 103 km, Tangail-80 km, Gazipur- 22 km (LRP029)",bridge,N105,"Bangabandhu Bridge- 103 km, Tangail-80 km, Gazipur- 22 km",25902,25902
+3191,Bridge end (LRP031D),bridge,N105,Bridge end,25902,25902
+3192,Km post missing (LRP032),link,N105,Km post missing,25902,25902
+3197,Box Culvert (LRP033B),bridge,N105,Box Culvert,25902,25902
+3198,"Gazipur 17 km, Tangail 75 km, Bangabandhu 98 km, / Bridge start (LRP034)",bridge,N105,"Gazipur 17 km, Tangail 75 km, Bangabandhu 98 km, / Bridge start",25902,25902
+3200,Box culvert (LRP034C),bridge,N105,Box culvert,25902,25902
+3208,Box culvert (LRP037B),bridge,N105,Box culvert,25902,25902
+3172,Info missing (LRP024),link,N105,Info missing,25901,25901
+3173,"Bangabandhu Bridge- 107 km, Tangail-84 km, Gazipur- 26 km (LRP025)",bridge,N105,"Bangabandhu Bridge- 107 km, Tangail-84 km, Gazipur- 26 km",25901,25901
+3174,Box Culvert (LRP025A),bridge,N105,Box Culvert,25901,25901
+3195,"Gazipur 18 km,Tangail 76 km,Bangabandhu 99 km (LRP033)",link,N105,"Gazipur 18 km,Tangail 76 km,Bangabandhu 99 km",25901,25901
+3201,"Gazipur 16 km,Tangail 74 km,Bangabandhu Bridge 97 km (LRP035)",bridge,N105,"Gazipur 16 km,Tangail 74 km,Bangabandhu Bridge 97 km",25901,25901
+3179,Culvert (LRP026C),bridge,N105,Culvert,25900,25900
+3180,Km Post missing (LRP027),link,N105,Km Post missing,25900,25900
+3183,Box Culvert (LRP028B),bridge,N105,Box Culvert,25900,25900
+3184,"Z3010, Kaliganj- Ulukhola road (LRP028C)",link,N105,"Z3010, Kaliganj- Ulukhola road",25900,25900
+3196,Box culvert (LRP033A),bridge,N105,Box culvert,25900,25900
+3203,Km post missing (LRP036),link,N105,Km post missing,25900,25900
+3178,Box Culvert (LRP026B),bridge,N105,Box Culvert,25899,25899
+3181,"Bangabandhu bridge 104 km, Mymenshingh-108 km, Gazipur- 23 km (LRP028)",bridge,N105,"Bangabandhu bridge 104 km, Mymenshingh-108 km, Gazipur- 23 km",25899,25899
+1882,Box culvert (LRP172E),bridge,N2,Box culvert,19780,19780
+1956,Box culvert (LRP188A),bridge,N2,Box culvert,19706,19706
+1959,Bridge end (LRP189B),bridge,N2,Bridge end,19705,19705
+1963,Sylhet 41 km (LRP191),link,N2,Sylhet 41 km,19705,19705
+1964,Box culvert (LRP191A),bridge,N2,Box culvert,19705,19705
+1948,Box culvert (LRP186C),bridge,N2,Box culvert,19704,19704
+1955,Sylhet 44 km (LRP188),link,N2,Sylhet 44 km,19704,19704
+1962,Bridge end (LRP190B),bridge,N2,Bridge end,19704,19704
+1965,Road to Moulavo Bazar(N207) (LRP191B),link,N2,Road to Moulavo Bazar(N207),19704,19704
+1949,Road to Raniganj (R241) (LRP186D),link,N2,Road to Raniganj (R241),19703,19703
+1950,Bridge start (LRP186E),bridge,N2,Bridge start,19703,19703
+1951,Bridge end (LRP186F),bridge,N2,Bridge end,19703,19703
+1952,Sylhet 45 km (LRP187),link,N2,Sylhet 45 km,19703,19703
+1953,Bridge start (LRP187A),bridge,N2,Bridge start,19703,19703
+1954,Bridge end (LRP187B),bridge,N2,Bridge end,19703,19703
+1960,Sylhet 42 km/ Start of Moulavibazar road Division / Sylhet 42 km/ Start of Moulavibazar road Division (LRP190),link,N2,Sylhet 42 km/ Start of Moulavibazar road Division / Sylhet 42 km/ Start of Moulavibazar road Division,19703,19703
+1910,Bridge end (LRP178B),bridge,N2,Bridge end,19702,19702
+1911,Bridge start (LRP178C),bridge,N2,Bridge start,19702,19702
+1912,Bridge end (LRP178D),bridge,N2,Bridge end,19702,19702
+1913,Box culvert (LRP178E),bridge,N2,Box culvert,19702,19702
+1957,Sylhet 43 km (LRP189),link,N2,Sylhet 43 km,19702,19702
+1958,Bridge start (LRP189A),bridge,N2,Bridge start,19702,19702
+1961,Bridge start (LRP190A),bridge,N2,Bridge start,19702,19702
+1944,Box culvert (LRP185A),bridge,N2,Box culvert,19701,19701
+1947,Box culvert (LRP186B),bridge,N2,Box culvert,19701,19701
+1902,Box culvert (LRP176E),bridge,N2,Box culvert,19700,19700
+1915,Km post missing (LRP179),link,N2,Km post missing,19700,19700
+1916,Box culvert (LRP179A),bridge,N2,Box culvert,19700,19700
+1921,Bridge end (LRP180B),bridge,N2,Bridge end,19700,19700
+1930,Box culvert (LRP182A),bridge,N2,Box culvert,19700,19700
+1931,Box culvert (LRP182B),bridge,N2,Box culvert,19700,19700
+1932,Road to Nabiganj (R240) (LRP182C),link,N2,Road to Nabiganj (R240),19700,19700
+1945,Sylhet 46 km (LRP186),link,N2,Sylhet 46 km,19700,19700
+1946,Box culvert (LRP186A),bridge,N2,Box culvert,19700,19700
+1893,Box culvert (LRP175A),bridge,N2,Box culvert,19699,19699
+1894,Box culvert (LRP175B),bridge,N2,Box culvert,19699,19699
+1895,Box culvert (LRP175C),bridge,N2,Box culvert,19699,19699
+1896,Box culvert (LRP175D),bridge,N2,Box culvert,19699,19699
+1897,Sylhet 56 km (LRP176),link,N2,Sylhet 56 km,19699,19699
+1900,Box culvert (LRP176C),bridge,N2,Box culvert,19699,19699
+1901,Box culvert (LRP176D),bridge,N2,Box culvert,19699,19699
+1907,Bridge end (LRP177C),bridge,N2,Bridge end,19699,19699
+1908,Sylhet 54 km (LRP178),link,N2,Sylhet 54 km,19699,19699
+1909,Bridge start (LRP178A),bridge,N2,Bridge start,19699,19699
+1914,Box culvert (LRP178F),bridge,N2,Box culvert,19699,19699
+1917,Bridge start (LRP179B),bridge,N2,Bridge start,19699,19699
+1918,Bridge end (LRP179C),bridge,N2,Bridge end,19699,19699
+1919,Sylhet 52 km (LRP180),link,N2,Sylhet 52 km,19699,19699
+1920,Bridge start (LRP180A),bridge,N2,Bridge start,19699,19699
+1922,Box culvert (LRP180C),bridge,N2,Box culvert,19699,19699
+1923,Sylhet 51 km (LRP181),link,N2,Sylhet 51 km,19699,19699
+1933,Box culvert (LRP182D),bridge,N2,Box culvert,19699,19699
+1934,Sylhet 49 km (LRP183),link,N2,Sylhet 49 km,19699,19699
+1935,Box culvert (LRP183A),bridge,N2,Box culvert,19699,19699
+1941,Box culvert (LRP184C),bridge,N2,Box culvert,19699,19699
+1891,Box culvert (LRP174E),bridge,N2,Box culvert,19698,19698
+1892,Km post missing (LRP175),link,N2,Km post missing,19698,19698
+1903,Box culvert (LRP176F),bridge,N2,Box culvert,19698,19698
+1904,Km post missing (LRP177),link,N2,Km post missing,19698,19698
+1905,Box culvert (LRP177A),bridge,N2,Box culvert,19698,19698
+1906,Bridge start (LRP177B),bridge,N2,Bridge start,19698,19698
+1925,Bridge end (LRP181B),bridge,N2,Bridge end,19698,19698
+1926,Box culvert (LRP181C),bridge,N2,Box culvert,19698,19698
+1927,Bridge start (LRP181D),bridge,N2,Bridge start,19698,19698
+1928,Bridge end (LRP181E),bridge,N2,Bridge end,19698,19698
+1929,Sylhet 50 km (LRP182),link,N2,Sylhet 50 km,19698,19698
+1938,Sylhet 48 km (LRP184),link,N2,Sylhet 48 km,19698,19698
+1939,Bridge start (LRP184A),bridge,N2,Bridge start,19698,19698
+1940,Bridge end (LRP184B),bridge,N2,Bridge end,19698,19698
+1942,Box culvert (LRP184D),bridge,N2,Box culvert,19698,19698
+1943,Sylhet 47 km (LRP185),link,N2,Sylhet 47 km,19698,19698
+1884,Box culvert (LRP173A),bridge,N2,Box culvert,19697,19697
+1889,Box culvert (LRP174C),bridge,N2,Box culvert,19697,19697
+1898,Box culvert (LRP176A),bridge,N2,Box culvert,19697,19697
+1899,Box culvert (LRP176B),bridge,N2,Box culvert,19697,19697
+1924,Bridge start (LRP181A),bridge,N2,Bridge start,19697,19697
+1936,Box culvert (LRP183B),bridge,N2,Box culvert,19697,19697
+1937,Box culvert (LRP183C),bridge,N2,Box culvert,19697,19697
+1885,Box culvert (LRP173B),bridge,N2,Box culvert,19696,19696
+1886,Km post missing (LRP174),link,N2,Km post missing,19696,19696
+1887,Bridge start (LRP174A),bridge,N2,Bridge start,19696,19696
+1888,Bridge end (LRP174B),bridge,N2,Bridge end,19696,19696
+1883,Sylhet 59 km (LRP173),link,N2,Sylhet 59 km,19695,19695
+1890,Box culvert (LRP174D),bridge,N2,Box culvert,19694,19694
+1822,Bridge end (LRP163B),bridge,N2,Bridge end,19689,19689
+1823,Box culvert (LRP163C),bridge,N2,Box culvert,19689,19689
+1824,Box culvert (LRP163D),bridge,N2,Box culvert,19689,19689
+1827,Box culvert (LRP164A),bridge,N2,Box culvert,19689,19689
+1839,Box culvert (LRP166B),bridge,N2,Box culvert,19689,19689
+1828,Box culvert (LRP164B),bridge,N2,Box culvert,19688,19688
+1829,Bridge start (LRP164C),bridge,N2,Bridge start,19688,19688
+1830,Bridge end (LRP164D),bridge,N2,Bridge end,19688,19688
+1831,Box culvert (LRP164E),bridge,N2,Box culvert,19688,19688
+1832,Sylhet 67 km (LRP165),link,N2,Sylhet 67 km,19688,19688
+1816,Box culvert (LRP162B),bridge,N2,Box culvert,19687,19687
+1817,Box culvert (LRP162C),bridge,N2,Box culvert,19687,19687
+1818,Box culvert (LRP162D),bridge,N2,Box culvert,19687,19687
+1819,Box culvert (LRP162E),bridge,N2,Box culvert,19687,19687
+1820,Sylhet 69 km (LRP163),link,N2,Sylhet 69 km,19687,19687
+1821,Bridge start (LRP163A),bridge,N2,Bridge start,19687,19687
+1825,Box culvert (LRP163E),bridge,N2,Box culvert,19687,19687
+1826,Sylhet 68 km (LRP164),link,N2,Sylhet 68 km,19687,19687
+1836,Box culvert (LRP165D),bridge,N2,Box culvert,19687,19687
+1762,Information missing (LRP147),link,N2,Information missing,19686,19686
+1763,Box culvert (LRP147A),bridge,N2,Box culvert,19686,19686
+1764,Box culvert (LRP147B),bridge,N2,Box culvert,19686,19686
+1766,Sylhet 84 km (LRP148),link,N2,Sylhet 84 km,19686,19686
+1767,Box culvert (LRP148A),bridge,N2,Box culvert,19686,19686
+1768,Box Culvert / Box culvert (LRP148B),bridge,N2,Box Culvert / Box culvert,19686,19686
+1769,Sylhet 83 km (LRP149),link,N2,Sylhet 83 km,19686,19686
+1770,Box culvert (LRP149A),bridge,N2,Box culvert,19686,19686
+1833,Bridge start (LRP165A),bridge,N2,Bridge start,19686,19686
+1834,Bridge end (LRP165B),bridge,N2,Bridge end,19686,19686
+1835,Box culvert (LRP165C),bridge,N2,Box culvert,19686,19686
+1837,Sylhet 66 km (LRP166),link,N2,Sylhet 66 km,19686,19686
+1838,Box culvert (LRP166A),bridge,N2,Box culvert,19686,19686
+1841,Box culvert (LRP166D),bridge,N2,Box culvert,19686,19686
+1842,Box culvert (LRP166E),bridge,N2,Box culvert,19686,19686
+1765,Box culvert (LRP147C),bridge,N2,Box culvert,19685,19685
+1772,Box culvert (LRP150A),bridge,N2,Box culvert,19685,19685
+1773,Bridge start (LRP150B),bridge,N2,Bridge start,19685,19685
+1771,Sylhet 82 km (LRP150),link,N2,Sylhet 82 km,19684,19684
+1775,Sylhet 81 km (LRP151),link,N2,Sylhet 81 km,19684,19684
+1813,Box culvert (LRP161B),bridge,N2,Box culvert,19684,19684
+1814,Sylhet 70 km (LRP162),link,N2,Sylhet 70 km,19684,19684
+1815,Box culvert (LRP162A),bridge,N2,Box culvert,19684,19684
+1840,Box culvert (LRP166C),bridge,N2,Box culvert,19684,19684
+1843,Sylhet 65 km (LRP167),link,N2,Sylhet 65 km,19684,19684
+1844,Box culvert (LRP167A),bridge,N2,Box culvert,19684,19684
+1845,Box culvert (LRP167B),bridge,N2,Box culvert,19684,19684
+1846,Box culvert (LRP167C),bridge,N2,Box culvert,19684,19684
+1878,Box culvert (LRP172A),bridge,N2,Box culvert,19684,19684
+1879,Box culvert (LRP172B),bridge,N2,Box culvert,19684,19684
+1880,Box culvert (LRP172C),bridge,N2,Box culvert,19684,19684
+1881,Box culvert (LRP172D),bridge,N2,Box culvert,19684,19684
+1774,Bridge end (LRP150C),bridge,N2,Bridge end,19683,19683
+1776,Box culvert (LRP151A),bridge,N2,Box culvert,19683,19683
+1849,Sylhet 64 km (LRP168),link,N2,Sylhet 64 km,19683,19683
+1850,Bridge start (LRP168A),bridge,N2,Bridge start,19683,19683
+1851,Bridge end (LRP168B),bridge,N2,Bridge end,19683,19683
+1853,Sylhet 63 km (LRP169),link,N2,Sylhet 63 km,19683,19683
+1854,Box culvert (LRP169A),bridge,N2,Box culvert,19683,19683
+1874,Box culvert (LRP171E),bridge,N2,Box culvert,19683,19683
+1875,Box culvert (LRP171F),bridge,N2,Box culvert,19683,19683
+1876,Box culvert (LRP171G),bridge,N2,Box culvert,19683,19683
+1877,Sylhet 60 km (LRP172),link,N2,Sylhet 60 km,19683,19683
+1778,Box culvert (LRP152A),bridge,N2,Box culvert,19682,19682
+1781,Box culvert (LRP152D),bridge,N2,Box culvert,19682,19682
+1782,Sylhet 79 km (LRP153),link,N2,Sylhet 79 km,19682,19682
+1783,Box culvert (LRP153A),bridge,N2,Box culvert,19682,19682
+1797,Box culvert (LRP157A),bridge,N2,Box culvert,19682,19682
+1798,Bridge start (LRP157B),bridge,N2,Bridge start,19682,19682
+1799,Bridge end (LRP157C),bridge,N2,Bridge end,19682,19682
+1800,Sylhet 74 km (LRP158),link,N2,Sylhet 74 km,19682,19682
+1808,Box culvert (LRP160B),bridge,N2,Box culvert,19682,19682
+1809,Bridge start (LRP160C),bridge,N2,Bridge start,19682,19682
+1810,Bridge end (LRP160D),bridge,N2,Bridge end,19682,19682
+1811,Sylhet 71 km (LRP161),link,N2,Sylhet 71 km,19682,19682
+1812,Box culvert (LRP161A),bridge,N2,Box culvert,19682,19682
+1847,Bridge start (LRP167D),bridge,N2,Bridge start,19682,19682
+1848,Bridge end (LRP167E),bridge,N2,Bridge end,19682,19682
+1852,Box culvert (LRP168C),bridge,N2,Box culvert,19682,19682
+1857,Box culvert (LRP169D),bridge,N2,Box culvert,19682,19682
+1858,Box culvert (LRP169E),bridge,N2,Box culvert,19682,19682
+1859,Sylhet 62 km (LRP170),link,N2,Sylhet 62 km,19682,19682
+1860,Box culvert (LRP170A),bridge,N2,Box culvert,19682,19682
+1861,Box culvert (LRP170B),bridge,N2,Box culvert,19682,19682
+1863,Bridge end (LRP170D),bridge,N2,Bridge end,19682,19682
+1864,Box culvert (LRP170E),bridge,N2,Box culvert,19682,19682
+1865,Box culvert (LRP170F),bridge,N2,Box culvert,19682,19682
+1866,Box culvert (LRP170G),bridge,N2,Box culvert,19682,19682
+1867,Box culvert (LRP170H),bridge,N2,Box culvert,19682,19682
+1868,Box culvert (LRP170I),bridge,N2,Box culvert,19682,19682
+1869,Sylhet 61 km (LRP171),link,N2,Sylhet 61 km,19682,19682
+1870,Box culvert (LRP171A),bridge,N2,Box culvert,19682,19682
+1871,Box culvert (LRP171B),bridge,N2,Box culvert,19682,19682
+1872,Box culvert (LRP171C),bridge,N2,Box culvert,19682,19682
+1873,Box culvert (LRP171D),bridge,N2,Box culvert,19682,19682
+1777,Km post missing (LRP152),link,N2,Km post missing,19681,19681
+1779,Box culvert (LRP152B),bridge,N2,Box culvert,19681,19681
+1780,Box culvert (LRP152C),bridge,N2,Box culvert,19681,19681
+1784,Box culvert (LRP153B),bridge,N2,Box culvert,19681,19681
+1785,Box culvert (LRP153C),bridge,N2,Box culvert,19681,19681
+1790,Km post broken (LRP155),link,N2,Km post broken,19681,19681
+1806,Sylhet 72 km (LRP160),link,N2,Sylhet 72 km,19681,19681
+1807,Box culvert (LRP160A),bridge,N2,Box culvert,19681,19681
+1788,Bridge end (LRP154B),bridge,N2,Bridge end,19680,19680
+1789,Box culvert (LRP154C),bridge,N2,Box culvert,19680,19680
+1792,Sylhet 76 km (LRP156),link,N2,Sylhet 76 km,19680,19680
+1793,Bridge start (LRP156A),bridge,N2,Bridge start,19680,19680
+1794,Bridge end (LRP156B),bridge,N2,Bridge end,19680,19680
+1795,Box culvert (LRP156C),bridge,N2,Box culvert,19680,19680
+1796,Sylhet 75 km (LRP157),link,N2,Sylhet 75 km,19680,19680
+1801,Box culvert (LRP158A),bridge,N2,Box culvert,19680,19680
+1802,Sylhet 73 km (LRP159),link,N2,Sylhet 73 km,19680,19680
+1803,Box culvert (LRP159A),bridge,N2,Box culvert,19680,19680
+1855,Box culvert (LRP169B),bridge,N2,Box culvert,19680,19680
+1856,Box culvert (LRP169C),bridge,N2,Box culvert,19680,19680
+1862,Bridge start (LRP170C),bridge,N2,Bridge start,19680,19680
+1804,Box culvert (LRP159B),bridge,N2,Box culvert,19679,19679
+1805,Box culvert (LRP159C),bridge,N2,Box culvert,19679,19679
+1786,Sylhet 78 km (LRP154),link,N2,Sylhet 78 km,19678,19678
+1787,Bridge start (LRP154A),bridge,N2,Bridge start,19678,19678
+1791,Box culvert (LRP155A),bridge,N2,Box culvert,19678,19678
+503,Bridge start (LRP216A),bridge,N1,Bridge start,19088,19088
+564,The chittagong city area starts from Alongka cinema Hall (LRP235B),link,N1,The chittagong city area starts from Alongka cinema Hall,19048,19048
+537,Box culvert (LRP227A),bridge,N1,Box culvert,19039,19039
+562,Km post missing (LRP235),link,N1,Km post missing,19039,19039
+538,Bridge start (LRP227B),bridge,N1,Bridge start,19038,19038
+539,Bridge end (LRP227C),bridge,N1,Bridge end,19038,19038
+540,Km post missing (LRP228),link,N1,Km post missing,19038,19038
+517,Km post missing (LRP219),link,N1,Km post missing,19037,19037
+518,Bridge start (LRP219A),bridge,N1,Bridge start,19037,19037
+519,Bridge end (LRP219B),bridge,N1,Bridge end,19037,19037
+520,Km post missing (LRP220),link,N1,Km post missing,19037,19037
+554,Box culvert (LRP232B),bridge,N1,Box culvert,19037,19037
+555,Bridge start (LRP232C),bridge,N1,Bridge start,19037,19037
+556,Bridge end (LRP232D),bridge,N1,Bridge end,19037,19037
+561,Bridge end (LRP234B),bridge,N1,Bridge end,19037,19037
+515,Bridge end (LRP218D),bridge,N1,Bridge end,19036,19036
+521,Box culvert (LRP220A),bridge,N1,Box culvert,19036,19036
+525,Bridge end (LRP221C),bridge,N1,Bridge end,19036,19036
+526,Info.Missing (LRP222),link,N1,Info.Missing,19036,19036
+535,Bridge end (LRP226B),bridge,N1,Bridge end,19036,19036
+536,Km post missing (LRP227),link,N1,Km post missing,19036,19036
+543,Bridge end (LRP229B),bridge,N1,Bridge end,19036,19036
+547,Start of Bituminous Pavement (LRP230C),link,N1,Start of Bituminous Pavement,19036,19036
+548,Km post missing (LRP231),link,N1,Km post missing,19036,19036
+549,Road to Biman Bandar (Z1016) (LRP231A),link,N1,Road to Biman Bandar (Z1016),19036,19036
+550,Bridge start (LRP231B),bridge,N1,Bridge start,19036,19036
+551,Bridge end (LRP231C),bridge,N1,Bridge end,19036,19036
+552,Km post missing (LRP232),link,N1,Km post missing,19036,19036
+557,Km post missing (LRP233),link,N1,Km post missing,19036,19036
+505,Ctg 28 km (LRP217),link,N1,Ctg 28 km,19035,19035
+506,Bridge start (LRP217A),bridge,N1,Bridge start,19035,19035
+507,Bridge end (LRP217B),bridge,N1,Bridge end,19035,19035
+508,Box culvert (LRP217C),bridge,N1,Box culvert,19035,19035
+509,Bridge start (LRP217D),bridge,N1,Bridge start,19035,19035
+516,Box culvert (LRP218E),bridge,N1,Box culvert,19035,19035
+522,Ctg 24 km (LRP221),link,N1,Ctg 24 km,19035,19035
+523,Box culvert (LRP221A),bridge,N1,Box culvert,19035,19035
+532,Info.Missing (LRP225),link,N1,Info.Missing,19035,19035
+541,Km post missing (LRP229),link,N1,Km post missing,19035,19035
+542,Bridge start (LRP229A),bridge,N1,Bridge start,19035,19035
+544,Km post missing (LRP230),link,N1,Km post missing,19035,19035
+545,End of Bituminous Pavement (LRP230A),link,N1,End of Bituminous Pavement,19035,19035
+546,Box culvert (LRP230B),bridge,N1,Box culvert,19035,19035
+563,End of Bituminous Road (LRP235A),link,N1,End of Bituminous Road,19035,19035
+504,Bridge end (LRP216B),bridge,N1,Bridge end,19034,19034
+510,Bridge end (LRP217E),bridge,N1,Bridge end,19034,19034
+511,Km post missing (LRP218),link,N1,Km post missing,19034,19034
+512,Bridge start (LRP218A),bridge,N1,Bridge start,19034,19034
+513,Bridge end (LRP218B),bridge,N1,Bridge end,19034,19034
+514,Bridge start (LRP218C),bridge,N1,Bridge start,19034,19034
+524,Bridge start (LRP221B),bridge,N1,Bridge start,19034,19034
+533,Km post missing (LRP226),link,N1,Km post missing,19034,19034
+534,Bridge start (LRP226A),bridge,N1,Bridge start,19034,19034
+553,"N111, Port Connecting Road (LRP232A)",link,N1,"N111, Port Connecting Road",19034,19034
+558,Box culvert (LRP233A),bridge,N1,Box culvert,19034,19034
+559,Km post missing (LRP234),link,N1,Km post missing,19034,19034
+560,Bridge start (LRP234A),bridge,N1,Bridge start,19034,19034
+528,Ctg 22 km (LRP223),link,N1,Ctg 22 km,19033,19033
+530,Bridge start (LRP224A),bridge,N1,Bridge start,19033,19033
+531,Bridge end (LRP224B),bridge,N1,Bridge end,19033,19033
+442,"Ctg 48 km,Sitakanda 8 km (LRP197)",link,N1,"Ctg 48 km,Sitakanda 8 km",19032,19032
+527,Box culvert (LRP222A),bridge,N1,Box culvert,19032,19032
+529,Km post missing (LRP224),link,N1,Km post missing,19032,19032
+440,Box culvert (LRP196A),bridge,N1,Box culvert,19031,19031
+565,Chittagong city area ends and the survey of N1 starts again (LRP244B),link,N1,Chittagong city area ends and the survey of N1 starts again,19031,19031
+566,Km post missing (LRP245),link,N1,Km post missing,19031,19031
+441,Box culvert (LRP196B),bridge,N1,Box culvert,19030,19030
+443,Box culvert (LRP197A),bridge,N1,Box culvert,19030,19030
+444,Box culvert (LRP197B),bridge,N1,Box culvert,19029,19029
+445,Km post missing (LRP198),link,N1,Km post missing,19029,19029
+446,Road to Haidchokia (Z1086) (LRP198A),link,N1,Road to Haidchokia (Z1086),19029,19029
+447,Box culvert (LRP198B),bridge,N1,Box culvert,19029,19029
+450,Box culvert (LRP199A),bridge,N1,Box culvert,19029,19029
+451,Box culvert (LRP199B),bridge,N1,Box culvert,19029,19029
+484,Road to Katirhat (Z1087) (LRP209C),link,N1,Road to Katirhat (Z1087),19029,19029
+485,Box culvert (LRP209D),bridge,N1,Box culvert,19029,19029
+486,Km post missing (LRP210),link,N1,Km post missing,19029,19029
+436,Box culvert (LRP194C),bridge,N1,Box culvert,19028,19028
+437,"Ctg 50 km,Sitakanda 10 km (LRP195)",link,N1,"Ctg 50 km,Sitakanda 10 km",19028,19028
+438,Box culvert (LRP195A),bridge,N1,Box culvert,19028,19028
+439,Km post missing (LRP196),link,N1,Km post missing,19028,19028
+448,Box culvert (LRP198C),bridge,N1,Box culvert,19028,19028
+449,"Ctg 46 km,Sitakanda 6 km (LRP199)",link,N1,"Ctg 46 km,Sitakanda 6 km",19028,19028
+452,Km post missing (LRP200),link,N1,Km post missing,19028,19028
+453,Box culvert (LRP200A),bridge,N1,Box culvert,19028,19028
+454,Box culvert (LRP200B),bridge,N1,Box culvert,19028,19028
+456,Box culvert (LRP201A),bridge,N1,Box culvert,19028,19028
+457,Box culvert (LRP201B),bridge,N1,Box culvert,19028,19028
+458,Km post missing (LRP202),link,N1,Km post missing,19028,19028
+473,Box culvert (LRP206A),bridge,N1,Box culvert,19028,19028
+488,Bridge end (LRP210B),bridge,N1,Bridge end,19028,19028
+489,Km post missing (LRP211),link,N1,Km post missing,19028,19028
+497,Bridge end (LRP213B),bridge,N1,Bridge end,19028,19028
+499,Box culvert (LRP214A),bridge,N1,Box culvert,19028,19028
+501,Box culvert (LRP215A),bridge,N1,Box culvert,19028,19028
+455,"Ctg 44 km,Sitakanda 4 km (LRP201)",link,N1,"Ctg 44 km,Sitakanda 4 km",19027,19027
+459,Box culvert (LRP202A),bridge,N1,Box culvert,19027,19027
+460,"Ctg 42 km,Sitakanda 2 km (LRP203)",link,N1,"Ctg 42 km,Sitakanda 2 km",19027,19027
+461,Box culvert (LRP203A),bridge,N1,Box culvert,19027,19027
+480,Box culvert (LRP208A),bridge,N1,Box culvert,19027,19027
+487,Bridge start (LRP210A),bridge,N1,Bridge start,19027,19027
+490,Box culvert (LRP211A),bridge,N1,Box culvert,19027,19027
+491,Bridge start (LRP211B),bridge,N1,Bridge start,19027,19027
+492,Bridge end (LRP211C),bridge,N1,Bridge end,19027,19027
+493,Box culvert (LRP211D),bridge,N1,Box culvert,19027,19027
+494,Km post missing (LRP212),link,N1,Km post missing,19027,19027
+495,Ctg 32 km (LRP213),link,N1,Ctg 32 km,19027,19027
+496,Bridge start (LRP213A),bridge,N1,Bridge start,19027,19027
+498,Km post missing (LRP214),link,N1,Km post missing,19027,19027
+500,Ctg 30 km (LRP215),link,N1,Ctg 30 km,19027,19027
+502,Km post missing (LRP216),link,N1,Km post missing,19027,19027
+362,Km post missing (LRP166),link,N1,Km post missing,19026,19026
+375,Km post missing / Box culvert (LRP172),bridge,N1,Km post missing / Box culvert,19026,19026
+378,Box culvert (LRP173A),bridge,N1,Box culvert,19026,19026
+415,Box culvert (LRP186A),bridge,N1,Box culvert,19026,19026
+422,Box culvert (LRP189A),bridge,N1,Box culvert,19026,19026
+434,Box culvert (LRP194A),bridge,N1,Box culvert,19026,19026
+435,Box culvert (LRP194B),bridge,N1,Box culvert,19026,19026
+462,Box culvert (LRP203B),bridge,N1,Box culvert,19026,19026
+463,Km post missing (LRP204),link,N1,Km post missing,19026,19026
+471,Box culvert (LRP205B),bridge,N1,Box culvert,19026,19026
+472,Km post missing (LRP206),link,N1,Km post missing,19026,19026
+474,Ctg 38 km (LRP207),link,N1,Ctg 38 km,19026,19026
+475,Box culvert (LRP207A),bridge,N1,Box culvert,19026,19026
+476,Box culvert (LRP207B),bridge,N1,Box culvert,19026,19026
+477,Box culvert (LRP207C),bridge,N1,Box culvert,19026,19026
+479,Km post missing (LRP208),link,N1,Km post missing,19026,19026
+481,Info.Missing (LRP209),link,N1,Info.Missing,19026,19026
+482,Bridge start (LRP209A),bridge,N1,Bridge start,19026,19026
+483,Bridge end (LRP209B),bridge,N1,Bridge end,19026,19026
+379,Box culvert (LRP173B),bridge,N1,Box culvert,19025,19025
+380,Km post missing (LRP174),link,N1,Km post missing,19025,19025
+424,Box culvert (LRP190A),bridge,N1,Box culvert,19025,19025
+464,Box culvert (LRP204A),bridge,N1,Box culvert,19025,19025
+465,Box culvert (LRP204B),bridge,N1,Box culvert,19025,19025
+466,Bridge start (LRP204C),bridge,N1,Bridge start,19025,19025
+467,Bridge end / Box culvert (LRP204D),bridge,N1,Bridge end / Box culvert,19025,19025
+470,Box culvert (LRP205A),bridge,N1,Box culvert,19025,19025
+355,Ctg 83 km (LRP162),link,N1,Ctg 83 km,19024,19024
+360,Road to Chhagalnaiya (Z1032) (LRP164A),link,N1,Road to Chhagalnaiya (Z1032),19024,19024
+361,Km post missing (LRP165),link,N1,Km post missing,19024,19024
+370,End of Bituminous Pavment (LRP170A),link,N1,End of Bituminous Pavment,19024,19024
+371,Road to Karerhat (R151) (LRP170B),link,N1,Road to Karerhat (R151),19024,19024
+372,Start of Bituminious Pavement (LRP170C),link,N1,Start of Bituminious Pavement,19024,19024
+373,Box culvert (LRP170D),bridge,N1,Box culvert,19024,19024
+388,Bridge end (LRP176B),bridge,N1,Bridge end,19024,19024
+389,Box culvert (LRP176C),bridge,N1,Box culvert,19024,19024
+390,Box culvert (LRP176D),bridge,N1,Box culvert,19024,19024
+391,Km post missing (LRP177),link,N1,Km post missing,19024,19024
+392,Pipe culvert (LRP177A),bridge,N1,Pipe culvert,19024,19024
+413,Box culvert (LRP185B),bridge,N1,Box culvert,19024,19024
+414,Km post missing (LRP186),link,N1,Km post missing,19024,19024
+419,Km post missing (LRP188),link,N1,Km post missing,19024,19024
+420,Box culvert (LRP188A),bridge,N1,Box culvert,19024,19024
+421,Km post missing (LRP189),link,N1,Km post missing,19024,19024
+423,Km post missing (LRP190),link,N1,Km post missing,19024,19024
+468,Box culvert (LRP204F),bridge,N1,Box culvert,19024,19024
+469,"Ctg 40 km,Sitakanda 0 km (LRP205)",link,N1,"Ctg 40 km,Sitakanda 0 km",19024,19024
+354,Km post missing (LRP161),link,N1,Km post missing,19023,19023
+366,Bridge end/Start of Chittagong Road Division / Bridge end/Start of Chittagong Road Division (LRP168B),bridge,N1,Bridge end/Start of Chittagong Road Division / Bridge end/Start of Chittagong Road Division,19023,19023
+368,Box culvert (LRP169A),bridge,N1,Box culvert,19023,19023
+369,Km post missing (LRP170),link,N1,Km post missing,19023,19023
+374,Km post missing (LRP171),link,N1,Km post missing,19023,19023
+381,Box culvert (LRP174A),bridge,N1,Box culvert,19023,19023
+382,Box culvert (LRP174B),bridge,N1,Box culvert,19023,19023
+383,Km post missing (LRP175),link,N1,Km post missing,19023,19023
+384,Box culvert (LRP175A),bridge,N1,Box culvert,19023,19023
+385,Box culvert (LRP175B),bridge,N1,Box culvert,19023,19023
+416,Km post missing (LRP187),link,N1,Km post missing,19023,19023
+478,Box culvert (LRP207D),bridge,N1,Box culvert,19023,19023
+363,Km post missing (LRP167),link,N1,Km post missing,19022,19022
+376,Box culvert (LRP172B),bridge,N1,Box culvert,19022,19022
+377,Km post missing (LRP173),link,N1,Km post missing,19022,19022
+386,Km post missing (LRP176),link,N1,Km post missing,19022,19022
+387,Bridge start (LRP176A),bridge,N1,Bridge start,19022,19022
+393,Km post missing (LRP178),link,N1,Km post missing,19022,19022
+394,Box culvert (LRP178A),bridge,N1,Box culvert,19022,19022
+409,Road to Narayanhat (Z1021) (LRP184B),link,N1,Road to Narayanhat (Z1021),19022,19022
+410,Box culvert (LRP184C),bridge,N1,Box culvert,19022,19022
+411,Km post missing (LRP185),link,N1,Km post missing,19022,19022
+412,Box culvert (LRP185A),bridge,N1,Box culvert,19022,19022
+425,Km post missing (LRP191),link,N1,Km post missing,19022,19022
+426,Box culvert (LRP191A),bridge,N1,Box culvert,19022,19022
+431,Box culvert (LRP193A),bridge,N1,Box culvert,19022,19022
+432,Box Culvert (LRP193B),bridge,N1,Box Culvert,19022,19022
+433,Km post missing (LRP194),link,N1,Km post missing,19022,19022
+359,Ctg 81 kkm (LRP164),link,N1,Ctg 81 kkm,19021,19021
+364,Km post missing (LRP168),link,N1,Km post missing,19021,19021
+365,Bridge start (LRP168A),bridge,N1,Bridge start,19021,19021
+367,Km post missing (LRP169),link,N1,Km post missing,19021,19021
+405,Km post missing (LRP183),link,N1,Km post missing,19021,19021
+408,Bridge end (LRP184A),bridge,N1,Bridge end,19021,19021
+417,Bridge start (LRP187A),bridge,N1,Bridge start,19021,19021
+418,Bridge end (LRP187B),bridge,N1,Bridge end,19021,19021
+427,Km post missing (LRP192),link,N1,Km post missing,19021,19021
+336,Ctg 95 km (LRP150),link,N1,Ctg 95 km,19020,19020
+349,Km post missing (LRP157),link,N1,Km post missing,19020,19020
+350,Ctg 87 km (LRP158),link,N1,Ctg 87 km,19020,19020
+356,Km post missing (LRP163),link,N1,Km post missing,19020,19020
+357,Bridge start (LRP163A),bridge,N1,Bridge start,19020,19020
+358,Bridge end (LRP163B),bridge,N1,Bridge end,19020,19020
+402,Km post missing (LRP182),link,N1,Km post missing,19020,19020
+403,Box Culvert (LRP182A),bridge,N1,Box Culvert,19020,19020
+406,Bridge start (LRP183A),bridge,N1,Bridge start,19020,19020
+407,Km post missing (LRP184),link,N1,Km post missing,19020,19020
+428,Box culvert (LRP192A),bridge,N1,Box culvert,19020,19020
+429,Box culvert (LRP192B),bridge,N1,Box culvert,19020,19020
+430,"Ctg 52 km,Sitakhada 12 km (LRP193)",link,N1,"Ctg 52 km,Sitakhada 12 km",19020,19020
+351,Km post missing (LRP159),link,N1,Km post missing,19019,19019
+352,"Ctg 85 km,Bairyahat 10 km (LRP160)",link,N1,"Ctg 85 km,Bairyahat 10 km",19019,19019
+353,Road to Mounshirhat (Z1081) (LRP160A),link,N1,Road to Mounshirhat (Z1081),19019,19019
+395,Km post missing (LRP179),link,N1,Km post missing,19019,19019
+401,Box culvert (LRP181A),bridge,N1,Box culvert,19019,19019
+337,Km post missing (LRP151),link,N1,Km post missing,19018,19018
+338,Bridge start (LRP151A),bridge,N1,Bridge start,19018,19018
+348,Bridge end (LRP156B),bridge,N1,Bridge end,19018,19018
+404,Box culvert (LRP182B),bridge,N1,Box culvert,19018,19018
+344,Ctg 91 km (LRP154),link,N1,Ctg 91 km,19017,19017
+345,Km post missing (LRP155),link,N1,Km post missing,19017,19017
+339,Bridge end (LRP151B),bridge,N1,Bridge end,19016,19016
+343,Ctg 91 km (LRP153),link,N1,Ctg 91 km,19016,19016
+346,Km post missing (LRP156),link,N1,Km post missing,19016,19016
+347,Bridge start (LRP156A),bridge,N1,Bridge start,19016,19016
+396,Km post missing (LRP180),link,N1,Km post missing,19016,19016
+397,Box culvert (LRP180A),bridge,N1,Box culvert,19016,19016
+398,Box culvert (LRP180B),bridge,N1,Box culvert,19016,19016
+399,Box culvert (LRP180C),bridge,N1,Box culvert,19016,19016
+400,Km post missing (LRP181),link,N1,Km post missing,19016,19016
+340,"Ctg 93 km,Lalpole 1 km (LRP152)",link,N1,"Ctg 93 km,Lalpole 1 km",19013,19013
+341,Road to Feni Town (Z1034) (LRP152A),link,N1,Road to Feni Town (Z1034),19013,19013
+342,Road to Sonagazi (Z1034) (LRP152B),link,N1,Road to Sonagazi (Z1034),19013,19013
+2041,Box culvert (LRP221A),bridge,N2,Box culvert,17335,17335
+2042,Sylhet 10 km (LRP222),link,N2,Sylhet 10 km,17335,17335
+2043,Box culvert (LRP222A),bridge,N2,Box culvert,17335,17335
+2044,Box culvert (LRP222B),bridge,N2,Box culvert,17335,17335
+2045,Sylhet 9 km (LRP223),link,N2,Sylhet 9 km,17335,17335
+2046,Box culvert (LRP223A),bridge,N2,Box culvert,17334,17334
+2052,Sylhet 7 km (LRP225),link,N2,Sylhet 7 km,17334,17334
+2053,Box culvert (LRP225A),bridge,N2,Box culvert,17334,17334
+2048,Box culvert (LRP224A),bridge,N2,Box culvert,17333,17333
+2049,R283 (LRP224B),link,N2,R283,17333,17333
+2050,Bridge start (LRP224C),bridge,N2,Bridge start,17333,17333
+2051,Bridge end (LRP224D),bridge,N2,Bridge end,17333,17333
+2058,Box culvert (LRP226C),bridge,N2,Box culvert,17333,17333
+2059,Km post missing (LRP227),link,N2,Km post missing,17333,17333
+2060,Box culvert (LRP227A),bridge,N2,Box culvert,17333,17333
+2061,Km post missing (LRP228),link,N2,Km post missing,17333,17333
+2062,Bridge start (LRP228A),bridge,N2,Bridge start,17333,17333
+2063,Bridge end (LRP228B),bridge,N2,Bridge end,17333,17333
+2064,N209 / N208 to Moulovibazar (LRP228C),link,N2,N209 / N208 to Moulovibazar,17333,17333
+2047,Sylhet 8 km (LRP224),link,N2,Sylhet 8 km,17332,17332
+2055,Sylhet 6 km (LRP226),link,N2,Sylhet 6 km,17332,17332
+2054,Road to Balaganj (Z2013) (LRP225B),link,N2,Road to Balaganj (Z2013),17331,17331
+2056,Box culvert (LRP226A),bridge,N2,Box culvert,17331,17331
+2057,Box culvert (LRP226B),bridge,N2,Box culvert,17331,17331
+2036,Box culvert (LRP219A),bridge,N2,Box culvert,17330,17330
+2039,Bridge end (LRP220B),bridge,N2,Bridge end,17330,17330
+2040,Sylhet 11 km (LRP221),link,N2,Sylhet 11 km,17330,17330
+2037,Sylhet 12 km (LRP220),link,N2,Sylhet 12 km,17329,17329
+2038,Bridge start (LRP220A),bridge,N2,Bridge start,17329,17329
+2034,Sylhet 14 km (LRP218),link,N2,Sylhet 14 km,17327,17327
+2035,Sylhet 13 km (LRP219),link,N2,Sylhet 13 km,17327,17327
+2033,Sylhet 15 km (LRP217),link,N2,Sylhet 15 km,17323,17323
+2016,Sylhet 21 km (LRP211),link,N2,Sylhet 21 km,17319,17319
+2027,Sylhet 17 km (LRP215),link,N2,Sylhet 17 km,17319,17319
+2028,Box culvert (LRP215A),bridge,N2,Box culvert,17319,17319
+2032,Box culvert (LRP216C),bridge,N2,Box culvert,17319,17319
+2017,Box culvert (LRP211A),bridge,N2,Box culvert,17318,17318
+2018,Box culvert (LRP211B),bridge,N2,Box culvert,17318,17318
+2020,Box culvert (LRP212A),bridge,N2,Box culvert,17318,17318
+2021,Sylhet 19 km (LRP213),link,N2,Sylhet 19 km,17318,17318
+2022,Box culvert (LRP213A),bridge,N2,Box culvert,17318,17318
+2029,Sylhet 16 km (LRP216),link,N2,Sylhet 16 km,17318,17318
+2030,Box culvert (LRP216A),bridge,N2,Box culvert,17318,17318
+2031,Road to Lamakazi (Z2016) (LRP216B),link,N2,Road to Lamakazi (Z2016),17318,17318
+2014,Sylhet 22 km (LRP210),link,N2,Sylhet 22 km,17317,17317
+2015,Box culvert (LRP210A),bridge,N2,Box culvert,17317,17317
+2019,Sylhet 20 km (LRP212),link,N2,Sylhet 20 km,17317,17317
+2025,Box culvert (LRP214A),bridge,N2,Box culvert,17317,17317
+2026,Box culvert (LRP214B),bridge,N2,Box culvert,17317,17317
+2023,Box culvert (LRP213B),bridge,N2,Box culvert,17316,17316
+2024,Sylhet 18 km (LRP214),link,N2,Sylhet 18 km,17316,17316
+2011,Sylhet 23 km (LRP209),link,N2,Sylhet 23 km,17314,17314
+2012,Box culvert (LRP209A),bridge,N2,Box culvert,17314,17314
+2013,Box culvert (LRP209B),bridge,N2,Box culvert,17313,17313
+2009,Sylhet 24 km (LRP208),link,N2,Sylhet 24 km,17312,17312
+2010,Box culvert (LRP208A),bridge,N2,Box culvert,17312,17312
+2005,Box culvert (LRP206A),bridge,N2,Box culvert,17311,17311
+2008,Box culvert (LRP207A),bridge,N2,Box culvert,17311,17311
+1967,Bridge start (LRP192A),bridge,N2,Bridge start,17310,17310
+2006,Box culvert (LRP206B),bridge,N2,Box culvert,17310,17310
+2007,Km post broken (LRP207),link,N2,Km post broken,17310,17310
+1972,Bridge end (LRP194B),bridge,N2,Bridge end,17309,17309
+1975,Sylhet 37 km (LRP195),link,N2,Sylhet 37 km,17309,17309
+1980,Bridge end (LRP197B),bridge,N2,Bridge end,17309,17309
+1968,Bridge end (LRP192B),bridge,N2,Bridge end,17308,17308
+1969,Sylhet 39 km (LRP193),link,N2,Sylhet 39 km,17308,17308
+1970,Sylhet 38 km (LRP194),link,N2,Sylhet 38 km,17308,17308
+1971,Bridge start (LRP194A),bridge,N2,Bridge start,17308,17308
+1973,Bridge start (LRP194C),bridge,N2,Bridge start,17308,17308
+1974,Bridge end (LRP194D),bridge,N2,Bridge end,17308,17308
+1977,Box culvert (LRP196A),bridge,N2,Box culvert,17308,17308
+1999,Box culvert (LRP203A),bridge,N2,Box culvert,17308,17308
+2002,Box Culvert (LRP205A),bridge,N2,Box Culvert,17308,17308
+2003,Road to Balaganj (Z2022) (LRP205B),link,N2,Road to Balaganj (Z2022),17308,17308
+2004,Sylhet 26 km (LRP206),link,N2,Sylhet 26 km,17308,17308
+1966,Sylhet 40 km/ Start of Sylhet road Division / Sylhet 40 km/ Start of Sylhet road Division (LRP192),link,N2,Sylhet 40 km/ Start of Sylhet road Division / Sylhet 40 km/ Start of Sylhet road Division,17307,17307
+1976,Sylhet 36 km (LRP196),link,N2,Sylhet 36 km,17307,17307
+1978,Sylhet 35 km (LRP197),link,N2,Sylhet 35 km,17307,17307
+1979,Bridge start (LRP197A),bridge,N2,Bridge start,17307,17307
+1983,Bridge end (LRP198B),bridge,N2,Bridge end,17307,17307
+1995,Box culvert (LRP201A),bridge,N2,Box culvert,17307,17307
+1996,Box culvert (LRP201B),bridge,N2,Box culvert,17307,17307
+1997,Sylhet 30 km (LRP202),link,N2,Sylhet 30 km,17307,17307
+1998,Km post missing (LRP203),link,N2,Km post missing,17307,17307
+2000,Sylhet 28 km (LRP204),link,N2,Sylhet 28 km,17307,17307
+2001,Sylhet 27 km (LRP205),link,N2,Sylhet 27 km,17307,17307
+1981,Sylhet 34 km (LRP198),link,N2,Sylhet 34 km,17306,17306
+1982,Bridge start (LRP198A),bridge,N2,Bridge start,17306,17306
+1984,Box culvert (LRP198C),bridge,N2,Box culvert,17306,17306
+1985,Sylhet 33 km (LRP199),link,N2,Sylhet 33 km,17306,17306
+1992,Box culvert (LRP200C),bridge,N2,Box culvert,17306,17306
+1993,Box culvert (LRP200D),bridge,N2,Box culvert,17306,17306
+1994,Km post missing (LRP201),link,N2,Km post missing,17306,17306
+1988,Box culvert (LRP199C),bridge,N2,Box culvert,17305,17305
+1989,Sylhet 32 km (LRP200),link,N2,Sylhet 32 km,17305,17305
+1986,Bridge start (LRP199A),bridge,N2,Bridge start,17304,17304
+1987,Bridge end (LRP199B),bridge,N2,Bridge end,17304,17304
+1990,Bridge start (LRP200A),bridge,N2,Bridge start,17304,17304
+1991,Bridge end (LRP200B),bridge,N2,Bridge end,17304,17304
+3126,Box culvert (LRP002A),bridge,N105,Box culvert,15272,15272
+3127,"Bangabandhu bridge 127 km,Mymensingh 130 km (LRP003)",bridge,N105,"Bangabandhu bridge 127 km,Mymensingh 130 km",15272,15272
+3128,Box culvert (LRP003A),bridge,N105,Box culvert,15271,15271
+3129,"Bangabandhu bridge 126 km,Mymensingh 129 km,Gazipur 45 km (LRP004)",bridge,N105,"Bangabandhu bridge 126 km,Mymensingh 129 km,Gazipur 45 km",15271,15271
+3132,Box culvert (LRP005A),bridge,N105,Box culvert,15271,15271
+3130,Tanaki Road (LRP004A),link,N105,Tanaki Road,15270,15270
+3131,"Bangabandhu bridge 125 km,Mymensingh 128 km,Gazipur 44 km (LRP005)",bridge,N105,"Bangabandhu bridge 125 km,Mymensingh 128 km,Gazipur 44 km",15270,15270
+3133,"Bangabandhu bridge 124 km,Gazipur 43 km,Mymensingh 127 km (LRP006)",bridge,N105,"Bangabandhu bridge 124 km,Gazipur 43 km,Mymensingh 127 km",15270,15270
+3134,Box culvert (LRP006A),bridge,N105,Box culvert,15270,15270
+3135,"R114, Nayapur- Raipura Road (LRP006B)",link,N105,"R114, Nayapur- Raipura Road",15270,15270
+3138,"Z1090, Majerchar -Kayetpara Road (LRP007A)",link,N105,"Z1090, Majerchar -Kayetpara Road",15270,15270
+3141,"Bangabondhu Bridge- 122 km, Mymensingh- 125 km, Gazipur 41km (LRP008)",bridge,N105,"Bangabondhu Bridge- 122 km, Mymensingh- 125 km, Gazipur 41km",15270,15270
+3147,Box Culvert (LRP010A),bridge,N105,Box Culvert,15270,15270
+3148,Bridge Start (LRP010B),bridge,N105,Bridge Start,15270,15270
+3149,Bridge end (LRP010C),bridge,N105,Bridge end,15270,15270
+3150,Information  missing (LRP011),link,N105,Information  missing,15270,15270
+3123,Km post missing (LRP001),link,N105,Km post missing,15269,15269
+3124,Box culvert (LRP001A),bridge,N105,Box culvert,15269,15269
+3125,"Bangabandhu Bridge 128 km,Mymensingh 132 km (LRP002)",bridge,N105,"Bangabandhu Bridge 128 km,Mymensingh 132 km",15269,15269
+3136,Box Culvert (LRP006C),bridge,N105,Box Culvert,15269,15269
+3137,"Bangabondhu Bridge-123 km,Mymanshingh -126 km, Gazipur 42 km (LRP007)",bridge,N105,"Bangabondhu Bridge-123 km,Mymanshingh -126 km, Gazipur 42 km",15269,15269
+3139,Bridge Start (LRP007B),bridge,N105,Bridge Start,15269,15269
+3140,Bridge end (LRP007C),bridge,N105,Bridge end,15269,15269
+3143,Box Culvert (LRP009A),bridge,N105,Box Culvert,15269,15269
+3145,Bridge end (LRP009C),bridge,N105,Bridge end,15269,15269
+3146,"Bangabondhu Bridge- 120 km, Mymensingh- 123 km, Gazipur 39 km (LRP010)",bridge,N105,"Bangabondhu Bridge- 120 km, Mymensingh- 123 km, Gazipur 39 km",15269,15269
+3142,"Bangabondhu Bridge 121km, Mymensingh- 124 km, Gazipur 40 km (LRP009)",bridge,N105,"Bangabondhu Bridge 121km, Mymensingh- 124 km, Gazipur 40 km",15268,15268
+3144,Bridge Start (LRP009B),bridge,N105,Bridge Start,15268,15268
+3151,"Bangabondhu Bridge 118 km, Mymenshingh 151 km, Gazipur 37 km (LRP012)",bridge,N105,"Bangabondhu Bridge 118 km, Mymenshingh 151 km, Gazipur 37 km",15268,15268
+3152,N2 Dhaka-Sylhet -Jaflong Road (LRP012A),link,N105,N2 Dhaka-Sylhet -Jaflong Road,15268,15268
+2201,Jaflong 10 km (LRP278),link,N2,Jaflong 10 km,9804,9804
+2202,Km post broken (LRP279),link,N2,Km post broken,9804,9804
+2200,Tamabil 7 km (LRP277),link,N2,Tamabil 7 km,9803,9803
+2211,Jaflong 4 km (LRP284),link,N2,Jaflong 4 km,9803,9803
+2212,Box culvert (LRP284A),bridge,N2,Box culvert,9803,9803
+2213,Box culvert (LRP284B),bridge,N2,Box culvert,9803,9803
+2196,Bridge end (LRP275B),bridge,N2,Bridge end,9802,9802
+2197,Jaflong 12 km (LRP276),link,N2,Jaflong 12 km,9802,9802
+2198,Bridge start (LRP276A),bridge,N2,Bridge start,9802,9802
+2199,Bridge end (LRP276B),bridge,N2,Bridge end,9802,9802
+2203,Jaflong 8 km (LRP280),link,N2,Jaflong 8 km,9802,9802
+2210,Km post missing (LRP283),link,N2,Km post missing,9802,9802
+2214,Jaflong 3 km (LRP285),link,N2,Jaflong 3 km,9802,9802
+2215,Box culvert (LRP285A),bridge,N2,Box culvert,9802,9802
+2216,Box culvert (LRP285B),bridge,N2,Box culvert,9802,9802
+2193,Bridge end (LRP274F),bridge,N2,Bridge end,9801,9801
+2194,Tamabil 9 km (LRP275),link,N2,Tamabil 9 km,9801,9801
+2195,Bridge start (LRP275A),bridge,N2,Bridge start,9801,9801
+2204,Bridge start (LRP280A),bridge,N2,Bridge start,9801,9801
+2205,Bridge end (LRP280B),bridge,N2,Bridge end,9801,9801
+2206,Tamabil 3 km (LRP281),link,N2,Tamabil 3 km,9801,9801
+2207,Bridge start (LRP281A),bridge,N2,Bridge start,9801,9801
+2208,Bridge end (LRP281B),bridge,N2,Bridge end,9801,9801
+2209,Jaflong 6 km (LRP282),link,N2,Jaflong 6 km,9801,9801
+2217,Km post broken (LRP286),link,N2,Km post broken,9801,9801
+2218,Box culvert (LRP286A),bridge,N2,Box culvert,9801,9801
+2219,Box culvert (LRP286B),bridge,N2,Box culvert,9801,9801
+2220,Jaflong 1  km (LRP287),link,N2,Jaflong 1  km,9801,9801
+2221,Bridge start (LRP287A),bridge,N2,Bridge start,9801,9801
+2222,Bridge end (LRP287B),bridge,N2,Bridge end,9801,9801
+2223,Box culvert (LRP287C),bridge,N2,Box culvert,9801,9801
+2165,Bridge end (LRP266B),bridge,N2,Bridge end,9800,9800
+2175,Bridge end (LRP270B),bridge,N2,Bridge end,9800,9800
+2176,Bridge start (LRP270C),bridge,N2,Bridge start,9800,9800
+2177,Bridge end (LRP270D),bridge,N2,Bridge end,9800,9800
+2178,Tamabil 13 km (LRP271),link,N2,Tamabil 13 km,9800,9800
+2179,Bridge start (LRP271A),bridge,N2,Bridge start,9800,9800
+2180,Bridge end (LRP271B),bridge,N2,Bridge end,9800,9800
+2181,Jaflong 16 km (LRP272),link,N2,Jaflong 16 km,9800,9800
+2186,Bridge end (LRP273B),bridge,N2,Bridge end,9800,9800
+2153,Box culvert (LRP262A),bridge,N2,Box culvert,9799,9799
+2154,Jaflong 25 km (LRP263),link,N2,Jaflong 25 km,9799,9799
+2155,Road to Kanaighat (Z2011) (LRP263A),link,N2,Road to Kanaighat (Z2011),9799,9799
+2159,Km post broken (LRP265),link,N2,Km post broken,9799,9799
+2160,Bridge start (LRP265A),bridge,N2,Bridge start,9799,9799
+2161,Bridge end (LRP265B),bridge,N2,Bridge end,9799,9799
+2162,Road to Gowainghat (Z2012) (LRP265C),link,N2,Road to Gowainghat (Z2012),9799,9799
+2163,Jaflong 22 km (LRP266),link,N2,Jaflong 22 km,9799,9799
+2164,Bridge start (LRP266A),bridge,N2,Bridge start,9799,9799
+2169,Jaintapur 3 km (LRP268),link,N2,Jaintapur 3 km,9799,9799
+2170,Jaflong 19 km (LRP269),link,N2,Jaflong 19 km,9799,9799
+2171,Bridge start (LRP269A),bridge,N2,Bridge start,9799,9799
+2172,Bridge end (LRP269B),bridge,N2,Bridge end,9799,9799
+2173,Jaintapur 1 km (LRP270),link,N2,Jaintapur 1 km,9799,9799
+2174,Bridge start (LRP270A),bridge,N2,Bridge start,9799,9799
+2182,Bridge start (LRP272A),bridge,N2,Bridge start,9799,9799
+2183,Bridge end (LRP272B),bridge,N2,Bridge end,9799,9799
+2184,Tamabil 11 km (LRP273),link,N2,Tamabil 11 km,9799,9799
+2185,Bridge start (LRP273A),bridge,N2,Bridge start,9799,9799
+2187,Jaflong 14 km (LRP274),link,N2,Jaflong 14 km,9799,9799
+2188,Bridge start (LRP274A),bridge,N2,Bridge start,9799,9799
+2189,Bridge end (LRP274B),bridge,N2,Bridge end,9799,9799
+2190,Bridge start (LRP274C),bridge,N2,Bridge start,9799,9799
+2191,Bridge end (LRP274D),bridge,N2,Bridge end,9799,9799
+2192,Bridge start (LRP274E),bridge,N2,Bridge start,9799,9799
+2147,Jaflong 28 km (LRP260),link,N2,Jaflong 28 km,9798,9798
+2151,Box culvert (LRP261B),bridge,N2,Box culvert,9798,9798
+2152,Km post missing (LRP262),link,N2,Km post missing,9798,9798
+2156,Bridge start (LRP263B),bridge,N2,Bridge start,9798,9798
+2157,Bridge end (LRP263C),bridge,N2,Bridge end,9798,9798
+2158,Jaintapur 7 km (LRP264),link,N2,Jaintapur 7 km,9798,9798
+2166,Jaintapur 4 km (LRP267),link,N2,Jaintapur 4 km,9798,9798
+2168,Bridge end (LRP267B),bridge,N2,Bridge end,9798,9798
+2069,Km post missing (LRP230),link,N2,Km post missing,9797,9797
+2070,Box culvert (LRP230A),bridge,N2,Box culvert,9797,9797
+2071,Box culvert (LRP230B),bridge,N2,Box culvert,9797,9797
+2083,Tamabil 50 km (LRP234),link,N2,Tamabil 50 km,9797,9797
+2142,Bridge end (LRP257B),bridge,N2,Bridge end,9797,9797
+2148,Box culvert (LRP260A),bridge,N2,Box culvert,9797,9797
+2149,Jaintapur 10 km (LRP261),link,N2,Jaintapur 10 km,9797,9797
+2150,Box culvert (LRP261A),bridge,N2,Box culvert,9797,9797
+2167,Bridge start (LRP267A),bridge,N2,Bridge start,9797,9797
+2072,Km post missing (LRP231),link,N2,Km post missing,9796,9796
+2073,Box culvert (LRP231A),bridge,N2,Box culvert,9796,9796
+2074,Road to Keen Bridge(N206) (LRP231B),bridge,N2,Road to Keen Bridge(N206),9796,9796
+2075,Box culvert (LRP231C),bridge,N2,Box culvert,9796,9796
+2076,Box culvert (LRP231D),bridge,N2,Box culvert,9796,9796
+2079,Box culvert (LRP232A),bridge,N2,Box culvert,9796,9796
+2111,Jainyapur 27 km (LRP244),link,N2,Jainyapur 27 km,9796,9796
+2143,Jaintapur 13 km (LRP258),link,N2,Jaintapur 13 km,9796,9796
+2146,Tamabil 25 km (LRP259),link,N2,Tamabil 25 km,9796,9796
+2065,Km post broken (LRP229),link,N2,Km post broken,9795,9795
+2066,Under Pass R250 (LRP229A),bridge,N2,Under Pass R250,9795,9795
+2067,Bridge start (LRP229B),bridge,N2,Bridge start,9795,9795
+2068,Bridge end (LRP229C),bridge,N2,Bridge end,9795,9795
+2077,Box culvert (LRP231E),bridge,N2,Box culvert,9795,9795
+2078,Km post missing (LRP232),link,N2,Km post missing,9795,9795
+2080,Km post missing (LRP233),link,N2,Km post missing,9795,9795
+2081,Box culvert (LRP233A),bridge,N2,Box culvert,9795,9795
+2082,Box culvert (LRP233B),bridge,N2,Box culvert,9795,9795
+2085,Horipur 17 km (LRP235),link,N2,Horipur 17 km,9795,9795
+2109,Bridge end (LRP243B),bridge,N2,Bridge end,9795,9795
+2110,Box culvert (LRP243C),bridge,N2,Box culvert,9795,9795
+2113,Box culvert (LRP245A),bridge,N2,Box culvert,9795,9795
+2140,Jaflong 31 km (LRP257),link,N2,Jaflong 31 km,9795,9795
+2141,Bridge start (LRP257A),bridge,N2,Bridge start,9795,9795
+2144,Bridge start (LRP258A),bridge,N2,Bridge start,9795,9795
+2145,Bridge end (LRP258B),bridge,N2,Bridge end,9795,9795
+2084,Box culvert (LRP234A),bridge,N2,Box culvert,9794,9794
+2086,Horipur 16 km (LRP236),link,N2,Horipur 16 km,9794,9794
+2087,Box culvert (LRP236A),bridge,N2,Box culvert,9794,9794
+2089,Tamabil 47 km (LRP237),link,N2,Tamabil 47 km,9794,9794
+2090,Bridge start (LRP237A),bridge,N2,Bridge start,9794,9794
+2091,Bridge end (LRP237B),bridge,N2,Bridge end,9794,9794
+2092,Jaflong 50 km (LRP238),link,N2,Jaflong 50 km,9794,9794
+2095,Box culvert (LRP238C),bridge,N2,Box culvert,9794,9794
+2096,Km post missing (LRP239),link,N2,Km post missing,9794,9794
+2097,N210 (LRP239A),link,N2,N210,9794,9794
+2112,Tamabil 39 km (LRP245),link,N2,Tamabil 39 km,9794,9794
+2124,Box culvert (LRP249A),bridge,N2,Box culvert,9794,9794
+2125,Jaflong 38 km (LRP250),link,N2,Jaflong 38 km,9794,9794
+2126,Box culvert (LRP250A),bridge,N2,Box culvert,9794,9794
+2127,Horipur 1 km (LRP251),link,N2,Horipur 1 km,9794,9794
+2128,Box culvert (LRP251A),bridge,N2,Box culvert,9794,9794
+2129,Km post missing (LRP252),link,N2,Km post missing,9794,9794
+2130,Bridge start (LRP252A),bridge,N2,Bridge start,9794,9794
+2088,Box culvert (LRP236B),bridge,N2,Box culvert,9793,9793
+2094,Bridge end (LRP238B),bridge,N2,Bridge end,9793,9793
+2098,Jaintapur 31 km (LRP240),link,N2,Jaintapur 31 km,9793,9793
+2099,Box culvert (LRP240A),bridge,N2,Box culvert,9793,9793
+2100,Box culvert (LRP240B),bridge,N2,Box culvert,9793,9793
+2101,Tamabil 43 km (LRP241),link,N2,Tamabil 43 km,9793,9793
+2102,Bridge start (LRP241A),bridge,N2,Bridge start,9793,9793
+2103,Bridge end (LRP241B),bridge,N2,Bridge end,9793,9793
+2105,Jaflong 46 km (LRP242),link,N2,Jaflong 46 km,9793,9793
+2106,Box culvert (LRP242A),bridge,N2,Box culvert,9793,9793
+2107,Horipur 9 km (LRP243),link,N2,Horipur 9 km,9793,9793
+2108,Bridge start (LRP243A),bridge,N2,Bridge start,9793,9793
+2114,Jaflong 42 km (LRP246),link,N2,Jaflong 42 km,9793,9793
+2115,Bridge start (LRP246A),bridge,N2,Bridge start,9793,9793
+2116,Bridge end (LRP246B),bridge,N2,Bridge end,9793,9793
+2131,Bridge end (LRP252B),bridge,N2,Bridge end,9793,9793
+2134,Bridge end (LRP253B),bridge,N2,Bridge end,9793,9793
+2135,Jaflong 34 km (LRP254),link,N2,Jaflong 34 km,9793,9793
+2139,Tamabil 28 km (LRP256),link,N2,Tamabil 28 km,9793,9793
+2104,Box culvert (LRP241C),bridge,N2,Box culvert,9792,9792
+2119,Box culvert (LRP247A),bridge,N2,Box culvert,9792,9792
+2132,Tamabil 31 km (LRP253),link,N2,Tamabil 31 km,9792,9792
+2133,Bridge start (LRP253A),bridge,N2,Bridge start,9792,9792
+2093,Bridge start (LRP238A),bridge,N2,Bridge start,9791,9791
+2117,Box culvert (LRP246C),bridge,N2,Box culvert,9791,9791
+2118,Horipur 5 km (LRP247),link,N2,Horipur 5 km,9791,9791
+2123,Tamabil 35 km (LRP249),link,N2,Tamabil 35 km,9791,9791
+2136,Jaintapur 16 km (LRP255),link,N2,Jaintapur 16 km,9791,9791
+2138,Bridge end (LRP255B),bridge,N2,Bridge end,9791,9791
+2120,Box culvert (LRP247B),bridge,N2,Box culvert,9790,9790
+2121,Jaintapur 23  km (LRP248),link,N2,Jaintapur 23  km,9790,9790
+2122,Box Culvert (LRP248A),bridge,N2,Box Culvert,9790,9790
+2137,Bridge start (LRP255A),bridge,N2,Bridge start,9790,9790
+3049,Box culvert (LRP023B),bridge,N104,Box culvert,5897,5897
+3114,Bridge start (LRP048A),bridge,N104,Bridge start,5896,5896
+3115,Bridge end (LRP048B),bridge,N104,Bridge end,5872,5872
+3116,Box culvert (LRP048C),bridge,N104,Box culvert,5871,5871
+3117,Sonapur 1 km (LRP049),link,N104,Sonapur 1 km,5871,5871
+3118,Box culvert (LRP049A),bridge,N104,Box culvert,5871,5871
+3119,Box culvert (LRP049B),bridge,N104,Box culvert,5871,5871
+3120,Sonapur Link Road Z-1440 (LRP049C),link,N104,Sonapur Link Road Z-1440,5871,5871
+3050,Road to Senbagh Z-1421 (LRP023C),link,N104,Road to Senbagh Z-1421,5870,5870
+3051,"Begumganj 12 km,Maijdee 20 km (LRP024)",link,N104,"Begumganj 12 km,Maijdee 20 km",5870,5870
+3032,"Begumganj 20 km,Maijdee 30 km (LRP016)",link,N104,"Begumganj 20 km,Maijdee 30 km",5869,5869
+3052,"Begumganj 11 km,Maijdee 21 km (LRP025)",link,N104,"Begumganj 11 km,Maijdee 21 km",5869,5869
+3053,Box culvert (LRP025A),bridge,N104,Box culvert,5869,5869
+3044,"Begumganj 14 km,Maijdee 24 km (LRP022)",link,N104,"Begumganj 14 km,Maijdee 24 km",5868,5868
+3036,"Begumganj 18 km,Maijdee 28 km (LRP018)",link,N104,"Begumganj 18 km,Maijdee 28 km",5867,5867
+3041,Infor.missing (LRP020),link,N104,Infor.missing,5867,5867
+3042,"Begumganj 15 km,Maijdee 25 km (LRP021)",link,N104,"Begumganj 15 km,Maijdee 25 km",5867,5867
+3043,Box culvert (LRP021A),bridge,N104,Box culvert,5867,5867
+3045,Bridge start (LRP022A),bridge,N104,Bridge start,5867,5867
+3046,Bridge end (LRP022B),bridge,N104,Bridge end,5867,5867
+3047,"Begumganj 13 km,Maijdee 23 km (LRP023)",link,N104,"Begumganj 13 km,Maijdee 23 km",5867,5867
+3048,Road to Chanderhat (Z1416) (LRP023A),link,N104,Road to Chanderhat (Z1416),5867,5867
+3054,"Begumganj 10 km,Maijdee 18 km(Wrong Writting) (LRP026)",link,N104,"Begumganj 10 km,Maijdee 18 km(Wrong Writting)",5867,5867
+3057,"Begumganj 8 km,Maijdee 16 km(Wrong Writting) (LRP028)",link,N104,"Begumganj 8 km,Maijdee 16 km(Wrong Writting)",5867,5867
+3058,2 V-Box culvert (LRP028A),bridge,N104,2 V-Box culvert,5867,5867
+3059,"Begumganj 7 km,Maijdee 17 km (LRP029)",link,N104,"Begumganj 7 km,Maijdee 17 km",5867,5867
+3023,Bridge end (LRP011B),bridge,N104,Bridge end,5866,5866
+3024,"Begumganj 24 km,Maijdee 34 km (LRP012)",link,N104,"Begumganj 24 km,Maijdee 34 km",5866,5866
+3025,"Begumganj 23 km,Maijdee 33 km (LRP013)",link,N104,"Begumganj 23 km,Maijdee 33 km",5866,5866
+3026,Box culvert (LRP013A),bridge,N104,Box culvert,5866,5866
+3031,Box culvert (LRP015A),bridge,N104,Box culvert,5866,5866
+3033,"Begumganj 19 km,Maijdee 29 km (LRP017)",link,N104,"Begumganj 19 km,Maijdee 29 km",5866,5866
+3034,Road to Biroli Z -1030 (LRP017A),link,N104,Road to Biroli Z -1030,5866,5866
+3035,Box culvert (LRP017B),bridge,N104,Box culvert,5866,5866
+3037,Box Culvert (LRP018A),bridge,N104,Box Culvert,5866,5866
+3038,Box Culvert (LRP018B),bridge,N104,Box Culvert,5866,5866
+3039,Noakhali RHD start / Noakhali RHD start (LRP018C),link,N104,Noakhali RHD start / Noakhali RHD start,5866,5866
+3040,Km post missing (LRP019),link,N104,Km post missing,5866,5866
+3060,"Begumganj 6 km,Maijdee 16 km (LRP030)",link,N104,"Begumganj 6 km,Maijdee 16 km",5866,5866
+3017,"Begumganj 27 km,Maijdee 37 km (LRP009)",link,N104,"Begumganj 27 km,Maijdee 37 km",5865,5865
+3018,Box culvert (LRP009A),bridge,N104,Box culvert,5865,5865
+3019,"Begumganj 26 km,Maijdee 36 km (LRP010)",link,N104,"Begumganj 26 km,Maijdee 36 km",5865,5865
+3020,Box culvert (LRP010A),bridge,N104,Box culvert,5865,5865
+3021,"Begumganj 25 km,Maijdee 35 km (LRP011)",link,N104,"Begumganj 25 km,Maijdee 35 km",5865,5865
+3022,Bridge start (LRP011A),bridge,N104,Bridge start,5865,5865
+3027,"Begumganj 22 km,Maijdee 32 km (LRP014)",link,N104,"Begumganj 22 km,Maijdee 32 km",5865,5865
+3055,"Begumganj 9 km,Maijdee 17 km(Wrong Writting) (LRP027)",link,N104,"Begumganj 9 km,Maijdee 17 km(Wrong Writting)",5865,5865
+3056,Slab culvert (LRP027A),bridge,N104,Slab culvert,5865,5865
+3061,Box culvert (LRP030A),bridge,N104,Box culvert,5865,5865
+3063,Slab culvert (LRP031A),bridge,N104,Slab culvert,5865,5865
+3016,Road to Senbagh (Z1443) (LRP008D),link,N104,Road to Senbagh (Z1443),5864,5864
+3028,Road to Baktermunshi (LRP014A),link,N104,Road to Baktermunshi,5864,5864
+3029,Road to Companiganj Z1441 (LRP014B),link,N104,Road to Companiganj Z1441,5864,5864
+3030,Km post missing (LRP015),link,N104,Km post missing,5864,5864
+3062,"Begumganj 5 km,Maijdee 13 km (LRP031)",link,N104,"Begumganj 5 km,Maijdee 13 km",5864,5864
+3011,"Begumgonj 29 km,Maijdee 39 km (LRP007)",link,N104,"Begumgonj 29 km,Maijdee 39 km",5863,5863
+3012,"Begumgonj 28 km,Maijdee 38 km (LRP008)",link,N104,"Begumgonj 28 km,Maijdee 38 km",5863,5863
+3013,Box culvert (LRP008A),bridge,N104,Box culvert,5863,5863
+3014,Bridge start (LRP008B),bridge,N104,Bridge start,5863,5863
+3015,Bridge end (LRP008C),bridge,N104,Bridge end,5863,5863
+3064,"Begumganj 4 km,Maijdee 12 km (LRP032)",link,N104,"Begumganj 4 km,Maijdee 12 km",5863,5863
+3065,Box culvert (LRP032A),bridge,N104,Box culvert,5863,5863
+3066,Km post missing (LRP033),link,N104,Km post missing,5863,5863
+3067,Km post missing (LRP034),link,N104,Km post missing,5863,5863
+3071,Z-1420 (LRP034D),link,N104,Z-1420,5863,5863
+3072,"Z-1450,Road Start (LRP034E)",link,N104,"Z-1450,Road Start",5863,5863
+3073,Rail road crossing (LRP034F),link,N104,Rail road crossing,5863,5863
+3005,"Begumgonj 33 km,Maijdee 43 km (LRP003)",link,N104,"Begumgonj 33 km,Maijdee 43 km",5862,5862
+3006,"Begumgonj 32 km,Maijdee 42 km (LRP004)",link,N104,"Begumgonj 32 km,Maijdee 42 km",5862,5862
+3007,Road to Gazirhat (Z1444) (LRP004A),link,N104,Road to Gazirhat (Z1444),5862,5862
+3008,Box culvert (LRP004B),bridge,N104,Box culvert,5862,5862
+3009,"Begumgonj 31 km,Maijdee 41 km (LRP005)",link,N104,"Begumgonj 31 km,Maijdee 41 km",5862,5862
+3068,Z-1450 road end (LRP034A),link,N104,Z-1450 road end,5862,5862
+3069,Bridge start (LRP034B),bridge,N104,Bridge start,5862,5862
+3070,Bridge end (LRP034C),bridge,N104,Bridge end,5862,5862
+3074,Km post missing (LRP035),link,N104,Km post missing,5862,5862
+3075,Bridge start (LRP035A),bridge,N104,Bridge start,5862,5862
+3076,Bridge end (LRP035B),bridge,N104,Bridge end,5862,5862
+3004,Box culvert (LRP002A),bridge,N104,Box culvert,5861,5861
+3010,"Begumgonj 30 km,Maijdee 40 km (LRP006)",link,N104,"Begumgonj 30 km,Maijdee 40 km",5861,5861
+3077,Km post missing (LRP036),link,N104,Km post missing,5861,5861
+3078,"Road to Sonaimuri (R142),Begumganj More (LRP036A)",link,N104,"Road to Sonaimuri (R142),Begumganj More",5861,5861
+3079,Road to Lakshmipur (R140) (LRP036B),link,N104,Road to Lakshmipur (R140),5861,5861
+3080,Box culvert (LRP036C),bridge,N104,Box culvert,5861,5861
+3093,"Maijdee 3 km,Sonapur 8 km (LRP042)",link,N104,"Maijdee 3 km,Sonapur 8 km",5861,5861
+3003,Km post missing (LRP002),link,N104,Km post missing,5860,5860
+3081,Km post missing (LRP037),link,N104,Km post missing,5860,5860
+3082,Box culvert (LRP037A),bridge,N104,Box culvert,5860,5860
+3083,Box culvert (LRP037B),bridge,N104,Box culvert,5860,5860
+3084,Km post missing (LRP038),link,N104,Km post missing,5860,5860
+3094,Km post missing (LRP043),link,N104,Km post missing,5860,5860
+3095,Box Culvert (LRP043A),bridge,N104,Box Culvert,5860,5860
+3096,Road to Right R-143 (LRP043B),link,N104,Road to Right R-143,5860,5860
+3099,"Maijdee 1 km,Sonapur 6 km (LRP044)",link,N104,"Maijdee 1 km,Sonapur 6 km",5860,5860
+3100,Box Culvert (LRP044A),bridge,N104,Box Culvert,5860,5860
+3101,Box Culvert (LRP044B),bridge,N104,Box Culvert,5860,5860
+3102,Bridge start (LRP044C),bridge,N104,Bridge start,5860,5860
+3103,Bridge end (LRP044D),bridge,N104,Bridge end,5860,5860
+3104,Box Culvert (LRP044E),bridge,N104,Box Culvert,5860,5860
+3105,"Z-1452,Link Section end (Maijdee Station road) (LRP044F)",link,N104,"Z-1452,Link Section end (Maijdee Station road)",5860,5860
+3106,Km post missing (LRP045),link,N104,Km post missing,5860,5860
+3107,"Z-1452,Maijdee Station road / Road to Dadpur,Z-1429 (LRP045A)",link,N104,"Z-1452,Maijdee Station road / Road to Dadpur,Z-1429",5860,5860
+3108,Box culvert (LRP045C),bridge,N104,Box culvert,5860,5860
+3110,"Sonapur 4 km, Bagumganj 10 km, Maijdee 1 km (LRP046)",link,N104,"Sonapur 4 km, Bagumganj 10 km, Maijdee 1 km",5860,5860
+3111,Box culvert (LRP046A),bridge,N104,Box culvert,5860,5860
+3112,"Sonapur 3 km,Begumganj 11 km (LRP047)",link,N104,"Sonapur 3 km,Begumganj 11 km",5860,5860
+3113,"Sonapur 2 km,Begumganj 12 km,Maijdee 3 km (LRP048)",link,N104,"Sonapur 2 km,Begumganj 12 km,Maijdee 3 km",5860,5860
+3085,Bridge start (LRP038A),bridge,N104,Bridge start,5859,5859
+3086,Bridge end (LRP038B),bridge,N104,Bridge end,5859,5859
+3087,"Maijdee 6 km,Sonapur 11 km (LRP039)",link,N104,"Maijdee 6 km,Sonapur 11 km",5859,5859
+3088,Box culvert (LRP039A),bridge,N104,Box culvert,5859,5859
+3090,Box culvert (LRP040A),bridge,N104,Box culvert,5859,5859
+3091,"Maijdee 4 km,Sonapur 9 km (LRP041)",link,N104,"Maijdee 4 km,Sonapur 9 km",5859,5859
+3092,Box culvert (LRP041A),bridge,N104,Box culvert,5859,5859
+3097,Bridge start (LRP043C),bridge,N104,Bridge start,5859,5859
+3098,Bridge end (LRP043D),bridge,N104,Bridge end,5859,5859
+3109,Box Culvert (LRP045D),bridge,N104,Box Culvert,5859,5859
+3089,"Maijdee 5 km,Sonapur 10 km (LRP040)",link,N104,"Maijdee 5 km,Sonapur 10 km",5858,5858
+3001,Km post missing (LRP001),link,N104,Km post missing,5791,5791
+3002,Right to Comilla Left to Chittagong (LRP001A),link,N104,Right to Comilla Left to Chittagong,5791,5791
+3000,Box culvert (LRPSA),bridge,N104,Box culvert,5790,5790
+2733,Box Culvert (LRP029C),bridge,N207,Box Culvert,3853,3853
+2660,Km post missing (LRP001),link,N207,Km post missing,3839,3839
+2661,Bridge start (LRP001A),bridge,N207,Bridge start,3839,3839
+2662,Bridge end (LRP001B),bridge,N207,Bridge end,3839,3839
+2663,Km post missing (LRP002),link,N207,Km post missing,3838,3838
+2664,Bridge start (LRP002A),bridge,N207,Bridge start,3838,3838
+2665,Bridge end (LRP002B),bridge,N207,Bridge end,3838,3838
+2666,"Z2008 ,Nutan Bazar-Chunarughar road (LRP002C)",link,N207,"Z2008 ,Nutan Bazar-Chunarughar road",3838,3838
+2667,Km post missing (LRP003),link,N207,Km post missing,3838,3838
+2671,Km post missing (LRP005),link,N207,Km post missing,3838,3838
+2687,Srimongal 12 km (LRP013),link,N207,Srimongal 12 km,3838,3838
+2690,Srimongal  10 km (LRP015),link,N207,Srimongal  10 km,3838,3838
+2691,Srimongal 9 km (LRP016),link,N207,Srimongal 9 km,3838,3838
+2692,Srimongal 8km (LRP017),link,N207,Srimongal 8km,3838,3838
+2693,Box Culvert (LRP017A),bridge,N207,Box Culvert,3838,3838
+2694,Box Culvert (LRP017B),bridge,N207,Box Culvert,3838,3838
+2695,Srimongal 7 km (LRP018),link,N207,Srimongal 7 km,3838,3838
+2696,Bridge start (LRP018A),bridge,N207,Bridge start,3838,3838
+2697,Bridge end (LRP018B),bridge,N207,Bridge end,3838,3838
+2698,Box Culvert (LRP018C),bridge,N207,Box Culvert,3838,3838
+2699,Srimongal 6 km (LRP019),link,N207,Srimongal 6 km,3838,3838
+2700,Bridge start (LRP019A),bridge,N207,Bridge start,3838,3838
+2701,Bridge end (LRP019B),bridge,N207,Bridge end,3838,3838
+2702,Srimongal 5 km (LRP020),link,N207,Srimongal 5 km,3838,3838
+2703,Box Culvert (LRP020A),bridge,N207,Box Culvert,3838,3838
+2704,Box Culvert (LRP020B),bridge,N207,Box Culvert,3838,3838
+2705,Srimongal 4 km (LRP021),link,N207,Srimongal 4 km,3838,3838
+2706,Box Culvert (LRP021A),bridge,N207,Box Culvert,3838,3838
+2657,Pipe culvert (LRPSA),bridge,N207,Pipe culvert,3837,3837
+2658,Bridge Start (LRPSB),bridge,N207,Bridge Start,3837,3837
+2659,Bridge end (LRPSC),bridge,N207,Bridge end,3837,3837
+2668,Bridge start (LRP003A),bridge,N207,Bridge start,3837,3837
+2669,Bridge end (LRP003B),bridge,N207,Bridge end,3837,3837
+2670,Km post missing (LRP004),link,N207,Km post missing,3837,3837
+2685,Km post missing/ Start of Moulavibazar road Division / Km post missing/ Start of Moulavibazar road Division (LRP012),link,N207,Km post missing/ Start of Moulavibazar road Division / Km post missing/ Start of Moulavibazar road Division,3837,3837
+2686,Box Culvert (LRP012A),bridge,N207,Box Culvert,3837,3837
+2688,Srimongal 11 km (LRP014),link,N207,Srimongal 11 km,3837,3837
+2689,Box Culvert (LRP014A),bridge,N207,Box Culvert,3837,3837
+2707,Srimongal 3 km (LRP022),link,N207,Srimongal 3 km,3837,3837
+2728,Box Culvert (LRP028A),bridge,N207,Box Culvert,3837,3837
+2729,Box Culvert (LRP028B),bridge,N207,Box Culvert,3837,3837
+2730,Sylhet 77 km (LRP029),link,N207,Sylhet 77 km,3837,3837
+2731,Box Culvert (LRP029A),bridge,N207,Box Culvert,3837,3837
+2732,Box Culvert (LRP029B),bridge,N207,Box Culvert,3837,3837
+2672,Km post missing (LRP006),link,N207,Km post missing,3836,3836
+2673,Pipe culvert (LRP006A),bridge,N207,Pipe culvert,3836,3836
+2674,Km post missing (LRP007),link,N207,Km post missing,3836,3836
+2675,Km post missing (LRP008),link,N207,Km post missing,3836,3836
+2676,Box Culvert (LRP008A),bridge,N207,Box Culvert,3836,3836
+2677,Box Culvert (LRP008B),bridge,N207,Box Culvert,3836,3836
+2678,Km post missing (LRP009),link,N207,Km post missing,3836,3836
+2679,Box Culvert (LRP009A),bridge,N207,Box Culvert,3836,3836
+2680,Box Culvert (LRP009B),bridge,N207,Box Culvert,3836,3836
+2681,Box Culvert (LRP009C),bridge,N207,Box Culvert,3836,3836
+2708,Bridge start (LRP022A),bridge,N207,Bridge start,3836,3836
+2709,Bridge end (LRP022B),bridge,N207,Bridge end,3836,3836
+2710,Srimongal 2 km (LRP023),link,N207,Srimongal 2 km,3836,3836
+2711,Box Culvert (LRP023A),bridge,N207,Box Culvert,3836,3836
+2712,Srimongal 1 km (LRP024),link,N207,Srimongal 1 km,3836,3836
+2713,"Z2003 ,Khulna -Srimongal road (LRP024A)",link,N207,"Z2003 ,Khulna -Srimongal road",3836,3836
+2714,Sylhet 81 km (LRP025),link,N207,Sylhet 81 km,3836,3836
+2715,Box culvert (LRP025A),bridge,N207,Box culvert,3836,3836
+2716,Box Culvert (LRP025B),bridge,N207,Box Culvert,3836,3836
+2717,Box Culvert (LRP025C),bridge,N207,Box Culvert,3836,3836
+2718,Box Culvert (LRP025D),bridge,N207,Box Culvert,3836,3836
+2719,Sylhet 80 km (LRP026),link,N207,Sylhet 80 km,3836,3836
+2720,Box Culvert (LRP026A),bridge,N207,Box Culvert,3836,3836
+2721,Box Culvert (LRP026B),bridge,N207,Box Culvert,3836,3836
+2722,Sylhet 79 km (LRP027),link,N207,Sylhet 79 km,3836,3836
+2723,Box Culvert (LRP027A),bridge,N207,Box Culvert,3836,3836
+2724,Box Culvert (LRP027B),bridge,N207,Box Culvert,3836,3836
+2725,Bridge start (LRP027C),bridge,N207,Bridge start,3836,3836
+2726,Bridge end (LRP027D),bridge,N207,Bridge end,3836,3836
+2727,Sylhet 78 km (LRP028),link,N207,Sylhet 78 km,3836,3836
+2764,Box Culvert (LRP040B),bridge,N207,Box Culvert,3836,3836
+2682,Km post missing (LRP010),link,N207,Km post missing,3835,3835
+2683,Box Culvert (LRP010A),bridge,N207,Box Culvert,3835,3835
+2684,Km post missing (LRP011),link,N207,Km post missing,3835,3835
+2754,Box Culvert (LRP037B),bridge,N207,Box Culvert,3835,3835
+2756,Sylhet 68 km (LRP038),link,N207,Sylhet 68 km,3835,3835
+2757,Box Culvert (LRP038A),bridge,N207,Box Culvert,3835,3835
+2758,Box Culvert (LRP038B),bridge,N207,Box Culvert,3835,3835
+2759,Sylhet 67 km (LRP039),link,N207,Sylhet 67 km,3835,3835
+2760,Box Culvert (LRP039A),bridge,N207,Box Culvert,3835,3835
+2761,Box Culvert (LRP039B),bridge,N207,Box Culvert,3835,3835
+2762,Sylhet 66 km (LRP040),link,N207,Sylhet 66 km,3835,3835
+2763,Box Culvert (LRP040A),bridge,N207,Box Culvert,3835,3835
+2765,Sylhet 65 km (LRP041),link,N207,Sylhet 65 km,3835,3835
+2766,Box Culvert (LRP041A),bridge,N207,Box Culvert,3835,3835
+2767,Box Culvert (LRP041B),bridge,N207,Box Culvert,3835,3835
+2768,Sylhet 64 km (LRP042),link,N207,Sylhet 64 km,3835,3835
+2769,Box Culvert (LRP042A),bridge,N207,Box Culvert,3835,3835
+2770,Sylhet 63 km (LRP043),link,N207,Sylhet 63 km,3835,3835
+2734,Sylhet 76 km (LRP030),link,N207,Sylhet 76 km,3834,3834
+2735,Box Culvert (LRP030A),bridge,N207,Box Culvert,3834,3834
+2736,Box Culvert (LRP030B),bridge,N207,Box Culvert,3834,3834
+2737,Box Culvert (LRP030C),bridge,N207,Box Culvert,3834,3834
+2738,Sylhet 75 km (LRP031),link,N207,Sylhet 75 km,3834,3834
+2739,Box Culvert (LRP031A),bridge,N207,Box Culvert,3834,3834
+2740,Sylhet 74 km (LRP032),link,N207,Sylhet 74 km,3834,3834
+2741,Box Culvert (LRP032A),bridge,N207,Box Culvert,3834,3834
+2742,Box Culvert (LRP032B),bridge,N207,Box Culvert,3834,3834
+2743,Sylhet 73 km (LRP033),link,N207,Sylhet 73 km,3834,3834
+2744,Box Culvert (LRP033A),bridge,N207,Box Culvert,3834,3834
+2745,Box Culvert (LRP033B),bridge,N207,Box Culvert,3834,3834
+2746,Sylhet 72 km (LRP034),link,N207,Sylhet 72 km,3834,3834
+2747,Box Culvert (LRP034A),bridge,N207,Box Culvert,3834,3834
+2752,Sylhet 69 km (LRP037),link,N207,Sylhet 69 km,3834,3834
+2753,Box Culvert (LRP037A),bridge,N207,Box Culvert,3834,3834
+2755,Box Culvert (LRP037C),bridge,N207,Box Culvert,3834,3834
+2748,Sylhet 71 km (LRP035),link,N207,Sylhet 71 km,3833,3833
+2749,Box Culvert (LRP035A),bridge,N207,Box Culvert,3833,3833
+2750,Sylhet 70 km (LRP036),link,N207,Sylhet 70 km,3833,3833
+2751,Box Culvert (LRP036A),bridge,N207,Box Culvert,3833,3833
+588,Box culvert (LRP251C),bridge,N1,Box culvert,2900,2900
+1184,Box culvert (LRP435A),bridge,N1,Box culvert,2894,2894
+655,Bridge start (LRP276B),bridge,N1,Bridge start,2892,2892
+1144,Bridge start (LRP428A),bridge,N1,Bridge start,2891,2891
+734,Box culvert (LRP307A),bridge,N1,Box culvert,2890,2890
+735,Box culvert (LRP307B),bridge,N1,Box culvert,2890,2890
+736,"Cox,s Bazar 87 km (LRP308)",link,N1,"Cox,s Bazar 87 km",2890,2890
+767,"Cox,s Bazar 78 km (LRP317)",link,N1,"Cox,s Bazar 78 km",2890,2890
+768,Box culvert (LRP317A),bridge,N1,Box culvert,2890,2890
+769,Box culvert (LRP317B),bridge,N1,Box culvert,2890,2890
+770,"Cox,s Bazar 77 km/Start of Cox's Bazar Road Division. / Cox,s Bazar 77 km/Start of Cox's Bazar Road Division. (LRP318)",link,N1,"Cox,s Bazar 77 km/Start of Cox's Bazar Road Division. / Cox,s Bazar 77 km/Start of Cox's Bazar Road Division.",2890,2890
+1050,Bridge start (LRP403D),bridge,N1,Bridge start,2890,2890
+730,Box culvert (LRP305A),bridge,N1,Box culvert,2889,2889
+731,"Cox,s Bazar 93 km,Lohagora 6 km (LRP306)",link,N1,"Cox,s Bazar 93 km,Lohagora 6 km",2889,2889
+732,Box culvert (LRP306A),bridge,N1,Box culvert,2889,2889
+733,"Cox,s Bazar 92 km,Lohagra 0 km (LRP307)",link,N1,"Cox,s Bazar 92 km,Lohagra 0 km",2889,2889
+737,Box culvert (LRP308A),bridge,N1,Box culvert,2889,2889
+738,Box culvert (LRP308B),bridge,N1,Box culvert,2889,2889
+739,Bridge start (LRP308C),bridge,N1,Bridge start,2889,2889
+740,Bridge end (LRP308D),bridge,N1,Bridge end,2889,2889
+741,"Cox,s Bazar 86 km,Chokaria 28 km (LRP309)",link,N1,"Cox,s Bazar 86 km,Chokaria 28 km",2889,2889
+742,Box culvert (LRP309A),bridge,N1,Box culvert,2889,2889
+743,Bridge start (LRP309B),bridge,N1,Bridge start,2889,2889
+744,Bridge end (LRP309C),bridge,N1,Bridge end,2889,2889
+745,"Cox,s Bazar 87 km,Chokaria 27 km (LRP310)",link,N1,"Cox,s Bazar 87 km,Chokaria 27 km",2889,2889
+746,Bridge start (LRP310A),bridge,N1,Bridge start,2889,2889
+747,Bridge end (LRP310B),bridge,N1,Bridge end,2889,2889
+748,Box culvert (LRP310C),bridge,N1,Box culvert,2889,2889
+749,Box culvert (LRP310D),bridge,N1,Box culvert,2889,2889
+750,"Cox,s Bazar 88 km,Chowria 27 km (LRP311)",link,N1,"Cox,s Bazar 88 km,Chowria 27 km",2889,2889
+751,"Cox,s Bazar 83 km,Chokaria 25 km (LRP312)",link,N1,"Cox,s Bazar 83 km,Chokaria 25 km",2889,2889
+752,Road to Banskhali (R171) (LRP312A),link,N1,Road to Banskhali (R171),2889,2889
+753,Box culvert (LRP312B),bridge,N1,Box culvert,2889,2889
+754,Km post missing (LRP313),link,N1,Km post missing,2889,2889
+755,Bridge start (LRP313A),bridge,N1,Bridge start,2889,2889
+756,Bridge end (LRP313B),bridge,N1,Bridge end,2889,2889
+757,Box culvert (LRP313C),bridge,N1,Box culvert,2889,2889
+758,Km post missing (LRP314),link,N1,Km post missing,2889,2889
+759,Box culvert (LRP314A),bridge,N1,Box culvert,2889,2889
+760,Bridge start (LRP314B),bridge,N1,Bridge start,2889,2889
+761,Bridge end (LRP314C),bridge,N1,Bridge end,2889,2889
+762,Info.Missing (LRP315),link,N1,Info.Missing,2889,2889
+763,Box culvert (LRP315A),bridge,N1,Box culvert,2889,2889
+764,Km post missing (LRP316),link,N1,Km post missing,2889,2889
+765,Box culvert (LRP316A),bridge,N1,Box culvert,2889,2889
+766,Box culvert (LRP316B),bridge,N1,Box culvert,2889,2889
+1008,Box culvert (LRP395B),bridge,N1,Box culvert,2889,2889
+592,Cox's Bazar 141km (LRP253),link,N1,Cox's Bazar 141km,2888,2888
+593,Box culvert (LRP253A),bridge,N1,Box culvert,2888,2888
+594,Cox's Bazar 140km (LRP254),link,N1,Cox's Bazar 140km,2888,2888
+595,Road to Arowana (Z1018) (LRP254A),link,N1,Road to Arowana (Z1018),2888,2888
+596,Box culvert (LRP254B),bridge,N1,Box culvert,2888,2888
+600,Bridge end (LRP255A),bridge,N1,Bridge end,2888,2888
+656,Bridge end (LRP276C),bridge,N1,Bridge end,2888,2888
+657,Info.Missing (LRP277),link,N1,Info.Missing,2888,2888
+658,Bridge start (LRP277A),bridge,N1,Bridge start,2888,2888
+659,Bridge end (LRP277B),bridge,N1,Bridge end,2888,2888
+660,Box culvert (LRP277C),bridge,N1,Box culvert,2888,2888
+661,Km post missing (LRP278),link,N1,Km post missing,2888,2888
+662,Box culvert (LRP278A),bridge,N1,Box culvert,2888,2888
+663,Road To Dhupchheri (Z1026) (LRP278B),link,N1,Road To Dhupchheri (Z1026),2888,2888
+664,Km post missing (LRP279),link,N1,Km post missing,2888,2888
+728,Bridge end (LRP304A),bridge,N1,Bridge end,2888,2888
+729,"Cox,s Bazar 94 km,Lohaona 1 km (LRP305)",link,N1,"Cox,s Bazar 94 km,Lohaona 1 km",2888,2888
+771,Box culvert (LRP318A),bridge,N1,Box culvert,2888,2888
+772,Box culvert (LRP318B),bridge,N1,Box culvert,2888,2888
+773,"Cox,s Bazar 76 km (LRP319)",link,N1,"Cox,s Bazar 76 km",2888,2888
+774,Box culvert (LRP319A),bridge,N1,Box culvert,2888,2888
+775,Box culvert (LRP319B),bridge,N1,Box culvert,2888,2888
+776,"Cox,s Bazar 75 km (LRP320)",link,N1,"Cox,s Bazar 75 km",2888,2888
+777,Road to Lama(Z1007) (LRP320A),link,N1,Road to Lama(Z1007),2888,2888
+778,"Cox,s Bazar 74 km (LRP321)",link,N1,"Cox,s Bazar 74 km",2888,2888
+779,Road to Toitong (Z1124) (LRP321A),link,N1,Road to Toitong (Z1124),2888,2888
+780,Box culvert (LRP321B),bridge,N1,Box culvert,2888,2888
+781,"Cox,s Bazar 73 km (LRP322)",link,N1,"Cox,s Bazar 73 km",2888,2888
+782,Box culvert (LRP322A),bridge,N1,Box culvert,2888,2888
+783,Cox's Bazar 72 km (LRP323),link,N1,Cox's Bazar 72 km,2888,2888
+567,Box culvert (LRP245A),bridge,N1,Box culvert,2887,2887
+568,Km post missing (LRP246),link,N1,Km post missing,2887,2887
+569,Bridge start (LRP246A),bridge,N1,Bridge start,2887,2887
+570,Bridge end (LRP246B),bridge,N1,Bridge end,2887,2887
+571,Km post missing (LRP247),link,N1,Km post missing,2887,2887
+572,Bridge start (LRP247A),bridge,N1,Bridge start,2887,2887
+573,Bridge end (LRP247B),bridge,N1,Bridge end,2887,2887
+574,Km post missing (LRP248),link,N1,Km post missing,2887,2887
+575,Bridge start (LRP248A),bridge,N1,Bridge start,2887,2887
+576,Bridge end (LRP248B),bridge,N1,Bridge end,2887,2887
+577,Bridge start (LRP248C),bridge,N1,Bridge start,2887,2887
+578,Bridge end (LRP248D),bridge,N1,Bridge end,2887,2887
+579,Km post missing (LRP249),link,N1,Km post missing,2887,2887
+580,Shah Amanath (Karnaphuli) Bridge (LRP249A),bridge,N1,Shah Amanath (Karnaphuli) Bridge,2887,2887
+581,Km post missing (LRP250),link,N1,Km post missing,2887,2887
+582,Bridge end (LRP250A),bridge,N1,Bridge end,2887,2887
+583,Bridge start (LRP250B),bridge,N1,Bridge start,2887,2887
+584,Bridge end (LRP250C),bridge,N1,Bridge end,2887,2887
+585,"Cox,s Bazar 143 km,Patiya 16 km (LRP251)",link,N1,"Cox,s Bazar 143 km,Patiya 16 km",2887,2887
+586,Road to BFDC Fisharies (Z1804) /Start of Dohazari Road Division. / Road to BFDC Fisharies (Z1804) /Start of Dohazari Road Division. (LRP251A),link,N1,Road to BFDC Fisharies (Z1804) /Start of Dohazari Road Division. / Road to BFDC Fisharies (Z1804) /Start of Dohazari Road Division.,2887,2887
+587,Road to Balakkhati (Z1065) (LRP251B),link,N1,Road to Balakkhati (Z1065),2887,2887
+589,Cox's Bazar 142 km (LRP252),link,N1,Cox's Bazar 142 km,2887,2887
+590,Box culvert (LRP252A),bridge,N1,Box culvert,2887,2887
+591,Box culvert (LRP252B),bridge,N1,Box culvert,2887,2887
+597,Box culvert (LRP254C),bridge,N1,Box culvert,2887,2887
+598,Bridge start (LRP254D),bridge,N1,Bridge start,2887,2887
+599,Cox's Bazar 139 km (LRP255),link,N1,Cox's Bazar 139 km,2887,2887
+601,Box Culvert (LRP255B),bridge,N1,Box Culvert,2887,2887
+602,Cox's Bazar 138 km (LRP256),link,N1,Cox's Bazar 138 km,2887,2887
+603,Road to Kaliganj (Z1071) (LRP256A),link,N1,Road to Kaliganj (Z1071),2887,2887
+724,"Cox.s Bazar 96 km,Lohaona 3 km (LRP303)",link,N1,"Cox.s Bazar 96 km,Lohaona 3 km",2887,2887
+725,Box culvert (LRP303A),bridge,N1,Box culvert,2887,2887
+726,Bridge start (LRP303B),bridge,N1,Bridge start,2887,2887
+727,Km post missing (LRP304),link,N1,Km post missing,2887,2887
+784,Box culvert (LRP323A),bridge,N1,Box culvert,2887,2887
+785,Info.Missing (LRP324),link,N1,Info.Missing,2887,2887
+789,Bridge end (LRP325B),bridge,N1,Bridge end,2887,2887
+790,"Cox,s Bazar 69 km (LRP326)",link,N1,"Cox,s Bazar 69 km",2887,2887
+791,Box culvert (LRP326A),bridge,N1,Box culvert,2887,2887
+792,Box culvert (LRP326B),bridge,N1,Box culvert,2887,2887
+793,"Cox,s Bazar 68 km (LRP327)",link,N1,"Cox,s Bazar 68 km",2887,2887
+794,Box culvert (LRP327A),bridge,N1,Box culvert,2887,2887
+604,Cox's Bazar 137 km (LRP257),link,N1,Cox's Bazar 137 km,2886,2886
+605,Box culvert (LRP257A),bridge,N1,Box culvert,2886,2886
+606,"Cox,s Bazar 136 km,Patiya 11 km (LRP258)",link,N1,"Cox,s Bazar 136 km,Patiya 11 km",2886,2886
+607,Box culvert (LRP258A),bridge,N1,Box culvert,2886,2886
+608,"Cox,s Bazar 135 km,Patiya 10 km (LRP259)",link,N1,"Cox,s Bazar 135 km,Patiya 10 km",2886,2886
+609,Box culvert (LRP259A),bridge,N1,Box culvert,2886,2886
+610,Road to Kaliganj (Z1070) (LRP259B),link,N1,Road to Kaliganj (Z1070),2886,2886
+611,Box culvert (LRP260),bridge,N1,Box culvert,2886,2886
+612,Box culvert (LRP260A),bridge,N1,Box culvert,2886,2886
+613,Box culvert (LRP260B),bridge,N1,Box culvert,2886,2886
+614,Road to Kalurghat (N107) (LRP260C),link,N1,Road to Kalurghat (N107),2886,2886
+615,Km post missing (LRP261),link,N1,Km post missing,2886,2886
+616,Box culvert (LRP261A),bridge,N1,Box culvert,2886,2886
+617,Km post missing (LRP262),link,N1,Km post missing,2886,2886
+646,Box culvert (LRP273A),bridge,N1,Box culvert,2886,2886
+647,Box culvert (LRP273B),bridge,N1,Box culvert,2886,2886
+648,Km post missing (LRP274),link,N1,Km post missing,2886,2886
+649,Box culvert (LRP274A),bridge,N1,Box culvert,2886,2886
+650,Km post missing (LRP275),link,N1,Km post missing,2886,2886
+651,Box culvert (LRP275A),bridge,N1,Box culvert,2886,2886
+652,Box culvert (LRP275B),bridge,N1,Box culvert,2886,2886
+653,Info.Missing (LRP276),link,N1,Info.Missing,2886,2886
+654,Box culvert (LRP276A),bridge,N1,Box culvert,2886,2886
+684,Keranirhat 4 km (LRP289),link,N1,Keranirhat 4 km,2886,2886
+685,Box Culvert (LRP289A),bridge,N1,Box Culvert,2886,2886
+686,Box Culvert (LRP289B),bridge,N1,Box Culvert,2886,2886
+687,"Cox,s Bazar 109 km (LRP290)",link,N1,"Cox,s Bazar 109 km",2886,2886
+688,Bridge start (LRP290A),bridge,N1,Bridge start,2886,2886
+689,Bridge end (LRP290B),bridge,N1,Bridge end,2886,2886
+690,Bridge start (LRP290C),bridge,N1,Bridge start,2886,2886
+691,Bridge end (LRP290D),bridge,N1,Bridge end,2886,2886
+692,Info.Missing (LRP291),link,N1,Info.Missing,2886,2886
+693,Box culvert (LRP291A),bridge,N1,Box culvert,2886,2886
+694,Box culvert (LRP291B),bridge,N1,Box culvert,2886,2886
+695,Km post missing (LRP292),link,N1,Km post missing,2886,2886
+696,Box culvert (LRP292A),bridge,N1,Box culvert,2886,2886
+697,Km post missing (LRP293),link,N1,Km post missing,2886,2886
+698,Road to Bandarban(N108) (LRP293A),link,N1,Road to Bandarban(N108),2886,2886
+699,Box culvert (LRP293B),bridge,N1,Box culvert,2886,2886
+700,Road to Satkaria (Z1019) (LRP293C),link,N1,Road to Satkaria (Z1019),2886,2886
+701,Km post missing (LRP294),link,N1,Km post missing,2886,2886
+702,Box culvert (LRP294A),bridge,N1,Box culvert,2886,2886
+703,"Cox,s Bazar 104 km (LRP295)",link,N1,"Cox,s Bazar 104 km",2886,2886
+704,"Cox,s Bazar 103 km,Pasea 5 km (LRP296)",link,N1,"Cox,s Bazar 103 km,Pasea 5 km",2886,2886
+705,Box culvert (LRP296A),bridge,N1,Box culvert,2886,2886
+706,"Cox,s Bazar 102 km,Pasha 3 km (LRP297)",link,N1,"Cox,s Bazar 102 km,Pasha 3 km",2886,2886
+707,Box culvert (LRP297A),bridge,N1,Box culvert,2886,2886
+708,Km post missing (LRP298),link,N1,Km post missing,2886,2886
+709,Bridge start (LRP298A),bridge,N1,Bridge start,2886,2886
+710,Bridge end (LRP298B),bridge,N1,Bridge end,2886,2886
+711,"Cox,s Bazar 100 km,Pasra 2 km (LRP299)",link,N1,"Cox,s Bazar 100 km,Pasra 2 km",2886,2886
+712,Bridge start (LRP299A),bridge,N1,Bridge start,2886,2886
+713,Bridge end (LRP299B),bridge,N1,Bridge end,2886,2886
+714,Box culvert (LRP299C),bridge,N1,Box culvert,2886,2886
+715,Km post missing (LRP300),link,N1,Km post missing,2886,2886
+716,Box culvert (LRP300A),bridge,N1,Box culvert,2886,2886
+722,Km post missing (LRP302),link,N1,Km post missing,2886,2886
+723,Box culvert (LRP302A),bridge,N1,Box culvert,2886,2886
+786,Box culvert (LRP324A),bridge,N1,Box culvert,2886,2886
+787,Km post missing (LRP325),link,N1,Km post missing,2886,2886
+788,Bridge start (LRP325A),bridge,N1,Bridge start,2886,2886
+795,Box culvert (LRP327B),bridge,N1,Box culvert,2886,2886
+796,"Cox,s Bazar 67 km (LRP328)",link,N1,"Cox,s Bazar 67 km",2886,2886
+797,Box culvert (LRP328A),bridge,N1,Box culvert,2886,2886
+798,Road to Paharchaanda(Z1125) (LRP328B),link,N1,Road to Paharchaanda(Z1125),2886,2886
+639,Box culvert (LRP271A),bridge,N1,Box culvert,2885,2885
+640,Box culvert (LRP271B),bridge,N1,Box culvert,2885,2885
+641,Km post missing (LRP272),link,N1,Km post missing,2885,2885
+642,Bridge start (LRP272A),bridge,N1,Bridge start,2885,2885
+643,Bridge end (LRP272B),bridge,N1,Bridge end,2885,2885
+644,Box Culvert (LRP272C),bridge,N1,Box Culvert,2885,2885
+645,Km post missing (LRP273),link,N1,Km post missing,2885,2885
+669,Km post missing (LRP280),link,N1,Km post missing,2885,2885
+670,Info.Missing (LRP281),link,N1,Info.Missing,2885,2885
+671,Road to Barma (Z1036) (LRP281A),link,N1,Road to Barma (Z1036),2885,2885
+672,Info.Missing (LRP282),link,N1,Info.Missing,2885,2885
+677,Km post missing (LRP286),link,N1,Km post missing,2885,2885
+678,Bridge start (LRP286A),bridge,N1,Bridge start,2885,2885
+679,Bridge end (LRP286B),bridge,N1,Bridge end,2885,2885
+680,Km post missing (LRP287),link,N1,Km post missing,2885,2885
+681,Bridge start (LRP287A),bridge,N1,Bridge start,2885,2885
+682,Bridge end (LRP287B),bridge,N1,Bridge end,2885,2885
+683,"Cox,s Bazar 111 km,Kasherhat 5 km (LRP288)",link,N1,"Cox,s Bazar 111 km,Kasherhat 5 km",2885,2885
+717,Box culvert (LRP300B),bridge,N1,Box culvert,2885,2885
+718,Km post missing (LRP301),link,N1,Km post missing,2885,2885
+719,Box culvert (LRP301A),bridge,N1,Box culvert,2885,2885
+720,Road to Tonkabati (Z1013) (LRP301B),link,N1,Road to Tonkabati (Z1013),2885,2885
+721,Box culvert (LRP301C),bridge,N1,Box culvert,2885,2885
+799,Cox's Bazar 66 km (LRP329),link,N1,Cox's Bazar 66 km,2885,2885
+800,Bridge start (LRP329A),bridge,N1,Bridge start,2885,2885
+801,Bridge end (LRP329B),bridge,N1,Bridge end,2885,2885
+802,Box culvert (LRP329C),bridge,N1,Box culvert,2885,2885
+803,Cox's Bazar 65km (LRP330),link,N1,Cox's Bazar 65km,2885,2885
+804,Box culvert (LRP330A),bridge,N1,Box culvert,2885,2885
+805,Cox.s Bazar 64 km (LRP331),link,N1,Cox.s Bazar 64 km,2885,2885
+806,Road to Paharchanda(Z1002) (LRP331A),link,N1,Road to Paharchanda(Z1002),2885,2885
+807,Bridge start (LRP331B),bridge,N1,Bridge start,2885,2885
+808,Bridge end (LRP331C),bridge,N1,Bridge end,2885,2885
+809,"Cox,s Bazar 63 km (LRP332)",link,N1,"Cox,s Bazar 63 km",2885,2885
+1221,Box culvert (LRP442A),bridge,N1,Box culvert,2885,2885
+618,Km post missing (LRP263),link,N1,Km post missing,2884,2884
+619,Box culvert (LRP263A),bridge,N1,Box culvert,2884,2884
+620,Info.Missing (LRP264),link,N1,Info.Missing,2884,2884
+621,Km post missing (LRP265),link,N1,Km post missing,2884,2884
+637,Box Culvert (LRP270A),bridge,N1,Box Culvert,2884,2884
+638,Info.Missing (LRP271),link,N1,Info.Missing,2884,2884
+665,Bridge start (LRP279A),bridge,N1,Bridge start,2884,2884
+666,Bridge end (LRP279B),bridge,N1,Bridge end,2884,2884
+667,Bridge start (LRP279C),bridge,N1,Bridge start,2884,2884
+668,Bridge end (LRP279D),bridge,N1,Bridge end,2884,2884
+673,Info.Missing (LRP283),link,N1,Info.Missing,2884,2884
+674,Box culvert (LRP283A),bridge,N1,Box culvert,2884,2884
+675,Km post missing (LRP284),link,N1,Km post missing,2884,2884
+676,Km post missing (LRP285),link,N1,Km post missing,2884,2884
+810,"Cox,s Bazar 62 km (LRP333)",link,N1,"Cox,s Bazar 62 km",2884,2884
+622,Bridge start (LRP265A),bridge,N1,Bridge start,2883,2883
+623,Bridge end (LRP265B),bridge,N1,Bridge end,2883,2883
+624,Km post missing (LRP266),link,N1,Km post missing,2883,2883
+625,Km post missing (LRP267),link,N1,Km post missing,2883,2883
+626,Slab Culvert (LRP267A),bridge,N1,Slab Culvert,2883,2883
+627,Road to Boalkhali (Z1059) (LRP267B),link,N1,Road to Boalkhali (Z1059),2883,2883
+628,Km post missing (LRP268),link,N1,Km post missing,2883,2883
+629,Road to Haidgaon (Z1057) (LRP268A),link,N1,Road to Haidgaon (Z1057),2883,2883
+630,Box culvert (LRP268B),bridge,N1,Box culvert,2883,2883
+631,Road to Anowara (R170) (LRP268C),link,N1,Road to Anowara (R170),2883,2883
+632,Km post missing (LRP269),link,N1,Km post missing,2883,2883
+811,Box culvert (LRP333A),bridge,N1,Box culvert,2883,2883
+812,Box culvert (LRP333B),bridge,N1,Box culvert,2883,2883
+813,"Cox,s Bazar 61 km (LRP334)",link,N1,"Cox,s Bazar 61 km",2883,2883
+814,Box culvert (LRP334A),bridge,N1,Box culvert,2883,2883
+633,Bridge start (LRP269A),bridge,N1,Bridge start,2882,2882
+634,Bridge end (LRP269B),bridge,N1,Bridge end,2882,2882
+635,Road to Chandnaisa(Z1039) (LRP269C),link,N1,Road to Chandnaisa(Z1039),2882,2882
+636,Km post missing (LRP270),link,N1,Km post missing,2882,2882
+815,"Cox,s Bazar 60 km (LRP335)",link,N1,"Cox,s Bazar 60 km",2882,2882
+816,Box culvert (LRP335A),bridge,N1,Box culvert,2882,2882
+817,Box culvert (LRP335B),bridge,N1,Box culvert,2882,2882
+818,Intersection with Z1126 (LRP335C),link,N1,Intersection with Z1126,2882,2882
+819,Box culvert (LRP335D),bridge,N1,Box culvert,2882,2882
+820,"Cox,s Bazar 59 km (LRP336)",link,N1,"Cox,s Bazar 59 km",2882,2882
+821,Bridge start (LRP336A),bridge,N1,Bridge start,2882,2882
+822,Bridge end (LRP336B),bridge,N1,Bridge end,2882,2882
+823,Road to Tuabazar (Z1127) (LRP336C),link,N1,Road to Tuabazar (Z1127),2882,2882
+824,Km post missing (LRP337),link,N1,Km post missing,2882,2882
+825,Road to Badarkhali (R172) (LRP337A),link,N1,Road to Badarkhali (R172),2882,2882
+850,Road to Garzania (Z1130) (LRP348A),link,N1,Road to Garzania (Z1130),2882,2882
+851,Box culvert (LRP348B),bridge,N1,Box culvert,2882,2882
+852,"Cox,s Bazar 46 km (LRP349)",link,N1,"Cox,s Bazar 46 km",2882,2882
+853,Bridge start (LRP349A),bridge,N1,Bridge start,2882,2882
+854,Bridge end (LRP349B),bridge,N1,Bridge end,2882,2882
+1009,Box culvert (LRP395C),bridge,N1,Box culvert,2882,2882
+1010,Box culvert (LRP395D),bridge,N1,Box culvert,2882,2882
+1011,Box culvert (LRP395E),bridge,N1,Box culvert,2882,2882
+1012,Box culvert (LRP395F),bridge,N1,Box culvert,2882,2882
+1013,Box culvert (LRP395G),bridge,N1,Box culvert,2882,2882
+1014,Box culvert (LRP395H),bridge,N1,Box culvert,2882,2882
+1015,"Teknaf 71km, Ukhia 17km (LRP396)",link,N1,"Teknaf 71km, Ukhia 17km",2882,2882
+1016,Box culvert (LRP396A),bridge,N1,Box culvert,2882,2882
+1017,Box culvert (LRP396B),bridge,N1,Box culvert,2882,2882
+1018,Box culvert (LRP396C),bridge,N1,Box culvert,2882,2882
+1019,Box culvert (LRP396D),bridge,N1,Box culvert,2882,2882
+1030,Box culvert (LRP398C),bridge,N1,Box culvert,2882,2882
+1031,Box culvert (LRP398D),bridge,N1,Box culvert,2882,2882
+1032,"Teknaf 68 km,Uthia 14 km (LRP399)",link,N1,"Teknaf 68 km,Uthia 14 km",2882,2882
+826,"Cox,s Bazar 57 km (LRP338)",link,N1,"Cox,s Bazar 57 km",2881,2881
+839,"Cox,s Bazar 52 km (LRP343)",link,N1,"Cox,s Bazar 52 km",2881,2881
+840,Box culvert (LRP343A),bridge,N1,Box culvert,2881,2881
+841,"Cox,s Bazar 51 km (LRP344)",link,N1,"Cox,s Bazar 51 km",2881,2881
+842,Box culvert (LRP344A),bridge,N1,Box culvert,2881,2881
+843,Cox's Bazar 50km (LRP345),link,N1,Cox's Bazar 50km,2881,2881
+844,Cox's Bazar 49km (LRP346),link,N1,Cox's Bazar 49km,2881,2881
+845,Cox's Bazar 48 km (LRP347),link,N1,Cox's Bazar 48 km,2881,2881
+846,Bridge start (LRP347A),bridge,N1,Bridge start,2881,2881
+847,Bridge end (LRP347B),bridge,N1,Bridge end,2881,2881
+848,Box culvert (LRP347C),bridge,N1,Box culvert,2881,2881
+849,"Cox,s Bazar 47 km (LRP348)",link,N1,"Cox,s Bazar 47 km",2881,2881
+855,"Cox,s Bazar 45 km (LRP350)",link,N1,"Cox,s Bazar 45 km",2881,2881
+856,Bridge start (LRP350A),bridge,N1,Bridge start,2881,2881
+857,Bridge end (LRP350B),bridge,N1,Bridge end,2881,2881
+858,Box culvert (LRP350C),bridge,N1,Box culvert,2881,2881
+859,Box culvert (LRP350D),bridge,N1,Box culvert,2881,2881
+860,"Cox,s Bazar 44 km (LRP351)",link,N1,"Cox,s Bazar 44 km",2881,2881
+861,"Cox,s Bazar 43 km (LRP352)",link,N1,"Cox,s Bazar 43 km",2881,2881
+876,Box culvert (LRP357B),bridge,N1,Box culvert,2881,2881
+877,"Cox,s Bazar 37 km (LRP358)",link,N1,"Cox,s Bazar 37 km",2881,2881
+878,Box culvert (LRP358A),bridge,N1,Box culvert,2881,2881
+879,Box culvert (LRP358B),bridge,N1,Box culvert,2881,2881
+880,Cox's Bazar 36 km (LRP359),link,N1,Cox's Bazar 36 km,2881,2881
+881,Box culvert (LRP359A),bridge,N1,Box culvert,2881,2881
+882,"Cox,s Bazar 35 km (LRP360)",link,N1,"Cox,s Bazar 35 km",2881,2881
+883,Box Culvert (LRP360A),bridge,N1,Box Culvert,2881,2881
+884,"Cox,s Bazar 34 km (LRP361)",link,N1,"Cox,s Bazar 34 km",2881,2881
+885,Box Culvert (LRP361A),bridge,N1,Box Culvert,2881,2881
+886,Box Culvert (LRP361B),bridge,N1,Box Culvert,2881,2881
+887,"Cos,x Bazar 33 km (LRP362)",link,N1,"Cos,x Bazar 33 km",2881,2881
+888,Bridge start (LRP362A),bridge,N1,Bridge start,2881,2881
+889,Bridge end (LRP362B),bridge,N1,Bridge end,2881,2881
+892,"Cox,s Bazar 32 km (LRP363)",link,N1,"Cox,s Bazar 32 km",2881,2881
+893,Cox's Bazar 31km (LRP364),link,N1,Cox's Bazar 31km,2881,2881
+900,"Cox,s Bazar 29 km (LRP366)",link,N1,"Cox,s Bazar 29 km",2881,2881
+901,Box culvert (LRP366A),bridge,N1,Box culvert,2881,2881
+940,Box culvert (LRP379C),bridge,N1,Box culvert,2881,2881
+941,"Cox,s Bazar 15 km (LRP380)",link,N1,"Cox,s Bazar 15 km",2881,2881
+942,Box culvert (LRP380A),bridge,N1,Box culvert,2881,2881
+945,Box culvert (LRP381A),bridge,N1,Box culvert,2881,2881
+946,Cox's Bazar 13km (LRP382),link,N1,Cox's Bazar 13km,2881,2881
+947,Box culvert (LRP382A),bridge,N1,Box culvert,2881,2881
+948,Box culvert (LRP382B),bridge,N1,Box culvert,2881,2881
+949,Box culvert (LRP382C),bridge,N1,Box culvert,2881,2881
+1020,Box culvert (LRP396E),bridge,N1,Box culvert,2881,2881
+1021,Box culvert (LRP396F),bridge,N1,Box culvert,2881,2881
+1022,"Teknaf 70 km,Uthia 16 km (LRP397)",link,N1,"Teknaf 70 km,Uthia 16 km",2881,2881
+1023,Box culvert (LRP397A),bridge,N1,Box culvert,2881,2881
+1024,Box culvert (LRP397B),bridge,N1,Box culvert,2881,2881
+1025,Box culvert (LRP397C),bridge,N1,Box culvert,2881,2881
+1026,Box culvert (LRP397D),bridge,N1,Box culvert,2881,2881
+1027,"Teknaf 69 km,Uthia 15 km (LRP398)",link,N1,"Teknaf 69 km,Uthia 15 km",2881,2881
+1028,Box culvert (LRP398A),bridge,N1,Box culvert,2881,2881
+1029,Box culvert (LRP398B),bridge,N1,Box culvert,2881,2881
+1033,Bridge start (LRP399A),bridge,N1,Bridge start,2881,2881
+1034,Bridge end (LRP399B),bridge,N1,Bridge end,2881,2881
+1035,Box culvert (LRP399C),bridge,N1,Box culvert,2881,2881
+1036,"Teknaf 67 km,Uthia 13 km (LRP400)",link,N1,"Teknaf 67 km,Uthia 13 km",2881,2881
+1037,Box culvert (LRP400A),bridge,N1,Box culvert,2881,2881
+827,"Cox,s Bazar 56 km (LRP339)",link,N1,"Cox,s Bazar 56 km",2880,2880
+828,Box culvert (LRP339A),bridge,N1,Box culvert,2880,2880
+829,Cox's Bazar 55 km (LRP340),link,N1,Cox's Bazar 55 km,2880,2880
+830,Box culvert (LRP340A),bridge,N1,Box culvert,2880,2880
+831,Box culvert (LRP340B),bridge,N1,Box culvert,2880,2880
+832,Bridge start (LRP340C),bridge,N1,Bridge start,2880,2880
+833,Bridge end (LRP340D),bridge,N1,Bridge end,2880,2880
+834,"Cox,s Bazar 54 km (LRP341)",link,N1,"Cox,s Bazar 54 km",2880,2880
+835,Box culvert (LRP341A),bridge,N1,Box culvert,2880,2880
+836,Road to Alikadam(Z1005) (LRP341B),link,N1,Road to Alikadam(Z1005),2880,2880
+837,Cox's Bazar 53km (LRP342),link,N1,Cox's Bazar 53km,2880,2880
+838,Pipe Culvert (LRP342A),bridge,N1,Pipe Culvert,2880,2880
+862,"Cox,s Bazar 42 km (LRP353)",link,N1,"Cox,s Bazar 42 km",2880,2880
+863,Box culvert (LRP353A),bridge,N1,Box culvert,2880,2880
+864,Cox's Bazar 41km (LRP354),link,N1,Cox's Bazar 41km,2880,2880
+865,Bridge start (LRP354A),bridge,N1,Bridge start,2880,2880
+866,Bridge end (LRP354B),bridge,N1,Bridge end,2880,2880
+867,"Z1131, Kutakhali-Maheshkhali (LRP354C)",link,N1,"Z1131, Kutakhali-Maheshkhali",2880,2880
+868,"Cox,s Bazar 40 km (LRP355)",link,N1,"Cox,s Bazar 40 km",2880,2880
+869,Box culvert (LRP355A),bridge,N1,Box culvert,2880,2880
+870,Box culvert (LRP355B),bridge,N1,Box culvert,2880,2880
+871,"Cox,s Bazar 39 km (LRP356)",link,N1,"Cox,s Bazar 39 km",2880,2880
+872,Box culvert (LRP356A),bridge,N1,Box culvert,2880,2880
+873,Box culvert (LRP356B),bridge,N1,Box culvert,2880,2880
+874,Cox's Bazar 38km (LRP357),link,N1,Cox's Bazar 38km,2880,2880
+875,Box culvert (LRP357A),bridge,N1,Box culvert,2880,2880
+890,Bridge start (LRP362C),bridge,N1,Bridge start,2880,2880
+891,Bridge end (LRP362D),bridge,N1,Bridge end,2880,2880
+894,Cox.s Bazar 30 km (LRP365),link,N1,Cox.s Bazar 30 km,2880,2880
+895,Box culvert (LRP365A),bridge,N1,Box culvert,2880,2880
+896,Box culvert (LRP365B),bridge,N1,Box culvert,2880,2880
+897,Bridge start (LRP365C),bridge,N1,Bridge start,2880,2880
+898,Bridge end (LRP365D),bridge,N1,Bridge end,2880,2880
+899,Box culvert (LRP365E),bridge,N1,Box culvert,2880,2880
+902,Box culvert (LRP366B),bridge,N1,Box culvert,2880,2880
+903,Cox.s Bazar 28 km (LRP367),link,N1,Cox.s Bazar 28 km,2880,2880
+904,Box culvert (LRP367A),bridge,N1,Box culvert,2880,2880
+906,Cox's Bazar 27km (LRP368),link,N1,Cox's Bazar 27km,2880,2880
+911,"Cox,s Bazar 24 km (LRP371)",link,N1,"Cox,s Bazar 24 km",2880,2880
+912,Box culvert (LRP371A),bridge,N1,Box culvert,2880,2880
+913,Cox.s Bazar 23 km (LRP372),link,N1,Cox.s Bazar 23 km,2880,2880
+914,Box culvert (LRP372A),bridge,N1,Box culvert,2880,2880
+937,"Cox,s Bazar 16 km (LRP379)",link,N1,"Cox,s Bazar 16 km",2880,2880
+938,Bridge start (LRP379A),bridge,N1,Bridge start,2880,2880
+939,Bridge end (LRP379B),bridge,N1,Bridge end,2880,2880
+943,Box culvert (LRP380B),bridge,N1,Box culvert,2880,2880
+944,"Cox,s Bazar 14 km (LRP381)",link,N1,"Cox,s Bazar 14 km",2880,2880
+950,Box culvert (LRP382D),bridge,N1,Box culvert,2880,2880
+951,"Cox,s Bazar 12 km (LRP383)",link,N1,"Cox,s Bazar 12 km",2880,2880
+952,Box culvert (LRP383A),bridge,N1,Box culvert,2880,2880
+953,Bridge start (LRP383B),bridge,N1,Bridge start,2880,2880
+954,Bridge end (LRP383C),bridge,N1,Bridge end,2880,2880
+959,Box culvert (LRP385A),bridge,N1,Box culvert,2880,2880
+960,Bridge start (LRP385B),bridge,N1,Bridge start,2880,2880
+961,Bridge end (LRP385C),bridge,N1,Bridge end,2880,2880
+962,Box culvert (LRP385D),bridge,N1,Box culvert,2880,2880
+963,"Cox,s Bazar 9 km (LRP386)",link,N1,"Cox,s Bazar 9 km",2880,2880
+964,Box culvert (LRP386A),bridge,N1,Box culvert,2880,2880
+967,Teknaf 79 km (LRP387),link,N1,Teknaf 79 km,2880,2880
+968,Box culvert (LRP387A),bridge,N1,Box culvert,2880,2880
+969,Box culvert (LRP387B),bridge,N1,Box culvert,2880,2880
+970,"Teknaf 78 km,Uttia 24 km (LRP388)",link,N1,"Teknaf 78 km,Uttia 24 km",2880,2880
+971,Box culvert (LRP388A),bridge,N1,Box culvert,2880,2880
+972,Box culvert (LRP388B),bridge,N1,Box culvert,2880,2880
+973,Box culvert (LRP388C),bridge,N1,Box culvert,2880,2880
+974,"Teknaf 77 km,Uthia 23 km (LRP389)",link,N1,"Teknaf 77 km,Uthia 23 km",2880,2880
+975,Box culvert (LRP389A),bridge,N1,Box culvert,2880,2880
+976,Box culvert (LRP389B),bridge,N1,Box culvert,2880,2880
+977,Bridge start (LRP389C),bridge,N1,Bridge start,2880,2880
+978,Bridge end (LRP389D),bridge,N1,Bridge end,2880,2880
+979,Box culvert (LRP389E),bridge,N1,Box culvert,2880,2880
+980,"Teknaf 76 km,Uthia 22 km (LRP390)",link,N1,"Teknaf 76 km,Uthia 22 km",2880,2880
+981,Box culvert (LRP390A),bridge,N1,Box culvert,2880,2880
+982,Box culvert (LRP390B),bridge,N1,Box culvert,2880,2880
+983,Box culvert (LRP390C),bridge,N1,Box culvert,2880,2880
+984,"Teknaf 75 km,Uthia 21 km (LRP391)",link,N1,"Teknaf 75 km,Uthia 21 km",2880,2880
+985,Box culvert (LRP391A),bridge,N1,Box culvert,2880,2880
+986,Box culvert (LRP391B),bridge,N1,Box culvert,2880,2880
+987,Box culvert (LRP391C),bridge,N1,Box culvert,2880,2880
+988,Km post missing (LRP392),link,N1,Km post missing,2880,2880
+1038,Box culvert (LRP400B),bridge,N1,Box culvert,2880,2880
+1039,"Teknaf 66 km,Uthia 12 km (LRP401)",link,N1,"Teknaf 66 km,Uthia 12 km",2880,2880
+1040,Khulna Plong Bridge (LRP401A),bridge,N1,Khulna Plong Bridge,2880,2880
+1041,Bridge end (LRP401B),bridge,N1,Bridge end,2880,2880
+1042,"Teknaf 65 km,Uthia 11 km (LRP402)",link,N1,"Teknaf 65 km,Uthia 11 km",2880,2880
+1043,Bridge start (LRP402A),bridge,N1,Bridge start,2880,2880
+1044,Bridge end (LRP402B),bridge,N1,Bridge end,2880,2880
+1045,Box culvert (LRP402C),bridge,N1,Box culvert,2880,2880
+1046,Km post broken (LRP403),link,N1,Km post broken,2880,2880
+1047,Bridge start (LRP403A),bridge,N1,Bridge start,2880,2880
+1048,Bridge end (LRP403B),bridge,N1,Bridge end,2880,2880
+1049,Road to Ramu(Z1009) (LRP403C),link,N1,Road to Ramu(Z1009),2880,2880
+905,Box culvert (LRP367B),bridge,N1,Box culvert,2879,2879
+907,Box culvert (LRP368A),bridge,N1,Box culvert,2879,2879
+908,Cox's Bazar 26km (LRP369),link,N1,Cox's Bazar 26km,2879,2879
+909,Box culvert (LRP369A),bridge,N1,Box culvert,2879,2879
+910,"Cox,s Bazar 25 km (LRP370)",link,N1,"Cox,s Bazar 25 km",2879,2879
+915,Box culvert (LRP372B),bridge,N1,Box culvert,2879,2879
+916,"Cox,s Bazar 22 km (LRP373)",link,N1,"Cox,s Bazar 22 km",2879,2879
+917,Bridge start (LRP373A),bridge,N1,Bridge start,2879,2879
+918,Bridge end (LRP373B),bridge,N1,Bridge end,2879,2879
+929,"Cox,s Bazar 18 km (LRP377)",link,N1,"Cox,s Bazar 18 km",2879,2879
+955,"Cox,s Bazar 11 km (LRP384)",link,N1,"Cox,s Bazar 11 km",2879,2879
+956,Box culvert (LRP384A),bridge,N1,Box culvert,2879,2879
+957,Box culvert (LRP384B),bridge,N1,Box culvert,2879,2879
+958,"Cox,s Bazar 10 km (LRP385)",link,N1,"Cox,s Bazar 10 km",2879,2879
+965,Box culvert (LRP386B),bridge,N1,Box culvert,2879,2879
+966,"N110,Link road-Cox' Bazar, (Labonir more) (LRP386C)",link,N1,"N110,Link road-Cox' Bazar, (Labonir more)",2879,2879
+989,Box culvert (LRP392A),bridge,N1,Box culvert,2879,2879
+990,Box culvert (LRP392B),bridge,N1,Box culvert,2879,2879
+1065,"Teknaf 59 km,Uthia 5 km (LRP408)",link,N1,"Teknaf 59 km,Uthia 5 km",2879,2879
+1066,"Teknaf 58 km,Uthia 4 km (LRP409)",link,N1,"Teknaf 58 km,Uthia 4 km",2879,2879
+1067,Box culvert (LRP409A),bridge,N1,Box culvert,2879,2879
+1068,Bridge start (LRP409B),bridge,N1,Bridge start,2879,2879
+1069,Bridge end (LRP409C),bridge,N1,Bridge end,2879,2879
+1070,Box Culvert (LRP409D),bridge,N1,Box Culvert,2879,2879
+1071,"Teknaf 57 km,Uthia 3 km (LRP410)",link,N1,"Teknaf 57 km,Uthia 3 km",2879,2879
+1072,Bridge start (LRP410A),bridge,N1,Bridge start,2879,2879
+1073,Bridge end (LRP410B),bridge,N1,Bridge end,2879,2879
+1074,Bridge start (LRP410C),bridge,N1,Bridge start,2879,2879
+1075,Bridge end (LRP410D),bridge,N1,Bridge end,2879,2879
+1076,"Teknaf 56 km,Uthia 2 km (LRP411)",link,N1,"Teknaf 56 km,Uthia 2 km",2879,2879
+1077,Bridge start (LRP411A),bridge,N1,Bridge start,2879,2879
+1078,Bridge end (LRP411B),bridge,N1,Bridge end,2879,2879
+1079,Box culvert (LRP411C),bridge,N1,Box culvert,2879,2879
+1080,Box culvert (LRP411D),bridge,N1,Box culvert,2879,2879
+1209,Box culvert (LRP439D),bridge,N1,Box culvert,2879,2879
+1210,Km post missing (LRP440),link,N1,Km post missing,2879,2879
+1211,Box culvert (LRP440A),bridge,N1,Box culvert,2879,2879
+1212,Box culvert (LRP440B),bridge,N1,Box culvert,2879,2879
+1213,Box culvert (LRP440C),bridge,N1,Box culvert,2879,2879
+1214,Bridge start (LRP440D),bridge,N1,Bridge start,2879,2879
+1215,Bridge end (LRP440E),bridge,N1,Bridge end,2879,2879
+1216,Info.Missing (LRP441),link,N1,Info.Missing,2879,2879
+1217,Box culvert (LRP441A),bridge,N1,Box culvert,2879,2879
+919,Box culvert (LRP373C),bridge,N1,Box culvert,2878,2878
+920,"Cox,s Bazar 21 km (LRP374)",link,N1,"Cox,s Bazar 21 km",2878,2878
+921,"Cox,s Bazar 20 km (LRP375)",link,N1,"Cox,s Bazar 20 km",2878,2878
+922,Box culvert (LRP375A),bridge,N1,Box culvert,2878,2878
+923,Box culvert (LRP375B),bridge,N1,Box culvert,2878,2878
+924,"Cox,s Bazar 19 km (LRP376)",link,N1,"Cox,s Bazar 19 km",2878,2878
+925,"Z1001, Road to Naikkongchhari (LRP376A)",link,N1,"Z1001, Road to Naikkongchhari",2878,2878
+926,Box culvert (LRP376B),bridge,N1,Box culvert,2878,2878
+927,Bridge start (LRP376C),bridge,N1,Bridge start,2878,2878
+928,Bridge end (LRP376D),bridge,N1,Bridge end,2878,2878
+930,Box culvert (LRP377A),bridge,N1,Box culvert,2878,2878
+931,Box culvert (LRP377B),bridge,N1,Box culvert,2878,2878
+932,"Cox,s Bazar 17 km (LRP378)",link,N1,"Cox,s Bazar 17 km",2878,2878
+933,Box culvert (LRP378A),bridge,N1,Box culvert,2878,2878
+934,Box culvert (LRP378B),bridge,N1,Box culvert,2878,2878
+935,Ramu old Section (N109) (LRP378C),link,N1,Ramu old Section (N109),2878,2878
+936,Box culvert (LRP378D),bridge,N1,Box culvert,2878,2878
+992,Bridge end (LRP392D),bridge,N1,Bridge end,2878,2878
+993,Box culvert (LRP392E),bridge,N1,Box culvert,2878,2878
+994,"Teknaf 74 km,Uthia 20 km (LRP393)",link,N1,"Teknaf 74 km,Uthia 20 km",2878,2878
+995,Box culvert (LRP393A),bridge,N1,Box culvert,2878,2878
+996,Bridge start (LRP393B),bridge,N1,Bridge start,2878,2878
+997,Bridge end (LRP393C),bridge,N1,Bridge end,2878,2878
+998,"Teknaf 73 km, Ukhia 19km (LRP394)",link,N1,"Teknaf 73 km, Ukhia 19km",2878,2878
+999,Box culvert (LRP394A),bridge,N1,Box culvert,2878,2878
+1000,Box culvert (LRP394B),bridge,N1,Box culvert,2878,2878
+1001,Box culvert (LRP394C),bridge,N1,Box culvert,2878,2878
+1002,Box culvert (LRP394D),bridge,N1,Box culvert,2878,2878
+1003,Box culvert (LRP394E),bridge,N1,Box culvert,2878,2878
+1004,Box culvert (LRP394F),bridge,N1,Box culvert,2878,2878
+1005,Box culvert (LRP394G),bridge,N1,Box culvert,2878,2878
+1006,"Teknaf 72 km,Uthia 18 km (LRP395)",link,N1,"Teknaf 72 km,Uthia 18 km",2878,2878
+1007,Box culvert (LRP395A),bridge,N1,Box culvert,2878,2878
+1059,"Teknaf 61 km,Uthia 7 km (LRP406)",link,N1,"Teknaf 61 km,Uthia 7 km",2878,2878
+1060,"Teknaf 60 km,Uthia 6 km (LRP407)",link,N1,"Teknaf 60 km,Uthia 6 km",2878,2878
+1061,Box culvert (LRP407A),bridge,N1,Box culvert,2878,2878
+1062,Bridge start (LRP407B),bridge,N1,Bridge start,2878,2878
+1063,Bridge end (LRP407C),bridge,N1,Bridge end,2878,2878
+1064,Box culvert (LRP407D),bridge,N1,Box culvert,2878,2878
+1081,"Teknaf 55 km,Uthia 1 km (LRP412)",link,N1,"Teknaf 55 km,Uthia 1 km",2878,2878
+1082,Box culvert (LRP412A),bridge,N1,Box culvert,2878,2878
+1083,Bridge start (LRP412B),bridge,N1,Bridge start,2878,2878
+1084,Bridge end (LRP412C),bridge,N1,Bridge end,2878,2878
+1085,Bridge start (LRP412D),bridge,N1,Bridge start,2878,2878
+1086,Bridge end (LRP412E),bridge,N1,Bridge end,2878,2878
+1087,Teknaf 54 km (LRP413),link,N1,Teknaf 54 km,2878,2878
+1088,"Z1503, Maricha Dukbanglow road (LRP413A)",link,N1,"Z1503, Maricha Dukbanglow road",2878,2878
+1089,Bridge start (LRP413B),bridge,N1,Bridge start,2878,2878
+1090,Bridge end (LRP413C),bridge,N1,Bridge end,2878,2878
+1091,Teknaf 53 km (LRP414),link,N1,Teknaf 53 km,2878,2878
+1092,Teknaf 52 km (LRP415),link,N1,Teknaf 52 km,2878,2878
+1189,Info.Missing (LRP436),link,N1,Info.Missing,2878,2878
+1190,Box culvert (LRP436A),bridge,N1,Box culvert,2878,2878
+1191,Bridge start (LRP436B),bridge,N1,Bridge start,2878,2878
+1192,Bridge end (LRP436C),bridge,N1,Bridge end,2878,2878
+1193,Box culvert (LRP436D),bridge,N1,Box culvert,2878,2878
+1194,Box culvert (LRP436E),bridge,N1,Box culvert,2878,2878
+1195,Km post missing (LRP437),link,N1,Km post missing,2878,2878
+1196,Box culvert (LRP437A),bridge,N1,Box culvert,2878,2878
+1197,Box culvert (LRP437B),bridge,N1,Box culvert,2878,2878
+1198,Box culvert / Box culvert (LRP437C),bridge,N1,Box culvert / Box culvert,2878,2878
+1199,Km post missing (LRP438),link,N1,Km post missing,2878,2878
+1200,Box culvert (LRP438A),bridge,N1,Box culvert,2878,2878
+1201,Box culvert (LRP438B),bridge,N1,Box culvert,2878,2878
+1202,Box culvert (LRP438C),bridge,N1,Box culvert,2878,2878
+1203,Box culvert (LRP438D),bridge,N1,Box culvert,2878,2878
+1204,Box culvert (LRP438E),bridge,N1,Box culvert,2878,2878
+1205,Info.Missing (LRP439),link,N1,Info.Missing,2878,2878
+1206,Box culvert (LRP439A),bridge,N1,Box culvert,2878,2878
+1207,Box culvert (LRP439B),bridge,N1,Box culvert,2878,2878
+1208,Box culvert (LRP439C),bridge,N1,Box culvert,2878,2878
+1218,Bridge start (LRP441B),bridge,N1,Bridge start,2878,2878
+1219,Bridge end (LRP441C),bridge,N1,Bridge end,2878,2878
+1220,Teknaf 24 km (LRP442),link,N1,Teknaf 24 km,2878,2878
+991,Bridge start (LRP392C),bridge,N1,Bridge start,2877,2877
+1051,Bridge end (LRP403E),bridge,N1,Bridge end,2877,2877
+1052,"Teknaf 63 km,Uthia 9 km (LRP404)",link,N1,"Teknaf 63 km,Uthia 9 km",2877,2877
+1053,"Z1503, Maricha Dakbunglow Road (LRP404A)",link,N1,"Z1503, Maricha Dakbunglow Road",2877,2877
+1054,Box culvert (LRP404B),bridge,N1,Box culvert,2877,2877
+1055,"Teknaf 62 km,Uthia 8 km (LRP405)",link,N1,"Teknaf 62 km,Uthia 8 km",2877,2877
+1056,Box culvert (LRP405A),bridge,N1,Box culvert,2877,2877
+1057,Bridge start (LRP405B),bridge,N1,Bridge start,2877,2877
+1058,Bridge end (LRP405C),bridge,N1,Bridge end,2877,2877
+1093,Teknaf 51km (LRP416),link,N1,Teknaf 51km,2877,2877
+1113,Box culvert (LRP421D),bridge,N1,Box culvert,2877,2877
+1114,Info.Missing (LRP422),link,N1,Info.Missing,2877,2877
+1115,Box culvert (LRP422A),bridge,N1,Box culvert,2877,2877
+1116,Bridge start (LRP422B),bridge,N1,Bridge start,2877,2877
+1117,Bridge end (LRP422C),bridge,N1,Bridge end,2877,2877
+1118,Info.Missing (LRP423),link,N1,Info.Missing,2877,2877
+1119,Box culvert (LRP423A),bridge,N1,Box culvert,2877,2877
+1120,Info.Missing (LRP424),link,N1,Info.Missing,2877,2877
+1121,Box culvert (LRP424A),bridge,N1,Box culvert,2877,2877
+1122,Box culvert (LRP424B),bridge,N1,Box culvert,2877,2877
+1123,Bridge start (LRP424C),bridge,N1,Bridge start,2877,2877
+1124,Bridge end (LRP424D),bridge,N1,Bridge end,2877,2877
+1125,Box culvert (LRP424E),bridge,N1,Box culvert,2877,2877
+1126,Info.Missing (LRP425),link,N1,Info.Missing,2877,2877
+1127,Box culvert (LRP425A),bridge,N1,Box culvert,2877,2877
+1128,Bridge start (LRP425B),bridge,N1,Bridge start,2877,2877
+1129,Bridge end (LRP425C),bridge,N1,Bridge end,2877,2877
+1130,Box culvert (LRP425D),bridge,N1,Box culvert,2877,2877
+1131,Box Culvert (LRP425E),bridge,N1,Box Culvert,2877,2877
+1132,Box culvert (LRP425F),bridge,N1,Box culvert,2877,2877
+1133,Info.Missing (LRP426),link,N1,Info.Missing,2877,2877
+1134,Box culvert (LRP426A),bridge,N1,Box culvert,2877,2877
+1135,Box culvert (LRP426B),bridge,N1,Box culvert,2877,2877
+1136,Box culvert (LRP426C),bridge,N1,Box culvert,2877,2877
+1137,Box culvert (LRP426D),bridge,N1,Box culvert,2877,2877
+1138,Box culvert (LRP426E),bridge,N1,Box culvert,2877,2877
+1139,Info.Missing (LRP427),link,N1,Info.Missing,2877,2877
+1140,Box culvert (LRP427A),bridge,N1,Box culvert,2877,2877
+1141,Bridge start (LRP427B),bridge,N1,Bridge start,2877,2877
+1142,Bridge end (LRP427C),bridge,N1,Bridge end,2877,2877
+1143,Teknaf 38 km (LRP428),link,N1,Teknaf 38 km,2877,2877
+1185,Box culvert (LRP435B),bridge,N1,Box culvert,2877,2877
+1186,Box culvert (LRP435C),bridge,N1,Box culvert,2877,2877
+1187,Box culvert (LRP435D),bridge,N1,Box culvert,2877,2877
+1188,Box culvert (LRP435E),bridge,N1,Box culvert,2877,2877
+1094,Teknaf 50 km (LRP417),link,N1,Teknaf 50 km,2876,2876
+1095,Box culvert (LRP417A),bridge,N1,Box culvert,2876,2876
+1096,Box culvert (LRP417B),bridge,N1,Box culvert,2876,2876
+1097,Info.Missing (LRP418),link,N1,Info.Missing,2876,2876
+1098,Box culvert (LRP418A),bridge,N1,Box culvert,2876,2876
+1099,Box culvert (LRP418B),bridge,N1,Box culvert,2876,2876
+1100,Box culvert (LRP418C),bridge,N1,Box culvert,2876,2876
+1101,Teknaf 47km (LRP419),link,N1,Teknaf 47km,2876,2876
+1102,Box culvert (LRP419A),bridge,N1,Box culvert,2876,2876
+1103,Box culvert (LRP419B),bridge,N1,Box culvert,2876,2876
+1104,Box culvert (LRP419C),bridge,N1,Box culvert,2876,2876
+1105,Teknaf 46 km (LRP420),link,N1,Teknaf 46 km,2876,2876
+1106,Box culvert (LRP420A),bridge,N1,Box culvert,2876,2876
+1107,Box culvert (LRP420B),bridge,N1,Box culvert,2876,2876
+1108,"Z1504, Ukhia Gundum Road (LRP420C)",link,N1,"Z1504, Ukhia Gundum Road",2876,2876
+1109,Info.Missing (LRP421),link,N1,Info.Missing,2876,2876
+1110,Box culvert (LRP421A),bridge,N1,Box culvert,2876,2876
+1111,Bridge start (LRP421B),bridge,N1,Bridge start,2876,2876
+1112,Bridge end (LRP421C),bridge,N1,Bridge end,2876,2876
+1151,Box culvert (LRP429D),bridge,N1,Box culvert,2874,2874
+1152,Bridge start (LRP429E),bridge,N1,Bridge start,2874,2874
+1153,Bridge end (LRP429F),bridge,N1,Bridge end,2874,2874
+1154,Info.Missing (LRP430),link,N1,Info.Missing,2874,2874
+1155,Box culvert (LRP430A),bridge,N1,Box culvert,2874,2874
+1156,Box culvert (LRP430B),bridge,N1,Box culvert,2874,2874
+1157,Bridge start (LRP430C),bridge,N1,Bridge start,2874,2874
+1158,Bridge end (LRP430D),bridge,N1,Bridge end,2874,2874
+1159,Box culvert (LRP430E),bridge,N1,Box culvert,2874,2874
+1160,Info.Missing (LRP431),link,N1,Info.Missing,2874,2874
+1161,Box culvert (LRP431A),bridge,N1,Box culvert,2874,2874
+1162,Box culvert (LRP431B),bridge,N1,Box culvert,2874,2874
+1163,Km post missing (LRP432),link,N1,Km post missing,2874,2874
+1164,Box culvert (LRP432A),bridge,N1,Box culvert,2874,2874
+1165,Box culvert (LRP432B),bridge,N1,Box culvert,2874,2874
+1166,Box culvert (LRP432C),bridge,N1,Box culvert,2874,2874
+1167,Box culvert (LRP432D),bridge,N1,Box culvert,2874,2874
+1168,Box culvert (LRP432E),bridge,N1,Box culvert,2874,2874
+1169,Box culvert (LRP432F),bridge,N1,Box culvert,2874,2874
+1145,Bridge end (LRP428B),bridge,N1,Bridge end,2873,2873
+1146,Box culvert (LRP428C),bridge,N1,Box culvert,2873,2873
+1147,Info.Missing (LRP429),link,N1,Info.Missing,2873,2873
+1148,Box culvert (LRP429A),bridge,N1,Box culvert,2873,2873
+1149,Box culvert (LRP429B),bridge,N1,Box culvert,2873,2873
+1150,Box culvert (LRP429C),bridge,N1,Box culvert,2873,2873
+1170,Info.Missing (LRP433),link,N1,Info.Missing,2873,2873
+1171,Box culvert (LRP433A),bridge,N1,Box culvert,2873,2873
+1172,Box culvert (LRP433B),bridge,N1,Box culvert,2873,2873
+1173,Box culvert (LRP433C),bridge,N1,Box culvert,2873,2873
+1174,Box culvert (LRP433D),bridge,N1,Box culvert,2873,2873
+1175,Z1133 Road to Shaplapur (LRP433E),link,N1,Z1133 Road to Shaplapur,2873,2873
+1176,Bridge start (LRP433F),bridge,N1,Bridge start,2873,2873
+1177,Bridge end (LRP433G),bridge,N1,Bridge end,2873,2873
+1178,Info.Missing (LRP434),link,N1,Info.Missing,2873,2873
+1179,Box culvert (LRP434A),bridge,N1,Box culvert,2873,2873
+1180,Box culvert (LRP434B),bridge,N1,Box culvert,2873,2873
+1181,Box culvert (LRP434C),bridge,N1,Box culvert,2873,2873
+1182,Box culvert (LRP434D),bridge,N1,Box culvert,2873,2873
+1183,Km post broken (LRP435),link,N1,Km post broken,2873,2873
+1272,Box culvert (LRP455A),bridge,N1,Box culvert,2872,2872
+1273,Bridge start (LRP455B),bridge,N1,Bridge start,2872,2872
+1274,Bridge end (LRP455C),bridge,N1,Bridge end,2872,2872
+1275,Km post missing (LRP456),link,N1,Km post missing,2872,2872
+1276,Box culvert (LRP456A),bridge,N1,Box culvert,2872,2872
+1277,Box culvert (LRP456B),bridge,N1,Box culvert,2872,2872
+1278,Box culvert (LRP456C),bridge,N1,Box culvert,2872,2872
+1279,Box culvert (LRP456D),bridge,N1,Box culvert,2872,2872
+1280,Bridge start (LRP456E),bridge,N1,Bridge start,2872,2872
+1281,Bridge end (LRP456F),bridge,N1,Bridge end,2872,2872
+1282,Infor.missing (LRP457),link,N1,Infor.missing,2872,2872
+1283,Bridge start (LRP457A),bridge,N1,Bridge start,2872,2872
+1284,Bridge end (LRP457B),bridge,N1,Bridge end,2872,2872
+1285,Bridge start (LRP457C),bridge,N1,Bridge start,2872,2872
+1286,Bridge end (LRP457D),bridge,N1,Bridge end,2872,2872
+1287,Box Culvert (LRP457E),bridge,N1,Box Culvert,2872,2872
+1288,Teknaf 8 km (LRP458),link,N1,Teknaf 8 km,2872,2872
+1289,Box Culvert (LRP458A),bridge,N1,Box Culvert,2872,2872
+1222,Box culvert (LRP442B),bridge,N1,Box culvert,2871,2871
+1223,Box culvert (LRP442C),bridge,N1,Box culvert,2871,2871
+1253,Box culvert (LRP451A),bridge,N1,Box culvert,2871,2871
+1254,Infor.missing (LRP452),link,N1,Infor.missing,2871,2871
+1255,Bridge start (LRP452A),bridge,N1,Bridge start,2871,2871
+1256,Bridge end (LRP452B),bridge,N1,Bridge end,2871,2871
+1261,Box culvert (LRP453A),bridge,N1,Box culvert,2871,2871
+1262,Box culvert (LRP453B),bridge,N1,Box culvert,2871,2871
+1263,Box culvert (LRP453C),bridge,N1,Box culvert,2871,2871
+1264,Box culvert (LRP453D),bridge,N1,Box culvert,2871,2871
+1265,Box culvert (LRP453E),bridge,N1,Box culvert,2871,2871
+1266,Info.Missing (LRP454),link,N1,Info.Missing,2871,2871
+1267,Box culvert (LRP454A),bridge,N1,Box culvert,2871,2871
+1268,Bridge start (LRP454B),bridge,N1,Bridge start,2871,2871
+1269,Bridge end (LRP454C),bridge,N1,Bridge end,2871,2871
+1270,Box culvert (LRP454D),bridge,N1,Box culvert,2871,2871
+1271,Info.Missing (LRP455),link,N1,Info.Missing,2871,2871
+1321,Km post missing (LRP462),link,N1,Km post missing,2871,2871
+1322,Bridge start (LRP462A),bridge,N1,Bridge start,2871,2871
+1323,Bridge end (LRP462B),bridge,N1,Bridge end,2871,2871
+1324,Teknaf 4 km (LRP463),link,N1,Teknaf 4 km,2871,2871
+1325,Bridge start (LRP463A),bridge,N1,Bridge start,2871,2871
+1326,Bridge end (LRP463B),bridge,N1,Bridge end,2871,2871
+1327,Info.Missing (LRP464),link,N1,Info.Missing,2871,2871
+1328,Box culvert (LRP464A),bridge,N1,Box culvert,2871,2871
+1329,Box culvert (LRP464B),bridge,N1,Box culvert,2871,2871
+1332,Bridge end (LRP465B),bridge,N1,Bridge end,2871,2871
+1333,Km post missing (LRP466),link,N1,Km post missing,2871,2871
+1334,Box culvert (LRP466A),bridge,N1,Box culvert,2871,2871
+1335,Bridge start (LRP466B),bridge,N1,Bridge start,2871,2871
+1336,Bridge end (LRP466C),bridge,N1,Bridge end,2871,2871
+1337,Infor.missing (LRP467),link,N1,Infor.missing,2871,2871
+1224,Box culvert (LRP442D),bridge,N1,Box culvert,2870,2870
+1225,Teknaf 23 km (LRP443),link,N1,Teknaf 23 km,2870,2870
+1226,Box culvert (LRP443A),bridge,N1,Box culvert,2870,2870
+1227,Bridge start (LRP443B),bridge,N1,Bridge start,2870,2870
+1228,Bridge end (LRP443C),bridge,N1,Bridge end,2870,2870
+1229,Teknaf 21 km (LRP444),link,N1,Teknaf 21 km,2870,2870
+1242,Box culvert (LRP447C),bridge,N1,Box culvert,2870,2870
+1243,Teknaf 29 km (LRP448),link,N1,Teknaf 29 km,2870,2870
+1244,Bridge start (LRP448A),bridge,N1,Bridge start,2870,2870
+1245,Bridge end (LRP448B),bridge,N1,Bridge end,2870,2870
+1246,Box culvert (LRP448C),bridge,N1,Box culvert,2870,2870
+1247,Teknaf 18 km (LRP449),link,N1,Teknaf 18 km,2870,2870
+1248,Box culvert (LRP449A),bridge,N1,Box culvert,2870,2870
+1249,Infor.missing (LRP450),link,N1,Infor.missing,2870,2870
+1250,Bridge start (LRP450A),bridge,N1,Bridge start,2870,2870
+1251,Bridge end (LRP450B),bridge,N1,Bridge end,2870,2870
+1252,Km post missing (LRP451),link,N1,Km post missing,2870,2870
+1257,Box culvert (LRP452C),bridge,N1,Box culvert,2870,2870
+1258,Bridge start (LRP452D),bridge,N1,Bridge start,2870,2870
+1259,Bridge end (LRP452E),bridge,N1,Bridge end,2870,2870
+1260,Info.Missing (LRP453),link,N1,Info.Missing,2870,2870
+1290,Bridge start (LRP458B),bridge,N1,Bridge start,2870,2870
+1291,Bridge end (LRP458C),bridge,N1,Bridge end,2870,2870
+1292,Box Culvert (LRP458D),bridge,N1,Box Culvert,2870,2870
+1293,Box culvert (LRP458E),bridge,N1,Box culvert,2870,2870
+1294,Box Culvert (LRP458F),bridge,N1,Box Culvert,2870,2870
+1295,Teknaf 7 km (LRP459),link,N1,Teknaf 7 km,2870,2870
+1296,Bridge start (LRP459A),bridge,N1,Bridge start,2870,2870
+1297,Bridge end (LRP459B),bridge,N1,Bridge end,2870,2870
+1298,Box Culvert (LRP459C),bridge,N1,Box Culvert,2870,2870
+1299,Box culvert (LRP459D),bridge,N1,Box culvert,2870,2870
+1300,Km post missing (LRP460),link,N1,Km post missing,2870,2870
+1301,Box Culvert (LRP460A),bridge,N1,Box Culvert,2870,2870
+1302,Box Culvert (LRP460B),bridge,N1,Box Culvert,2870,2870
+1303,Box culvert (LRP460C),bridge,N1,Box culvert,2870,2870
+1304,Bridge start (LRP460D),bridge,N1,Bridge start,2870,2870
+1305,Bridge end (LRP460E),bridge,N1,Bridge end,2870,2870
+1306,Box culvert (LRP460F),bridge,N1,Box culvert,2870,2870
+1307,Bridge start (LRP460G),bridge,N1,Bridge start,2870,2870
+1308,Bridge end (LRP460H),bridge,N1,Bridge end,2870,2870
+1309,Km post missing (LRP461),link,N1,Km post missing,2870,2870
+1310,Box culvert (LRP461A),bridge,N1,Box culvert,2870,2870
+1311,Box culvert (LRP461B),bridge,N1,Box culvert,2870,2870
+1312,Bridge start (LRP461C),bridge,N1,Bridge start,2870,2870
+1313,Bridge end (LRP461D),bridge,N1,Bridge end,2870,2870
+1314,Box culvert (LRP461E),bridge,N1,Box culvert,2870,2870
+1315,Box culvert (LRP461F),bridge,N1,Box culvert,2870,2870
+1316,Box culvert (LRP461G),bridge,N1,Box culvert,2870,2870
+1317,Bridge start (LRP461H),bridge,N1,Bridge start,2870,2870
+1318,Bridge end (LRP461I),bridge,N1,Bridge end,2870,2870
+1319,Box culvert (LRP461J),bridge,N1,Box culvert,2870,2870
+1320,Box culvert (LRP461K),bridge,N1,Box culvert,2870,2870
+1330,Teknaf 2 km (LRP465),link,N1,Teknaf 2 km,2870,2870
+1331,Bridge start (LRP465A),bridge,N1,Bridge start,2870,2870
+1230,Box culvert (LRP444A),bridge,N1,Box culvert,2869,2869
+1231,Box culvert (LRP444B),bridge,N1,Box culvert,2869,2869
+1232,Box culvert (LRP444C),bridge,N1,Box culvert,2869,2869
+1233,Km post missing (LRP445),link,N1,Km post missing,2869,2869
+1234,Bridge start (LRP445A),bridge,N1,Bridge start,2869,2869
+1235,Bridge end (LRP445B),bridge,N1,Bridge end,2869,2869
+1236,Infor.missing (LRP446),link,N1,Infor.missing,2869,2869
+1237,Box culvert (LRP446A),bridge,N1,Box culvert,2869,2869
+1238,Box culvert (LRP446B),bridge,N1,Box culvert,2869,2869
+1239,Teknaf 20 km (LRP447),link,N1,Teknaf 20 km,2869,2869
+1240,Box culvert (LRP447A),bridge,N1,Box culvert,2869,2869
+1241,Box culvert (LRP447B),bridge,N1,Box culvert,2869,2869
+2368,Bridge end (LRP039E),bridge,N106,Bridge end,1073,1073
+2296,Bridge start (LRP022A),bridge,N106,Bridge start,1070,1070
+2271,Bridge start (LRP015A),bridge,N106,Bridge start,1069,1069
+2297,Bridge end (LRP022B),bridge,N106,Bridge end,1069,1069
+2298,Box culvert (LRP022C),bridge,N106,Box culvert,1069,1069
+2299,Km post missing (LRP023),link,N106,Km post missing,1069,1069
+2300,Box culvert (LRP023A),bridge,N106,Box culvert,1069,1069
+2301,Box culvert (LRP023B),bridge,N106,Box culvert,1069,1069
+2302,Bridge start (LRP023C),bridge,N106,Bridge start,1069,1069
+2303,Bridge end (LRP023D),bridge,N106,Bridge end,1069,1069
+2304,Bridge start (LRP023E),bridge,N106,Bridge start,1069,1069
+2305,Bridge end (LRP023F),bridge,N106,Bridge end,1069,1069
+2306,Rangamati 44 km (LRP024),link,N106,Rangamati 44 km,1069,1069
+2307,Box culvert (LRP024A),bridge,N106,Box culvert,1069,1069
+2308,Road to Jalepara (LRP024B),link,N106,Road to Jalepara,1069,1069
+2309,"Rangamati 43 km,Raozan 0 km (LRP025)",link,N106,"Rangamati 43 km,Raozan 0 km",1069,1069
+2310,Road to Brahmanchari (LRP025A),link,N106,Road to Brahmanchari,1069,1069
+2311,Box culvert (LRP025B),bridge,N106,Box culvert,1069,1069
+2312,Box Culvert (LRP025C),bridge,N106,Box Culvert,1069,1069
+2313,Road to Katakhali (LRP025D),link,N106,Road to Katakhali,1069,1069
+2314,Rangamati 42 km (LRP026),link,N106,Rangamati 42 km,1069,1069
+2315,Box culvert (LRP026A),bridge,N106,Box culvert,1069,1069
+2316,Box culvert (LRP026B),bridge,N106,Box culvert,1069,1069
+2317,Box culvert (LRP026C),bridge,N106,Box culvert,1069,1069
+2318,"Rangamati 42 km,Betbunia10 km (LRP027)",link,N106,"Rangamati 42 km,Betbunia10 km",1069,1069
+2319,Box culvert (LRP027A),bridge,N106,Box culvert,1069,1069
+2320,"Rangamati 41 km,Betbunia 9 km (LRP028)",link,N106,"Rangamati 41 km,Betbunia 9 km",1069,1069
+2321,"Rangamati 40 km,Betbunia 8 km (LRP029)",link,N106,"Rangamati 40 km,Betbunia 8 km",1069,1069
+2322,"Rangamati 39 km,Betbunia 7 km (LRP030)",link,N106,"Rangamati 39 km,Betbunia 7 km",1069,1069
+2323,Bridge start (LRP030A),bridge,N106,Bridge start,1069,1069
+2324,Bridge end (LRP030B),bridge,N106,Bridge end,1069,1069
+2325,"Rangamati 38 km,Betbunia 6 km (LRP031)",link,N106,"Rangamati 38 km,Betbunia 6 km",1069,1069
+2326,Box Culvert (LRP031A),bridge,N106,Box Culvert,1069,1069
+2327,"Rangamati 37 km,Betbunia 5 km (LRP032)",link,N106,"Rangamati 37 km,Betbunia 5 km",1069,1069
+2328,Box culvert (LRP032A),bridge,N106,Box culvert,1069,1069
+2329,Start of Rangamati road Division / Start of Rangamati road Division (LRP032B),link,N106,Start of Rangamati road Division / Start of Rangamati road Division,1069,1069
+2330,Bridge start (LRP032C),bridge,N106,Bridge start,1069,1069
+2331,Bridge end (LRP032D),bridge,N106,Bridge end,1069,1069
+2332,Km post missing (LRP033),link,N106,Km post missing,1069,1069
+2333,Box Culvert (LRP033A),bridge,N106,Box Culvert,1069,1069
+2334,Box Culvert (LRP033B),bridge,N106,Box Culvert,1069,1069
+2335,"Rangamati 36 km,Betbunia 4 km (LRP034)",link,N106,"Rangamati 36 km,Betbunia 4 km",1069,1069
+2336,Box Culvert (LRP034A),bridge,N106,Box Culvert,1069,1069
+2337,Box Culvert (LRP034B),bridge,N106,Box Culvert,1069,1069
+2338,Box Culvert (LRP034C),bridge,N106,Box Culvert,1069,1069
+2339,Box Culvert (LRP034D),bridge,N106,Box Culvert,1069,1069
+2340,Box Culvert (LRP034E),bridge,N106,Box Culvert,1069,1069
+2341,Box Culvert (LRP034F),bridge,N106,Box Culvert,1069,1069
+2342,"Rangamati 35 km, Betbunia 3 km (LRP035)",link,N106,"Rangamati 35 km, Betbunia 3 km",1069,1069
+2343,Box Culvert (LRP035A),bridge,N106,Box Culvert,1069,1069
+2344,Box Culvert (LRP035B),bridge,N106,Box Culvert,1069,1069
+2345,Box Culvert (LRP035C),bridge,N106,Box Culvert,1069,1069
+2346,Box Culvert (LRP035D),bridge,N106,Box Culvert,1069,1069
+2347,Box Culvert (LRP035E),bridge,N106,Box Culvert,1069,1069
+2348,"Rangamati 34 km, Betbunia 2 km (LRP036)",link,N106,"Rangamati 34 km, Betbunia 2 km",1069,1069
+2349,Box Culvert (LRP036A),bridge,N106,Box Culvert,1069,1069
+2350,Box Culvert (LRP036B),bridge,N106,Box Culvert,1069,1069
+2351,Box Culvert (LRP036C),bridge,N106,Box Culvert,1069,1069
+2352,Box Culvert (LRP036D),bridge,N106,Box Culvert,1069,1069
+2353,Box Culvert (LRP036E),bridge,N106,Box Culvert,1069,1069
+2354,Box Culvert (LRP036F),bridge,N106,Box Culvert,1069,1069
+2355,Box Culvert (LRP036G),bridge,N106,Box Culvert,1069,1069
+2356,"Rangamati 34 km, Betbunia 1 km (LRP037)",link,N106,"Rangamati 34 km, Betbunia 1 km",1069,1069
+2357,Box Culvert (LRP037A),bridge,N106,Box Culvert,1069,1069
+2358,Box Culvert (LRP037B),bridge,N106,Box Culvert,1069,1069
+2359,Box Culvert (LRP037C),bridge,N106,Box Culvert,1069,1069
+2360,Km post missing (LRP038),link,N106,Km post missing,1069,1069
+2361,Box Culvert (LRP038A),bridge,N106,Box Culvert,1069,1069
+2362,Box Culvert (LRP038B),bridge,N106,Box Culvert,1069,1069
+2363,Rangamati 31 km (LRP039),link,N106,Rangamati 31 km,1069,1069
+2364,Box Culvert (LRP039A),bridge,N106,Box Culvert,1069,1069
+2365,Box Culvert (LRP039B),bridge,N106,Box Culvert,1069,1069
+2366,Road from Kawakhali (LRP039C),link,N106,Road from Kawakhali,1069,1069
+2367,Bridge start (LRP039D),bridge,N106,Bridge start,1069,1069
+2374,Box culvert (LRP041A),bridge,N106,Box culvert,1068,1068
+2375,Rangamati 28 km (LRP042),link,N106,Rangamati 28 km,1068,1068
+2376,Box culvert (LRP042A),bridge,N106,Box culvert,1068,1068
+2377,Box culvert (LRP042B),bridge,N106,Box culvert,1068,1068
+2378,Rangamati 27 km (LRP043),link,N106,Rangamati 27 km,1068,1068
+2379,Ranirhat bridge (LRP043A),bridge,N106,Ranirhat bridge,1068,1068
+2380,Ranirhat bridge (LRP043B),bridge,N106,Ranirhat bridge,1068,1068
+2381,Box culvert (LRP043C),bridge,N106,Box culvert,1068,1068
+2382,Rangamati 26 km (LRP044),link,N106,Rangamati 26 km,1068,1068
+2383,Box culvert (LRP044A),bridge,N106,Box culvert,1068,1068
+2384,Z1617 (LRP044B),link,N106,Z1617,1068,1068
+2385,Box culvert (LRP044C),bridge,N106,Box culvert,1068,1068
+2386,Box culvert (LRP044D),bridge,N106,Box culvert,1068,1068
+2387,"Rangamati 25 km,Ghagra 6 km (LRP045)",link,N106,"Rangamati 25 km,Ghagra 6 km",1068,1068
+2431,Km post missing (LRP065),link,N106,Km post missing,1068,1068
+2432,Rangamati 4 km (LRP066),link,N106,Rangamati 4 km,1068,1068
+2226,Box culvert (LRPSA),bridge,N106,Box culvert,1067,1067
+2227,Box culvert (LRPSB),bridge,N106,Box culvert,1067,1067
+2228,Box culvert (LRPSC),bridge,N106,Box culvert,1067,1067
+2229,Km post missing (LRP001),link,N106,Km post missing,1067,1067
+2230,Slab culvert (LRP001A),bridge,N106,Slab culvert,1067,1067
+2231,Box culvert (LRP001B),bridge,N106,Box culvert,1067,1067
+2232,Km post missing (LRP002),link,N106,Km post missing,1067,1067
+2233,Box culvert (LRP002A),bridge,N106,Box culvert,1067,1067
+2234,Bridge start (LRP002B),bridge,N106,Bridge start,1067,1067
+2235,Bridge end (LRP002C),bridge,N106,Bridge end,1067,1067
+2236,Km post missing (LRP003),link,N106,Km post missing,1067,1067
+2237,Box culvert (LRP003A),bridge,N106,Box culvert,1067,1067
+2238,Box culvert (LRP003B),bridge,N106,Box culvert,1067,1067
+2239,"Rangamati 64 km,Hathazari 8 km (LRP004)",link,N106,"Rangamati 64 km,Hathazari 8 km",1067,1067
+2240,Box culvert (LRP004A),bridge,N106,Box culvert,1067,1067
+2241,Box Culvert (LRP004C),bridge,N106,Box Culvert,1067,1067
+2242,Km post missing (LRP005),link,N106,Km post missing,1067,1067
+2243,Box culvert (LRP005A),bridge,N106,Box culvert,1067,1067
+2244,Box culvert (LRP005B),bridge,N106,Box culvert,1067,1067
+2245,Information missing (LRP006),link,N106,Information missing,1067,1067
+2246,Box culvert (LRP006A),bridge,N106,Box culvert,1067,1067
+2247,Box culvert (LRP006B),bridge,N106,Box culvert,1067,1067
+2248,Km post missing (LRP007),link,N106,Km post missing,1067,1067
+2249,Box culvert (LRP007A),bridge,N106,Box culvert,1067,1067
+2250,Box culvert (LRP007B),bridge,N106,Box culvert,1067,1067
+2251,Box culvert (LRP007C),bridge,N106,Box culvert,1067,1067
+2252,Km post missing (LRP008),link,N106,Km post missing,1067,1067
+2253,Box culvert (LRP008A),bridge,N106,Box culvert,1067,1067
+2254,Bridge start (LRP008B),bridge,N106,Bridge start,1067,1067
+2255,Bridge end (LRP008C),bridge,N106,Bridge end,1067,1067
+2256,Km post missing (LRP009),link,N106,Km post missing,1067,1067
+2369,Ranga mati 30 km (LRP040),link,N106,Ranga mati 30 km,1067,1067
+2370,Box culvert (LRP040A),bridge,N106,Box culvert,1067,1067
+2371,Box culvert (LRP040B),bridge,N106,Box culvert,1067,1067
+2372,Box culvert (LRP040C),bridge,N106,Box culvert,1067,1067
+2373,Rangamati 29 km (LRP041),link,N106,Rangamati 29 km,1067,1067
+2388,Box culvert (LRP045A),bridge,N106,Box culvert,1067,1067
+2389,"Rangamati 24 km,Ghagra 6 km (LRP046)",link,N106,"Rangamati 24 km,Ghagra 6 km",1067,1067
+2390,Box culvert (LRP046A),bridge,N106,Box culvert,1067,1067
+2391,"Rangamati 23 km,Ghagra 5 km (LRP047)",link,N106,"Rangamati 23 km,Ghagra 5 km",1067,1067
+2392,Bridge start (LRP047A),bridge,N106,Bridge start,1067,1067
+2393,Bridge end (LRP047B),bridge,N106,Bridge end,1067,1067
+2394,Km post missing (LRP048),link,N106,Km post missing,1067,1067
+2395,Box culvert (LRP048A),bridge,N106,Box culvert,1067,1067
+2396,Box culvert (LRP048B),bridge,N106,Box culvert,1067,1067
+2397,Box culvert (LRP048C),bridge,N106,Box culvert,1067,1067
+2398,Km post missing (LRP049),link,N106,Km post missing,1067,1067
+2399,"Rangamati 20 km,Ghagra 2 km (LRP050)",link,N106,"Rangamati 20 km,Ghagra 2 km",1067,1067
+2400,Information missing (LRP051),link,N106,Information missing,1067,1067
+2401,"R161, Road to Bandarban (LRP051A)",link,N106,"R161, Road to Bandarban",1067,1067
+2402,Box culvert (LRP051B),bridge,N106,Box culvert,1067,1067
+2403,"Rangamati 18 km,Ghagra 0 km (LRP052)",link,N106,"Rangamati 18 km,Ghagra 0 km",1067,1067
+2404,Box culvert (LRP052A),bridge,N106,Box culvert,1067,1067
+2405,Box culvert (LRP052B),bridge,N106,Box culvert,1067,1067
+2406,Rangamati 17 km (LRP053),link,N106,Rangamati 17 km,1067,1067
+2407,Box culvert (LRP053A),bridge,N106,Box culvert,1067,1067
+2408,Box culvert (LRP053B),bridge,N106,Box culvert,1067,1067
+2409,Rangamati 16 km (LRP054),link,N106,Rangamati 16 km,1067,1067
+2410,Box culvert (LRP054A),bridge,N106,Box culvert,1067,1067
+2430,Km post missing (LRP064),link,N106,Km post missing,1067,1067
+2433,Km post missing (LRP067),link,N106,Km post missing,1067,1067
+2434,Rangamati 2 km (LRP068),link,N106,Rangamati 2 km,1067,1067
+2435,Police Comissionar Bunglow 1 km (LRP069),link,N106,Police Comissionar Bunglow 1 km,1067,1067
+2257,Box culvert (LRP009A),bridge,N106,Box culvert,1066,1066
+2258,Information missing (LRP010),link,N106,Information missing,1066,1066
+2272,Bridge end (LRP015B),bridge,N106,Bridge end,1066,1066
+2273,Box culvert (LRP015C),bridge,N106,Box culvert,1066,1066
+2274,Km post missing (LRP016),link,N106,Km post missing,1066,1066
+2275,Box Culvert (LRP016A),bridge,N106,Box Culvert,1066,1066
+2276,Bridge start (LRP016B),bridge,N106,Bridge start,1066,1066
+2277,Bridge end (LRP016C),bridge,N106,Bridge end,1066,1066
+2278,"Rangamati 51 km,Raozan9 km (LRP017)",link,N106,"Rangamati 51 km,Raozan9 km",1066,1066
+2279,Box culvert (LRP017A),bridge,N106,Box culvert,1066,1066
+2280,Rangamati 50 km (LRP018),link,N106,Rangamati 50 km,1066,1066
+2281,Bridge start (LRP018A),bridge,N106,Bridge start,1066,1066
+2282,Bridge end (LRP018B),bridge,N106,Bridge end,1066,1066
+2283,Box culvert (LRP018C),bridge,N106,Box culvert,1066,1066
+2284,Km post missing (LRP019),link,N106,Km post missing,1066,1066
+2285,Box culvert (LRP019A),bridge,N106,Box culvert,1066,1066
+2286,Box Culvert (LRP019B),bridge,N106,Box Culvert,1066,1066
+2287,Road to Fatikchari (LRP019C),link,N106,Road to Fatikchari,1066,1066
+2288,"Rangamati 48 km,Raozan 6 km (LRP020)",link,N106,"Rangamati 48 km,Raozan 6 km",1066,1066
+2289,Box culvert (LRP020A),bridge,N106,Box culvert,1066,1066
+2290,Bridge start (LRP020B),bridge,N106,Bridge start,1066,1066
+2291,Bridge end (LRP020C),bridge,N106,Bridge end,1066,1066
+2292,"Rangamati 47 km,Raozan 5 km (LRP021)",link,N106,"Rangamati 47 km,Raozan 5 km",1066,1066
+2293,Bridge start (LRP021A),bridge,N106,Bridge start,1066,1066
+2294,Bridge end (LRP021B),bridge,N106,Bridge end,1066,1066
+2295,"Rangamati 46 km,Raozan 4 km (LRP022)",link,N106,"Rangamati 46 km,Raozan 4 km",1066,1066
+2411,Box culvert (LRP054B),bridge,N106,Box culvert,1066,1066
+2412,Box culvert (LRP054C),bridge,N106,Box culvert,1066,1066
+2413,Box culvert (LRP054D),bridge,N106,Box culvert,1066,1066
+2414,Box Culvert` (LRP054E),bridge,N106,Box Culvert`,1066,1066
+2415,Information missing (LRP055),link,N106,Information missing,1066,1066
+2416,Box culvert / Pipe Culvert (LRP055A),bridge,N106,Box culvert / Pipe Culvert,1066,1066
+2417,Rangamati 14 km (LRP056),link,N106,Rangamati 14 km,1066,1066
+2418,Box culvert (LRP056A),bridge,N106,Box culvert,1066,1066
+2419,Rangamati 13 km (LRP057),link,N106,Rangamati 13 km,1066,1066
+2420,Box culvert (LRP057A),bridge,N106,Box culvert,1066,1066
+2421,Rangamati 12 km (LRP058),link,N106,Rangamati 12 km,1066,1066
+2422,"Rangamati 11 km, Manikchan 1 km (LRP059)",link,N106,"Rangamati 11 km, Manikchan 1 km",1066,1066
+2423,Bridge start (LRP059A),bridge,N106,Bridge start,1066,1066
+2424,Bridge end (LRP059B),bridge,N106,Bridge end,1066,1066
+2425,"R162, Road to Khagrachari (LRP059C)",link,N106,"R162, Road to Khagrachari",1066,1066
+2426,"Rangamati 10 km,Manikchhari  0 km (LRP060)",link,N106,"Rangamati 10 km,Manikchhari  0 km",1066,1066
+2427,Km post missing (LRP061),link,N106,Km post missing,1066,1066
+2428,Rangamati 8 km (LRP062),link,N106,Rangamati 8 km,1066,1066
+2429,Rangamati 7 km (LRP063),link,N106,Rangamati 7 km,1066,1066
+2259,Km post missing (LRP011),link,N106,Km post missing,1065,1065
+2260,Box culvert (LRP011A),bridge,N106,Box culvert,1065,1065
+2261,Bridge start (LRP011B),bridge,N106,Bridge start,1065,1065
+2262,Km post missing (LRP012),link,N106,Km post missing,1065,1065
+2263,"R160, Khagrachari Road (LRP012A)",link,N106,"R160, Khagrachari Road",1065,1065
+2264,"Rangamati 55 km,Raozan 13 km (LRP013)",link,N106,"Rangamati 55 km,Raozan 13 km",1065,1065
+2265,Box culvert (LRP013A),bridge,N106,Box culvert,1065,1065
+2266,Box culvert (LRP013B),bridge,N106,Box culvert,1065,1065
+2267,"Rangamati 54 km, Raozan 12 km (LRP014)",link,N106,"Rangamati 54 km, Raozan 12 km",1065,1065
+2268,Bridge start (LRP014A),bridge,N106,Bridge start,1065,1065
+2269,Bridge end (LRP014B),bridge,N106,Bridge end,1065,1065
+2270,"Rangamati 53 km,Raozan 11 km (LRP015)",link,N106,"Rangamati 53 km,Raozan 11 km",1065,1065
+2862,Sylhet 48 km (LRP015),link,N208,Sylhet 48 km,724,724
+2863,Box culvert (LRP015A),bridge,N208,Box culvert,724,724
+2864,Sylhet 47 km (LRP016),link,N208,Sylhet 47 km,724,724
+2865,Box culvert (LRP016A),bridge,N208,Box culvert,724,724
+2866,Box culvert (LRP016B),bridge,N208,Box culvert,724,724
+2867,Sylhet 46 km (LRP017),link,N208,Sylhet 46 km,724,724
+2868,Box culvert (LRP017A),bridge,N208,Box culvert,724,724
+2883,Sylhet 41 km (LRP022),link,N208,Sylhet 41 km,724,724
+2884,Box culvert (LRP022A),bridge,N208,Box culvert,724,724
+2823,Km post missing (LRP001),link,N208,Km post missing,723,723
+2824,Box culvert (LRP001A),bridge,N208,Box culvert,723,723
+2825,Box Culvert (LRP001B),bridge,N208,Box Culvert,723,723
+2826,Km post missing (LRP002),link,N208,Km post missing,723,723
+2827,Bridge start (LRP002A),bridge,N208,Bridge start,723,723
+2828,Bridge end (LRP002B),bridge,N208,Bridge end,723,723
+2829,Km post missing (LRP003),link,N208,Km post missing,723,723
+2830,"Z2002,Moulavibazar-Chatla Cheek post road (LRP003A)",link,N208,"Z2002,Moulavibazar-Chatla Cheek post road",723,723
+2831,Bridge start (LRP003B),bridge,N208,Bridge start,723,723
+2832,Bridge end (LRP003C),bridge,N208,Bridge end,723,723
+2833,Km post missing (LRP004),link,N208,Km post missing,723,723
+2834,Box culvert (LRP004A),bridge,N208,Box culvert,723,723
+2835,Km post missing (LRP005),link,N208,Km post missing,723,723
+2836,Box culvert (LRP005A),bridge,N208,Box culvert,723,723
+2837,Box culvert (LRP005B),bridge,N208,Box culvert,723,723
+2838,Information missing (LRP006),link,N208,Information missing,723,723
+2839,Box culvert (LRP006A),bridge,N208,Box culvert,723,723
+2840,Km post missing (LRP007),link,N208,Km post missing,723,723
+2841,Box culvert (LRP007A),bridge,N208,Box culvert,723,723
+2842,Box culvert (LRP007B),bridge,N208,Box culvert,723,723
+2843,Km post missing (LRP008),link,N208,Km post missing,723,723
+2844,Box culvert (LRP008A),bridge,N208,Box culvert,723,723
+2845,Km post missing (LRP009),link,N208,Km post missing,723,723
+2846,Bridge start (LRP009A),bridge,N208,Bridge start,723,723
+2847,Bridge end (LRP009B),bridge,N208,Bridge end,723,723
+2848,Information missing (LRP010),link,N208,Information missing,723,723
+2849,Box culvert (LRP010A),bridge,N208,Box culvert,723,723
+2850,Box culvert (LRP010B),bridge,N208,Box culvert,723,723
+2851,Km post missing (LRP011),link,N208,Km post missing,723,723
+2852,Box culvert (LRP011A),bridge,N208,Box culvert,723,723
+2853,Box culvert (LRP011B),bridge,N208,Box culvert,723,723
+2854,Information missing (LRP012),link,N208,Information missing,723,723
+2855,Box culvert (LRP012A),bridge,N208,Box culvert,723,723
+2857,Box culvert (LRP013A),bridge,N208,Box culvert,723,723
+2858,"R281,Rajnagar-Charkhai road (LRP013B)",link,N208,"R281,Rajnagar-Charkhai road",723,723
+2859,Box Culvert (LRP013C),bridge,N208,Box Culvert,723,723
+2860,Km post missing (LRP014),link,N208,Km post missing,723,723
+2861,Box culvert (LRP014A),bridge,N208,Box culvert,723,723
+2869,Box culvert (LRP017B),bridge,N208,Box culvert,723,723
+2870,Sylhet 45 km (LRP018),link,N208,Sylhet 45 km,723,723
+2871,Box culvert (LRP018A),bridge,N208,Box culvert,723,723
+2872,Sylhet 44 km (LRP019),link,N208,Sylhet 44 km,723,723
+2873,Bridge start (LRP019A),bridge,N208,Bridge start,723,723
+2874,Bridge end (LRP019B),bridge,N208,Bridge end,723,723
+2875,Sylhet 43 km (LRP020),link,N208,Sylhet 43 km,723,723
+2876,Bridge start (LRP020A),bridge,N208,Bridge start,723,723
+2877,Bridge END (LRP020B),bridge,N208,Bridge END,723,723
+2878,Box culvert (LRP020C),bridge,N208,Box culvert,723,723
+2879,Box culvert (LRP020D),bridge,N208,Box culvert,723,723
+2880,Sylhet 42 km (LRP021),link,N208,Sylhet 42 km,723,723
+2881,Box culvert (LRP021A),bridge,N208,Box culvert,723,723
+2882,Box Culvert (LRP021B),bridge,N208,Box Culvert,723,723
+2885,Box culvert (LRP022B),bridge,N208,Box culvert,723,723
+2886,Box Culvert (LRP022C),bridge,N208,Box Culvert,723,723
+2887,Sylhet 40 km (LRP023),link,N208,Sylhet 40 km,723,723
+2888,Box culvert (LRP023A),bridge,N208,Box culvert,723,723
+2889,Box culvert (LRP023B),bridge,N208,Box culvert,723,723
+2890,Box culvert (LRP023C),bridge,N208,Box culvert,723,723
+2891,Box Culvert (LRP023D),bridge,N208,Box Culvert,723,723
+2892,Sylhet 39 km (LRP024),link,N208,Sylhet 39 km,723,723
+2893,Box culvert (LRP024A),bridge,N208,Box culvert,723,723
+2894,Box culvert (LRP024B),bridge,N208,Box culvert,723,723
+2895,Sylhet 38 km (LRP025),link,N208,Sylhet 38 km,723,723
+2896,Box culvert (LRP025A),bridge,N208,Box culvert,723,723
+2897,Bridge start (LRP025B),bridge,N208,Bridge start,723,723
+2898,Bridge end (LRP025C),bridge,N208,Bridge end,723,723
+2899,Box culvert (LRP025D),bridge,N208,Box culvert,723,723
+2900,Sylhet 37 km (LRP026),link,N208,Sylhet 37 km,723,723
+2901,Box culvert (LRP026A),bridge,N208,Box culvert,723,723
+2856,Km post missing (LRP013),link,N208,Km post missing,722,722
+2902,Box culvert (LRP026B),bridge,N208,Box culvert,722,722
+2903,Sylhet 36 km (LRP027),link,N208,Sylhet 36 km,722,722
+2904,Bridge start (LRP027A),bridge,N208,Bridge start,722,722
+2905,Bridge end (LRP027B),bridge,N208,Bridge end,722,722
+2906,Box culvert (LRP027C),bridge,N208,Box culvert,722,722
+2907,Box culvert (LRP027D),bridge,N208,Box culvert,722,722
+2908,Box culvert (LRP027E),bridge,N208,Box culvert,722,722
+2909,Box culvert (LRP027F),bridge,N208,Box culvert,722,722
+2910,Sylhet 35 km (LRP028),link,N208,Sylhet 35 km,722,722
+2911,Box culvert (LRP028A),bridge,N208,Box culvert,722,722
+2912,Box culvert (LRP028B),bridge,N208,Box culvert,722,722
+2913,Box culvert (LRP028C),bridge,N208,Box culvert,722,722
+2914,Sylhet 34 km (LRP029),link,N208,Sylhet 34 km,722,722
+2915,Box culvert (LRP029A),bridge,N208,Box culvert,722,722
+2916,Box culvert (LRP029B),bridge,N208,Box culvert,722,722
+2917,Bridge start (LRP029C),bridge,N208,Bridge start,722,722
+2918,Bridge end (LRP029D),bridge,N208,Bridge end,722,722
+2919,Sylhet 33 km (LRP030),link,N208,Sylhet 33 km,722,722
+2920,Box culvert (LRP030A),bridge,N208,Box culvert,722,722
+2921,Box culvert (LRP030B),bridge,N208,Box culvert,721,721
+2922,Box culvert (LRP030C),bridge,N208,Box culvert,721,721
+2923,Km post missing (LRP031),link,N208,Km post missing,721,721
+2924,Box culvert (LRP031A),bridge,N208,Box culvert,721,721
+2925,Box culvert (LRP031B),bridge,N208,Box culvert,721,721
+2926,Box culvert (LRP031C),bridge,N208,Box culvert,721,721
+2927,Info.Missing (LRP032),link,N208,Info.Missing,721,721
+2928,Box culvert (LRP032A),bridge,N208,Box culvert,721,721
+2929,Box Culvert (LRP032B),bridge,N208,Box Culvert,721,721
+2930,Z2020 to Palbari (LRP032C),link,N208,Z2020 to Palbari,721,721
+2931,Bridge start (LRP032D),bridge,N208,Bridge start,721,721
+2932,Bridge end (LRP032E),bridge,N208,Bridge end,721,721
+2933,Sylhet 30 km (LRP033),link,N208,Sylhet 30 km,721,721
+2934,Box culvert (LRP033A),bridge,N208,Box culvert,721,721
+2935,Box culvert (LRP033B),bridge,N208,Box culvert,721,721
+2936,Sylhet 29 km (LRP034),link,N208,Sylhet 29 km,721,721
+2937,Box culvert (LRP034A),bridge,N208,Box culvert,721,721
+2938,Box culvert (LRP034B),bridge,N208,Box culvert,721,721
+2939,Box culvert (LRP034C),bridge,N208,Box culvert,721,721
+2940,Box culvert (LRP034D),bridge,N208,Box culvert,721,721
+2941,Sylhet 28 km (LRP035),link,N208,Sylhet 28 km,721,721
+2942,Box culvert (LRP035A),bridge,N208,Box culvert,721,721
+2943,Box culvert (LRP035B),bridge,N208,Box culvert,721,721
+2944,Box culvert (LRP035C),bridge,N208,Box culvert,721,721
+2945,Box culvert (LRP035D),bridge,N208,Box culvert,721,721
+2946,Box Culvert (LRP035E),bridge,N208,Box Culvert,721,721
+2947,Z2020 to Palbari (LRP035F),link,N208,Z2020 to Palbari,721,721
+2948,Km post missing (LRP036),link,N208,Km post missing,721,721
+2949,Bridge start (LRP036A),bridge,N208,Bridge start,721,721
+2950,Bridge end (LRP036B),bridge,N208,Bridge end,721,721
+2951,Km post missing (LRP037),link,N208,Km post missing,721,721
+2952,Box culvert (LRP037A),bridge,N208,Box culvert,721,721
+2953,Km post missing (LRP038),link,N208,Km post missing,721,721
+2954,Bridge start (LRP038A),bridge,N208,Bridge start,721,721
+2955,Bridge end (LRP038B),bridge,N208,Bridge end,721,721
+2956,Km post missing (LRP039),link,N208,Km post missing,721,721
+2957,Rail Road Crossing (LRP039A),link,N208,Rail Road Crossing,721,721
+2958,Sylhet 21 km (LRP040),link,N208,Sylhet 21 km,721,721
+2959,Box culvert (LRP040A),bridge,N208,Box culvert,721,721
+2960,Sylhet 20 km (LRP041),link,N208,Sylhet 20 km,721,721
+2961,Bridge start (LRP041A),bridge,N208,Bridge start,721,721
+2962,Km post missing / Bridge end (LRP042),bridge,N208,Km post missing / Bridge end,721,721
+2963,Box culvert (LRP042B),bridge,N208,Box culvert,721,721
+2964,Km post missing (LRP043),link,N208,Km post missing,721,721
+2965,Box culvert (LRP043A),bridge,N208,Box culvert,721,721
+2966,Bridge start (LRP043B),bridge,N208,Bridge start,721,721
+2967,Bridge end (LRP043C),bridge,N208,Bridge end,721,721
+2968,Sylhet 17 km (LRP044),link,N208,Sylhet 17 km,721,721
+2969,Km post broken (LRP045),link,N208,Km post broken,721,721
+2970,Bridge start (LRP045A),bridge,N208,Bridge start,721,721
+2971,Bridge end (LRP045B),bridge,N208,Bridge end,721,721
+2972,Km post missing (LRP046),link,N208,Km post missing,721,721
+2973,Bridge start (LRP046A),bridge,N208,Bridge start,721,721
+2974,Bridge end (LRP046B),bridge,N208,Bridge end,721,721
+2975,Km post missing (LRP047),link,N208,Km post missing,721,721
+2976,Box culvert (LRP047A),bridge,N208,Box culvert,721,721
+2977,Bridge start (LRP047B),bridge,N208,Bridge start,721,721
+2978,Bridge end (LRP047C),bridge,N208,Bridge end,721,721
+2979,Sylhet 13 km (LRP048),link,N208,Sylhet 13 km,721,721
+2980,Km post missing (LRP049),link,N208,Km post missing,721,721
+2981,Bridge start (LRP049A),bridge,N208,Bridge start,721,721
+2982,Bridge end (LRP049B),bridge,N208,Bridge end,721,721
+2983,Km post missing (LRP050),link,N208,Km post missing,721,721
+2984,Km post missing (LRP051),link,N208,Km post missing,721,721
+2985,Sylhet 9 km (LRP052),link,N208,Sylhet 9 km,721,721
+2986,Box culvert (LRP052A),bridge,N208,Box culvert,721,721
+2987,"Z2832,Daudabad-Vdeshwar road (LRP052B)",link,N208,"Z2832,Daudabad-Vdeshwar road",721,721
+2988,Sylhet 8 km (LRP053),link,N208,Sylhet 8 km,721,721
+2989,Bridge start (LRP053A),bridge,N208,Bridge start,721,721
+2990,Bridge end (LRP053B),bridge,N208,Bridge end,721,721
+2991,Sylhet 7 km (LRP054),link,N208,Sylhet 7 km,721,721
+2992,"N210, Sylhet Bypass road (LRP054A)",link,N208,"N210, Sylhet Bypass road",721,721
+2993,Sylhet 8 km (LRP055),link,N208,Sylhet 8 km,721,721
+2994,Sylhet 7 km (LRP056),link,N208,Sylhet 7 km,721,721
+2997,Sylhet 5 km (LRP058),link,N208,Sylhet 5 km,721,721
+2995,Box culvert (LRP056A),bridge,N208,Box culvert,720,720
+2996,Sylhet 6 km (LRP057),link,N208,Sylhet 6 km,720,720
+2771,"N 208 ,Moulavibazar-Sylet road (LRP043A)",link,N207,"N 208 ,Moulavibazar-Sylet road",129,129
+2772,Bridge start (LRP043B),bridge,N207,Bridge start,129,129
+2773,Bridge end (LRP043C),bridge,N207,Bridge end,129,129
+2774,Km  post missing (LRP044),link,N207,Km  post missing,129,129
+2775,Sylhet 61 km (LRP045),link,N207,Sylhet 61 km,129,129
+2776,Sylhet 60 km (LRP046),link,N207,Sylhet 60 km,129,129
+2777,Sylhet 59 km (LRP047),link,N207,Sylhet 59 km,129,129
+2778,Box Culvert (LRP047A),bridge,N207,Box Culvert,129,129
+2779,Sylhet 58 km (LRP048),link,N207,Sylhet 58 km,129,129
+2780,Box Culvert (LRP048A),bridge,N207,Box Culvert,129,129
+2781,Box Culvert (LRP048B),bridge,N207,Box Culvert,129,129
+2782,Sylhet 57 km (LRP049),link,N207,Sylhet 57 km,129,129
+2783,Sylhet 56 km (LRP050),link,N207,Sylhet 56 km,129,129
+2784,Sylhet 55 km (LRP051),link,N207,Sylhet 55 km,129,129
+2785,Box Culvert (LRP051A),bridge,N207,Box Culvert,129,129
+2786,Box Culvert (LRP051B),bridge,N207,Box Culvert,129,129
+2787,Km post broken (LRP052),link,N207,Km post broken,129,129
+2788,Box Culvert (LRP052A),bridge,N207,Box Culvert,129,129
+2789,Sylhet 53 km (LRP053),link,N207,Sylhet 53 km,129,129
+2790,Box Culvert (LRP053A),bridge,N207,Box Culvert,129,129
+2791,Sylhet 52 km (LRP054),link,N207,Sylhet 52 km,129,129
+2792,Sylhet 51 km (LRP055),link,N207,Sylhet 51 km,129,129
+2793,Box Culvert (LRP055A),bridge,N207,Box Culvert,129,129
+2794,Sylhet 50 km (LRP056),link,N207,Sylhet 50 km,129,129
+2795,Bridge start (LRP056A),bridge,N207,Bridge start,129,129
+2796,Bridge end (LRP056B),bridge,N207,Bridge end,129,129
+2797,Sylhet 49 km (LRP057),link,N207,Sylhet 49 km,129,129
+2798,Box Culvert (LRP057A),bridge,N207,Box Culvert,129,129
+2799,Sylhet 48 km (LRP058),link,N207,Sylhet 48 km,129,129
+2800,Sylhet 47 km (LRP059),link,N207,Sylhet 47 km,129,129
+2801,Sylhet 46 km (LRP060),link,N207,Sylhet 46 km,129,129
+2802,Box Culvert (LRP060A),bridge,N207,Box Culvert,129,129
+2803,Sylhet 45 km (LRP061),link,N207,Sylhet 45 km,129,129
+2804,Box Culvert (LRP061A),bridge,N207,Box Culvert,129,129
+2805,Bridge start (LRP061B),bridge,N207,Bridge start,129,129
+2806,Bridge end (LRP061C),bridge,N207,Bridge end,129,129
+2807,Sylhet 44 km (LRP062),link,N207,Sylhet 44 km,129,129
+2808,Box Culvert (LRP062A),bridge,N207,Box Culvert,129,129
+2809,Sylhet 43 km (LRP063),link,N207,Sylhet 43 km,129,129
+2810,Bridge start (LRP063A),bridge,N207,Bridge start,129,129
+2811,Bridge end (LRP063B),bridge,N207,Bridge end,129,129
+2812,Sylhet 42 km (LRP064),link,N207,Sylhet 42 km,129,129
+2813,Bridge start (LRP064A),bridge,N207,Bridge start,129,129
+2814,Bridge end (LRP064B),bridge,N207,Bridge end,129,129
+2815,Box Culvert (LRP064C),bridge,N207,Box Culvert,129,129
+2816,Sylhet 41 km (LRP065),link,N207,Sylhet 41 km,129,129
+2817,Sylhet 40 km (LRP066),link,N207,Sylhet 40 km,129,129
+2818,Box Culvert (LRP066A),bridge,N207,Box Culvert,129,129
+2819,Sylhet 39 km (LRP067),link,N207,Sylhet 39 km,129,129
+2820,Sylhet 38 km (LRP068),link,N207,Sylhet 38 km,129,129
