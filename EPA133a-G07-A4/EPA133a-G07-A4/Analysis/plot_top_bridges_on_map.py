@@ -7,8 +7,8 @@ import pandas as pd
 
 
 NETWORK_INPUT = Path(__file__).resolve().parents[1] / "data" / "network_model.csv"
-IMPORTANCE_INPUT = Path(__file__).resolve().parents[1] / "Experiments" / "plots" / "infrastructure_importance_by_scenario.csv"
-OUTPUT = Path(__file__).resolve().parents[1] / "Experiments" / "network_map_top_bridges.png"
+IMPORTANCE_INPUT = Path(__file__).resolve().parents[1] / "img"/ "infrastructure_importance_by_scenario.csv"
+OUTPUT = Path(__file__).resolve().parents[1] / "img" / "network_map_top_bridges.png"
 TOP_N = 4
 
 
