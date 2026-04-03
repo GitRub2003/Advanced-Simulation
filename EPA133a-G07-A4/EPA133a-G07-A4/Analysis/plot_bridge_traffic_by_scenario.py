@@ -9,8 +9,8 @@ import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 NETWORK_INPUT = BASE_DIR / "data" / "network_model.csv"
-IMPORTANCE_INPUT = BASE_DIR / "Experiments" / "plots" / "infrastructure_importance_by_scenario.csv"
-OUTPUT_DIR = BASE_DIR / "Experiments" / "plots"
+IMPORTANCE_INPUT = BASE_DIR / "img" / "infrastructure_importance_by_scenario.csv"
+OUTPUT_DIR = BASE_DIR / "img"
 OUTPUT_PATTERN = "bridge_traffic_map_scenario_{scenario}.png"
 
 

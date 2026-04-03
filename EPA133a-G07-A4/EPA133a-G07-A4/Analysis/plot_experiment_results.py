@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 # ============================================================
 # SETTINGS
 # ============================================================
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-EXPERIMENTS_DIR = PROJECT_ROOT / "Experiments"
-OUTPUT_DIR = PROJECT_ROOT / "img"
+BASE_DIR = Path(__file__).resolve().parents[1]
+EXPERIMENTS_DIR = BASE_DIR / "Experiments"
+OUTPUT_DIR = BASE_DIR / "img"
 TOP_N = 10
 
 
