@@ -26,17 +26,15 @@ The road network is produced by running 'run\_pipeline' , which runs 'Data Prepa
 
 
 
-The network\_model.csv file is then used by the model file in the model folder. The model calculates and exports truck driving times times for each scenario and replication. These calculations are executed by running the model\_run file, which also stores the outputs in the Experiments folder.
+The network\_model.csv file is then used by the model file in the model folder. The model calculates and exports infrastructure crossings and truck driving times times for each scenario and replication. These calculations are executed by running the model\_run file, which also stores the outputs in the Experiments folder.
 
 
 
-Finally, there are 2 files important for the results visualisation . Plot bridge\_traffic\_by\_scenario plots  makes one network map per scenario plotting each bridge and their criticality on it.It also labels the top 5 busiest bridges in that scenario. Secondly, running plot\_experiment\_results which is visualising the more analysis oriented comparisons of the experiments, it uses the experiment outputs to generate visualizations, which are saved in the img folder.
-
-
+Finally, there are 3 files important for the results visualisation . First run `plot\_experiment\_results.py`, which reads the raw scenario and replicate CSV files from `Experiments/` and writes summary CSVs and plots to `img/`. Then run `plot\_bridge\_traffic\_by\_scenario.py`, which uses `data/network\_model.csv` and `img/infrastructure\_importance\_by\_scenario.csv` to create bridge traffic maps for each scenario. `plot\_top\_bridges\_on\_map.py`highlights the bridges that are consistently among the busiest across scenarios. It also uses 'img/infrastructure\_importance\_by\_scenario.csv' and outputs plots in 'img'.
 
 
 
 ## Requirements
 
-To be able to run the model mesa version 2.1.4, pandas module 2.1.3 or later is needed and geopandas for the compare\_intersections\_with\_shapefile.py
+To be able to run the model mesa version 2.1.4, pandas module 2.1.3 or later is needed and geopandas for the compare\_intersections\_with\_shapefile.py. The latest pyDOE version is needed to run the latin hypercube experimental design in model\_run
 
